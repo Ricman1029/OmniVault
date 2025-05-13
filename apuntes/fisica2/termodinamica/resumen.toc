@@ -1,0 +1,40 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Temperatura y calor}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Temperatura y equilibrio térmico}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Ley cero de la termodinámica}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Termómetros y escalas de temperatura}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Expansión térmica}{4}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Expansión lineal}{4}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Expnasión volumétrica}{5}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Cantidad de calor}{5}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Calor específico}{6}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}Capacidad calorífica molar}{6}{subsubsection.1.5.2}%
+\contentsline {subsubsection}{\numberline {1.5.3}Cambios de fase}{6}{subsubsection.1.5.3}%
+\contentsline {section}{\numberline {2}Propiedades térmicas de la materia}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}La ecuación del gas ideal}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Graficas pV}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Moles y número de Avogadro}{9}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Modelo cinético-molecular del gas ideal}{9}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Colisiones y presión del gas}{9}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Rapideces moleculares}{12}{subsubsection.2.4.2}%
+\contentsline {section}{\numberline {3}Primera ley de la termodinámica}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Sistemas termodinámicos}{12}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Signos del calor y el trabajo en termodinámica}{12}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Trabajo realizado al cambiar el volumen}{12}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Trayectoria entre estados temodinámicos}{14}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Trabajo efectuado en un proceso termodinámico}{14}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Calor agregado en un proceso termodinámico}{14}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}Energía interna y la primera ley de la termodinámica}{15}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Proceso cíclicos y sistemas aislados}{15}{subsubsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.5}Tipos de procesos termodinámicos}{16}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Proceso adiabático}{16}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Proceso isocórico}{16}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Proceso isobárico}{16}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Proceso isotérmico}{16}{subsubsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.6}Energía interna de un gas ideal}{16}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Capacidad calorífica del gas ideal}{17}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.1}Relación entre las dos capacidades caloríficas para un gas ideal}{18}{subsubsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.2}El cociente de capacidades caloríficas}{19}{subsubsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.8}Proceso adiabático para el gas ideal}{19}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}Gas ideal adiabático: Relación entre V, T, y p}{19}{subsubsection.3.8.1}%
+\contentsline {section}{\numberline {4}La segunda ley de la termodinámica}{21}{section.4}%
