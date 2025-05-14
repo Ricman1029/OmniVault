@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  13 MAY 2025 02:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  14 MAY 2025 16:35
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -765,7 +765,7 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<~/imagenes/logo_utn_frc.jpg, id=163, 1606.0pt x 568.1225pt>
+<~/imagenes/logo_utn_frc.jpg, id=179, 1606.0pt x 568.1225pt>
 File: ~/imagenes/logo_utn_frc.jpg Graphic file (type jpg)
 <use ~/imagenes/logo_utn_frc.jpg>
 Package pdftex.def Info: ~/imagenes/logo_utn_frc.jpg  used on input line 76.
@@ -802,7 +802,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 
 
-<~/imagenes/logo_utn.png, id=208, 3011.25pt x 3538.21875pt>
+<~/imagenes/logo_utn.png, id=224, 3011.25pt x 3538.21875pt>
 File: ~/imagenes/logo_utn.png Graphic file (type png)
 <use ~/imagenes/logo_utn.png>
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 39.
@@ -835,7 +835,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 136.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [3]
-<imagenes/escala-Kelvin.png, id=229, 250.68657pt x 222.07968pt>
+<imagenes/escala-Kelvin.png, id=249, 250.68657pt x 222.07968pt>
 File: imagenes/escala-Kelvin.png Graphic file (type png)
 <use imagenes/escala-Kelvin.png>
 Package pdftex.def Info: imagenes/escala-Kelvin.png  used on input line 144.
@@ -865,12 +865,12 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 255.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [7]
-<imagenes/g-pv-gas-ideal.png, id=254, 426.84468pt x 382.42876pt>
+<imagenes/g-pv-gas-ideal.png, id=274, 426.84468pt x 382.42876pt>
 File: imagenes/g-pv-gas-ideal.png Graphic file (type png)
 <use imagenes/g-pv-gas-ideal.png>
 Package pdftex.def Info: imagenes/g-pv-gas-ideal.png  used on input line 258.
 (pdftex.def)             Requested size: 241.84843pt x 216.68535pt.
-<imagenes/g-pv-gas-no-ideal.png, id=255, 399.74344pt x 412.54124pt>
+<imagenes/g-pv-gas-no-ideal.png, id=275, 399.74344pt x 412.54124pt>
 File: imagenes/g-pv-gas-no-ideal.png Graphic file (type png)
 <use imagenes/g-pv-gas-no-ideal.png>
 Package pdftex.def Info: imagenes/g-pv-gas-no-ideal.png  used on input line 265.
@@ -882,7 +882,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 273.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [8 <./imagenes/g-pv-gas-ideal.png (PNG copy)> <./imagenes/g-pv-gas-no-ideal.png (PNG copy)>]
-<imagenes/choque-molecula-gas.png, id=263, 398.23781pt x 520.19344pt>
+<imagenes/choque-molecula-gas.png, id=283, 398.23781pt x 520.19344pt>
 File: imagenes/choque-molecula-gas.png Graphic file (type png)
 <use imagenes/choque-molecula-gas.png>
 Package pdftex.def Info: imagenes/choque-molecula-gas.png  used on input line 301.
@@ -906,7 +906,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 363.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [11]
-<imagenes/trabajo-gas-piston.png, id=283, 502.12593pt x 298.11375pt>
+<imagenes/trabajo-gas-piston.png, id=303, 502.12593pt x 298.11375pt>
 File: imagenes/trabajo-gas-piston.png Graphic file (type png)
 <use imagenes/trabajo-gas-piston.png>
 Package pdftex.def Info: imagenes/trabajo-gas-piston.png  used on input line 390.
@@ -918,7 +918,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 394.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [12]
-<imagenes/trabajo-g-pv.png, id=290, 611.28375pt x 237.13594pt>
+<imagenes/trabajo-g-pv.png, id=311, 611.28375pt x 237.13594pt>
 File: imagenes/trabajo-g-pv.png Graphic file (type png)
 <use imagenes/trabajo-g-pv.png>
 Package pdftex.def Info: imagenes/trabajo-g-pv.png  used on input line 417.
@@ -930,7 +930,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 423.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [13 <./imagenes/trabajo-gas-piston.png (PNG copy)> <./imagenes/trabajo-g-pv.png (PNG copy)>]
-<imagenes/trabajo-trayectoria.png, id=297, 445.665pt x 302.63063pt>
+<imagenes/trabajo-trayectoria.png, id=318, 445.665pt x 302.63063pt>
 File: imagenes/trabajo-trayectoria.png Graphic file (type png)
 <use imagenes/trabajo-trayectoria.png>
 Package pdftex.def Info: imagenes/trabajo-trayectoria.png  used on input line 436.
@@ -948,7 +948,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 479.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [15]
-<imagenes/expansion-libre-gas-ideal.png, id=309, 362.10281pt x 296.60812pt>
+<imagenes/expansion-libre-gas-ideal.png, id=329, 362.10281pt x 296.60812pt>
 File: imagenes/expansion-libre-gas-ideal.png Graphic file (type png)
 <use imagenes/expansion-libre-gas-ideal.png>
 Package pdftex.def Info: imagenes/expansion-libre-gas-ideal.png  used on input line 501.
@@ -987,9 +987,27 @@ Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 638.
 
 File: ~/imagenes/logo_utn.png Graphic file (type png)
 <use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 674.
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 660.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[21] (./resumen.aux
+[21]
+<imagenes/diagrama-de-flujo.png, id=357, 337.26pt x 425.33907pt>
+File: imagenes/diagrama-de-flujo.png Graphic file (type png)
+<use imagenes/diagrama-de-flujo.png>
+Package pdftex.def Info: imagenes/diagrama-de-flujo.png  used on input line 670.
+(pdftex.def)             Requested size: 241.84843pt x 305.01724pt.
+
+
+File: ~/imagenes/logo_utn.png Graphic file (type png)
+<use ~/imagenes/logo_utn.png>
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 678.
+(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
+[22 <./imagenes/diagrama-de-flujo.png (PNG copy)>]
+
+File: ~/imagenes/logo_utn.png Graphic file (type png)
+<use ~/imagenes/logo_utn.png>
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 721.
+(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
+[23] (./resumen.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -998,21 +1016,21 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
  ***********
 Package rerunfilecheck Info: File `resumen.out' has not changed.
-(rerunfilecheck)             Checksum: F4A824E6F7F256C282697468479DC0C4;8718.
+(rerunfilecheck)             Checksum: 5ABB011DDD7C215E34445E2AE931DD19;9640.
  ) 
 Here is how much of TeX's memory you used:
- 35526 strings out of 469608
- 819017 string characters out of 5470607
- 1324556 words of memory out of 5000000
- 61690 multiletter control sequences out of 15000+600000
+ 35545 strings out of 469608
+ 819453 string characters out of 5470607
+ 1324557 words of memory out of 5000000
+ 61702 multiletter control sequences out of 15000+600000
  670689 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,105p,990b,840s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on resumen.pdf (22 pages, 717865 bytes).
+Output written on resumen.pdf (24 pages, 766811 bytes).
 PDF statistics:
- 396 PDF objects out of 1000 (max. 8388607)
- 339 compressed objects within 4 object streams
- 77 named destinations out of 1000 (max. 500000)
- 375 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 428 PDF objects out of 1000 (max. 8388607)
+ 368 compressed objects within 4 object streams
+ 84 named destinations out of 1000 (max. 500000)
+ 412 words of extra memory for PDF output out of 10000 (max. 10000000)
 

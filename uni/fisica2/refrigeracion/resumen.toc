@@ -1,5 +1,0 @@
-\babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1}Segunda Ley de la Termodinamica}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Maquina termica}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Eficiencia termica}{3}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Refrigeradores y bombas de calor}{4}{subsection.1.3}%

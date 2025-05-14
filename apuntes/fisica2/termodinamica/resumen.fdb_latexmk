@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1747115445.24747 "resumen.tex" "resumen.pdf" "resumen" 1747115446.32096 0
+["pdflatex"] 1747251312.00716 "resumen.tex" "resumen.pdf" "resumen" 1747251313.09625 0
   "/home/ricman/imagenes/logo_utn.png" 1746771300 278751 34a500bfa1ef02b54b48f78d077633d6 ""
   "/home/ricman/imagenes/logo_utn_frc.jpg" 1746771300 55244 4d2f4db94d25b481fb9a7ee85dd2c263 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -241,6 +241,7 @@
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1746690538 3567303 2fa6b124fe51f3ea78d920e0a9e77168 ""
   "/usr/local/texlive/2025/texmf.cnf" 1746690467.41207 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "imagenes/choque-molecula-gas.png" 1747081705.35611 78490 9c12a1b6ed6d22b939dca831c01829a8 ""
+  "imagenes/diagrama-de-flujo.png" 1747250320.7668 41560 01b08d1fce49d4925075fc2f29da247d ""
   "imagenes/escala-Kelvin.png" 1747067237.83638 29935 1d6c41a826e6b71503ded210bbc85e54 ""
   "imagenes/expansion-libre-gas-ideal.png" 1747108461.88746 30275 36ecb591917eea52fa270e207e74fe5c ""
   "imagenes/g-pv-gas-ideal.png" 1747078989.02848 65746 069b7c1ce5b1f14d27887321101c000c ""
@@ -248,10 +249,10 @@
   "imagenes/trabajo-g-pv.png" 1747102530.7 59323 ca3b0ac9052dbc85d37196c6234ee93b ""
   "imagenes/trabajo-gas-piston.png" 1747094357.3633 40518 a8030a7288d51d39b55a81c3924047f1 ""
   "imagenes/trabajo-trayectoria.png" 1747103559.11432 28447 7cc7ecce435c5dbf8eb4d0b21336cffb ""
-  "resumen.aux" 1747115446.25945 8053 d65f41c2f0671e515c640a485d0d79a6 "pdflatex"
-  "resumen.out" 1747115446.26045 8718 f4a824e6f7f256c282697468479dc0c4 "pdflatex"
-  "resumen.tex" 1747115444.05741 40282 78cee6a3b7662dddc70af451af9ec08d ""
-  "resumen.toc" 1747115446.26045 3969 22f9f243718845407b4830dc4f267d17 "pdflatex"
+  "resumen.aux" 1747251313.03071 8906 68fd2f5c240c60e7fb161e340445c801 "pdflatex"
+  "resumen.out" 1747251313.03289 9640 5abb011ddd7c215e34445e2ae931dd19 "pdflatex"
+  "resumen.tex" 1747251311.27368 44748 94d18698fc80e45f2f8f762c6a0ab3c8 ""
+  "resumen.toc" 1747251313.03289 4385 053fc734ca8e0f43252dcf12ac5228ce "pdflatex"
   (generated)
   "resumen.aux"
   "resumen.log"

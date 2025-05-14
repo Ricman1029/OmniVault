@@ -38,3 +38,7 @@
 \contentsline {subsection}{\numberline {3.8}Proceso adiabático para el gas ideal}{19}{subsection.3.8}%
 \contentsline {subsubsection}{\numberline {3.8.1}Gas ideal adiabático: Relación entre V, T, y p}{19}{subsubsection.3.8.1}%
 \contentsline {section}{\numberline {4}La segunda ley de la termodinámica}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Dirección de los procesos termodinámicos}{21}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Máquinas térmicas}{21}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Fuentes fría y caliente}{22}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Diagramas de flujo de energía y eficiencia}{22}{subsubsection.4.2.2}%
