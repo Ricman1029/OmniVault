@@ -1,0 +1,1133 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+% Interlineado 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+% Fuente Times New Roman
+\usepackage{mathptmx}
+
+% Acomodar margenes del documento
+\usepackage[a4paper, margin=2cm, top=3cm, headheight=50pt]{geometry}
+
+% Paquetes comunes
+\usepackage{graphicx, float}
+\usepackage{amsfonts, amssymb, amsmath}
+\usepackage{physics, esvect}
+\usepackage{enumerate}
+\usepackage[colorlinks=true, citecolor=blue]{hyperref}
+
+% Nuevos
+\usepackage{pgfplots}
+\usepackage{tikz, color}
+\usepackage{tikz-3dplot}
+\pgfplotsset{width=15cm, compat=1.12}
+
+
+% Encabezados
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\fancyhead[L]{
+  \includegraphics[height=1.2cm]{~/imagenes/logo_utn.png}
+  \shortstack[l]{
+    {\footnotesize Universidad Tecnológica Nacional} \\
+    {\footnotesize Facultad Regional Córdoba} \\
+    {\footnotesize Extensión Áulica Bariloche}
+  }
+}
+\fancyhead[C]{
+  \shortstack[c]{
+    {\footnotesize Análisis Matemático 2} \\
+    {\footnotesize Resumen} \\
+    {\footnotesize }
+  }
+}
+\fancyhead[R]{
+  \shortstack[r]{
+    {\footnotesize Profesor: Mónica Guraya} \\
+    {\footnotesize Alumno: Ricardo Nicolás Freccero} \\
+    {\footnotesize Fecha: 19/04/2025}
+  }
+}
+
+% Para bibliografía
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{bibliografia.bib}
+
+\begin{document}
+\newgeometry{margin=2cm, top=1.5cm}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=\linewidth]{~/imagenes/logo_utn_frc.jpg}\\
+
+	\textsc{
+		\LARGE Universidad Tecnológica Nacional\\
+		\Large Facultad Regional Córdoba - Extensión Áulica Bariloche\\
+		\large Ingeniería en Sistemas de Información\\
+		Año lectivo 2025\\[0.5cm]
+	}
+
+	\rule{\linewidth}{1.0mm}\\[0.4cm]
+	\Huge
+	\textbf{Análisis Matemático 2}\\
+	Resumen\\[0.2cm]
+	\LARGE
+	Cambiar Título
+	\rule{\linewidth}{1.0mm}\\
+	\large
+	\begin{flushleft}
+		Profesor: Mónica Guraya
+
+		Ayudante: Santiago Ward
+
+		Fecha: 19/04/2025
+	\end{flushleft}
+
+	\vfill
+	\begin{flushright}
+		Alumno: Ricardo Nicolás Freccero
+
+		Número de legajo: 415753
+	\end{flushright}
+\end{titlepage}
+
+\restoregeometry
+\tableofcontents
+\newpage
+
+
+\section{Conjuntos y puntos}
+En $ \mathbb{R}^{2} $ el \textbf{entorno de un punto} $ P_{0}(x_{0}, y_{0}) $ y de radio $ \delta $ es el conjunto de puntos ubicados en el interior de un círculo de centro $ P_{0} $ y radio $ \delta $.
+
+En clase al entorno lo vimos como \textbf{Bola}, así que vamos a usar la B para representarlo.
+
+\subsection{Punto}
+Consideramos como punto a cualquier vector del plano o el espacio que tenga origen en el $ \overline{O} $.
+
+\subsection{Bola abierta}
+Es el conjunto de puntos ubicados en un circulo de radio $ \delta $ alrededor de un punto $ P_{0} $.
+\[
+	B(P_{0}, \delta) = \left\{(x,y) \mid 0\leq+\sqrt[]{(x-x_{0})^{2}-(y-y_{0})^{2}}<\delta, \delta \in \mathbb{R}^{}\right\}
+\]
+Otra notación mas facil de entender es la siguiente:
+\[
+	B(P_{0}, \delta) = \left|P - P_{0}\right| < \delta, \delta \in \mathbb{R}^{}
+\]
+Que podemos interpretar como: la bola abierta $ B(P_{0}, \delta) $ es el conjunto de todos los puntos $ P $ cuya distancia a $ P_{0} $ es menor a $ \delta $, siendo $ \delta $ el radio de un circulo al rededor del punto $ P_{0} $.
+
+\subsection{Bola abierta reducida}
+
+Es lo mismo que la bola abierta, solo que ahora el punto $ P_{0} $ no está incluído en el conjunto de puntos.
+
+La denotamos como $ B_{0} $ y su ecuación es la siguiente:
+\[
+	B_{0}(P_{0}, \delta) = 0 < \left|P - P_{0}\right| < \delta, \delta \in \mathbb{R}^{}
+\]
+
+\subsection{Bola cerrada}
+Es el conjunto de puntos al rededor del punto $ P_{0} $ que cumplen que su distancia es $ \leq \delta $. La denotamos como $ \overline{B} $.
+\[
+	\overline{B}(P_{0}, \delta) = \left|P - P_{0}\right| \leq \delta, \delta \in \mathbb{R}^{}
+\]
+
+\subsection{Tipos de puntos}
+Dados un punto $ P $ cualquiera y un conjunto no vacío $ A $ de números definimos:
+
+\subsubsection{Punto interior}
+Un punto $ P_{0} $ es interior de un conjunto $ A $ si existe una bola abierta alrededor de $ P_{0} $ que esté totalmente contenida en $ A $.
+
+$ P_{0} $ es punto interior $ \iff \exists B(P_{0}) \subset A $
+
+\subsubsection{Punto de acumulación}
+Cuando toda bola abierta \textbf{reducida} alrededor de un punto $ P_{0} $ contiene puntos de $ A $.
+
+$ P_{0} $ es punto de acumulación de A $ \iff \forall B_{0}(P_{0}): \exists P \mid P \in B_{0}(P_{0}) \land P \in A $.
+
+\subsubsection{Punto aislado}
+Cuando existe una bola abierta al rededor del punto $ P_{0} $ cuya intersección con $ A $ es el mismo punto.
+
+$ P_{0} $ es punto aislado $ \iff \exists B(P_{0})\mid B(P_{0}) \cap A = \left\{P_{0}\right\} $
+
+\textbf{Nota}: Fijarse que en este caso, $ P_{0} \in A $. Si bien es un punto que está separado del resto de los puntos de $ A $ (porque la intersección de una bola abierta alrededor de él con $ A $ es el mismo punto), sigue formando parte del conjunto.
+
+\subsubsection{Punto exterior}
+Este es lo mismo que el anterior, pero para cuando el punto $ \notin A $.
+
+$ P_{0} $ es punto exterior $ \iff \exists B(P_{0}) \mid B(P_{0}) \cap A = \left\{\emptyset \right\} $
+
+\subsubsection{Punto frontera}
+Si hay una bola alrededor de un punto $ P_{0} $ que contiene tanto puntos que pertenecen como puntos que no prtenecen a $ A $.
+
+$ P_{0} $ es punto frontera $ \iff \forall B(P_{0}):
+	\begin{cases}
+		\exists P_{1} \in B(P_{0}) \land P_{1}\in A \\
+		\exists P_{2} \in B(P_{0}) \land P_{2} \notin A
+	\end{cases}$
+
+\subsubsection{Frontera de un conjunto}
+El conjunto de todos los puntos frontera de un conjunto $ A $ se llama frontera de $ A $.
+
+\subsection{Conjuntos}
+\subsubsection{Conjunto abierto}
+Es un conjunto cuyos puntos son todos interiores. \textbf{No hay puntos frontera}
+
+\subsubsection{Conjunto cerrado}
+Es un conjunto que contiene todos sus puntos de acumulacion, es decir, contiene sus puntos interiores y \textbf{contiene sus puntos frontera}.
+
+\subsubsection{Conjunto acotado}
+Es un conjunto para el cual es posible hallar un valor $ M $ que es mayor que el módulo de cualquier punto $ P_{0} $ de $ A $.
+
+$ M \in \mathbb{R}^{+} \mid \left|P_{0}\right| < M \; \forall P_{0} \in A $
+
+O lo que es lo mismo:
+
+$ \forall P_{0} \in A: \exists M \in \mathbb{R}^{+} \mid \left|P_{0}\right| < M $
+
+\subsubsection{Complemento de un conjunto}
+El complemento de un conjunto $ A $ es el conjunto que contiene todos los elementos del conjunto universal de $ A $ que no pertenecen a $ A $.
+
+\subsubsection{Conjunto conexo}
+Un conjunto es conexo si cualquier par de puntos del conjunto puede ser unido por un camino formado por segmentos de recta contenidos en $ A $.
+
+\subsubsection{Conjunto simplemente conexo}
+Es cuando cualquier curva cerrada contenida en el conjunto tiene su interior totalmente contenido en el conjunto.
+
+
+\section{Funciones}
+Existen varios tipo de funciones. Nosotros hasta ahora veníamos trabajando con funciones de una sola variable, que iban de $ \mathbb{{R}}^n \to \mathbb{{R}}^m $, estas funciones son \textbf{funciones escalares}
+
+\subsection*{Campos escalares}
+Funciones de dos o mas variables independientes.
+
+Son funciones de vectores, y la dimensión de su imagen es 1.
+
+$ \mathbb{{R}}^n \to \mathbb{{R}} $
+
+\subsection*{Funciones Vectoriales}
+Van de $ \mathbb{{R}} \to \mathbb{{R}}^m $
+
+La dimensión del dominio es 1, pero la dimensión de la imagen es $ m $.
+
+En $ \mathbb{{R}}^2  $ por ejemplo, una función vectorial le asigna a cada número real una imagen que es un vector de dos componentes. La función vectorial $ r(t) $ la podemos escribir en forma paramétrica de la siguiente forma:
+
+\[
+	r(t) =
+	\begin{cases}
+		x = f(t) \\
+		y = g(t)
+	\end{cases}
+\]
+
+En donde a cada valor de $ t $ le corresponde un par de valores de $ (x,y) $, es decir, un punto en $ \mathbb{R}^{2} $
+
+Estas funciones se utilizan para describir movimientos de partículas, curvas, etc.
+
+\subsection*{Campos Vectoriales}
+Van de $ \mathbb{R}^{n}\to\mathbb{R}^{m} $.
+
+Ejemplos de campos vectoriales son el \textbf{Campo Eléctrico}, \textbf{Campo Magnético}, \textbf{Campo Gravitacional}, etc.
+
+Vamos a estudiar los campos vectoriales en $ \mathbb{R}^{2} $ y $ \mathbb{R}^{3} $.
+
+Por ejemplo, podemos tener un campo vectorial en $ \mathbb{R}^{2} $ que le asigna a cada punto del plano, otro punto del plano. (va de $ \mathbb{R}^{2}\to\mathbb{R}^{2} $. Y lo mismo pasa en $ \mathbb{R}^{3} $.
+
+\subsection{Campos Escalares o Funciones de dos o mas variables}
+"\textit{Se dice que $ z $ es una Función de dos Variables Independientes $ (x, y) $ definida en un dominio $ D $ si a cada par de valores $ (x, y) $ tomados de ese dominio $ D $ le corresponde un solo valor de $ z $}"\parencite{am2monllor}
+
+\subsubsection*{Dominio}
+El dominio es el conjunto de todos los pares ordenados $ (x, y) $ para los que está defiinida la función $ z = f(x,y) $.
+
+$ D \in \mathbb{R}^{2} $, en este caso porque las variables independientes son dos.
+
+\subsubsection*{Imagen}
+La imagen es el conjunto de valores que toma $ z $ para todos los puntos que conforman el domino.
+
+$ z \in \mathbb{R}^{} $
+
+\subsubsection*{Función Explícita}
+Cuando está dada de la forma: $ z = f(x,y) $
+
+\subsubsection*{Función Implícita}
+Cuando está dada de la forma: $ f(x,y,z) = 0 $
+
+\subsubsection{Líneas o Curvas de Nivel}
+Para una función $ z = f(x,y) $ es el conjunto de todos los puntos $ (x,y) $ en los que la función toma el mismo valor.
+
+Lo podemos pensar como la proyección sobre el plano $ xy $ de la intersección de la función $ z = f(x,y) $ con un plano paralelo al plano $ xy $.
+
+\subsubsection{Superficies de Nivel}
+En el caso de funciones de 3 variables independientes podemos definir superficies de nivel.
+
+Para una función $ w = f(x,y,z) $, una superficie de nivel es el conjunto de todos los puntos $ (x,y,z) $ en los que la función toma el mismo valor.
+
+\textbf{Nota}: Este tipo de funciones de 3 variables independientes no las podemos graficar porque necesitamos 4 ejes, pero sí podemos graficar sus superficies de nivel.
+
+\subsection{Incrementos de una función}\label{sec:incrementos_func}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{imagenes/incrementos_de_funcion.png}
+	\caption{Imagen sacada de \parencite{am2monllor}. Incrementos de una función}
+	\label{fig:inc_funcion}
+\end{figure}
+
+Si analizamos la curva \textbf{MN}, que es la intersección de la superficie $ z = f(x,y) $ y el plano $ y = cte $, vemos que si nos movemos sobre ella, $ z $ varía solo en función de $ x $.
+
+Si nos movemos en el eje $ x $ una distancía $ \Delta x $, la variación de $ z $ es lo que se conoce como:
+
+\textbf{Incremento Parcial de $ z $ repecto de $ x $} (es el segmento $\overline{NN_{1}}$ de la figura \ref{fig:inc_funcion})
+
+\centerline{$\boxed{\Delta_{x}z = f(x+\Delta x, y) - f(x,y)}$}
+
+\vspace{0.5cm}
+Si en cambio, consideramos a $ x = cte $ y nos vamos moviendo sobre el eje $ y $, la variación de $ z $ es:
+
+\textbf{Incremento Parcial de $ z $ respecto de $ y $} (es el segmento $ \overline{TT_{1}} $ de la figura \ref{fig:inc_funcion})
+
+\centerline{$ \boxed{\Delta_{y}z = f(x, y + \Delta y) - f(x,y)} $}
+
+\vspace{0.5cm}
+Si incrementamos simultáneamente a $ x $ en $ \Delta x $, y a $ y $ en $ \Delta y $, obtenemos el:
+
+\textbf{Incremento Total de la función} (segmento $ \overline{QQ_{1}} $ de la figura \ref{fig:inc_funcion}
+
+\section{Límites}
+Dada una función $ z = f(x,y) $, se define el límite de esta función cuando $ P(x,y) $ tiende a $ P_{0}(x_{0},y_{0}) $ de la siguiente manera:
+
+"\textit{El límite de $ f(x,y) $ es igual a $ L $ si, para cualquier número $ \varepsilon > 0 $ existe un número $ \delta > 0 $ tal que, si la distancia del punto $ P(x,y) $ a $ P_{0}(x_{0},y_{0}) $ es menor a $ \delta $ entonces, la distancia entre $ f(x,y) $ y $ L $ es menor a $ \varepsilon $, con $ P(x,y) \neq P_{0}(x_{0},y_{0}) $}"
+\[
+	\lim_{(x,y) \to (x_{0},y_{0})}{f(x,y)} = L \iff \forall \varepsilon > 0 : \exists \delta > 0 \mid 0 < \lVert(x,y) - (x_{0},y_{0})\rVert < \delta \implies \left|f(x,y) - L\right| < \varepsilon
+\]
+
+Esta definición implica que por mas pequeño que sea $ \varepsilon{} $ siempre existe una bola reducida $ B_{0}(P_{0},\delta) $ dentro de la cual están los puntos $ P(x,y) $. Se considera una bola reducida porque no nos interesa qué pasa en el punto $ P_{0} $ donde la función puede no estar definida.
+
+Recordemos que cuando estudiabamos límites en análisis I, las trayectorias posibles para acercarse al límite eran dos (por izquierda, y por derecha) y bastaba con probar que los límites de esas dos trayectorias eran iguales para demostrar la existencia del límite en ese punto.
+
+El problema es que ahora, como tenemos dos variables, las trayectorias que existen para acercarse a un mismo punto son infinitas y es imposible calcular el límite de todas las trayectorias para ver si son el mismo.
+
+Una forma de demostrar la existencia de un límite de dos variables es calcularlo aplicando la definición, pero esto se puede volver muy complicado.
+
+Lo que sí podemos hacer se algo parecido a lo que veníamos haciendo para límites de una sola variable, y si llegamos a una indeterminación vemos cómo nos las arreglamos.
+
+\underline{Ejemplo 1}:
+\[
+	\lim_{(x,y) \to (3,1)}{\left(xy - y^{2}\right)}
+\]
+En este caso podemos directamente reemplazar $ (x,y) $ por $ (3,1) $ y el resultado es $ L = 2 $. Esto quiere decir que por cualquier camino que nos aproximemos al punto $ P_{0}(3,1) $ los valores de la función van a tender a 2.
+
+En este caso, como no hay problema con ningúna de las variables, decimos que la función tiene Límite Doble y es $ L = 2 $.
+
+\underline{Ejemplo 2}:
+\[
+\lim_{(x,y) \to (0,0)}{\frac{\sin^{} 3xy}{x}}
+\]
+En este caso, si evaluamos la función en el $ (0,0) $ tenemos una indeterminación, pero la podemos salvar:
+\[
+\lim_{(x,y) \to (0,0)}{\frac{\sin^{} 3xy}{x}} = \lim_{(x,y) \to (0,0)}{\frac{3y\sin^{}3xy}{3xy}} = \left(\lim_{(x,y) \to (0,0)}{3y}\right)\times\left(\lim_{(x,y) \to (0,0)}{\frac{\sin^{}3xy}{3xy}}\right) = 0\times1 = 0
+\]
+Vemos entonces que la función tiene Límite Doble $ L = 0 $.
+
+\underline{Ejemplo 3}:
+\[
+\lim_{(x,y) \to (0,0)}{\frac{3x^{2}+y}{x^{2}-y}}
+\]
+En este caso llegamos a una indeterminación si evaluamos la función en el $ (0,0) $ pero no hay forma de salvarla. La forma de saber si existe el límite en estos casos es calcularlo con la definición o fijarnos si aproximandonos por todas las infinitas direcciones obtenemos el mismo resultado. Y no queremos hacer ninguna de las dos cosas.
+
+Entonces, no podemos (o es muy dificil) confirmar la existencia del límite, pero sí puede ser mas sencillo afirmar cuando \textbf{no} existe el mismo, ya que si los límites calculados por dos trayectorias son diferentes, el límite no existe.
+
+Vamos a ver dos formas de hacer esto: usando \textbf{Límites Iterados}, y \textbf{Límites Radiales}.
+
+\subsection{Límites Iterados}
+Podemos calcular los límites de una función por trayectorias particulares, denominadas \textbf{Trayectorias Escalonadas}, constituidas por rectas paralelas a los ejes cartesianos y que consiste en llegar al punto $ P_{0} $ partiendo de $ P $ y pasando por $ P_{1} $, y luego hacer lo mismo pero pasando por $ P_{2} $ para comparar los resultados.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imagenes/limites_iterados.png}
+  \caption{Imagen sacada de \parencite{am2monllor}. Cálculo de límites iterados.}
+  \label{fig:limites_iterados}
+\end{figure}
+
+\underline{Ejemplo 4}:
+Dada $ z = \frac{2x^{2} + y^{3}}{3x^{2} - y^{3}} $, calcular los Límites Iterados en el punto $ P_{0}(0,0) $:
+\begin{align*}
+	\lim_{y \to 0}{\left[\lim_{x \to 0}{\frac{2x^{2} + y^{3}}{3x^{2} - y^{3}}}\right]} &= -1\\
+	\lim_{x \to 0}{\left[\lim_{y \to 0}{\frac{2x^{2} + y^{3}}{3x^{2} - y^{3}}}\right]} &= \frac{2}{3}
+\end{align*}
+
+Los Límites iterados son distintos, por lo tanto la función no tiene límite en $ P_{0}(0,0) $.
+
+\fbox{\parbox{0.9\linewidth}{
+\textbf{IMPORTANTE}:
+
+Que los límites iterados sean iguales no garantiza que la función tenga límite. Hay que recordar que para que exista el límite en un punto, las infinitas trayectorias a ese punto deben tener el mismo límite, y cuando calculamos los límites iterados solo estamos calculando dos trayectorias. Podría ser que haya una trayectoria con un límite distinto.
+}}
+
+\subsection{Límites Radiales}
+Consiste entomar el límite siguiendo las trayectorias del haz de rectas que pasan por el punto $ P_{0}(x_{0}, y_{0}) $:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imagenes/limites_radiales.png}
+  \caption{Imagen tomada de \parencite{am2monllor}. Límites radiales}
+  \label{fig:limites_radiales}
+\end{figure}
+
+Con este método, si $ L $ queda en función de $ m $ significa que tendrá un límite distinto para cada trayectoria, osea que no existe el límite en ese punto.
+
+\underline{Ejemplo 5}:
+Dada $ z = \frac{2xy}{3x^{2} - y^{2}} $, calcular el límite de $ z $ en el punto $ P_{0}(0,0) $.
+\[
+\lim_{(x,y) \to (0,0)}{\frac{2xy}{3x^{2} - y^{2}}}
+\]
+Como $ P_{0}(0,0) $, sabemos que $ \begin{cases}
+  x_{0} = 0 \\
+  y_{0} = 0
+\end{cases} $, entonces la trayectoria es $ y - 0 = m(x-0) $ que es lo mismo que $ y = mx $.
+
+Ahora como podemos reemplazar $ y $ en función de $ x $, podemos escribir la función y el límite en función de $ x $:
+\[
+\lim_{x \to 0}{\frac{2x.mx}{3x^{2} - (mx)^{2}}}
+\]
+Y podemos resolver el límite:
+\[
+\lim_{x \to 0}{\frac{2x.mx}{3x^{2} - (mx)^{2}}} = \lim_{x \to 0}{\frac{x^{2}2m}{x^{2}(3- (mx)^{2})}} = \frac{2m}{3-m^{2}}
+\]
+
+El resultado del límite nos quedó en función de $ m $, así que podemos afirmar que no existe el límite para esa función en el punto $ P_{0}(0,0) $.
+
+Veamos un ejemplo mas:
+
+\underline{Ejemplo 6}:
+Dada $ z = \frac{2x^{2}y}{x^{4}+3y^{2}} $, calcular el límite de la función en el punto $ P_{0}(0,0) $
+
+Busquemos primero los límites susecivos:
+\begin{align*}
+	\lim_{y \to 0}{\left[\lim_{x \to 0}{\frac{2x^{2}y}{x^{4}+3y^{2}}}\right]} &= 0 \\
+	\lim_{y \to 0}{\left[\lim_{x \to 0}{\frac{2x^{2}y}{x^{4}+3y^{2}}}\right]} &= 0
+\end{align*}
+
+Los límites son iguales, pero habíamos dicho que solo con esta iformación no podíamos afirmar si existe o no el límite.
+
+Calculemos ahora los límites radiales:
+ 
+$
+\displaystyle \lim_{(x,y) \to (0,0)}{\frac{2x^{2}y}{x^{4}+3y^{2}}}
+\qquad
+\begin{cases}
+  x_{0} = 0 \\
+  y_{0} = 0
+\end{cases}
+$ la trayectoria es $ y = mx $
+\[
+\lim_{x \to 0}{\frac{2x^{2}mx}{x^{4}+3(mx)^{2}}} = \lim_{x \to 0}{\frac{2mx}{x^{2}+3m^{2}}} = 0
+\]
+
+Obtuvimos el mismo valor de límite a lo largo de cualquier trayectoria paralela a los ejes coordenados (límites iterados) y de cualquier recta que pase por el origen. \textbf{Pero esto NO demuestra que el límite de la función sea 0}, porque hay infinitas trayectorias que hay que analizar y no las analizamos todas. Por ejemplo, analicemos la trayectoria de la parábola $ y = x^{2} $, y veamos si el límite nos sigue dando 0.
+\[
+	\lim_{(x,y) \to (0,0)}{\frac{2x^{2}y}{x^{4}+3y^{2}}} =\lim_{(x,y) \to (0,0)}{\frac{2x^{2}x^{2}}{x^{4}+3(x^{2})^{2}}} = \lim_{(x,y) \to (0,0)}{\frac{2x^{4}}{x^{4}+3x^{4}}} = \frac{1}{2}
+\]
+
+Obtuvimos un valor distinto de límite, por lo tanto el límite para esta función cuando $ P $ tiende a $ (0,0) $ NO EXISTE.
+
+\textbf{Estos métodos no sirven para demostrar si existe el límite, solo nos sirven para demostrar cuándo la funcion NO lo tiene.}
+
+\section{Continuidad}
+Es lo mismo que siempre. Sea la función $ z = f(x,y) $ y $ P_{0}(x_{0}, y_{0}) $, $ z $ es continua en $ P_{0} $ si:
+\[
+\lim_{(x,y) \to (x_{0},y_{0})}{f(x,y)} = f(x_{0},y_{0})
+\]
+
+Para que se cumpla esto se tiene que cumplir tres condiciones básicas:
+\begin{enumerate}[1.]
+  \item Que el límite exista para $ P(x,y) \to P_{0}(x_{0},y_{0}) $
+
+  \item Que la función esté definida en $ P_{0}(x_{0},y_{0}) $
+
+  \item Que el límite de la función es igual al valor de la función en $ P_{0}(x_{0},y_{0}) $
+\end{enumerate}
+
+Si la igualdad no se cumple en $ P_{0} $ quiere decir que este es un \textbf{punto de discontinuidad}.
+
+Si no existe el límite en ese punto, la discontinuidad es \textbf{esencial}.
+
+Si existe el límite, pero la función no es continua, la discontinuidad es \textbf{evitable}. Lo que se hace es redefinir la función para que sea continua.
+
+\section{Derivadas Parciales}
+Sea la función $ z = f(x,y) $, de dos variables independientes, y consideremos que se mantiene a $ y $ constante, haciendo variar solamente a $ x $, encontes la función planteada se comporta como una función \textbf{derivada parcial de la función con respecto a "$ x $"}, que se expresa así:
+\[
+\pdv[]{f(x,y)}{x} = \lim_{\Delta x \to 0}{\frac{\Delta_{x}f(x,y)}{\Delta x}} = \lim_{\Delta x \to 0}{\frac{f(x + \Delta x,y) - f(x,y)}{\Delta x}}
+\]
+
+Otras formas de escribir la derviada parcial son las siguientes:
+\[
+\pdv[]{f(x,y)}{x} = \pdv[]{z}{x} = \pdv[]{f}{x} = z_{x}^\prime = f_{x} = \dots
+\]
+
+De igual manera, podemos mantener constante a $ x $ y derivar a la función para obtener la \textbf{derivada parcial respecto de "$ y $"}
+\[
+\pdv[]{f(x,y)}{y} = \lim_{\Delta y \to 0}{\frac{\Delta_{y}f(x,y)}{\Delta y}} = \lim_{\Delta y \to 0}{\frac{f(x,y + \Delta y) - f(x,y)}{\Delta y}}
+\]
+
+La forma de calcular estas derivadas es la misma que usabamos cuando teníamos una sola variable, solo que ahora hay que tener en cuenta que si estamos haciendo la derivada parcial respecto de $ x $, la variable $ y $ es una constante y la tenemos que tratar como tal.
+
+\underline{Ejemplos}:
+\begin{enumerate}[1.]
+  \item Las derivadas parciales de la funcion $ z = y^{3}\cos^{}x $ son: 
+	$
+	\begin{cases}
+	  \pdv[]{z}{x} = -y^{3}\sin^{}x \\
+	  \pdv[]{z}{y} = 3y^{2}\cos^{}x
+	\end{cases}
+	$
+
+  \item Calcular las derivadas parciales de la función $ z = 3x^{2}y - y^{2} $ en el punto $ P(1,2) $:
+\begin{align*}
+	\pdv[]{f(x,y)}{x} & = 6xy & \pdv[]{f(1,2)}{x} & = 12 \\ 
+	\pdv[]{f(x,y)}{y} & = 3x^{2} - 2y & \pdv[]{f(1,2)}{y} & = -1 
+\end{align*}
+	  
+\end{enumerate}
+
+
+\subsection{Interpretación geométrica de las derivadas parciales}
+Consideremos a la función $ z = 4 - x^{2} - 2y^{2} $ y busquemos sus derivadas parciales en los puntos $ P_{0}(1,1) $.
+
+Tenemos que:
+\begin{align*}
+	\pdv[]{f(x,y)}{x} &= -2x &= \pdv[]{f(x,y)}{y} &= -4y\\
+	\pdv[]{f(1,1)}{x} &= -2 &= \pdv[]{f(1,1)}{y} &= -4
+\end{align*}
+
+Si miramos la figura \ref{fig:derivada_parcial_x}, podemos que ver cuando hacemos la derivada parcial respecto de x, nos estamos moviendo en el plano $ y = 1 $, y la derivada parcial es la pendiente de la recta tangente a la curva generada por la función $ z $ en la intersección con ese plano $ y = 1 $.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{imagenes/interp_geom_derivada_paracial_x.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Derivada parcial respecto de $ x $.}
+  \label{fig:derivada_parcial_x}
+\end{figure}
+
+Lo mismo podemos observar cuando analizamos la figura \ref{fig:derivada_parcial_y}. En este caso, el plano sobre el que nos movemos es $ x = 1 $, y la derivada parcial es la pendiente de la recta tangente a la curva generada por la intersección de la función $ z $ con él.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{imagenes/interp_geom_derivada_paracial_y.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Derivada parcial respecto de $ y $.}
+  \label{fig:derivada_parcial_y}
+\end{figure}
+
+\subsection*{Derivavilidad de una función}
+Una función de varias variables independientes es derivable en un punto si es continua en ese punto.
+
+\subsection{Derivadas parciales sucesivas}
+Igual que con las derivadas normales, una derivada parcial la podemos derivar cuantas veces queramos obteniendo derivadas parciales segundas, terceras, etc., con respecto a cada una de las variables consideradas.
+
+Así para una función de dos variables independientes sus derivadas parciales son:
+\begin{align*}
+	z &= f(x,y) & z &= x^{4}\sin^{}5y\\
+	\pdv[]{z}{x} &= f_{x}^{\prime}(x,y) & \pdv[]{z}{x} &= 4x^{3}\sin^{}5y\\
+	\pdv[]{z}{y} &= f_{y}^{\prime}(x,y) & \pdv[]{z}{y} &= 5x^{4}\cos^{}5y
+\end{align*}
+
+Estas pueden ser derivadas nuevamente obteniendo las derivadas parciales de segundo orden:
+\begin{align*}
+	\pdv[2]{z}{x} &= f_{xx}^{\prime\prime}(x,y) & \pdv[2]{z}{x} &= 12x^{2}\sin^{}5y\\
+	\pdv[2]{z}{y}{x} &= f_{xy}^{\prime\prime}(x,y) & \pdv[2]{z}{y}{x} &= 20x^{3}\cos^{}5y\\
+	\pdv[2]{z}{x}{y} &= f_{yx}^{\prime\prime}(x,y) & \pdv[2]{z}{x}{y} &= 20x^{3}\cos^{}5y\\
+	\pdv[2]{z}{y} &= f_{yy}^{\prime\prime}(x,y) & \pdv[2]{z}{y} &= -25x^{4}\sin^{}5y
+\end{align*}
+
+Y así siempre que existan las derivadas correspondientes, se pueden seguir derivando de forma sucesivas.
+
+Estas derivadas parciales sucesivas vemos que no son todas distintas entre sí. Hay un teorema que dice que: "\textit{Si las derivadas sucesivas a calcular son continuas, el orden de derivación no altera la derivada, siempre que la cantidad de veces que se derive respceto a cada variable sea la misma}."
+
+Es decir, que si derivamos primero respecto a $ x $ y luego respecto a $ y $, o primero respecto a $ y $ y luego respecto a $ x $, SIEMPRE QUE TODAS LAS DERIVADAS QUE CALCULAMOS SEAN CONTINUAS vamos a llegar al mismo resultado.
+
+Esto se puede demostrar con el teorema de Schwartz, pero no lo vemos en clase.
+
+\subsection{Diferencial}
+Para explicar qué es el diferencial vamos a volver a trabajar con funciones de $ \mathbb{R}^{}\to\mathbb{R}^{} $ y después vamos a aplicar los conocimientos en las funciones de $ \mathbb{R}^{n}\to\mathbb{R}^{m} $.
+
+La notación diferencial en realidad la venimos viendo hace un montón pero nunca supimos de dónde venía ni qué significaba. La veíamos por ejemplo cuando estudiabamos derivadas, que podiamos expresarla como $ \dv[]{y}{x} $ donde $ y = f(x) $. También la veíamos en las integrales de la forma $ \int_{}^{} f(x) \,dx $. Esto lo tomabamos como que solo era una notación, pero en realidad no, $ dx $ y $ dy $ son dos variables que tienen la propiedad de que cuando su razón existe, esta es igual a la derivada.
+
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Definición de diferenciales}
+
+Sea $ y = f(x) $ una función derivable. La \underline{diferencial $ dx $} es una variable independiente. La \underline{diferencial $ dy $} es
+\[
+dy = f^{\prime}(x)dx
+\]
+}}\vspace{0.2cm}
+
+Como $ dx $ es una variable independiente puede tomar cualquier valor, pero el valor de $ dy $ va a depender tanto del valor que tome la variable $ dx $ como del de la variable $ x $.
+
+\subsubsection{Interpretación geométrica del diferencial}
+En la siguiente figura podemos ver gráficamente a qué llamamos $ dx $ y $ dy $.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imagenes/interp_geom_diferencial.png}
+  \caption{Imagen sacada de \parencite{thomas_calc_uv}. Interpretación geométrica del diferencial.}
+  \label{fig:interp_geom_diferencial}
+\end{figure}
+
+Vemos en la figura \ref{fig:interp_geom_diferencial} que la diferencial $ dy $ es el cambio $ \Delta L $ cuando $ x = a $ cambia en una cantidad $ dx = \Delta x $. Y lo podemos comprobar de la siguiente forma:
+\begin{align*}
+  \Delta L &= L(a + dx) - L(a)\\
+  \Delta L &= \underbrace{f(a) + f^{\prime}(a)\left[(a + dx) - a\right]}_{L(a + dx)} - \underbrace{f(a)}_{L(a)}\\
+  \Delta L &= f^{\prime}(a)dx
+\end{align*}
+
+Entonces, $ \Delta L = dy $ y representa la magnitud que se eleva o baja la recta tangente cuando $ x $ cambia en una cantidad $ dx = \Delta x $.
+
+Si $ dx \neq 0 $, entonces el cociente de la diferencial $ dy $ entre la diferencial $ dx $ es igual a la derivada $ f^{\prime} (x,y) $.
+
+Si tenemos la ecuación $ f(x) = 3x^{2} - 6 $, entonces $ dy = f^{\prime}(x)dx = 6xdx $.
+
+Toda fórmula de derivación como 
+\begin{align*}
+	\dv[]{(u + v)}{x} &= \dv[]{u}{x} + \dv[]{v}{x} && \text{o} & \dv[]{(\sin^{}u)}{x} &= \cos^{}u\dv[]{u}{x}
+\end{align*}
+
+Tiene una forma diferencial correspondiente como 
+\begin{align*}
+	d(u+v) &= du+dv && \text{o} & d(\sin^{}u) &= \cos^{}udu
+\end{align*}
+
+\subsubsection{Estimación con diferenciales}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Aclaraciones}
+
+
+Acá me mezclo un poco así que vamos a hacer un par de aclaraciones.
+\begin{itemize}
+  \item $ \Delta y $ es lo que varía la función $ f(x) $ si nos movemos una distancia $ \Delta x = dx $ sobre el eje $ x $. La variación de la función se calcula como cualquier variación, punto final menos inicial:
+\[
+\Delta y = f(a + dx) - f(a)
+\]
+
+  \item $ dx = \Delta x $ y es la distancia que nos movemos en el eje $ x $.
+
+  \item Cuando $ \Delta x $ es pequeña, podemos decir (y se vé en la gráfica de la figua \ref{fig:interp_geom_diferencial}) que $ dy $ es aproximadamente igual a $ \Delta y $. Osea,
+\[
+	\Delta y \approx dy
+\]
+
+  \item $ dy $ \textbf{no es} $ \Delta y $, solo es aproximadamente igual cuando $ dx $ es muy pequeño.
+La fórmula de $ dy $ es:
+\[
+dy = f^{\prime}(x)dx
+\]
+\end{itemize}
+}}\vspace{0.2cm}
+
+Ahora sí, supongamos que conocemos el valor de una función derivable $ f(x) $ en un punto $ a $ y necesitamos estimar cuánto cambiará este valor en $ f(a + dx) $. Si $ dx = \Delta x $ es pequeña, mirando la figura \ref{fig:interp_geom_diferencial}, podemos ver que $ \Delta y $ es aproximadamente igual a $ dx $.
+
+Sabemos que $ \Delta y = f(a + dx) - f(a) $, entonces $ f(a + dx) = f(a) - \Delta y $. Y recién dijimos que para valores muy chicos de $ dx $, $ \Delta y $ era aproximadamente igual a $ dy $ así que podemos decir que
+\[
+	f(a + dx) \approx f(a) + dy
+\]
+que es lo mismo que decir 
+\[
+dy \approx f(a + dx) - f(a)
+\]
+Entonces podemos usar $ dy $ para estimar $ f(a + dx) $ cuando conocemos $ f(a) $ y los valores de $ dx $ son pequeños.
+
+\subsubsection{Error en la aproximación diferencial}
+Sea $ f(x) $ derivable en $ x = a $ y supongamos que $ dx = \Delta x $ es un incremento de $ x $. Tenemos dos formas de describir el cambio en $ f $ cuando $ x $ cambia de $ a $ a $ a + \Delta x $:
+
+El cambio real: $ \Delta f = f(a + \Delta x) - f(a) $
+
+La estimación diferencial: $ df = f^{\prime}(a)\Delta x $
+
+¿Qué tan bien aproxima $ df $ a $ \Delta f $?
+
+Podemos medir el error de la aproximación si restamos $ df $ de $ \Delta f $:
+
+\begin{align*}
+  \text{Error de aproximacion} &= \Delta f - df \\
+   &= \Delta f - f^{\prime}(a)\Delta x\\
+    &= \underbrace{f(a + \Delta x) - f(a)}_{\Delta f} - f^{\prime}(a)\Delta x\\
+    &= \underbrace{\left(\frac{f(a + \Delta x) - f(a)}{\Delta x} - f^{\prime}(a)\right)}_{\text{A esta parte la llamamos }\varepsilon}\Delta x\\
+     &= \varepsilon \Delta x
+\end{align*}
+
+Cuando $ \Delta x \to 0 $, el cociente de diferencias 
+\[
+\frac{f(a + \Delta x) - f(a)}{\Delta x}
+\]
+se aproxima a la derivada $ f^{\prime}(a) $ así que la cantidad entre paréntesis se vuelve un número muy pequeño. Es decir, cuando $ \Delta x \to 0 $, $ \varepsilon \to 0 $.
+
+Ahora podemos afirmar lo siguiente:
+\[
+\underbrace{\Delta f}_{\text{cambio real}} = \underbrace{f^{\prime}(a)\Delta x}_{cambio estimado} + \underbrace{\varepsilon \Delta x}_{error}
+\]
+
+
+\subsection{Diferencial en funciones de varias variables}
+\subsubsection{Repaso}
+Recordemos el teorema del valor medio, que dice que:
+
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Teroema del Valor Medio} \\
+Si $ f $ es una función que satisface las siguientes hipótesis
+\begin{enumerate}[1.]
+	\item $ f $ es continua sobre el intervalo cerrado $ [a,b] $
+
+	\item $ f $ es derivable sobre el intervalo abierto $ (a,b) $
+\end{enumerate}
+entonces existe un número $ x = c $ en $ (a,b) $ tal que:
+\[
+	f^{\prime}(c) = \frac{f(b) - f(a)}{b - a}
+\]
+o, equivalentemente
+\[
+	f(b) - f(a) = f^{\prime}(c)(b - a)
+\]
+}}
+\vspace{0.2cm}
+
+Basicamente, lo que dice es que si $ f $ es continua y derivable dentro de un intervalo, entonces hay al menos un punto dentro de ese intervalo en el que la derivada de la función es igual a la pendiente de la recta secante que va de $ f(a) $ a $ f(b) $.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imagenes/valor_medio.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Teorema del Valor Medio}
+  \label{fig:valor_medio}
+\end{figure}
+
+
+
+\subsection{Diferencial total}
+Dada una función $ z = f(x,y) $, vimos en la sección \ref{sec:incrementos_func} que su incremento total es:
+\[
+\Delta z = f(x + \Delta x, y + \Delta y) - f(x,y)
+\]
+
+Supongamos que la función es continua y tiene derivadas parciales también continuas en el punto considerado.
+
+A la expresion del incremento total le sumamos y restamos $ f(x + \Delta x,y) $ y la reordenamos un poquito:
+\[
+\Delta z = \underbrace{f(x + \Delta x, y) - f(x,y)}_{\Delta z_{1}} + \underbrace{f(x + \Delta x, y + \Delta y) - f(x + \Delta x, y)}_{\Delta z_{2}}
+\]
+
+A los primeros dos términos de la ecuación los podemos considerar como un $ \Delta z_{1} $, que simboliza el incremento de $ z $ al movernos desde el punto $ f(x,y) $ hasta el punto $ f(x + \Delta x, y) $. Osea, que nos movimos en un plano paralelo al eje $ x $ con $ y = cte $.
+
+A los últimos dos términos los podemos considerar como un $ \Delta z_{2} $, que es ahora el incremento de $ z $ al movernos desde el punto final anterior $ f(x + \Delta x, y) $ hasta el punto $ f(x + \Delta x, y + \Delta y) $. En este caso nos movemos sobre un eje paralelo al eje $ y $, manteniendo $ x = cte $.
+
+Lo que estamos haciendo es calcular el incremento real de $ z $ pero en dos partes. Primero nos movemos una distancia $ \Delta x $ con $ y = cte $, y luego desde ese punto en el que quedamos nos movemos una distancia $ \Delta y $ con $ x = cte $.
+
+Ahora, en $ z_{1} $, como estamos considerando que $ y=cte $ podemos aplicar el Teorema del Valor Medio sobre ese plano. Este teorema nos dice que existe un valor $ c $ entre $ x $ y $ x + \Delta x $ donde
+\[
+	f(x + \Delta x, y) - f(x,y) = f_{x}(c,y)\Delta x
+\]
+
+
+Y podemos hacer lo mismo en $ z_{2} $ ya que $ x = cte $. En este caso el Teorema del Valor medio nos dice que existe un número $ d $ entre $ y $ y $ y + \Delta y $ donde
+\[
+	f(x + \Delta x, y + \Delta y) - f(x + \Delta x, y) = f_{y}(x,d)\Delta y
+\]
+
+Entonces la ecuación del incremento de $ z $ queda así: 
+
+\[
+	\Delta z = f_{x}(c, y)\Delta x + f_{y}(x + \Delta x, d)\Delta y
+\]
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{imagenes/incremento_total.png}
+  \caption{Imagen sacada de \parencite{thomas_calc_vv}}
+  \label{fig:incremento_total}
+\end{figure}
+
+Miremos la figura \ref{fig:incremento_total}. Lo que acabamos de hacer en cuentas lo podemos explicar graficamente de la siguiente forma. 
+
+Partimos del punto $ P_{0} $ que sería nuestro $ f(x,y) $. De ahí, lo que habíamos hecho era movernos sobre el eje $ x $ una distancia $ \Delta x $ manteniendo un $ y = cte $, que sería lo mismo que movernos desde $ P_{0} $ hacia $ P^{\prime\prime} $. Esto representaría el incremento del $ z_{1} $ que habíamos identificado antes. Ese incremento sería el módulo del segmento $ \overline{P^{\prime\prime}Q} $.
+
+Después lo que habíamos hecho fue movernos desde ese último punto en el que habíamos quedado, pero ahora nos movíamos sobre el eje $ y $ mientras manteníamos un $ x = cte $. En el gráfico sería el equivalente a partir del punto $ P^{\prime\prime} $ e ir hacía el punto $ P^{\prime} $. Esto sería el incremento $ z_{2} $, que en el gráfico es el módulo del segmento $ \overline{Q^{\prime}S} $.
+
+Entonces ahora es mas facil ver que cuando sumamos esos dos incrementos, estamos obteniendo el valor real del incremento total de $ z $.
+
+Esto es buenísimo, pero en realidad nosotros queríamos calcular el diferencial total, no el incremento total. Y acá pasa lo mismo que pasa cuano teníamos una sola variable, solo que ahora tenemos dos. Entonces ahora, $ dx $ y $ dy $ son las variables independientes, y $ dz $ es la variable dependiente.
+
+Para una variable habíamos dicho que cuando $ dx $ era muy chico, se cumplía que $ dy \approx \Delta y $ y ahora pasa lo mismo. Podemos decir que $ dz \approx \Delta z $ cuando $ dx \to 0 $ y $ dy \to 0 $.
+
+Analicemos entonces la función que obtubimos del incremento total cuando $ \Delta x \to 0 \land \Delta y \to 0 $.
+Como $ c $ es un valor que está entre $ (x, x + \Delta x) $ y $ d $ es un valor entre $ (y, y + \Delta y) $, sabemos que cuando $ \Delta x \to 0 $ y $ \Delta y \to 0 $, $ c \to x $ y $ d \to y $. Pero estos valores no son exactamente $ x $ e $ y $. Son una aproximación, pero con esa aproximación viene un error. 
+\begin{align*}
+  \varepsilon_{1} &= f_{x}(x,y) - f_{x}(x,y)\\
+  \varepsilon_{2} &= f_{y}(x + \Delta x, d) - f_{y}(x,y)
+\end{align*}
+
+Entonces ahora podemos decir lo siguiente:
+\begin{align*}
+  \Delta z &= \Delta z_{1} + \Delta z_{2} \\
+   &= f_{x}(c,y)\Delta x - f_{y}(x + \Delta x, d)\Delta y \\
+    &= \left[f_{x}(x,y) + \varepsilon_{1}\right]\Delta x + \left[f_{y}(x,y) + \varepsilon_{2}\right]\Delta y \\
+    \Delta z &= f_{x}(x,y)\Delta x + f_{y}(x,y)\Delta y + \varepsilon_{1}\Delta x + \varepsilon_{2}\Delta y
+\end{align*}
+
+La suma de los dos primeros términos recibe el nombre de parte principal del incremento y es el \textbf{Diferencial Total} de la función:
+\[
+\boxed{dz = f_{x}(x,y)\Delta x + f_{y}(x,y)\Delta y}
+\]
+También se puede expresar:
+\[
+\boxed{dz = \pdv[]{z}{x}dx + \pdv[]{z}{y}dy}
+\]
+Esto que acabamos de demostrar acá sirve para funciones de $ n $ variables:
+
+\underline{Ejemplo:}
+
+Calculemos el diferencial total de la función $ z = 2x^3y^2 $, en el punto $ P(1,2) $, para cuando la variable independiente $ x $ se incrementa en $ dx=0,03 $ y la variable independiente $ y $ se incrementa en $ dy=0,02 $.
+\begin{align*}
+  df(x,y) &= 6x^2y^2dx+4x^3ydy\\
+  df(1,2) &= 6\cdot 1^2\cdot 2^2\cdot 0,03+4\cdot 1^3\cdot 2\cdot 0,02\\
+  df(1,2) &= 0,88
+\end{align*}
+
+Significa que cuando las variables independientes $ x $ e $ y $ se incrementan en $ dx = 0.02 $ y en $ dy=0.03 $ respectivamente, la función se incrementa aproximadamente en $ dz=0.88 $.
+
+
+\subsection{Plano tangente y recta normal a una superficie}
+% Recordemos que 
+%
+% Dada la función $ z = f(x,y) $ sabemos que su diferencial es:
+% \[
+% 	dz = \pdv[]{f(x,y)}{x}dx + \pdv[]{f(x,y)}{y}dy
+% \]
+%
+% Si ahora consideramos que $ \Delta x = x - x_{0} $ y $ \Delta y = y- y_{0} $, entonces $ dz = z - z_{0} $. 
+%
+% Esto lo podemos reemplazar en la ecuación del diferencial para obtener: 
+% \[
+% z - z_{0} = \pdv[]{f(x_{0}, y_{0})}{x} \left(x-x_{0}\right) + \pdv[]{f(x_{0}, y_{0})}{y}\left(y - y_{0}\right)
+% \]
+%
+% que es la ecuación de un plano que pasa por el punto $ M(x_{0},y_{0},z_{0}) $.
+%
+% Para verlo mejor podemos reescribir la ecuación de la siguiente forma:
+% \[
+% \underbrace{1}_{-C}\left(z-z_{0}\right) = \underbrace{\pdv[]{f(x_{0},y_{0})}{x}}_{A}\left(x-x_{0}\right)+\underbrace{\pdv[]{f(x_{0},y_{0})}{y}}_{B}\left(y-y_{0}\right)
+% \]
+% \[
+% \begin{aligned}
+%   \underbrace{\pdv[]{f(x_{0},y_{0})}{x}\left(x-x_{0}\right)}_{A}+\underbrace{\pdv[]{f(x_{0},y_{0})}{y}\left(y-y_{0}\right)}_{B}+\underbrace{\left(-1\right)}_{C}\left(z-z_{0}\right) &= 0\\
+%   \left(\pdv[]{f(x_{0},y_{0})}{x},\pdv[]{f(x_{0},y_{0})}{y},-1\right)\cdot \left(x-x_{0},y-y_{0},z-z_{0}\right) &= 0\\
+% \end{aligned}
+% \]
+% \[
+%   \vv{n_{\pi}}\cdot \vv{P_{0}P} = 0
+% \]
+Recordemos algo de teoría primero. Sabemos que la ecuación de un plano está dada por el producto escalar entre un vector normal al plano y un punto cualquiera del mismo.
+\[
+\pi = \vv{n_{\pi}}\cdot \vv{P_{0}P} = 0
+\]
+
+donde $ \vv{n_{\pi}} = \left(A,B,C\right) $ y $ \vv{P_{0}P} = \left(x-x_{0},y-y_{0},z-z_{0}\right) $. Si desarrollamos esta ecuación obtenemos lo siguiente
+\[
+A\left(x-x_{0}\right) + B\left(y-y_{0}\right) + C\left(z-z_{0}\right) = 0
+\]
+
+Al dividir esta ecuación por $ C $, podemos decir que $ a = -A/C $ y que $ b = -B/C $, y de esta manera podemos reescribir la ecuación anterior como sigue
+
+\begin{equation}\label{eq:plano-tg}
+z-z_{0} = a\left(x-x_{0}\right) + b\left(y-y_{0}\right)
+\end{equation}
+
+Quedemonos con esto en la cabeza porque lo vamos a usar enseguida, pero primero tenemos que llegar hasta ahí. Imaginemos que tenemos una superficie $ S $ dada por la ecuación $ z=f(x,y) $, donde $ f $ tiene primeras derivadas parciales continuas. Habíamos visto mas arriba que cuando calculabamos las derivadas parciales de una función, lo que hacíamos era analizar las curvas dadas por la intersección de dicha función con los planos verticales $ y=y_{0} $ y $ x=x_{0} $, y el resultado era la pendiente de la recta tangente a dicha curva. Vamos a llamar $ T_{1} $ a la recta tangente a la curva dada por la intersección de $ z $ con el plano $ y =y_{0} $, y $ T_{2} $ a la recta tangente a la curva dada por la intersección de $ z $ con el plano $ x=x_{0} $. También vamos a definir al punto $ P(x_{0}, y_{0}, z_{0}) $ como el punto que se encuentra sobre la superficie $ S $; notar que al tener coordenadas $ x_{0} $ y $ y_{0} $ este punto se encuentra en la intersección de las rectas $ T_{1} $ y $ T_{2} $. (Ver Figura \ref{fig:plano-tg})
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imagenes/plano-tg.png}
+  \caption{Imagen sacada de \parencite{stewart2}. El plano tangente contiene a las rectas $ T_{1} $ y $ T_{2} $.}
+  \label{fig:plano-tg}
+\end{figure}
+
+En la Figura \ref{fig:plano-tg} podemos ver que el \textbf{plano tangente} a la función $ z=f(x,y) $ en el punto $ P $ es el plano que contiene a las dos rectas tangentes $ T_{1} $ y $ T_{2} $.
+
+Ahora sí, volvamos a la ecuación \ref{eq:plano-tg} y analicémosla. Si dicha ecuación representa el plano tangente en el punto $ P(x_{0},y_{0},z_{0}) $, su intersección con el plano $ y=y_{0} $ tiene que ser la recta tangente $ T_{1} $. Al calcular esta intersección obtenemos
+\[
+z-z_{0} = a\left(x-x_{0}\right)
+\]
+
+Vemos que esta es la ecuación de una recta con pendiente $ a $, pero habíamos dicho recién que la pendiente de esta recta era tangente a la función $ z=f(x_{0},y_{0}) $ por lo que $ a=f_{x}(x_{0},y_{0}) $.
+
+De forma análoga, si hacemos la intersección con el plano $ x=x_{0} $ obtenemos $ z-z_{0}=b\left(y-y_{0}\right) $, que representa a la recta $ T_{2} $, así que $ b=f_{y}(x_{0},y_{0}) $.
+
+Ahora que sabemos todo esto podemos afirmar lo siguiente:
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Ecuación del plano tangente}
+
+Si una función $ f $ tiene derivadas parciales continuas, una ecuación del plano tangente a la superficie $ z=f(x,y) $ en el punto $ P(x_{0},y_{0},z_{0}) $ es
+\[
+z-z_{0}=f_{x}(x_{0},y_{0})\left(x-x_{0}\right) + f_{y}(x_{0},y_{0})\left(y-y_{0}\right)
+\]
+}}\vspace{0.2cm}
+
+\underline{Ejemplo 1:}
+
+Determinar las ecuaciones del Plano Tangente y la Recta Normal a la superficie $ z = 9 - x^2 - y^2 $ en el punto $ M(1,2,4) $.
+
+\begin{align*}
+	z - z_{0} = \pdv[]{f(x_{0}, y_{0})}{x} \left(x-x_{0}\right) + \pdv[]{f(x_{0}, y_{0})}{y}\left(y - y_{0}\right) && \text{Ecuación del Plano Tangente}\\[0.2cm]
+	z - 4 = \pdv[]{f(1, 2)}{x} \left(x-1\right) + \pdv[]{f(1, 2)}{y}\left(y - 2\right)&&\\[0.2cm]
+	\pdv[]{f(x,y)}{x} = -2x \quad \to \quad \pdv[]{f(1,2)}{x}  = -2&&\\[0.2cm]
+	\pdv[]{f(x,y)}{y} = -2y \quad \to \quad \pdv[]{f(1,2)}{y}  = -4&&\\[0.2cm]
+	z-4 = -2\left(x-1\right) - 4\left(y-2\right)  \to \boxed{2x+4y+z=14} && \text{Plano Tangente}\\[0.2cm]
+	\frac{x-1}{2} = \frac{y-2}{4} = \frac{z-4}{1} &&\text{Recta Normal}
+\end{align*} 
+
+\underline{Ejemplo 2:}
+
+Determinar el plano tangente al paraboloide elíptico $ z=2x^2 - y^2 $ en el punto $ (1,1,3) $.
+
+Armamos nuesetra función: $ f(x,y)=2x^2+y^2 $
+
+Calculamos sus derivadas paraciales:
+\begin{align*}
+	f_{x}(x,y) &= 4x && \to & f_{x}(1,1) &= 4\\
+	f_{y}(x,y) &= 2y && \to & f_{y}(1,1) &= 2
+\end{align*}
+
+Entonces la ecuación del plano tangente es:
+\begin{align*}
+  z-3 &= 4\left(x-1\right)+2\left(y-1\right)\\
+  z &= 4x+2y-3
+\end{align*}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{imagenes/aprox-lineal.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Plano tangente a $ z=2x^2+y^2 $}
+  \label{fig:aprox-lineal}
+\end{figure}
+
+Si prestamos atención a la Figura \ref{fig:aprox-lineal} podemos ver que a medida que nos acercamos al punto $ (1,1,3) $, la función y su plano tangente en dicho punto se asemejan cada vez mas. Podemos decir entonces que la función lineal de dos variables
+\[
+L(x,y)=4x+2y-3
+\]
+
+es una buena aproximación a $ f(x,y)=2x^2+y^2 $ cuando estamos en una bola alrededor del punto $ (1,1,3) $. La función $ L $ se llama \textit{linealización} de $ f $ en $ (1,1) $ y la aproximación 
+\[
+f(x,y) \approx 4x+2y-3
+\]
+
+se llama \textbf{aproximación lineal} del plano tangente de $ f $ en $ (1,1) $.
+
+\subsection{La regla de la cadena}
+La regla de la cadena funciona de manera similar a como lo hacía cuando trabajabamos con funciones reales, solo que ahora al tener mas variables se agregan algunas cosas. La regla conviene explicarla en dos casos separados y después presentar el caso general que aplica para cualquier función $ f:\mathbb{R}^{n} \to \mathbb{R}^{m} $.
+\subsubsection{Caso 1}
+Supongamos que $ z=f(x,y) $ es una función derivable de $ x $ y $ y $, donde $ x=g(t) $ y $ y=h(t) $ son funciones derivables de $ t $. Entonces, $ z $ es una funcion derivable de $ t $ y
+\[
+\dv[]{z}{t} = \pdv[]{f}{x}\dv[]{x}{t} + \pdv[]{f}{y}\dv[]{y}{t}
+\]
+
+\underline{Ejemplo:}
+
+Si $ z=x^2y + 3xy^4 $, donde $ x=\sin^{}2t $, y $ y=\cos^{}t $, determinar $ dz/dt $ cuando $ t=0 $.
+
+La regla de la cadena dice
+\[
+\dv[]{z}{t} = \pdv[]{f}{x}\dv[]{x}{t} + \pdv[]{f}{y}\dv[]{y}{t}
+\]
+
+Así que 
+\[
+\dv[]{z}{t} = \left(2xy + 3y^4\right)\left(2\cos^{}2t\right) + \left(x^2+12xy^3\right)\left(-\sin^{}t\right)
+\]
+
+Evaluamos para $ t=0 $
+\[
+	\left.\dv[]{z}{t}\right|_{t=0}=\left(0+3\right)\left(2\cos^{}0\right) + \left(0 + 0\right)\left(-\sin^{}0\right) = 6
+\]
+
+\subsubsection{Caso 2}
+Supongamos que $ z=f(x,y) $ es una función derivable de $ x $ y $ y $, donde $ x=g(s,t) $ y $ y=h(s,t) $ son funciones derivables de $ s $ y $ t $. Entonces,
+\[
+\pdv[]{z}{s} = \pdv[]{z}{x}\pdv[]{x}{s} + \pdv[]{z}{y}\pdv[]{y}{s} \qquad \pdv[]{z}{t} = \pdv[]{z}{x}\pdv[]{x}{t} + \pdv[]{z}{y}\pdv[]{y}{t}
+\]
+
+\underline{Ejemplo:}
+
+Si $ z=e^{x}\sin^{}y $, donde $ x=st^{2} $ y $ y=s^2t $, determinar $ \partial z/\partial s $ y $ \partial z/\partial t $.
+\begin{align*}
+  \pdv[]{z}{s} &= \pdv[]{z}{x}\pdv[]{x}{s} + \pdv[]{z}{y}\pdv[]{y}{s} = \left(e^{x}\sin^{}y\right)\left(t^{2}\right) + \left(e^x\cos^{}y\right)\left(2st\right)\\
+   &= t^2e^{st^2}\sin^{}(s^2t) + 2ste^{st^2}\cos^{}(s^2t)
+\end{align*}
+\begin{align*}
+  \pdv[]{z}{t} &= \pdv[]{z}{x}\pdv[]{x}{t} + \pdv[]{z}{y}\pdv[]{y}{t} = \left(e^x\sin^{}(y)\right)\left(2st\right) + \left(e^x\cos^{}(y)\right)\left(s^2\right)\\
+   &= 2ste^{st^2}\sin^{}(s^2t)+s^2e^{st^2}\cos^{}(s^2t)
+\end{align*}
+
+\subsubsection{La regla de la cadena (versión general)}
+Supongamos que $ u $ es una función derivable de las $ n $ variables $ x_{1},x_{2},\dots ,x_{n} $ y que cada $ x_{j} $ es una función derivable de las $ m $ variables $ t_{1},t_{2},\dots ,t_{m} $. Entonces, $ u $ es una función de $ t_{1}, t_{2},\dots,t_{m} $ y
+\[
+\pdv[]{u}{t_{i}} = \pdv[]{u}{x_{1}}\pdv[]{x_{1}}{t_{i}} + \pdv[]{u}{x_{2}}\pdv[]{x_{2}}{t_{i}} + \dots  + \pdv[]{u}{x_{n}}\pdv[]{x_{n}}{t_{i}}
+\]
+
+para cada $ i=1,2,\dots ,m $.
+
+\underline{Ejemplo:}
+
+Si $ u=x^4y+y^2z^3 $, donde $ x=rse^t $, $ y=rs^2e^{-t} $, y $ z=r^2s\sin^{}(t) $, determinar el valor de $ \partial u/\partial s $ cuando $ r=2 $, $ s=1 $, $ t=0 $.
+
+Lo mas fácil es primero empezar por identificar las funciones y sus varialbes independientes.
+\[
+	u = f(x,y,z) \qquad x,y,z = f(r,s,t)
+\]
+
+Ahora escribimos en símbolos la derivada parcial
+\[
+\pdv[]{u}{s} = \pdv[]{u}{x}\pdv[]{x}{s} + \pdv[]{u}{y}\pdv[]{y}{s} + \pdv[]{u}{z}\pdv[]{z}{s}
+\]
+
+Ahora resolvemos
+\[
+\pdv[]{u}{s} = \left(4x^3y\right)\left(re^t\right) + \left(x^4+2yz^3\right)\left(2rse^{-t}\right) + \left(3y^2z^2\right)\left(r^2\sin^{}(t)\right)
+\]
+
+Y evaluamos cuando $ r=2 $, $ s=1 $ y $ t=0 $.
+\[
+\pdv[]{u}{s} = (64)(2) + (16)(4) + (0)(0) = 192
+\]
+
+\subsection{Derivación implícita}
+Podemos usar la regla de la cadena para encontrar la derivada de una función que esté dada de forma implícita. Recordemos que una función está dada de forma explícita cuando se presenta de la forma $ z=f(x,y) $. Otra forma que existe de definir a $ z $ en función de $ x,y $ es $ F(x,y,z)=0 $, que se llama forma implícita de $ z $. 
+
+Pasar de la forma explicita a la implicita es inmediato, simplemente restamos $ z $ de ambos lados de la ecuación y la función queda definida en su forma implícita. Sin embargo, hacer el camino inverso puede ser muy complicado e incluso imposible en algunos casos. Cuando es así, si queremos obtener la derivada de $ z $, y esta está dada de forma implícita, podemos aplicar el \textbf{teoréma de la función implícita} para encontrarla sin tener que conocer su forma explícita.
+
+Supongamos que tenemos una ecuación de la forma $ F(x,y)=0 $, que define a $ y $ implícitamente como una función derivable de $ x $, es decir $ y = f(x) $, donde $ F(x,f(x)) =0 $ para todas las $ x $ que pertenecen al dominio de $ f $. Si $ F $ es derivable, podemos derivar los dos miembros de la ecucación $ F(x,y)=0 $ con respecto a $ x $:
+\[
+\pdv[]{F}{x}\dv[]{x}{x} + \pdv[]{F}{y}\dv[]{y}{x} = 0
+\]
+
+Pero $ dx/dx=1 $, así que si $ F_{y} \neq 0 $ podemos despejar $ dy/dx $ para obtener
+\begin{equation}
+\boxed{
+  \dv[]{y}{x}=-\frac{\pdv[]{F}{x}}{\pdv[]{F}{y}}=-\frac{F_{x}}{F_{y}}
+} 
+\end{equation}
+
+\underline{Ejemplo:}
+
+Determinar $ y^{\prime} $ si $ x^3 + y^3 = 6xy $.
+
+Podemos escribir la ecuación de forma implícita como 
+\[
+	F(x,y) = x^3 + y^3 - 6xy =0
+\]
+
+Aplicamos el teorema
+\[
+\dv[]{y}{x} = -\frac{F_{x}}{F_{y}} = -\frac{3x^2-6y}{3y^2-6x}=-\frac{x^2-2y}{y^2-2x}
+\]
+
+Ahora supongamos que $ z $ es dada implícitamente como una función $ z=f(x,y) $ por una ecuación de la forma $ F(x,y,z)=0 $. Esto significa que $ F(x,y,f(x,y))=0 $ para todas las tuplas $ (x,y) $ que pertenecen al dominio de $ f $. Si $ F $ y $ f $ son derivables podemos encontrar las derivadas parciales de $ F(x,y,z)=0 $ de la siguiente manera:
+\[
+\pdv[]{F}{x}\pdv[]{x}{x} + \pdv[]{F}{y}\pdv[]{y}{x} + \pdv[]{F}{z}\pdv[]{z}{x} = 0
+\]
+
+Pero $ \partial x/\partial x = 1 $ y $ \partial y/\partial x = 0 $. (Recordemos que $ z $ es una función de $ (x,y) $, por eso $ \partial z/\partial x \neq 0 $.
+
+Así que la ecuación se convierte en 
+\[
+\pdv[]{F}{x} + \pdv[]{F}{z}\pdv[]{z}{x} = 0
+\]
+
+Si $ \partial F/\partial z \neq 0 $, podemos despejar $ F_{x} $. El procedimiento es el mismo para despejar $ F_{y} $ solo que derivamos respecto a $ y $. El resultado final de ambos despejes es el siguiente
+\begin{equation}
+z_{x}(x,y)=-\frac{F_{x}(x,y,z(x,y))}{F_{z}(x,y,z(x,y))} \qquad z_{y}(x,y)=-\frac{F_{y}(x,y,z(x,y))}{F_{z}(x,y,z(x,y))} 
+\end{equation}
+
+\subsection{Derivadas direccionales}
+Dada una función $ z=f(x,y) $, las derivadas parciales $ f_{x} $ y $ f_{y} $ representan las razones de cambio de $ z $ en las direcciones de $ x $ y $ y $. Podríamos pensarlo como que representan las razones de cambio en las direcciones de los versores $ \hat{\mathbf{i}} $ y $ \hat{\mathbf{j}} $.
+
+Supongamos ahora que queremos determinar la razón de cambio de $ z $ en $ (x_{0},y_{0}) $ en la dirección de un vector unitario arbitrario $ \mathbf{u}=\left\langle a,b \right\rangle $. Consideremos la superficie $ S $ con la ecuación $ z=f(x,y) $ (Figura \ref{fig:dv-direccional}) y digamos que $ z_{0}=f(x_{0},y_{0}) $. De esta manera, el punto $ P(x_{0},y_{0},z_{0}) $ pertenece a la superficie $ S $.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{imagenes/dv-direccional.png}
+  \caption{Imagen sacada de \parencite{stewart2}.}
+  \label{fig:dv-direccional}
+\end{figure}
+
+El plano vertical que pasa por $ P $ en la dirección $ \mathbf{u} $ interseca a $ S $ en un curva $ C $. La pendiente de la recta tangente $ T $ a $ C $ en el punto $ P $ es la razón de cambio de $ z $ en la dirección de $ \mathbf{u} $.
+
+Si $ Q(x,y,z) $ es otro punto en $ C $ y $ P^{\prime}, Q^{\prime} $ son las proyecciones de $ P, Q $ en el plano $ xy $, el vector $ \vv{P^{\prime}Q^{\prime}} $ es paralelo a $ \mathbf{u} $ y por lo tanto
+\[
+\vv{P^{\prime}Q^{\prime}}=h\mathbf{u}=\left\langle ha,hb \right\rangle \qquad h \in \mathbb{R}^{}
+\]
+
+Así, $ x-x_{0}=ha $, $ y-y_{0}=hb $, entonces $ x=x_{0}+ha $ y $ y=y_{0}+hb $, con lo que podemos decir que
+\[
+	\frac{\Delta z}{h} = \frac{z-z_{0}}{h} = \frac{f(x_{0}+ha,y_{0}+hb)-f(x_{0},y_{0})}{h}
+\]
+
+Si calculamos el límite cuando $ h \to 0 $, obtenemos la razón de cambio de $ z $ en la dirección de $ \mathbf{u} $, que se conoce como \textbf{derivada direccional} de $ f $ en la dirección de $ \mathbf{u} $
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Derivada direccional}
+
+La derivada direccional de $ f $ en $ (x_{0},y_{0}) $ en la dirección de un vector unitario $ \mathbf{u}=\left\langle a,b \right\rangle $ es
+\[
+D_{u}f(x_{0},y_{0}) = \lim_{h \to 0}\frac{f(x_{0}+ha,y_{0}+hb)-f(x_{0},y_{0})}{h}
+\]
+
+si ese límite existe.
+}}\vspace{0.2cm}
+
+Viendo esta definición podemos ver que si $ \mathbf{u}=\mathbf{i}=\left\langle 1,0 \right\rangle $, entonces $ D_{i}f=f_{x} $, y que si $ \mathbf{u}=\mathbf{j}=\left\langle 0,1 \right\rangle $, entonces $ D_{j}=f_{y} $. Osea que, en realidad, las derivadas parciales respecto de $ y $ y $ x $ son casos especiales de las derivadas direccionales.
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Teorema}
+
+Si $ f $ es una función derivable de $ x $ y $ y $, entonces $ f $ tiene una derivada direccional en la dirección de cualquier vector unitario $ \mathbf{u}=\left\langle a,b \right\rangle $ y \[
+D_{u}f(x,y)=f_{x}(x,y)a+f_{y}(x,y)b
+\]
+}}\vspace{0.2cm}
+
+Tarea, demostrar ;)
+
+\subsubsection{El vector gradiente}
+Si vemos el teorema anterior, podemos notar que la derivada direccional de una función derivable puede escribirse comom el producto punto de dos vectores:
+\begin{align*}
+  D_{u}f(x,y) &= f_{x}(x,y)a+f_{y}(x,y)b\\
+   &= \left\langle f_{x}(x,y),f_{y}(x,y) \right\rangle\cdot \left\langle a,b \right\rangle\\
+  D_{u}f(x,y) &= \left\langle f_{x}(x,y),f_{y}(x,y) \right\rangle\cdot \mathbf{u}
+\end{align*}
+
+El primer vector en este producto recibe el nombre de \textbf{gradiente} de $ f $ y se denota como $ \nabla f $.
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Gradiente}
+
+Dada una función $ f:U \subset \mathbb{R}^{n} \to \mathbb{R}^{} $, podemos definir el gradiente de la función, y lo denotamos como $ \nabla f $, como un vector cuyas componentes son las derivadas parciales de todas sus variables independientes.
+\[
+\nabla f = \left\langle \pdv[]{f}{x_{1}},\pdv[]{f}{x_{2}},\dots ,\pdv[]{f}{x_{n}} \right\rangle
+\]
+}}\vspace{0.2cm}
+
+Ademas, siempre podemos escribir la derivada direccional como el producto punto entre el vector gradiente y el vector unitario $ \mathbf{u} $ que marca la dirección.
+\[
+D_{u}f = \nabla f \cdot \mathbf{u}
+\]
+
+\subsubsection{Maximización de la derivada direccional}
+
+
+
+\newpage
+\addcontentsline{toc}{section}{Referencias}
+\printbibliography
+
+\end{document}

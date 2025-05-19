@@ -1,0 +1,281 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{thomas_calc_uv}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=90fc5d4ad4b27097ae01d312e41b9803}{%
+           family={George\bibnamedelimb B.\bibnamedelimi Thomas},
+           familyi={G\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Jr.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Educación}%
+      }
+      \strng{namehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{fullhash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{fullhashraw}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{bibnamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorbibnamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authornamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorfullhash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorfullhashraw}{90fc5d4ad4b27097ae01d312e41b9803}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{12}
+      \field{title}{Cálculo, una variable}
+      \field{year}{2010}
+    \endentry
+    \entry{thomas_calc_vv}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=90fc5d4ad4b27097ae01d312e41b9803}{%
+           family={George\bibnamedelimb B.\bibnamedelimi Thomas},
+           familyi={G\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Jr.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Educación}%
+      }
+      \strng{namehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{fullhash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{fullhashraw}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{bibnamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorbibnamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authornamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorfullhash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorfullhashraw}{90fc5d4ad4b27097ae01d312e41b9803}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{12}
+      \field{title}{Cálculo, varias variables}
+      \field{year}{2010}
+    \endentry
+    \entry{stewart2}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b90fd0927a5855f08e8f80d0d474c5b3}{%
+           family={James},
+           familyi={J\bibinitperiod},
+           given={Stewart},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cengage Learning}%
+      }
+      \strng{namehash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{fullhash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{fullhashraw}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{bibnamehash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{authorbibnamehash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{authornamehash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{authorfullhash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{authorfullhashraw}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7}
+      \field{title}{Cálculo de varias variables. Trascendentes tempranas.}
+      \field{year}{2012}
+    \endentry
+    \entry{am2monllor}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6c4b11304dd8f015e7cbed2d5dee86ef}{%
+           family={Monllor},
+           familyi={M\bibinitperiod},
+           given={Ingeniero\bibnamedelimb Migel\bibnamedelima Omar},
+           giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad Tecnológica Nacional - Facultad Regional Córdoba}%
+      }
+      \strng{namehash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{fullhash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{fullhashraw}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{bibnamehash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{authorbibnamehash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{authornamehash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{authorfullhash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{authorfullhashraw}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lecciones de Análisis Matemático II}
+      \field{year}{2015}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{thomas_calc_uv}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=90fc5d4ad4b27097ae01d312e41b9803}{%
+           family={George\bibnamedelimb B.\bibnamedelimi Thomas},
+           familyi={G\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Jr.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Educación}%
+      }
+      \strng{namehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{fullhash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{fullhashraw}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{bibnamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorbibnamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authornamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorfullhash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorfullhashraw}{90fc5d4ad4b27097ae01d312e41b9803}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{12}
+      \field{title}{Cálculo, una variable}
+      \field{year}{2010}
+    \endentry
+    \entry{thomas_calc_vv}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=90fc5d4ad4b27097ae01d312e41b9803}{%
+           family={George\bibnamedelimb B.\bibnamedelimi Thomas},
+           familyi={G\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Jr.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Educación}%
+      }
+      \strng{namehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{fullhash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{fullhashraw}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{bibnamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorbibnamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authornamehash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorfullhash}{90fc5d4ad4b27097ae01d312e41b9803}
+      \strng{authorfullhashraw}{90fc5d4ad4b27097ae01d312e41b9803}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{12}
+      \field{title}{Cálculo, varias variables}
+      \field{year}{2010}
+    \endentry
+    \entry{stewart2}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b90fd0927a5855f08e8f80d0d474c5b3}{%
+           family={James},
+           familyi={J\bibinitperiod},
+           given={Stewart},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cengage Learning}%
+      }
+      \strng{namehash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{fullhash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{fullhashraw}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{bibnamehash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{authorbibnamehash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{authornamehash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{authorfullhash}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \strng{authorfullhashraw}{b90fd0927a5855f08e8f80d0d474c5b3}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7}
+      \field{title}{Cálculo de varias variables. Trascendentes tempranas.}
+      \field{year}{2012}
+    \endentry
+    \entry{am2monllor}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6c4b11304dd8f015e7cbed2d5dee86ef}{%
+           family={Monllor},
+           familyi={M\bibinitperiod},
+           given={Ingeniero\bibnamedelimb Migel\bibnamedelima Omar},
+           giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad Tecnológica Nacional - Facultad Regional Córdoba}%
+      }
+      \strng{namehash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{fullhash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{fullhashraw}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{bibnamehash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{authorbibnamehash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{authornamehash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{authorfullhash}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \strng{authorfullhashraw}{6c4b11304dd8f015e7cbed2d5dee86ef}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lecciones de Análisis Matemático II}
+      \field{year}{2015}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
