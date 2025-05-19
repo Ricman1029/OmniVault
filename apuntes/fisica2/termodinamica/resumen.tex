@@ -279,6 +279,11 @@
   \[
   M = N_{A}m
   \]
+
+  La masa total $ m_{\text{total}} $ de una cantidad dada de un compuesto es el número de moles $ n $ multiplicado por la masa de un mol $ M $
+  \[
+  m_{\text{total}} = nM
+  \]
   
   \subsection{Modelo cinético-molecular del gas ideal}
   La idea es armar un modelo sencillo del gas ideal para poder predecir la capacidad caloríficar molar de un gas ideal.
@@ -684,34 +689,119 @@
     W = Q = Q_{H} + Q_{C} = \left|Q_{H}\right| - \left|Q_{C}\right|
   \]
 
-  Idealmente, nos gustaría convertir todo el calor $ Q_{H} $ en trabajo; en tal caso, tendríamos $ Q_{H} = W $ y $ Q_{C} = 0 $, pero esto es imposible en la realida. La \textbf{eficiencia térmica} de una máquina, denotada como $ e $ representa la cantidad de trabajo que puedo generar a partir de una cierta cantidad de calor $ Q_{H} $
+  Idealmente, nos gustaría convertir todo el calor $ Q_{H} $ en trabajo; en tal caso, tendríamos $ Q_{H} = W $ y $ Q_{C} = 0 $, pero esto es imposible en la realidad. La \textbf{eficiencia térmica} de una máquina, denotada como $ e $, representa la cantidad de trabajo que puedo generar a partir de una cierta cantidad de calor $ Q_{H} $
   \[
   e = \frac{W}{Q_{H}} = \frac{\left|Q_{H}\right| - \left|Q_{C}\right|}{Q_{H}} = 1 - \frac{\left|Q_{C}\right|}{Q_{H}}
   \]
 
+  \subsection{Refrigeradores}
+  Los \textbf{refrigeradores} son máquinas térmicas que operan en reversa. Habíamos dicho que una máquina térmica toma calor de una lugar caliente y lo cede a un lugar más frío. Un refrigerador hace lo contrario; toma calor de un lugar mas frío y lo cede a un lugar mas caliente.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{imagenes/diag-flujo-refri.png}
+    \caption{Diagrama de flujo de un refrigerador.}
+    \label{fig:diag-flujo-refri}
+  \end{figure}
+  
+  Vemos en la Figura \ref{fig:diag-flujo-refri} que, de acuerdo con las convenciones de signo que habíamos definido para el calor y el trabajo, $ Q_{C} $ es positivo pero $ Q_{H} $ y $ W $ son negativos en este caso.
+
+  Al ser un proceso cíclico, por la primera ley sabemos que $ Q = W $. El calor neto es $ Q = Q_{H} + Q_{C} $. En la figura vemos que $ Q_{H} $ es mayor que $ Q_{C} $, y esto tiene sentido porque dijimos que el trabajo $ W $ en los refrigeradores era negativo.
+  \[
+  W = Q = Q_{H} + Q_{C} \quad  \text{o,} \quad \left|W\right| = \left|Q_{H}\right| - \left|Q_{C}\right| 
+  \]
+
+  Desde un punto de vista económico, el mejor ciclo de refrigeración es el que saca el máximo de calor $ Q_{C} $ del refrigerdador con el menor gasto de trabajo mecánico $ \left|W\right| $. Por lo tanto, la razón que nos importa es $ \left|Q_{C}\right|/\left|W\right| $; cuanto mayor sea dicha razón, mejor será el refrigerador. A esta razón se la conoce como \textbf{coeficiente de rendimiento}, y se la denota con la letra $ K $.
+  \[
+  K = \frac{\left|Q_{C}\right|}{\left|W\right|} = \frac{\left|Q_{C}\right|}{\left|Q_{H}\right| - \left|Q_{C}\right|}
+  \]
+
+  \subsection{La segunda ley de la termodinámica}
+
+  \fbox{\parbox{0.9\linewidth}{
+  \textbf{Segunda Ley de la Termodinámica (Kelvin-Planck)}
+
+  Es imposible que un sistema efectúe un proceso en el que absorba calor de una fuente de temperatura uniforme y lo convierta totalmente en trabajo mecánico, terminando en el mismo estado en que inició.
+  }}\vspace{0.2cm}
+
+  Esta forma de la ley nos dice que en un proceso cíclico es imposible convertir enteramente calor en trabajo.
+
+  \fbox{\parbox{0.9\linewidth}{
+  \textbf{Segunda Ley de la Termodinámica (Clausius)}
+
+  Es imposible que un proceso tenga como único resultado la transferencia de calor de un cuerpo más frío a uno más caliente.
+  }}\vspace{0.2cm}
+
+  Si pudieramos construir un refrigerador sin trabajo, violando este segundo planteamiento de la segunda ley, podríamos usarlo junto con una máquina térmica, bombeando el calor rechazado por la máquina de vuelta a la fuente de calor para reutilizarlo. Tendríamos energía infinita.
+
+  \subsection{El ciclo de Carnot}
+  De acuerdo con la segunda ley, ninguna máquina térmica puede tener eficiencia del 100\%. ¿Qué tanta eficiencia puede tener una máquina? La respuesta la da una máquina térmica idealizada hipotética que tiene la máxima eficiencia posible. El ciclo de esta máquina se denomina \textbf{cilco de Carnot}.
 
 
+  \subsubsection{Pasos del ciclo de Carnot}
+  El ciclo de Carnot es un ciclo reversible que se compone de cuatro procesos también reversibles; dos isotérmicos y dos adiabáticos.
 
+  \begin{enumerate}[1.]
+    \item El gas se expande \textbf{isotérmicamente} a temperatura $ T_{H} $, absorbiendo calor $ Q_{H} $ $ (ab) $.
 
+    \item El gas se expande \textbf{adiabáticamente} hasta que su temperatura baja a $ T_{C} $ $ (bc) $.
 
+    \item El gas se comprime \textbf{isotérmicamente} a $ T_{C} $, expulsando calor $ \left|Q_{C}\right| $ $ (cd) $.
 
+    \item El gas se comprime \textbf{adiabáticamente} hasta su estado inicial a temperatura $ T_{H} $ $ (da) $.
+  \end{enumerate}
 
+  \begin{figure}[H]
+    \centering
+  \includegraphics[width=0.8\linewidth]{imagenes/ciclo-carnot.png}
+    \caption{Ciclo de Carnot para el gas ideal.}
+    \label{fig:ciclo-carnot}
+  \end{figure}
+  
+  Podemos calcular la eficiencia térmica de la máquina de Carnot cuando la sustancia de trabajo es un \textit{gas ideal}.
 
+  La energía interna $ U $ del gas ideal depende solo de la temperatura y por ello es constante en cualquier proceso isotérmico.Para la expansión isotémrica $ ab $, $ \Delta U_{ab} = 0 $ y $ Q_{H} $ es igual al trabajo $ W_{ab} $ realizado por el gas durante su expansión isotérmica a temperatura $ T_{H} $
+  \[
+  Q_{H} = W_{ab} = nRT_{H}\ln{\frac{V_{b}}{V_{a}}}
+  \]
 
+  Lo mismo pasa en la expansión isotérmica $ cd $
+  \[
+  Q_{C} = W_{cd} = nRT_{C}\ln{\frac{V_{d}}{V_{c}}} = -nRT_{C}\ln{\frac{V_{c}}{V_{d}}}
+  \]
 
+  La razón de las dos cantidades es 
+  \[
+  \frac{Q_{C}}{Q_{H}} = - \left(\frac{T_{C}}{T_{H}}\right)\frac{\ln{V_{c}/V_{d}}}{\ln{V_{b}/V_{a}}}
+  \]
 
+  Podemos simplificar esta ecuación usando la relación temperatura-volumen que habíamos visto mas arriba para los procesos adiabáticos.
+  \[
+  T_{H}V_{b}^{\gamma - 1} = T_{C}V_{c}^{\gamma-1} \quad \text{y} \quad T_{H}V_{a}^{\gamma-1} = T_{C}V_{d}^{\gamma - 1}
+  \]
 
+  Ahora podemos dividir la primera expresión entre la segunda
+  \[
+  \frac{V_{b}^{\gamma-1}}{V_{a}^{\gamma-1}} = \frac{V_{c}^{\gamma-1}}{V_{d}^{\gamma-1}} \quad \text{entonces, } \quad \frac{V_{b}}{V_{a}} = \frac{V_{c}}{V_{d}}
+  \]
 
+  Esto nos dice que los dos logaritmos que habíamos visto para las ecuaciones de $ Q_{H} $ y $ Q_{C} $ son iguales, así que la ecuación del cociente entre $ Q_{C} $ y $ Q_{H} $ queda aśi:
+  \[
+  \frac{Q_{C}}{Q_{H}} = -\frac{T_{C}}{T_{H}} \quad \text{o} \quad \frac{\left|Q_{C}\right|}{\left|Q_{H}\right|} = \frac{T_{C}}{T_{H}} \quad \text{Transferencia de calor en la máquina de Carnot}
+  \]
 
+  Por lo tanto, la eficiencia de una máquina de Carnot es 
+  \[
+  e_{\text{Carnot}} = 1 - \frac{T_{C}}{T_{H}}
+  \]
 
+  \subsubsection{El refrigerador de Carnot}
+  Como cada paso del ciclo de Carot es reversible,  \textit{todo el ciclo} podría revertirse, convirtiendo la máquina térmica en un refrigerador. El coeficiente de rendimiento del refrigerador de Carnot es 
+  \[
+  K_{\text{Carnot}} = \frac{T_{C}}{T_{H}-T_{C}}
+  \]
 
-
-
-
-
-
-
-
+  
 
 
 
