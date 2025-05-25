@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  19 MAY 2025 03:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  24 MAY 2025 01:13
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1008,7 +1008,7 @@ Package biblatex Info: Reference segment=0 on input line 62.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<~/imagenes/logo_utn_frc.jpg, id=198, 1606.0pt x 568.1225pt>
+<~/imagenes/logo_utn_frc.jpg, id=207, 1606.0pt x 568.1225pt>
 File: ~/imagenes/logo_utn_frc.jpg Graphic file (type jpg)
 <use ~/imagenes/logo_utn_frc.jpg>
 Package pdftex.def Info: ~/imagenes/logo_utn_frc.jpg  used on input line 66.
@@ -1049,7 +1049,7 @@ LaTeX Font Info:    Trying to load font information for U+esvect on input line 3
 File: uesvect.fd 
 )
 
-<~/imagenes/logo_utn.png, id=242, 3011.25pt x 3538.21875pt>
+<~/imagenes/logo_utn.png, id=250, 3011.25pt x 3538.21875pt>
 File: ~/imagenes/logo_utn.png Graphic file (type png)
 <use ~/imagenes/logo_utn.png>
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 37.
@@ -1096,7 +1096,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 258.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [6]
-<imagenes/incrementos_de_funcion.png, id=298, 757.32938pt x 493.845pt>
+<imagenes/incrementos_de_funcion.png, id=309, 757.32938pt x 493.845pt>
 File: imagenes/incrementos_de_funcion.png Graphic file (type png)
 <use imagenes/incrementos_de_funcion.png>
 Package pdftex.def Info: imagenes/incrementos_de_funcion.png  used on input line 273.
@@ -1114,7 +1114,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 321.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [8]
-<imagenes/limites_iterados.png, id=316, 450.18187pt x 339.51843pt>
+<imagenes/limites_iterados.png, id=326, 450.18187pt x 339.51843pt>
 File: imagenes/limites_iterados.png Graphic file (type png)
 <use imagenes/limites_iterados.png>
 Package pdftex.def Info: imagenes/limites_iterados.png  used on input line 349.
@@ -1126,7 +1126,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 353.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [9]
-<imagenes/limites_radiales.png, id=322, 484.81125pt x 185.94469pt>
+<imagenes/limites_radiales.png, id=332, 484.81125pt x 185.94469pt>
 File: imagenes/limites_radiales.png Graphic file (type png)
 <use imagenes/limites_radiales.png>
 Package pdftex.def Info: imagenes/limites_radiales.png  used on input line 374.
@@ -1150,7 +1150,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 473.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [12]
-<imagenes/interp_geom_derivada_paracial_x.png, id=345, 484.81125pt x 447.92343pt>
+<imagenes/interp_geom_derivada_paracial_x.png, id=355, 484.81125pt x 447.92343pt>
 File: imagenes/interp_geom_derivada_paracial_x.png Graphic file (type png)
 <use imagenes/interp_geom_derivada_paracial_x.png>
 Package pdftex.def Info: imagenes/interp_geom_derivada_paracial_x.png  used on input line 509.
@@ -1162,7 +1162,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 515.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [13 <./imagenes/interp_geom_derivada_paracial_x.png>]
-<imagenes/interp_geom_derivada_paracial_y.png, id=357, 458.46281pt x 461.47406pt>
+<imagenes/interp_geom_derivada_paracial_y.png, id=367, 458.46281pt x 461.47406pt>
 File: imagenes/interp_geom_derivada_paracial_y.png Graphic file (type png)
 <use imagenes/interp_geom_derivada_paracial_y.png>
 Package pdftex.def Info: imagenes/interp_geom_derivada_paracial_y.png  used on input line 518.
@@ -1174,7 +1174,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 542.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [14 <./imagenes/interp_geom_derivada_paracial_y.png>]
-<imagenes/interp_geom_diferencial.png, id=366, 710.655pt x 459.21562pt>
+<imagenes/interp_geom_diferencial.png, id=376, 710.655pt x 459.21562pt>
 File: imagenes/interp_geom_diferencial.png Graphic file (type png)
 <use imagenes/interp_geom_diferencial.png>
 Package pdftex.def Info: imagenes/interp_geom_diferencial.png  used on input line 573.
@@ -1198,7 +1198,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 657.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [17]
-<imagenes/valor_medio.png, id=386, 521.69907pt x 380.17032pt>
+<imagenes/valor_medio.png, id=396, 521.69907pt x 380.17032pt>
 File: imagenes/valor_medio.png Graphic file (type png)
 <use imagenes/valor_medio.png>
 Package pdftex.def Info: imagenes/valor_medio.png  used on input line 698.
@@ -1216,7 +1216,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 731.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [19 <./imagenes/valor_medio.png>]
-<imagenes/incremento_total.png, id=402, 604.50844pt x 475.7775pt>
+<imagenes/incremento_total.png, id=412, 604.50844pt x 475.7775pt>
 File: imagenes/incremento_total.png Graphic file (type png)
 <use imagenes/incremento_total.png>
 Package pdftex.def Info: imagenes/incremento_total.png  used on input line 743.
@@ -1234,7 +1234,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 830.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [21]
-<imagenes/plano-tg.png, id=417, 622.57594pt x 572.89032pt>
+<imagenes/plano-tg.png, id=427, 622.57594pt x 572.89032pt>
 File: imagenes/plano-tg.png Graphic file (type png)
 <use imagenes/plano-tg.png>
 Package pdftex.def Info: imagenes/plano-tg.png  used on input line 846.
@@ -1252,7 +1252,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 897.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [23]
-<imagenes/aprox-lineal.png, id=433, 636.12656pt x 204.765pt>
+<imagenes/aprox-lineal.png, id=443, 636.12656pt x 204.765pt>
 File: imagenes/aprox-lineal.png Graphic file (type png)
 <use imagenes/aprox-lineal.png>
 Package pdftex.def Info: imagenes/aprox-lineal.png  used on input line 907.
@@ -1276,7 +1276,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1009.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [26]
-<imagenes/dv-direccional.png, id=451, 620.3175pt x 543.53062pt>
+<imagenes/dv-direccional.png, id=461, 620.3175pt x 543.53062pt>
 File: imagenes/dv-direccional.png Graphic file (type png)
 <use imagenes/dv-direccional.png>
 Package pdftex.def Info: imagenes/dv-direccional.png  used on input line 1056.
@@ -1297,15 +1297,27 @@ Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1097.
 
 File: ~/imagenes/logo_utn.png Graphic file (type png)
 <use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1129.
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1134.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [29]
 
 File: ~/imagenes/logo_utn.png Graphic file (type png)
 <use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1133.
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1181.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[30] (./resumen.aux
+[30]
+
+File: ~/imagenes/logo_utn.png Graphic file (type png)
+<use ~/imagenes/logo_utn.png>
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1202.
+(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
+[31]
+
+File: ~/imagenes/logo_utn.png Graphic file (type png)
+<use ~/imagenes/logo_utn.png>
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1206.
+(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
+[32] (./resumen.aux
 LaTeX Info: Redefining \sptext on input line 12.
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
@@ -1315,24 +1327,24 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
  ***********
 Package rerunfilecheck Info: File `resumen.out' has not changed.
-(rerunfilecheck)             Checksum: D6D1190F04F622713510913631550FDA;8265.
+(rerunfilecheck)             Checksum: 3464FE02DC40EF59428BAAAA8016BDF7;8635.
 Package logreq Info: Writing requests to 'resumen.run.xml'.
 \openout1 = `resumen.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42691 strings out of 469608
- 955945 string characters out of 5470607
- 1949611 words of memory out of 5000000
- 68777 multiletter control sequences out of 15000+600000
+ 42709 strings out of 469608
+ 956160 string characters out of 5470607
+ 1949832 words of memory out of 5000000
+ 68783 multiletter control sequences out of 15000+600000
  668455 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,105p,1087b,2813s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/esvect/vect10.pfb>
-Output written on resumen.pdf (31 pages, 947126 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/esvect/vect10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/esvect/vect9.pfb>
+Output written on resumen.pdf (33 pages, 958056 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 467 compressed objects within 5 object streams
- 113 named destinations out of 1000 (max. 500000)
- 462 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 586 PDF objects out of 1000 (max. 8388607)
+ 500 compressed objects within 5 object streams
+ 125 named destinations out of 1000 (max. 500000)
+ 478 words of extra memory for PDF output out of 10000 (max. 10000000)
 

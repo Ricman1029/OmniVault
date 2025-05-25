@@ -1123,6 +1123,79 @@ D_{u}f = \nabla f \cdot \mathbf{u}
 \]
 
 \subsubsection{Maximización de la derivada direccional}
+Como la derivada direccional $ D_{u}f(x) $ es el producto escalar entre dos vectores $ \nabla f(x) \cdot \mathbf{\hat{u}} $, el \textbf{valor máximo} de la derivada direccional lo vamos a obtener cuando la dirección de $ \nabla f(x) $ sea la misma que el versor $ \mathbf{\hat{u}} $. Esto es porque cuando dichos vectores tienen la misma dirección el producto escalar dá su valor máximo ya que el $ \cos^{}(\theta)=1 $. Cuando esto ocurre, el valor de la derivada direccional $ D_{u}f(x) = \lVert\nabla f(x)\rVert $.
+
+\underline{Ejemplo:}
+
+\begin{enumerate}[a)]
+  \item Si $ f(x,y)=xe^y $, determine la razón de cambio de $ f $ en el punto $ P(2,0) $ en la dirección de $ P  \to Q(\frac{1}{2},2) $.
+
+  \item ¿En qué dirección tiene $ f $ la máxima razón de cambio? ¿Cuál es la máxima razón de cambio?
+\end{enumerate}
+
+\begin{enumerate}[a)]
+	\item Nos piden obtener la derivada direccional de $ f(x,y)=xe^y $ en el punto $ P(2,0) $, en dirección $ P \to Q(\frac{1}{2},2) $.
+		\[
+			D_{\vv{PQ}}f(x,y) = \nabla f(x,y) \cdot \frac{\vv{PQ}}{\lVert\vv{PQ}\rVert}
+		\]
+		\[
+			\nabla f(x,y) = \left\langle f_{x},f_{y} \right\rangle = \left\langle e^y,xe^y \right\rangle
+		\]
+		
+	El versor en la dirección $ \vv{PQ}=\left\langle -\frac{3}{2} \right\rangle $ es $ \mathbf{\hat{u}}=\left\langle -\frac{3}{5},\frac{4}{5} \right\rangle $, así que la razón de cambio de $ f $ en la diarección $ \vv{PQ} $ es
+	\[
+	D_{u}f(2,0)=\nabla f(2,0)\cdot \mathbf{\hat{u}} = \left\langle 1,2 \right\rangle \cdot \left\langle -\frac{3}{5},\frac{4}{5} \right\rangle = 1
+	\]
+
+\item La máxima razón de cambio se dá cuando $ \mathbf{\hat{u}} $ tiene la misma dirección de $ \nabla f(x,y) $, y es igual a $ \lVert\nabla f(x,y)\rVert $ en el punto $ (2,0) $
+	\[
+	\lVert\nabla f(2,0)\rVert = \lVert\left\langle 1,2 \right\rangle\rVert = \sqrt[]{5}
+	\]
+\end{enumerate}
+
+\subsection{Planos tangentes a superficies}
+Supongamos que $ S $ es una superficie de nivel con ecuación $ F(x,y,z)=k $, y sea $ P(x_{0},y_{0},z_{0}) $ un punto en $ S $. Sea $ C $ \textit{cualquier} curva de la superficie $ S $ que pasa por el punto $ P $. La función de la curva que pasa $ C $ la podemos escribir en su forma paramétrica de manera que $ C = r(t) = \left\langle x(t),y(t),z(t) \right\rangle $. Sea $ t_{0} $ el valor paramétrico correspondiente a $ P $; es decir, $ r(t_{0}) = \left\langle x_{0},y_{0},z_{0} \right\rangle $. Como $ C $ reside en $ S $, cualquier punto $ \left(x(t),y(t),z(t)\right) $, debe satisfacer la ecuación de $ S $, es decir
+\begin{equation}\label{eq:sup-nivel}
+F\left(x(t),y(t),z(t)\right) = k
+\end{equation}
+
+Si en la ecuación \ref{eq:sup-nivel}, $ x $, $ y $ y $ z $ son funciones derivables de $ t $ y $ F $ también es derivable, podemos derivar $ F $ respecto de $ t $ usando la regla de la cadena como sigue:
+\begin{equation}\label{eq:dv-sup-nivel-Ft}
+\pdv[]{F}{x}\dv[]{x}{t} + \pdv[]{F}{y}\dv[]{y}{t} + \pdv[]{F}{z}\dv[]{z}{t} = 0
+\end{equation}
+
+Pero habíamos visto que $ \nabla F = \left\langle F_{x}, F_{y}, F_{z} \right\rangle $ y sabemos que $ r^{\prime}(t)=\left\langle x^{\prime}(t),y^{\prime}(t),z^{\prime}(t) \right\rangle $, así que a la ecuación \ref{eq:dv-sup-nivel-Ft} la podemos expresar como un producto punto de la siguiente forma
+\[
+  \left\langle F_{x},F_{y},F_{z} \right\rangle\cdot \left\langle \dv[]{x}{t},\dv[]{y}{t},\dv[]{z}{t} \right\rangle = 0
+\]
+\begin{equation}\label{eq:grad-plano-tg}
+  \nabla F\cdot r^{\prime}(t)=0
+\end{equation}
+
+Si lo analizamos cuando $ t = t_{0} $ tenemos que $ r(t_{0})=\left\langle x_{0},y_{0},z_{0} \right\rangle $, así que
+\begin{equation}\label{eq:plano-tg-punto}
+  \nabla F(x_{0},y_{0},z_{0})\cdot r^{\prime}(t_{0})=0
+\end{equation}
+
+La ecuación \ref{eq:plano-tg-punto} establece que \textit{el vector gradiente en $ P $ dado por $ \nabla F(x_{0},y_{0},z_{0}) $, es perpendicular al vector tangente $ r^{\prime}(t_{0}) $ a cualquier curva $ C $ en $ S $ que pase por $ P $}. De esta manera podemos afirmar que, si $ \nabla F(x_{0},y_{0},z_{0})\neq 0 $, el \textbf{plano tangente a la superficie de nivel} $ F(x,y,z) = k $ en el punto $ P(x_{0},y_{0},z_{0}) $ es el plano cuyo vector normal es $ \nabla F(x_{0},y_{0},z_{0}) $ y pasa por el punto $ P $.
+
+La ecuación del \textbf{plano tangente a la superficie de nivel} $ F(x,y,z) = k $ está dada por la ecuación \ref{eq:plano-tg-punto}
+
+En el caso especial enel que la ecuación de una superficie $ S $ es de la forma $ z=f(x,y) $, podemos definir la ecuación como
+\[
+  F(x,y,z) = f(x,y) - z = 0
+\]
+
+y considerar a $ S $ como una superficie de nivel con $ k=0 $, de manera que
+\begin{align*}
+  F_{x}(x_{0},y_{0},z_{0}) &= f_{x}(x_{0},y_{0})\\
+  F_{y}(x_{0},y_{0},z_{0}) &= f_{y}(x_{0},y_{0})\\
+  F_{z}(x_{0},y_{0},z_{0}) &= -1
+\end{align*}
+
+\bsubsection{Máximos y mínimos}
+
+
 
 
 

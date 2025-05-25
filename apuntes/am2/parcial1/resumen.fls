@@ -686,6 +686,14 @@ INPUT /home/ricman/imagenes/logo_utn.png
 INPUT /home/ricman/imagenes/logo_utn.png
 INPUT /home/ricman/imagenes/logo_utn.png
 INPUT /home/ricman/imagenes/logo_utn.png
+INPUT /home/ricman/imagenes/logo_utn.png
+INPUT /home/ricman/imagenes/logo_utn.png
+INPUT /home/ricman/imagenes/logo_utn.png
+INPUT /home/ricman/imagenes/logo_utn.png
+INPUT /home/ricman/imagenes/logo_utn.png
+INPUT /home/ricman/imagenes/logo_utn.png
+INPUT /home/ricman/imagenes/logo_utn.png
+INPUT /home/ricman/imagenes/logo_utn.png
 INPUT resumen.aux
 INPUT ./resumen.out
 INPUT ./resumen.out
@@ -702,3 +710,4 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/esvect/vect10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/esvect/vect9.pfb
