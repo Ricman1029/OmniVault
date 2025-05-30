@@ -244,10 +244,34 @@
   \end{itemize}
 
   \section{Unidad 2 - Administración y Gestión de Archivos}
-    
+  Los \textbf{archivos} son unidades logicas de informacion que pueden ser leidas o creadas por los procesos. La informacion que se almacena en los archivos debe ser persistente. Un archivo debe desaparecer solo cuando su propietario lo remueve de manera explicita.
 
+  Los archivos son administrados por el sistema operativo. La parte del sistema operativo que trata con los archivos se conoce como \textbf{sistema de archivos}.
+
+  \subsection{Archivos}
+  Los archivos proporcionan una manera de almacenar informacion en el disco y leerla despues. Cuando un proceso crea un archivo le proporciona un nombre. Cuando el proceso termina, el archivo sigue existiendo y puede ser utilizado por otros procesos mediante su nombre.
+
+  Algunos sistemas de archivos, como el de UNIX, diferencian las letras mayusculas de las minusculas, mientras que otros no.
+
+  Existen varios sistemas de archivos que vamos a analizar mas adelante. Por ahora solo vamos a decir que Windows 95 y 98 usan el sistema de archivos \textbf{FAT-16}. Windows 98 extendio FAT-16 e introdujo \textbf{FAT-32} pero estos dos sistemas son bastante similares. Las versiones mas nuevas de Windows admiten ambos sistemas FAT, que en realidad ya son obsoletos, pero tienen un sistema de archivos nativo que se conoce como \textbf{NTFS}.
+
+  Muchos sistemas operativos aceptan nombres de archivos en dos partes, separadas por un punto. La parte que va despues del punto se conoce como la \textbf{extension del archivo} y suele indicar algo acerca de la naturaleza de ese archivo.
   
+  En algunos sistemas (como UNIX) las extensiones de archivo son solo convenciones y no son impuestas por el sistema operativo. Funcionan mas como un recordatorio para el propietario que como un medio para transportar informacion a la computadora. Sin embargo, en otros sistemas (como Windows) 'este es consciente de las extensiones y les asigna significado. Los usuarios pueden registrar extensiones y asignar programas a cada una de manera que cuando se le hace doble click al nombre del archivo, el programa asignado a su extension se inicia con ese archivo como parametro.
 
+  \subsection{Estructura de archivos}
+  Los archivos se pueden estructurar de varias formas:
+  \begin{itemize}
+    \item \textbf{Secuencias de byte sin estructura.} El sistema operativo no sabe, ni le importa que hay en el archivo. Esto provee la maxima flexibilidad ya que los programas de usuario pueden colocar cualquier cosa que quieran en sus archivos y denominarlos de cualquier manera conveniente.
+
+    \item \textbf{Secuencia de registros.} Un archivo es una secuencia de registros de longitud fija, cada uno con cierta estructura interna. Estos sistemas se usaban cuando todavia se utilizaban las tarjetas perforadas de 80 columnas, de manera que cada registro consistia de 80 caracteres, simulando la tarjeta.
+
+    \item \textbf{Arbol.} Un archivo consiste en un arbol de registros, donde no todos son necesariamente de la misma longitud; cada uno de llos contiene un campo llave en una posicion fija dentro del registro. El arbol se ordena con base en el campo llave para permitir una busqueda rapida por una llave especifica.
+  \end{itemize} 
+
+  poner figura 4-2 pagina 289 tannenbaum
+
+  \subsection{Tipos de archivos}
 
   
 
