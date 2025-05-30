@@ -50,6 +50,37 @@
       \field{title}{Sistemas Operativos}
       \field{year}{2005}
     \endentry
+    \entry{tanenbaum}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2414455c999bc471f803cd14fdea939d}{%
+           family={Tanenbaum},
+           familyi={T\bibinitperiod},
+           given={Andrew\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Educación.}%
+      }
+      \strng{namehash}{2414455c999bc471f803cd14fdea939d}
+      \strng{fullhash}{2414455c999bc471f803cd14fdea939d}
+      \strng{fullhashraw}{2414455c999bc471f803cd14fdea939d}
+      \strng{bibnamehash}{2414455c999bc471f803cd14fdea939d}
+      \strng{authorbibnamehash}{2414455c999bc471f803cd14fdea939d}
+      \strng{authornamehash}{2414455c999bc471f803cd14fdea939d}
+      \strng{authorfullhash}{2414455c999bc471f803cd14fdea939d}
+      \strng{authorfullhashraw}{2414455c999bc471f803cd14fdea939d}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Sistemas operativos modernos.}
+      \field{year}{2009}
+    \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global/global}
     \entry{sostallings}{book}{}{}
@@ -82,6 +113,37 @@
       \field{edition}{5}
       \field{title}{Sistemas Operativos}
       \field{year}{2005}
+    \endentry
+    \entry{tanenbaum}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2414455c999bc471f803cd14fdea939d}{%
+           family={Tanenbaum},
+           familyi={T\bibinitperiod},
+           given={Andrew\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Educación.}%
+      }
+      \strng{namehash}{2414455c999bc471f803cd14fdea939d}
+      \strng{fullhash}{2414455c999bc471f803cd14fdea939d}
+      \strng{fullhashraw}{2414455c999bc471f803cd14fdea939d}
+      \strng{bibnamehash}{2414455c999bc471f803cd14fdea939d}
+      \strng{authorbibnamehash}{2414455c999bc471f803cd14fdea939d}
+      \strng{authornamehash}{2414455c999bc471f803cd14fdea939d}
+      \strng{authorfullhash}{2414455c999bc471f803cd14fdea939d}
+      \strng{authorfullhashraw}{2414455c999bc471f803cd14fdea939d}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Sistemas operativos modernos.}
+      \field{year}{2009}
     \endentry
   \enddatalist
 \endrefsection

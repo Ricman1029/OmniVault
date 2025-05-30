@@ -257,9 +257,9 @@
 
   Muchos sistemas operativos aceptan nombres de archivos en dos partes, separadas por un punto. La parte que va despues del punto se conoce como la \textbf{extension del archivo} y suele indicar algo acerca de la naturaleza de ese archivo.
   
-  En algunos sistemas (como UNIX) las extensiones de archivo son solo convenciones y no son impuestas por el sistema operativo. Funcionan mas como un recordatorio para el propietario que como un medio para transportar informacion a la computadora. Sin embargo, en otros sistemas (como Windows) 'este es consciente de las extensiones y les asigna significado. Los usuarios pueden registrar extensiones y asignar programas a cada una de manera que cuando se le hace doble click al nombre del archivo, el programa asignado a su extension se inicia con ese archivo como parametro.
+  En algunos sistemas (como UNIX) las extensiones de archivo son solo convenciones y no son impuestas por el sistema operativo. Funcionan mas como un recordatorio para el propietario que como un medio para transportar informacion a la computadora. Sin embargo, en otros sistemas (como Windows) éste es consciente de las extensiones y les asigna significado. Los usuarios pueden registrar extensiones y asignar programas a cada una de manera que cuando se le hace doble click al nombre del archivo, el programa asignado a su extension se inicia con ese archivo como parametro.
 
-  \subsection{Estructura de archivos}
+  \subsubsection{Estructura de archivos}
   Los archivos se pueden estructurar de varias formas:
   \begin{itemize}
     \item \textbf{Secuencias de byte sin estructura.} El sistema operativo no sabe, ni le importa que hay en el archivo. Esto provee la maxima flexibilidad ya que los programas de usuario pueden colocar cualquier cosa que quieran en sus archivos y denominarlos de cualquier manera conveniente.
@@ -269,10 +269,224 @@
     \item \textbf{Arbol.} Un archivo consiste en un arbol de registros, donde no todos son necesariamente de la misma longitud; cada uno de llos contiene un campo llave en una posicion fija dentro del registro. El arbol se ordena con base en el campo llave para permitir una busqueda rapida por una llave especifica.
   \end{itemize} 
 
-  poner figura 4-2 pagina 289 tannenbaum
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/tipos-de-archivos.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Tres tipos de archivos.}
+    \label{fig:tipos-de-archivos}
+  \end{figure}
 
-  \subsection{Tipos de archivos}
+  \subsubsection{Tipos de archivos}
+  Muchos sistemas operativos soportan varios tipos de archivos. Por ejemplo, UNIX y Windows tienen archivos y directorios regulares. UNIX también tiene archivos especiales de caracteres y de bloques. Los \textbf{archivos regulares} son los que contienen información del usuario. Los \textbf{directorios} son sistemas de archivos para mantener la estructura del sistema de archivos. Los \textbf{archivos especiales de caracteres} se relacionan con la E/S y se utilizan para modelar dispositivos de E/S en serie. Los \textbf{archivos especiales de bloques} se utilizan para modelar discos.
 
+  Por lo general, los \textbf{archivos regulares} son archivos ASCII o binarios. Los archivos ASCII consisten en líneas de texto, se pueden mostrar e imprimir como están, y se pueden editar con cualquier editor de texto. Los archivos binarios tienen código binario y una cierta estructura interna conocida para los programas que los utilizan. La Figura \ref{fig:archivos-binarios} muestra dos archivos binarios de las primeras versiones de UNIX. El primero es un archivo binario ejecutable. El segundo es una colección de procedimientos (módulos) de biblioteca compilados, pero no enlazados.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/archivos-binarios.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Dos archivos binarios distintos.}
+    \label{fig:archivos-binarios}
+  \end{figure}
+
+  \subsubsection{Acceso a archivos}
+  Los primeros sistemas operativos proporcionaban sólo un tipo de acceso: \textbf{acceso secuencial}. En estos sistemas, sólo se podían leer los bytes en orden secuencial, pero no se podía saltar entre bytes.
+
+  Mas adelante se crearon los \textbf{archivos de acceso aleatorio} en los que se pueden leer sus bytes en cualquier orden. En estos se pueden usar los métodos \verb|seek| (para establecer la posición desde la que se quiere comenzar a leer) y \verb|read| (para comenzar a leer de manera secuencial desde la posición actual).
+
+  \subsubsection{Atributos de archivos}
+  Todo archivo tiene un nombre y sus datos. Además, todos los sistemas operativos asoian otra información con cada archivo. A estos elementos adicionales se los conoce como \textbf{atributos}. A continuación se muestra una tabla con varios atributos, aunque no son todos, que \textit{pueden} tener los archivos en un sistema operativo.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/atributos-archivos.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Algunos atributos de archivos.}
+    \label{fig:atributos-archivos}
+  \end{figure}
+  
+  \subsubsection{Operaciones de archivos}
+  Las llamadas al sistema (system calls) mas comunes relacionadas con los archivos son las siguientes:
+  \begin{enumerate}[1.]
+    \item \verb|Create|. El archivo se crea sin datos.
+
+    \item \verb|Delete|. Se elimina el archivo, liberando el espacio en disco.
+
+    \item \verb|Open|. Se llevan los atributos y la lista de direcciones de disco a memoria principal para tener acceso rápido al archivo.
+
+    \item \verb|Close|. Se libera el espacio que ocupaba el archivo en la memoria principal.
+
+    \item \verb|Read|. Se leen los datos del archivo desde la posición actual.
+
+    \item \verb|Write|. Se escriben datos en el archivo desde la posición actual.
+
+    \item \verb|Append|. Se escriben datos al final del archivo.
+
+    \item \verb|Seek|. Se modifica la posición actual del puntero del archivo.
+
+    \item \verb|Get attributes|. Se obtienen los atributos de un archivo.
+
+    \item \verb|Set attributes|. Algunos de los atributos los puede establecer el usuario y se pueden modificar después de haber creado el archivo.
+
+    \item \verb|Rename|. Se cambia el nombre del archivo.
+  \end{enumerate}
+
+  \subsection{Directorios}
+  Para llevar el registro de los archivos, los sistemas de archivos por lo general tiene \textbf{directorios}, que en muchos sistemas también son archivos.
+
+  \subsubsection{Sistemas de direcorios de un solo nivel}
+  La forma más simple de un sistema de directorios es tener un directorio que contenga todos los archivos. Como si en nuestra computadora solo tuviesemos una sola carpeta, y en ella existan todos los archivos que necesitamos.
+
+  \subsubsection{Sistemas de directorios jerárquicos}
+  El sistema anterior es útil para aplicaciones simples, pero nos podemos imaginar que sería un caos si fuese el caso de nuestra computadora. Lo que se hace ahora es tener un \textbf{árbol de directorios}. De esta manera, existe un directorio raíz (que en UNIX suele ser ``/'') del que se desprenden tantos directorios como quiera el usuario para agrupar los archivos de la forma mas conveniente.
+
+  \subsubsection{Nombres de rutas}
+  Al tener el File System organizado como un árbol de directorios, se necesita cierta forma de especificar los nombres de los archivos y existen dos métodos para lograr esto.
+  \begin{itemize}
+    \item \textbf{Nombre de ruta absoluto.} Consiste en usar el camino desde el directorio raíz hasta el archivo. Un ejemplo en Linux es \verb|/home/ricman/uni/apuntes/sop/parcial1/resumen.pdf|, que es la dirección en donde se encuentra este documento.
+
+    \item \textbf{Nombre de ruta relativa.} Consiste en nombrar al archivo siguiendo el camino desde el \textbf{directorio actual}, que es el directorio de trabajo, en el que está parado el usuario, hasta el archivo deseado. Por ejemplo, si nuestro directorio actual es \verb|/home/ricman/uni/|, y quiero referenciar este archivo, su nombre de ruta relativa sería \verb|apuntes/sop/parcial1/resumen.pdf|.
+  \end{itemize}
+
+  La mayoría de sistemas operativos que proporcionan un sistema de directorios jerárquico tienen dos entradas especiales en cada directorio ``.''(punto) y ``..''(puntopunto). \textit{Punto} se refiere al directorio actual; \textit{puntopunto} se refiere al directorioi padre del directorio actual. Esto es útil cuando queremos acceder a archivos que se encuentran en el directorio padre del directorio actual, pero no queremos usar una ruta absoluta para acceder a él.
+
+  El directorio \textit{punto} suele ser utilizado cuando, por ejemplo, queremos copiar algún archivo de un directorio externo al directorio actual. Para eso podemos usar el comando \verb|cp| (copy) y pasarle primero el nombre del archivo que queremos copiar y luego el directorio actual usando \textit{punto}.
+
+  \verb|cp /home/ricman/uni/apuntes/hola.txt .|
+
+  Lo anterior es lo mismo que decir 
+
+  \verb|cp /home/ricman/uni/apuntes/hola.txt /home/ricman/uni/apuntes/sop/parcial1/|
+
+  \subsubsection{Operaciones de directorios}
+  Al igual que con los archivos, podemos realizar varias operaciones con los directorios. En el libro \parencite{tanenbaum} se nombran unas operaciones que me parece que son viejisimas y no las vamos a usar en la cátedra. Pongo a continuación las que yo considero que son equivalentes y sí vamos a usar en la cátedra:
+  \begin{enumerate}[1.]
+    \item \verb|mkdir| (MaKe DIRectory). Crea un directorio vacío, excepto por \textit{punto} y \textit{puntopunto} que el sistema coloca de manera automática.
+
+    \item \verb|rm -r| (RemoVe). En realidad \verb|rm| es un comando que se utiliza para borrar archivos, pero al pasarle el argumento \verb|-r| es capaz de borrar directorios.
+
+    \item \verb|cd| (Change Directory). Este comando los usamos para movernos entre los directorios del File System.
+
+    \item \verb|mv| (MoVe). Al igual que \verb|rm|, el comando \verb|mv| se usa para ``mover'' archivos o directorios de un lugar a otro dentro del File System. Esto lo hace tomando como primer parámetro el archivo o directorio que deseamos mover, y como segundo el lugar a donde lo queremos mover, entonces crea una copia del archivo en la dirección especificada y borra el original. Esto lo podemos usar para \textit{renombrar} directorios si le decimos que lo mueva desde un directorio hacia el mismo lugar pero con otro nombre. Por ejemplo \verb|mv /home/ricman/uni/ /home/ricman/versi| renombra el directorio ``uni'' como ``versi''.
+
+    \item \verb|ln| (LiNk). Crea un \textbf{vínculo} desde un archivo existente hasta el nombre especificado por la ruta. De esta forma, el mismo archivo puede aparecer en varios directorios. 
+  \end{enumerate}
+
+  Una variante sobre la idea de vincular archivos es el \textbf{vínculo simbólico}. En vez de tener dos nombres que apunten a la misma estructura de datos interna que representa un archivo (como hace un vínculo), se puede crear un nombre que apunte a un archivo que nombre a otro.
+
+  \subsection{Implementación de File Systems}
+  Ya vimos qué son los archivos y cuáles son sus propiedades, y qué son los directorios y cuáes son sus propiedades. Ahora vamos a ver cómo se almacenan, cómo se administra el espacio en el disco y cómo hacer que todo funcione con eficiencia y confiabilidad.
+
+  \subsubsection{Distribución del sistema de archivos}
+  Los sistemas de archivos se alamacenan en discos. La mayoría de discos se pueden dividir en una o más particiones, con sistemas de archivos independientes en cada partición. El sector 0 del disco se conoce como el \textbf{MBR} (\textit{Master Boot Record}) y se utiliza para arrancar la computadora. El final del MBR contiene la tabla de particiones, la cual proporciona las direcciones de inicio y fin de cada partición. Una de las particiones en la tabla se marca como activa. Cuando se arranca la computadora, el BIOS lee y ejecuta el MBR. Lo primero que hace el programa MBR es localizar la partición activa, leer su primero bloque, conocido como el \textbf{bloque de arranque}, y ejecutarlo. El programa en el bloque de arranque carga el sistema operativo contenido en esa partición. 
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/distro-sistema-archivos.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Una posible distribución del sistema de archivos.}
+    \label{fig:distro-file-system}
+  \end{figure}
+  
+  \subsubsection{Implementación de archivos}
+  Existen varias formas para implementar el almacenamiento de archivos.
+
+  \paragraph{Asignación contigua}\mbox{}\\
+  El esquema de asignación más simple es almacenar cada archivo como una serie contigua de bloques de disco. Así, en un disco con bloques de 1 KB, a un archivo de 50 KB se le asignarían 50 bloques consecutivos.
+
+  Este sistema es facil de implementar ya que solo hay que saber dónde empieza y dónde termina cada archivo, y el rendimiento de lectura es excelente ya que se lee secuencialmente. Sin embargo, tiene una gran desventaja debido a que con el transcurso del tiempo, los discos se fragmentan. Podemos ver en la siguiente figura que a medida que vamos eliminando o modificando los archivos, empiezan a aparecer espacios vacíos entre archivos. Y si después queremos reutilizar ese espacio tendríamos que estar viendo que el archivo que queramos meter ahí entre justo en el hueco para no desaprovechar espacio. Otra opción sería compactar todo el espacio, moviendo todos los archivos para volver a dejar el espacio libre al fondo del disco. Ambas opciones son extremadamente costosas y no termina siendo ``worth''.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/asignacion-contigua.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. (a) Asignación contigua de espacio de disco para siete archivos. (b) El estado del disco después de haber removido los archivos D y F.}
+    \label{fig:asignacion-contigua}
+  \end{figure}
+  
+
+  \paragraph{Asignación de lista enlzada (linked list)}\mbox{}\\
+  Otro método es mantener cada archivo como una lista enlazada de bloques de disco. La primera palabra de cada bloque se utiliza como apuntador al siguiente. El resto del bloque es para los datos.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagenes/asign-lista-enlazada.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Almacenamiento de archivos como lista enlazada.}
+    \label{fig:aign-lista-enlazada}
+  \end{figure}
+
+  Con este método no se pierde espacio debido a la fragmentación (salvo por la fragmentación interna del último bloque), y para acceder al archivo sólo hace falta saber la ubicación en disco del primer bloque. Sin embargo, el acceso aleatorio es super lento y, al tener que usar una parte del espacio de cada bloque para referenciar al siguiente, perdemos espacio de almacenamiento del archivo.
+
+  \paragraph{Asignación de lista enlazada utilizando una tabla en memoria}\mbox{}\\
+  Las dos desventajas de la asignación de lista enlzada se pueden eliminar si tomamos la palabra del puntero de cada bloque de disco y la ponemos en una tabla en memoria. En la Figura \ref{fig:asign-lista-enlazada-tabla} vemos un archivo A que utiliza los bloques de disco 4, 7, 2, 10 y 12, en ese orden y el archivo B que utiliza los bloques de disco 6, 3, 11 y 14, en ese orden.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imagenes/asign-lista-enlazada-tabla.png}
+      \caption{Imagen sacada de \parencite{tanenbaum}.}
+    \label{fig:asign-lista-enlazada-tabla}
+  \end{figure}
+
+  La principal desventaja de este método es que toda la tabla debe estar en memoria principal todo el tiempo para que funcione y esto es muy poco práctico.
+
+  \paragraph{i-nodos}\mbox{}\\
+  El último método que vamos a ver es el de asociar con cada archivo una estructura de datos conocida como \textbf{i-nodo}(\textbf{nodo-indice}), que lista los atributos y las direcciones de disco de los bloques del archivo. La gran ventaja de esto es que el i-nodo necesita estar en memoria sólo cuando está abierto el archivo correspondiente. Si cada i-nodo ocoupa $ n $ bytes, y puede haber un máximo de $ k $ archivos abiertos a la vez, la memoria total ocupada por el arreglo que contiente los i-nodos para los archivos abiertos es $ kn $ bytes.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imagenes/i-nodo.png}
+    \caption{Imanen sacada de \parencite{tanenbaum}. Un i-nodo de ejemplo.}
+    \label{fig:i-nodo}
+  \end{figure}
+  
+
+  \subsubsection{Implementación de directorios}
+  Cuando vamos a guardar un arhivo dentro de un directorio, tenemos dos posibilidades principales para almacenar los atributos de los mimsmo. Podemos almacenarlos directamente en la entrada del directorio, como se muestra en la Figura \ref{fig:almac-atrib-archivos} (a). Otra forma es almacenar los atributos en los i-nodos, en vez de hacerlo en la entrada de los directorios, como se muestra en la Figura \ref{fig:atributos-archivos}.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/almac-atrib-archivos.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. (a) Un directorio simple en Windows. (b) Un directorio en UNIX.}
+    \label{fig:almac-atrib-archivos}
+  \end{figure}
+
+  Estas formas de almacenar los archivos son válidas pero traen problemas si queremos almacenar nombres de archivos mas largos, ya que la logitud de cada bloque es fija, por lo que los archivos que tengan nombres cortos estarían desperdiciando todo el espacio que les sobra.
+
+  Una alternativa es que la estructura este dada en tres partes: una primera parte para indicar la longitud de la entrada, una segunda parte para almacenar los atributos, y la tercer parte continene el nombre del archivo, siendo este tan largo o corto como quiera el usuario. Esto se ve en la Figura \ref{fig:almac-nom-archivos} (a). Sin embargo esto trae problemas de fragmentación, aunque ahora es mas factible compactar el directorio ya que se encuentra en memoria principal.
+
+  Otra manera de manejar los nombres de longitud variable es hacer que las entradas de directorio sean de longitud fija y mantener los nombres de los archivos juntos en un heap al final del directorio, como se muestra en la Figura \ref{fig:almac-nom-archivos} (b).
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/almac-nombres-archivos.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Dos maneras de manejar nombres de archivos de longitud variable. (a) En línea. (b) En un heap.}
+    \label{fig:almac-nom-archivos}
+  \end{figure}
+
+  \subsubsection{Archivos compartidos}
+  Cuando hay varios usuarios trabajando en conjunto en un proyecto, a menudo necesitan compartir archivos. De esta manera, resulta conveniente que un mismo archivo aparezca en dos directorios distintos (uno para cada usuario), como se vé en la Figura \ref{fig:archivo-compartido}. La conexión entre el directorio $ B $ y el archivo compartido del directorio $ C $ se conoce como \textbf{vínculo}. El sistema de archivos en sí ahora pasa a ser un \textbf{Grafo acíclico dirigido} (\textit{Directed Acyclic Graph}, \textbf{DAG}) en vez de un árbol.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imagenes/archivo-compartido.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Sistema que contiene un archivo compartido.}
+    \label{fig:archivo-compartido}
+  \end{figure}
+
+  También existe lo que se conoce como \textbf{link simbólico} o \textbf{vínculo simbólico} en el que, al hacer el vínculo del directorio $ B $ a uno de los archivos de $ C $, el nuevo archivo (el que se crea como link en $ B $) contiene sólo el nombre de la ruta del archivo al cual está vinculado. 
+  
+  Ambos métodos tiene sus desventajas. En el caso de los \textit{hard-links} (los vínculos normales), supongamos el caso de la figura \ref{fig:archivo-compartido}. Si en algún momento el directorio $ C $ trata de eliminar el archivo que está vinculado con $ B $, el archivo va a seguir existiendo pero $ B $ será el único usuario con acceso al mismo, aunque el propietario sigue siendo $ C $ ya que no se puede eliminar el i-nodo del archivo en el que se encuentran los atributos (tampoco se puede modificar quién es el propietario). Entonces todos los cambios que haga $ B $ sobre el archivo se le van a acreditar a $ C $, muy probablemente quitándole espacio de almacenamiento por un archivo al que no puede acceder.
+
+  Con los vínculos simbólicos no sucede esto ya que, como el archivo en $ B $ guarda la ruta del archivo en $ C $, si $ C $ elimina el archivo, la ruta que hay en $ B $ ya no es válida así que esta vez el archivo sí desaparece sin problemas. Sin embargo, la desventaja en este caso está en que cuando $ B $ quiere modificar el archivo se requiere de un mayor nivel de procesamiento ya que hay que leer la ruta del archivo a la que apunta, verificar si existe, ir hasta la ruta, acceder a su espacio en disco y recién ahí realizar los cambios requeridos.
+
+  Existen muchos otros sistemas de archivos entre los que se encuentran: \textbf{Sistemas de archivos estructurados por registro}, \textbf{Sistemas de archivos por bitácora}, \textbf{Sistemas de archivos virtuales}. Estos últimos son sistemas de archivos que utiliza UNIX principalmente para poder integrar varios sistemas de archivos distintos en uno solo. 
+
+  La mayoría de los sistemas UNIX utilizan el concepto de \textbf{VFS} (\textit{Virtual File System}) en el que todas las llamadas al sistema relacionadas con archivos se dirigen al sistema de archivos virtual para su procesamiento inicial. EStas llamadas, que provienen de procesos de usuarios, son las llamadas de POSIX estándar tales como \verb|open|, \verb|read|, \verb|write|, etc.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagenes/vfs.png}
+    \caption{Imanen sacada de \parencite{tanenbaum}. Posición del sistema de archivos virtual.}
+    \label{fig:vfs}
+  \end{figure}
+
+  
   
 
 

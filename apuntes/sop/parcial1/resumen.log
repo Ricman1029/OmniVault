@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  29 MAY 2025 17:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  30 MAY 2025 17:08
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1036,7 +1036,7 @@ Package biblatex Info: Reference segment=0 on input line 72.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<~/imagenes/logo_utn_frc.jpg, id=82, 1606.0pt x 568.1225pt>
+<~/imagenes/logo_utn_frc.jpg, id=151, 1606.0pt x 568.1225pt>
 File: ~/imagenes/logo_utn_frc.jpg Graphic file (type jpg)
 <use ~/imagenes/logo_utn_frc.jpg>
 Package pdftex.def Info: ~/imagenes/logo_utn_frc.jpg  used on input line 76.
@@ -1081,7 +1081,7 @@ File: uesvect.fd
 
 
 
-<~/imagenes/logo_utn.png, id=109, 3011.25pt x 3538.21875pt>
+<~/imagenes/logo_utn.png, id=195, 3011.25pt x 3538.21875pt>
 File: ~/imagenes/logo_utn.png Graphic file (type png)
 <use ~/imagenes/logo_utn.png>
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 111.
@@ -1094,7 +1094,7 @@ l.111   \newpage
                  [1
 
  </home/ricman/imagenes/logo_utn.png>]
-<imagenes/jerarquia-sist-comp.png, id=117, 305.64188pt x 318.43968pt>
+<imagenes/jerarquia-sist-comp.png, id=204, 305.64188pt x 318.43968pt>
 File: imagenes/jerarquia-sist-comp.png Graphic file (type png)
 <use imagenes/jerarquia-sist-comp.png>
 Package pdftex.def Info: imagenes/jerarquia-sist-comp.png  used on input line 130.
@@ -1112,7 +1112,7 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 158.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [3 <./imagenes/jerarquia-sist-comp.png (PNG copy)>]
-<imagenes/multiprogramacion.png, id=130, 353.82187pt x 160.34906pt>
+<imagenes/multiprogramacion.png, id=217, 353.82187pt x 160.34906pt>
 File: imagenes/multiprogramacion.png Graphic file (type png)
 <use imagenes/multiprogramacion.png>
 Package pdftex.def Info: imagenes/multiprogramacion.png  used on input line 177.
@@ -1130,12 +1130,12 @@ File: ~/imagenes/logo_utn.png Graphic file (type png)
 Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 205.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [5 <./imagenes/multiprogramacion.png (PNG copy)>]
-<imagenes/smp-vs-no-smp.png, id=141, 484.05844pt x 386.19281pt>
+<imagenes/smp-vs-no-smp.png, id=228, 484.05844pt x 386.19281pt>
 File: imagenes/smp-vs-no-smp.png Graphic file (type png)
 <use imagenes/smp-vs-no-smp.png>
 Package pdftex.def Info: imagenes/smp-vs-no-smp.png  used on input line 213.
 (pdftex.def)             Requested size: 338.58632pt x 270.14453pt.
-<imagenes/arquitectura-unix.png, id=144, 275.52937pt x 271.0125pt>
+<imagenes/arquitectura-unix.png, id=231, 275.52937pt x 271.0125pt>
 File: imagenes/arquitectura-unix.png Graphic file (type png)
 <use imagenes/arquitectura-unix.png>
 Package pdftex.def Info: imagenes/arquitectura-unix.png  used on input line 229.
@@ -1150,49 +1150,61 @@ Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 233.
 
 File: ~/imagenes/logo_utn.png Graphic file (type png)
 <use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 257.
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 248.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 [7 <./imagenes/arquitectura-unix.png (PNG copy)>]
 
 File: ~/imagenes/logo_utn.png Graphic file (type png)
 <use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 261.
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 270.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[8] (./resumen.aux
-LaTeX Info: Redefining \sptext on input line 12.
-LaTeX Info: Redefining \. on input line 12.
-LaTeX Info: Redefining \% on input line 12.
-)
- ***********
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-04-14>
- ***********
+[8]
+<imagenes/tipos-de-archivos.png, id=248, 504.38437pt x 212.29312pt>
+File: imagenes/tipos-de-archivos.png Graphic file (type png)
+<use imagenes/tipos-de-archivos.png>
+Package pdftex.def Info: imagenes/tipos-de-archivos.png  used on input line 274.
+(pdftex.def)             Requested size: 483.69687pt x 203.58852pt.
+<imagenes/archivos-binarios.png, id=251, 469.755pt x 411.78844pt>
+File: imagenes/archivos-binarios.png Graphic file (type png)
+<use imagenes/archivos-binarios.png>
+Package pdftex.def Info: imagenes/archivos-binarios.png  used on input line 286.
+(pdftex.def)             Requested size: 483.69687pt x 424.00858pt.
 
 
-Package rerunfilecheck Warning: File `resumen.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+File: ~/imagenes/logo_utn.png Graphic file (type png)
+<use ~/imagenes/logo_utn.png>
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 290.
+(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
+[9 <./imagenes/tipos-de-archivos.png (PNG copy)>]
+<imagenes/atributos-archivos.png, id=260, 441.90094pt x 366.61969pt>
+File: imagenes/atributos-archivos.png Graphic file (type png)
+<use imagenes/atributos-archivos.png>
+Package pdftex.def Info: imagenes/atributos-archivos.png  used on input line 301.
+(pdftex.def)             Requested size: 386.95897pt x 321.05435pt.
 
-Package rerunfilecheck Info: Checksums for `resumen.out':
-(rerunfilecheck)             Before: 69579F86566A1863FB184CF8759D120D;4464
-(rerunfilecheck)             After:  8FB52C73178A76D997072BA87D6F3551;4765.
-Package logreq Info: Writing requests to 'resumen.run.xml'.
-\openout1 = `resumen.run.xml'.
 
- ) 
-Here is how much of TeX's memory you used:
- 43070 strings out of 469608
- 972750 string characters out of 5470607
- 1969845 words of memory out of 5000000
- 69240 multiletter control sequences out of 15000+600000
- 660766 words of font info for 97 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 99i,16n,105p,1076b,2813s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on resumen.pdf (9 pages, 334719 bytes).
-PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 195 words of extra memory for PDF output out of 10000 (max. 10000000)
+File: ~/imagenes/logo_utn.png Graphic file (type png)
+<use ~/imagenes/logo_utn.png>
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 304.
+(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
+[10 <./imagenes/archivos-binarios.png (PNG copy)>]
 
+File: ~/imagenes/logo_utn.png Graphic file (type png)
+<use ~/imagenes/logo_utn.png>
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 327.
+(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
+[11 <./imagenes/atributos-archivos.png (PNG copy)>]
+
+File: ~/imagenes/logo_utn.png Graphic file (type png)
+<use ~/imagenes/logo_utn.png>
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 352.
+(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
+[12]
+
+File: ~/imagenes/logo_utn.png Graphic file (type png)
+<use ~/imagenes/logo_utn.png>
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 380.
+(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
+[13]
+<imagenes/distro-sistema-archivos.png, id=299, 459.96844pt x 207.77625pt>
+Fi
