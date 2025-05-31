@@ -486,7 +486,18 @@
     \label{fig:vfs}
   \end{figure}
 
-  
+  \subsection{Administracion y optimizacion de sistemas de archivos}
+  Siempre la idea de crear un sistema de archivos es hacerlo de manera eficiente. Por lo general los archivos se almacenan en disco, asi que la administracion del espacio en disco es una cuestion importante. Los puntos a tener en cuenta son:
+  \begin{itemize}
+    \item \textbf{Tamano de bloque.} Lo mas eficiente es almacenar los archivos en bloques de tamano fijo para evitar la fragmentacion del espacio. Es importante decidir el tamano que debe tener cada bloque ya que si se usan bloques de tamano muy grande, archivos de tamano pequeno desperdician el espacio. Por el contrario, si usamos bloques demasiado pequenos se pierde tiempo al leer los archivos.
+
+    \item \textbf{Registro de bloques libres.} El siguiente paso es determinar c'omo llevar el regisro de los bloques libres. Se puede hacer de dos formas tambien: con una lista enlazada de bloques de disco, donde cada bloque contiene tantos numeros de bloques de disco libres como pueda. Con un bloque de 1 KB y un numero de disco de 32 bits, cada bloque en la lista de bloques libres contiene los numeros de 255 bloques libres (para un disco de 500 GB, se requieren aproximadamente 1.9 millones de bloques). La otra opcion es crear un mapa de bits, donde cada bit referencia a un bloque de disco. Si el bit es 0, el bloque esta libre, si el bit es 1 quiere decir que el bloque no esta vacio (para un disco de 500 GB ahora se necesitan aproximadamente 60.000 bloques).
+
+    \item \textbf{Cuotas de disco.} Para evitar que los usuarios ocupen demasiado espacio en disco, los sistemas operativos multiusuario proporcionan un mecanismo para imponer las cuotas de disco.
+  \end{itemize}
+
+  \section{Unidad 4 - Administracion de Procesos}
+
   
 
 
