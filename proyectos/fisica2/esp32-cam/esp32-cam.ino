@@ -1,6 +1,7 @@
 #include "esp_camera.h"
 #include <WiFi.h>
 #include <HTTPClient.h>
+#include <time.h>
 
 //
 // WARNING!!! PSRAM IC required for UXGA resolution and high JPEG quality
@@ -42,10 +43,11 @@ const char *password = "22580660";
 
 const char *servidor = "http://192.168.1.12:8080/";
 
-unsigned long tiempo_anterior = 0;
-const unsigned long intervalo = 30000;
+// Configuración del servidor que dá la hora
+const char *ntp_server = "pool.ntp.org";
+const long gmt_offset = -10800;  //10800s = 3hs
+const int daylight_offset = 0;
 
-void startCameraServer();
 void setupLedFlash(int pin);
 
 void setup() {
@@ -121,9 +123,10 @@ void setup() {
     s->set_saturation(s, -2);  // lower the saturation
   }
   // drop down frame size for higher initial frame rate
-  if (config.pixel_format == PIXFORMAT_JPEG) {
-    s->set_framesize(s, FRAMESIZE_QVGA);
-  }
+  //if (config.pixel_format == PIXFORMAT_JPEG) {
+  //  s->set_framesize(s, FRAMESIZE_QVGA);
+  //}
+  // HASTA QUE TE ENCONTRÉ
 
 #if defined(CAMERA_MODEL_M5STACK_WIDE) || defined(CAMERA_MODEL_M5STACK_ESP32CAM)
   s->set_vflip(s, 1);
@@ -149,17 +152,41 @@ void setup() {
   }
   Serial.println("");
   Serial.println("WiFi connected");
+
+  configTime(gmt_offset, daylight_offset, ntp_server);
+  Serial.println("\nHora sincronizada");
 }
 
+int hora_establecida = 12;
+int minuto_establecido = 0;
+bool foto_tomada = false;
+
 void loop() {
-  if (millis() - tiempo_anterior >= intervalo) {
-    tiempo_anterior = millis();
-    tomar_y_enviar_foto();
+  struct tm hora_actual;
+  if (!getLocalTime(&hora_actual)) {
+    Serial.println("No se pudo obtener la hora");
+    return;
   }
+
+  int hora = hora_actual.tm_hour;
+  int minuto = hora_actual.tm_min;
+
+  // Si es la hora establecida, tomo una sola foto
+  if (hora == hora_establecida && minuto == minuto_establecido && !foto_tomada) {
+    tomar_y_enviar_foto();
+    foto_tomada = true;
+  }
+
+  // Cuando deja de ser la hora establecida, puedo volver a poner la variable foto_tomada en false
+  if (hora != hora_establecida && minuto != minuto_establecido) {
+    foto_tomada = false;
+  }
+
+  delay(10000);  // Se realiza el proceso cada 10s
 }
 
 void tomar_y_enviar_foto() {
-  // Agarro el fram buffer de la camara, si no hay nada hubo un error
+  // Agarro el frame buffer de la camara, si no hay nada hubo un error
   camera_fb_t * fb = esp_camera_fb_get();
   if (!fb) {
     Serial.println("Error al tomar foto");
