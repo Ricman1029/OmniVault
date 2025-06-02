@@ -58,4 +58,11 @@
 \contentsline {subsubsection}{\numberline {3.4.1}Multihilo}{34}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Funcionalidades de los hilos}{36}{subsubsection.3.4.2}%
 \contentsline {subsubsection}{\numberline {3.4.3}Hilos de nivel de usuario y de nivel de núcleo}{37}{subsubsection.3.4.3}%
-\contentsline {section}{Referencias}{38}{subsubsection.3.4.3}%
+\contentsline {paragraph}{Hilos de nivel de usuario}{37}{section*.8}%
+\contentsline {paragraph}{Hilos de nivel de núcleo}{38}{section*.9}%
+\contentsline {paragraph}{Enfoques combinados}{38}{section*.10}%
+\contentsline {subsection}{\numberline {3.5}Multiprocesamiento simétrico (SMP)}{39}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Micronúcleos}{39}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Beneficios de una organización micronúcleo}{40}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Rendimiento del micronúcleo}{40}{subsubsection.3.6.2}%
+\contentsline {section}{Referencias}{41}{subsubsection.3.6.2}%

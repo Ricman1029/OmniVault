@@ -827,8 +827,81 @@
   \end{figure}
 
   \subsubsection{Hilos de nivel de usuario y de nivel de núcleo}
+  Existen dos tipos de hilos: los de nivel de usuario (\textit{user-level threads}, \textbf{ULT}) y los de nivel de núcleo (\textit{kernel-level threads}, \textbf{KLT}).
 
+  \paragraph{Hilos de nivel de usuario}\mbox{}\\
+  En un entorno ULT puro, la aplicación gestiona todo el trabajo de los hilos y el núcleo no es consciente de la existencia de los mismos. Cualquier aplicación puede programarse para ser multihilo a través del uso de una biblioteca de hilos. Esta biblioteca contiene código para la creación y destrucción de hilos, para paso de mensajes y datos entre los hilos, para planificar la ejecución de los hilos, y para guardar y resetaurar el contexto de los hilos. Esto se hace en el espacio de usuario y dentro de un solo proceso; el núcleo continúa planificando el proceso como una unidad y le asigna un único estado.
 
+  Ventajas del uso de ULT en vez de KLT:
+  \begin{itemize}
+    \item El cambio de hilo no requiere privilegios de modo núcleo.
+
+    \item La planificación puede especificarse como parte de la aplicación. Una aplicación podría tener un algorítmo de planificación cíclico, mientras otra podría planificar basado en prioridades.
+
+    \item Los ULT puede ejecutar en cualquier sistema operativo.
+  \end{itemize}
+
+  Desventajas:
+  \begin{itemize}
+    \item Cuando UTL realiza una system call que sea bloqueante, no solo se bloquea el hilo que hizo la llamada sino que todo el proceso entero se bloquea con él.
+
+    \item Si el entorno es ULT puro, la aplicación no puede usar multiproceso ya que el núcleo le asigna un solo proceso a cada aplicación.
+  \end{itemize}
+
+  \paragraph{Hilos de nivel de núcleo}\mbox{}\\
+  En un entorno KLT puro, el núcleo gestiona todo el trabajo de gestión de h ilos. No hay código de gestión de hilos en la aplicación, solamente una interfaz de programación de aplicación (API) para acceder a las utilidades de hilos del núcleo. Windows es un ejemplo de esto.
+
+  Este tipo de entornos resuelve las dos desventajas que aprecen en entornos ULT puros ya que el núcleo puede planificar simultáneamente múltiples hilos de un solo proceso en múltiples procesadores, y si se bloquea un hilo de un proceso, el núcleo puede planificar otro hilo del mismo proceso.
+
+  La principal desventaja del enfoque KLT es que la transferencia de control de un hilo a otro del mismo proceso requiere un cambio de modo al núcleo y esto significa un aumento muy significativo en el tiempo requierido para realizar dicha acción. Por ejemplo, crear un hilo a nivel usuario puede tardar al rededor de 34$ \mu S $, mientras que hacerlo a nivel de núcleo demora unos 948$ \mu S $.
+
+  \paragraph{Enfoques combinados}\mbox{}\\
+  Existen sistemas operativos que usan ULT y KLT al mismo tiempo. Si está bien implementado, se pueden aprovechar las ventajas de los dos enfoques minimizando las desventajas.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/hilos-ult-klt.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Hilos de nivel usuario y de nivel de núcleo.}
+    \label{fig:hilos-ult-klt}
+  \end{figure}
+
+  \subsection{Multiprocesamiento simétrico (SMP)}
+  El SMP es un enfoque que se usa para proporcionar paralelismo entre procesos. La arquitectura de un sistema SMP está diseñada para que cada procesador pueda ejecutar el núcleo del sistema operativo, y normalemte cada procesador realiza su propia planificación del conjunto disponible de procesos e hilos. El núcleo a su vez puede construirse como múltiples procesos o hilos para permitir la ejecución de partes del mismo en paralelo.
+
+  En un sistema SMP existen múltiples procesadores, cada uno con acceso a una memoria principal compartida y dispositivos de E/S a través de algún mecanismo de interconexión. Los procesadores se puede comunicar entre sí a través de la memoria
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/organizacion-smp.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Organización de los SMP.}
+    \label{fig:organizacion-smp}
+  \end{figure}
+
+  \subsection{Micronúcleos}
+  Los primeros sistemas operativos que se desarrollaron eran \textbf{sistemas monolíticos}, donde prácticamente desde cualquier procedimiento se podía llamar a cualquier otro. No había estructura en la implementación del código y esto se hizo insostenible a medida que los sistemas operativos fueron creciendo. 
+
+  Luego aparecieron los sistemas operativos por capas, que estaban mas organizados pero igual seguían habiendo problemas. En estos, cada capa tenía distintas funcionalidades y se conectaba con las capas adyacentes. El problema es que si se realizaba un cambio en una capa, había que modificar las adyacentes también y los programas eran de millones de líneas de código.
+
+  Entonces apareció la idea de el \textbf{micronúcleo}. La idea era que solo las funciones absolutamente esenciales del sistema operativo estén en el núcleo, y el resto de servicios y aplicaciones se construyen sobre el micronúcleo y se ejecutan en modo usuario. De esta forma, el micronúcleo funciona como un intercambiador de mensajes: valida mensajes, los pasa entre los componentes, y concede el acceso al hardware. 
+
+  \subsubsection{Beneficios de una organización micronúcleo}
+  \begin{itemize}
+    \item \textbf{Interfaz uniforme}. No hace falta diferenciar entre servicios a nivel de núcleo o usuario porque todos se proporcionan a través de paso de mensajes.
+
+    \item \textbf{Extensibilidad}. Si se quiere añadir o modificar algún servicio, no hace falta rediseñar todo el núcleo, solo el módulo deseado.
+
+    \item \textbf{Felxibilidad}. Se pueden añadir nuevas características o quitar existentes para una implementación mas pequeña y eficiente.
+
+    \item \textbf{Portabilidad}. Es mas facil adaptar el núcleo a diferentes procesadores ya que todo el sistema operativo está en el micronúcleo.
+
+    \item \textbf{Fiabilidad}. Un micronúcleo se puede verificar de forma rigurosa al no ser un código tan extenso.
+
+    \item \textbf{Soporte de sistemas distribuidos}. 
+
+    \item \textbf{Soporte de sistemas operativos orientados a objetos}. 
+  \end{itemize}
+
+  \subsubsection{Rendimiento del micronúcleo}
 
 
 

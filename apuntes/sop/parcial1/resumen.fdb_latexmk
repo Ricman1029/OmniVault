@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber resumen"] 1748844342.12194 "resumen.bcf" "resumen.bbl" "resumen" 1748844379.10544 0
+["biber resumen"] 1748889928.61721 "resumen.bcf" "resumen.bbl" "resumen" 1748890881.18967 0
   "bibliografia.bib" 1748657969.13076 328 d9eeebfcb991befc76ea8cb9068eac2a ""
-  "resumen.bcf" 1748844379.02639 135889 4269fbe2ebf3adca2a007c730c19c5a5 "pdflatex"
+  "resumen.bcf" 1748890881.10736 136023 74c42d1179a8ac278d34d461577d4181 "pdflatex"
   (generated)
   "resumen.bbl"
   "resumen.blg"
   (rewritten before read)
-["pdflatex"] 1748844377.54809 "resumen.tex" "resumen.pdf" "resumen" 1748844379.1057 0
+["pdflatex"] 1748890879.61192 "resumen.tex" "resumen.pdf" "resumen" 1748890881.18994 0
   "/home/ricman/imagenes/logo_utn.png" 1746771300 278751 34a500bfa1ef02b54b48f78d077633d6 ""
   "/home/ricman/imagenes/logo_utn_frc.jpg" 1746771300 55244 4d2f4db94d25b481fb9a7ee85dd2c263 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -36,6 +36,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1248133631 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb" 1136849748 33709 b09d2e140b7e807d3a97058263ab6693 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1136849748 44729 811d6c62865936705a31c797a1d5dada ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb" 1136849748 46026 6dab18b61c907687b520c72847215a68 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb" 1136849748 45458 a3faba884469519614ca56ba5f6b1de1 ""
@@ -268,12 +269,14 @@
   "imagenes/creacion-proceso.png" 1748738204.90626 44846 ac8f7bdf509ab2eb2dbeba760283e6cc ""
   "imagenes/distro-sistema-archivos.png" 1748581890.28778 26356 2bae5b6e68940518bf0a1691ff830a46 ""
   "imagenes/ejecucion-de-tres-procesos.png" 1748737176.87297 75152 e156358890081a086036654a8095fe7a ""
+  "imagenes/hilos-ult-klt.png" 1748887350.05507 42150 1733ae39b290b5ef23665f6a02f9503a ""
   "imagenes/i-nodo.png" 1748584489.25693 37281 05e06048918eaa07ea23a0b76a45f6bd ""
   "imagenes/jerarquia-sist-comp.png" 1748144717.83705 25221 a500bf4d8e57e8a539b4d74a07e76ff5 ""
   "imagenes/mono-vs-multihilo-2.png" 1748844292.1042 46921 06a426f38eb00b15b90f91ca29d9e502 ""
   "imagenes/mono-vs-multihilo.png" 1748842975.3231 40220 f7f90a0ac61158b549949e6d9b029d1c ""
   "imagenes/multihilos.png" 1748842117.98817 46289 a8008bdf72d65a00c0b6750eedd9b3f0 ""
   "imagenes/multiprogramacion.png" 1748539295.60907 21567 bd9c335e3b48f47661ff17adbb13695b ""
+  "imagenes/organizacion-smp.png" 1748889882.4333 28457 685c1437bfa8b46e3754b2612c2305f5 ""
   "imagenes/proceso-en-ejecucion.png" 1748736383.362 17447 da9041ccb51ff48f7efaaae70dfe1483 ""
   "imagenes/procesos-cinco-estados.png" 1748739219.62834 28789 447c6135dd3aacf11dc0338c36260750 ""
   "imagenes/procesos-dos-estados.png" 1748737901.82722 28504 12ca741e3cb0e0f9c637d7e12beabdc3 ""
@@ -284,12 +287,12 @@
   "imagenes/tipos-de-archivos.png" 1748574908.89205 21888 8e15a96d8e43bc8d4192fb39355f87d6 ""
   "imagenes/trazas-procesos.png" 1748736813.55976 40707 4aecc3a066cf33543e0b47e5f91b190c ""
   "imagenes/vfs.png" 1748635548.29866 26685 84c098cdb0a5c6a813ba0313c1f05d67 ""
-  "resumen.aux" 1748844379.02339 23371 a99d1292ac05f796bcfff6bb9e25826e "pdflatex"
-  "resumen.bbl" 1748844342.78189 5678 7f82926b4b21bbc5d67e55017c94101e "biber resumen"
-  "resumen.out" 1748844379.02539 11480 0ecc30eaacac3355f5c8355a9f37fa74 "pdflatex"
-  "resumen.run.xml" 1748844379.02839 2382 99b53f1b0e16e7b97142b40a66041c29 "pdflatex"
-  "resumen.tex" 1748844375.96235 64482 e475290cc1413077aeb5c33d97eb8ee3 ""
-  "resumen.toc" 1748844379.02839 5916 885d3e03fb46b5b7bd9ad40a5fb9b6b3 "pdflatex"
+  "resumen.aux" 1748890881.10436 24897 9cb0d27dc2f147bfa7340c1f7bd9088a "pdflatex"
+  "resumen.bbl" 1748889929.29413 5678 7f82926b4b21bbc5d67e55017c94101e "biber resumen"
+  "resumen.out" 1748890881.10736 11839 50d3e537d2b2bd01a27274aae84c4671 "pdflatex"
+  "resumen.run.xml" 1748890881.10919 2382 99b53f1b0e16e7b97142b40a66041c29 "pdflatex"
+  "resumen.tex" 1748890879.02932 69074 80c1c85f5a09a01c4f354829584dc5ef ""
+  "resumen.toc" 1748890881.10919 6298 cd8fc4c26665b547a5614c56ec6b564e "pdflatex"
   (generated)
   "resumen.aux"
   "resumen.bcf"
