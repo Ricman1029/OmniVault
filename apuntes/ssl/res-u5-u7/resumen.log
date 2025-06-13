@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  13 JUN 2025 02:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  5 JUN 2025 17:10
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -593,7 +593,36 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen291
-))) (/usr/local/texlive/2025/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
+File: tikzlibraryautomata.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box69
+\pgfnodeparttwobox=\box70
+\pgfnodepartthreebox=\box71
+\pgfnodepartfourbox=\box72
+\pgfnodeparttwentybox=\box73
+\pgfnodepartnineteenbox=\box74
+\pgfnodeparteighteenbox=\box75
+\pgfnodepartseventeenbox=\box76
+\pgfnodepartsixteenbox=\box77
+\pgfnodepartfifteenbox=\box78
+\pgfnodepartfourteenbox=\box79
+\pgfnodepartthirteenbox=\box80
+\pgfnodeparttwelvebox=\box81
+\pgfnodepartelevenbox=\box82
+\pgfnodeparttenbox=\box83
+\pgfnodepartninebox=\box84
+\pgfnodeparteightbox=\box85
+\pgfnodepartsevenbox=\box86
+\pgfnodepartsixbox=\box87
+\pgfnodepartfivebox=\box88
+))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@headwidth=\skip55
 \f@nch@offset@elh=\skip56
@@ -611,285 +640,41 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthR=\skip68
 \@temptokenb=\toks51
 )
-(/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/logreq/logreq.sty
-Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count346
- (/usr/local/texlive/2025/texmf-dist/tex/latex/logreq/logreq.def
-File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-))
-\c@tabx@nest=\count347
-\c@listtotal=\count348
-\c@listcount=\count349
-\c@liststart=\count350
-\c@liststop=\count351
-\c@citecount=\count352
-\c@citetotal=\count353
-\c@multicitecount=\count354
-\c@multicitetotal=\count355
-\c@instcount=\count356
-\c@maxnames=\count357
-\c@minnames=\count358
-\c@maxitems=\count359
-\c@minitems=\count360
-\c@citecounter=\count361
-\c@maxcitecounter=\count362
-\c@savedcitecounter=\count363
-\c@uniquelist=\count364
-\c@uniquename=\count365
-\c@refsection=\count366
-\c@refsegment=\count367
-\c@maxextratitle=\count368
-\c@maxextratitleyear=\count369
-\c@maxextraname=\count370
-\c@maxextradate=\count371
-\c@maxextraalpha=\count372
-\c@abbrvpenalty=\count373
-\c@highnamepenalty=\count374
-\c@lownamepenalty=\count375
-\c@maxparens=\count376
-\c@parenlevel=\count377
-\blx@tempcnta=\count378
-\blx@tempcntb=\count379
-\blx@tempcntc=\count380
-\c@blx@maxsection=\count381
-\blx@maxsegment@0=\count382
-\blx@notetype=\count383
-\blx@parenlevel@text=\count384
-\blx@parenlevel@foot=\count385
-\blx@sectionciteorder@0=\count386
-\blx@sectionciteorderinternal@0=\count387
-\blx@entrysetcounter=\count388
-\blx@biblioinstance=\count389
-\labelnumberwidth=\skip69
-\labelalphawidth=\skip70
-\biblabelsep=\skip71
-\bibitemsep=\skip72
-\bibnamesep=\skip73
-\bibinitsep=\skip74
-\bibparsep=\skip75
-\bibhang=\skip76
-\blx@bcfin=\read4
-\blx@bcfout=\write4
-\blx@langwohyphens=\language91
-\c@mincomprange=\count390
-\c@maxcomprange=\count391
-\c@mincompwidth=\count392
-Package biblatex Info: Trying to load biblatex default data model...
-Package biblatex Info: ... file 'blx-dm.def' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-dm.def
-File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
-)
-Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'apa.dbx' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex-apa/apa.dbx
-File: apa.dbx 2023/03/20 v9.17 APA biblatex style data model
-)
-Package biblatex Info: Trying to load biblatex custom data model...
-Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count393
-\c@savedafterword=\count394
-\c@annotator=\count395
-\c@savedannotator=\count396
-\c@author=\count397
-\c@savedauthor=\count398
-\c@bookauthor=\count399
-\c@savedbookauthor=\count400
-\c@commentator=\count401
-\c@savedcommentator=\count402
-\c@editor=\count403
-\c@savededitor=\count404
-\c@editora=\count405
-\c@savededitora=\count406
-\c@editorb=\count407
-\c@savededitorb=\count408
-\c@editorc=\count409
-\c@savededitorc=\count410
-\c@foreword=\count411
-\c@savedforeword=\count412
-\c@holder=\count413
-\c@savedholder=\count414
-\c@introduction=\count415
-\c@savedintroduction=\count416
-\c@namea=\count417
-\c@savednamea=\count418
-\c@nameb=\count419
-\c@savednameb=\count420
-\c@namec=\count421
-\c@savednamec=\count422
-\c@translator=\count423
-\c@savedtranslator=\count424
-\c@shortauthor=\count425
-\c@savedshortauthor=\count426
-\c@shorteditor=\count427
-\c@savedshorteditor=\count428
-\c@narrator=\count429
-\c@savednarrator=\count430
-\c@execproducer=\count431
-\c@savedexecproducer=\count432
-\c@execdirector=\count433
-\c@savedexecdirector=\count434
-\c@with=\count435
-\c@savedwith=\count436
-\c@labelname=\count437
-\c@savedlabelname=\count438
-\c@institution=\count439
-\c@savedinstitution=\count440
-\c@lista=\count441
-\c@savedlista=\count442
-\c@listb=\count443
-\c@savedlistb=\count444
-\c@listc=\count445
-\c@savedlistc=\count446
-\c@listd=\count447
-\c@savedlistd=\count448
-\c@liste=\count449
-\c@savedliste=\count450
-\c@listf=\count451
-\c@savedlistf=\count452
-\c@location=\count453
-\c@savedlocation=\count454
-\c@organization=\count455
-\c@savedorganization=\count456
-\c@origlocation=\count457
-\c@savedoriglocation=\count458
-\c@origpublisher=\count459
-\c@savedorigpublisher=\count460
-\c@publisher=\count461
-\c@savedpublisher=\count462
-\c@language=\count463
-\c@savedlanguage=\count464
-\c@origlanguage=\count465
-\c@savedoriglanguage=\count466
-\c@citation=\count467
-\c@savedcitation=\count468
-\c@pageref=\count469
-\c@savedpageref=\count470
-\shorthandwidth=\skip77
-\shortjournalwidth=\skip78
-\shortserieswidth=\skip79
-\shorttitlewidth=\skip80
-\shortauthorwidth=\skip81
-\shorteditorwidth=\skip82
-\locallabelnumberwidth=\skip83
-\locallabelalphawidth=\skip84
-\localshorthandwidth=\skip85
-\localshortjournalwidth=\skip86
-\localshortserieswidth=\skip87
-\localshorttitlewidth=\skip88
-\localshortauthorwidth=\skip89
-\localshorteditorwidth=\skip90
-Package biblatex Info: Trying to load compatibility code...
-Package biblatex Info: ... file 'blx-compat.def' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-)
-Package biblatex Info: Trying to load generic definitions...
-Package biblatex Info: ... file 'biblatex.def' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.def
-File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count471
-\c@textcitetotal=\count472
-\c@textcitemaxnames=\count473
-\c@biburlbigbreakpenalty=\count474
-\c@biburlbreakpenalty=\count475
-\c@biburlnumpenalty=\count476
-\c@biburlucpenalty=\count477
-\c@biburllcpenalty=\count478
-\biburlbigskip=\muskip19
-\biburlnumskip=\muskip20
-\biburlucskip=\muskip21
-\biburllcskip=\muskip22
-\c@smartand=\count479
-)
-Package biblatex Info: Trying to load bibliography style 'apa'...
-Package biblatex Info: ... file 'apa.bbx' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex-apa/apa.bbx
-File: apa.bbx 2023/03/20 v9.17 APA biblatex references style
-Package biblatex Info: Trying to load bibliography style 'standard'...
-Package biblatex Info: ... file 'standard.bbx' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
-File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count480
-\c@bbx:relatedtotal=\count481
-)
-Package biblatex Info: Delimiter 'nameyeardelim' in context 'bib' already defined, overwriting.
-Package biblatex Info: Delimiter 'nameyeardelim' in context 'biblist' already defined, overwriting.
-Package biblatex Info: Delimiter 'nonameyeardelim' in context 'bib' already defined, overwriting.
-Package biblatex Info: Delimiter 'nonameyeardelim' in context 'biblist' already defined, overwriting.
-)
-Package biblatex Info: Trying to load citation style 'apa'...
-Package biblatex Info: ... file 'apa.cbx' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex-apa/apa.cbx
-File: apa.cbx 2023/03/20 v9.17 APA biblatex citation style
-Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined, overwriting.
-Package biblatex Info: Delimiter 'andothersdelim' in context '' already defined, overwriting.
-Package biblatex Info: Redefining '\fullcite'.
-Package biblatex Info: Redefining '\citeauthor'.
-Package biblatex Info: Redefining '\citeyear'.
-Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\cites'.
-Package biblatex Info: Redefining '\parencite'.
-Package biblatex Info: Redefining '\parencites'.
-Package biblatex Info: Redefining '\footcite'.
-Package biblatex Info: Redefining '\footcites'.
-Package biblatex Info: Redefining '\footcitetext'.
-Package biblatex Info: Redefining '\footcitetexts'.
-Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\smartcites'.
-Package biblatex Info: Redefining '\textcite'.
-Package biblatex Info: Redefining '\textcites'.
-)
-Package biblatex Info: Trying to load configuration file...
-Package biblatex Info: ... file 'biblatex.cfg' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.cfg
-File: biblatex.cfg 
-)
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Document encoding is UTF8 ....
-Package biblatex Info: ... and expl3
-(biblatex)             2025-04-14 L3 programming layer (loader) 
-(biblatex)             is new enough (at least 2020/04/06),
-(biblatex)             setting 'casechanger=expl3'.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
-Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
-))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 62.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 72.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (./resumen.aux
-LaTeX Info: Redefining \. on input line 12.
-LaTeX Info: Redefining \% on input line 12.
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 12.
+(babel)             Reported  on input line 11.
 )
 \openout1 = `resumen.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Info: Redefining \. on input line 62.
-LaTeX Info: Redefining \% on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Info: Redefining \. on input line 72.
+LaTeX Info: Redefining \% on input line 72.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -927,16 +712,16 @@ LaTeX Info: Redefining \% on input line 62.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count482
+\scratchcounter=\count346
 \scratchdimen=\dimen292
-\scratchbox=\box69
-\nofMPsegments=\count483
-\nofMParguments=\count484
+\scratchbox=\box89
+\nofMPsegments=\count347
+\nofMParguments=\count348
 \everyMPshowfont=\toks52
-\MPscratchCnt=\count485
+\MPscratchCnt=\count349
 \MPscratchDim=\dimen293
-\MPnumerator=\count486
-\makeMPintoPDFobject=\count487
+\MPnumerator=\count350
+\makeMPintoPDFobject=\count351
 \everyMPtoPDFconversion=\toks53
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -944,38 +729,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 62.
+Package hyperref Info: Link coloring ON on input line 72.
  (./resumen.out) (./resumen.out)
-\@outlinefile=\write5
-\openout5 = `resumen.out'.
+\@outlinefile=\write4
+\openout4 = `resumen.out'.
 
 
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.12).
 
-Package biblatex Info: Trying to load language 'spanish' -> 'spanish-apa'...
-Package biblatex Info: ... file 'spanish-apa.lbx' found.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex-apa/spanish-apa.lbx
-File: spanish-apa.lbx 2023/03/20 v9.17 APA biblatex localisation
-Package biblatex Info: Trying to load language 'spanish'...
-Package biblatex Info: ... file 'spanish.lbx' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/spanish.lbx
-File: spanish.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load language 'spanish'...
-Package biblatex Info: ... file 'spanish.lbx' found.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/spanish.lbx
-File: spanish.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-))
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Automatic encoding selection.
-(biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `resumen.bcf'.
-
-Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'resumen.bbl' found.
- (./resumen.bbl)
-Package biblatex Info: Reference section=0 on input line 62.
-Package biblatex Info: Reference segment=0 on input line 62.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1008,10 +769,10 @@ Package biblatex Info: Reference segment=0 on input line 62.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<~/imagenes/logo_utn_frc.jpg, id=211, 1606.0pt x 568.1225pt>
+<~/imagenes/logo_utn_frc.jpg, id=11, 1606.0pt x 568.1225pt>
 File: ~/imagenes/logo_utn_frc.jpg Graphic file (type jpg)
 <use ~/imagenes/logo_utn_frc.jpg>
-Package pdftex.def Info: ~/imagenes/logo_utn_frc.jpg  used on input line 66.
+Package pdftex.def Info: ~/imagenes/logo_utn_frc.jpg  used on input line 76.
 (pdftex.def)             Requested size: 483.69687pt x 171.10556pt.
 
 
@@ -1019,362 +780,82 @@ Package pdftex.def Info: ~/imagenes/logo_utn_frc.jpg  used on input line 66.
 
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/ricman/imagenes/logo_utn_frc.jpg>] (./resumen.toc
-LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 3.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 3.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 3.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 3.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Trying to load font information for U+esvect on input line 3.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/esvect/uesvect.fd
-File: uesvect.fd 
-)
+\tf@toc=\write5
+\openout5 = `resumen.toc'.
 
-<~/imagenes/logo_utn.png, id=254, 3011.25pt x 3538.21875pt>
+
+
+<~/imagenes/logo_utn.png, id=20, 3011.25pt x 3538.21875pt>
 File: ~/imagenes/logo_utn.png Graphic file (type png)
 <use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 37.
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 111.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.37 ...s de varias variables}{18}{subsection.5.4}
-                                                  % [1
+l.111   \newpage
+                 [1
 
- </home/ricman/imagenes/logo_utn.png>])
-\tf@toc=\write6
-\openout6 = `resumen.toc'.
-
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 101.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[2]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 144.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[3]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 182.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[4]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 217.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[5]
+ </home/ricman/imagenes/logo_utn.png>]
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 114.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 114.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 114.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 114.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 114.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 114.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 114.
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 114.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/esvect/uesvect.fd
+File: uesvect.fd 
+)
 
 File: ~/imagenes/logo_utn.png Graphic file (type png)
 <use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 258.
+Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 122.
 (pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[6]
-<imagenes/incrementos_de_funcion.png, id=314, 757.32938pt x 493.845pt>
-File: imagenes/incrementos_de_funcion.png Graphic file (type png)
-<use imagenes/incrementos_de_funcion.png>
-Package pdftex.def Info: imagenes/incrementos_de_funcion.png  used on input line 273.
-(pdftex.def)             Requested size: 483.69687pt x 315.41167pt.
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 280.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[7 <./imagenes/incrementos_de_funcion.png>]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 321.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[8]
-<imagenes/limites_iterados.png, id=331, 450.18187pt x 339.51843pt>
-File: imagenes/limites_iterados.png Graphic file (type png)
-<use imagenes/limites_iterados.png>
-Package pdftex.def Info: imagenes/limites_iterados.png  used on input line 349.
-(pdftex.def)             Requested size: 241.84843pt x 182.39952pt.
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 353.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[9]
-<imagenes/limites_radiales.png, id=337, 484.81125pt x 185.94469pt>
-File: imagenes/limites_radiales.png Graphic file (type png)
-<use imagenes/limites_radiales.png>
-Package pdftex.def Info: imagenes/limites_radiales.png  used on input line 374.
-(pdftex.def)             Requested size: 241.84843pt x 92.75931pt.
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 385.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[10 <./imagenes/limites_iterados.png> <./imagenes/limites_radiales.png>]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 432.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[11]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 473.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[12]
-<imagenes/interp_geom_derivada_paracial_x.png, id=360, 484.81125pt x 447.92343pt>
-File: imagenes/interp_geom_derivada_paracial_x.png Graphic file (type png)
-<use imagenes/interp_geom_derivada_paracial_x.png>
-Package pdftex.def Info: imagenes/interp_geom_derivada_paracial_x.png  used on input line 509.
-(pdftex.def)             Requested size: 145.11053pt x 134.0705pt.
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 515.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[13 <./imagenes/interp_geom_derivada_paracial_x.png>]
-<imagenes/interp_geom_derivada_paracial_y.png, id=372, 458.46281pt x 461.47406pt>
-File: imagenes/interp_geom_derivada_paracial_y.png Graphic file (type png)
-<use imagenes/interp_geom_derivada_paracial_y.png>
-Package pdftex.def Info: imagenes/interp_geom_derivada_paracial_y.png  used on input line 518.
-(pdftex.def)             Requested size: 145.11053pt x 146.0622pt.
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 542.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[14 <./imagenes/interp_geom_derivada_paracial_y.png>]
-<imagenes/interp_geom_diferencial.png, id=381, 710.655pt x 459.21562pt>
-File: imagenes/interp_geom_diferencial.png Graphic file (type png)
-<use imagenes/interp_geom_diferencial.png>
-Package pdftex.def Info: imagenes/interp_geom_diferencial.png  used on input line 573.
-(pdftex.def)             Requested size: 241.84843pt x 156.27838pt.
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 577.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[15]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 627.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[16 <./imagenes/interp_geom_diferencial.png>]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 657.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[17]
-<imagenes/valor_medio.png, id=401, 521.69907pt x 380.17032pt>
-File: imagenes/valor_medio.png Graphic file (type png)
-<use imagenes/valor_medio.png>
-Package pdftex.def Info: imagenes/valor_medio.png  used on input line 698.
-(pdftex.def)             Requested size: 241.84843pt x 176.23788pt.
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 701.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[18]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 731.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[19 <./imagenes/valor_medio.png>]
-<imagenes/incremento_total.png, id=417, 604.50844pt x 475.7775pt>
-File: imagenes/incremento_total.png Graphic file (type png)
-<use imagenes/incremento_total.png>
-Package pdftex.def Info: imagenes/incremento_total.png  used on input line 743.
-(pdftex.def)             Requested size: 338.58632pt x 266.48439pt.
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 757.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[20 <./imagenes/incremento_total.png>]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 830.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[21]
-<imagenes/plano-tg.png, id=433, 622.57594pt x 572.89032pt>
-File: imagenes/plano-tg.png Graphic file (type png)
-<use imagenes/plano-tg.png>
-Package pdftex.def Info: imagenes/plano-tg.png  used on input line 846.
-(pdftex.def)             Requested size: 241.84843pt x 222.54343pt.
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 852.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[22 <./imagenes/plano-tg.png (PNG copy)>]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 897.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[23]
-<imagenes/aprox-lineal.png, id=448, 636.12656pt x 204.765pt>
-File: imagenes/aprox-lineal.png Graphic file (type png)
-<use imagenes/aprox-lineal.png>
-Package pdftex.def Info: imagenes/aprox-lineal.png  used on input line 907.
-(pdftex.def)             Requested size: 483.69687pt x 155.69798pt.
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 930.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[24 <./imagenes/aprox-lineal.png (PNG copy)>]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 973.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[25]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1009.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[26]
-<imagenes/dv-direccional.png, id=466, 620.3175pt x 543.53062pt>
-File: imagenes/dv-direccional.png Graphic file (type png)
-<use imagenes/dv-direccional.png>
-Package pdftex.def Info: imagenes/dv-direccional.png  used on input line 1056.
-(pdftex.def)             Requested size: 290.22107pt x 254.29002pt.
-
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1059.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[27]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1097.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[28 <./imagenes/dv-direccional.png (PNG copy)>]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1134.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[29]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1181.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[30]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1221.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[31]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1254.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[32]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1291.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[33]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1356.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[34]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1362.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[35]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1367.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[36]
-
-File: ~/imagenes/logo_utn.png Graphic file (type png)
-<use ~/imagenes/logo_utn.png>
-Package pdftex.def Info: ~/imagenes/logo_utn.png  used on input line 1371.
-(pdftex.def)             Requested size: 29.03908pt x 34.14322pt.
-[37] (./resumen.aux
-LaTeX Info: Redefining \sptext on input line 12.
-LaTeX Info: Redefining \. on input line 12.
-LaTeX Info: Redefining \% on input line 12.
+[2] (./resumen.aux
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
 )
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
  ***********
 Package rerunfilecheck Info: File `resumen.out' has not changed.
-(rerunfilecheck)             Checksum: 45BCBEAF5D8776D48EA2E8068823B786;8779.
-Package logreq Info: Writing requests to 'resumen.run.xml'.
-\openout1 = `resumen.run.xml'.
-
+(rerunfilecheck)             Checksum: 128A83FD130E98CD1B47D002B3FFEED6;86.
  ) 
 Here is how much of TeX's memory you used:
- 43379 strings out of 469608
- 974083 string characters out of 5470607
- 2548773 words of memory out of 5000000
- 69443 multiletter control sequences out of 15000+600000
- 668455 words of font info for 117 fonts, out of 8000000 for 9000
+ 35332 strings out of 469608
+ 815274 string characters out of 5470607
+ 1309790 words of memory out of 5000000
+ 61586 multiletter control sequences out of 15000+600000
+ 657049 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,17n,105p,1087b,2813s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/esvect/vect10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/esvect/vect9.pfb>
-Output written on resumen.pdf (38 pages, 1073505 bytes).
+ 99i,16n,105p,727b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on resumen.pdf (3 pages, 182373 bytes).
 PDF statistics:
- 621 PDF objects out of 1000 (max. 8388607)
- 529 compressed objects within 6 object streams
- 135 named destinations out of 1000 (max. 500000)
- 486 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 50 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
+ 5 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

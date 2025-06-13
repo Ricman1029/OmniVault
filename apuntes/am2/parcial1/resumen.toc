@@ -48,4 +48,5 @@
 \contentsline {subsubsection}{\numberline {5.9.2}Maximización de la derivada direccional}{29}{subsubsection.5.9.2}%
 \contentsline {subsection}{\numberline {5.10}Planos tangentes a superficies}{30}{subsection.5.10}%
 \contentsline {subsection}{\numberline {5.11}Máximos y mínimos}{31}{subsection.5.11}%
-\contentsline {section}{Referencias}{32}{subsection.5.11}%
+\contentsline {section}{\numberline {6}Integrales múltiples}{36}{section.6}%
+\contentsline {section}{Referencias}{37}{section.6}%
