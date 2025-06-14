@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber resumen"] 1749790454.68986 "resumen.bcf" "resumen.bbl" "resumen" 1749793854.67373 0
+["biber resumen"] 1749889003.28718 "resumen.bcf" "resumen.bbl" "resumen" 1749889515.11682 0
   "bibliografia.bib" 1747548406.55287 753 97b8d2c126fd2a4403fa3292a45ace5b ""
-  "resumen.bcf" 1749793854.59346 134498 bbb86c910bed113c062ba76d2e0a0d61 "pdflatex"
+  "resumen.bcf" 1749889515.03512 134626 4d4b19a1307d06802190629edb29de9d "pdflatex"
   (generated)
   "resumen.bbl"
   "resumen.blg"
   (rewritten before read)
-["pdflatex"] 1749793848.28009 "resumen.tex" "resumen.pdf" "resumen" 1749793854.67399 0
+["pdflatex"] 1749889506.98679 "resumen.tex" "resumen.pdf" "resumen" 1749889515.11708 0
   "/home/ricman/imagenes/logo_utn.png" 1746771300 278751 34a500bfa1ef02b54b48f78d077633d6 ""
   "/home/ricman/imagenes/logo_utn_frc.jpg" 1746771300 55244 4d2f4db94d25b481fb9a7ee85dd2c263 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -267,16 +267,17 @@
   "imagenes/interp_geom_derivada_paracial_x.png" 1745214005 58268 b2aad81657d4a5ae3268f8b3ac3dc14c ""
   "imagenes/interp_geom_derivada_paracial_y.png" 1745214032 60023 ec3d5927fd6e606ba2da51c2e021f449 ""
   "imagenes/interp_geom_diferencial.png" 1745261194 72611 6f298781a919e0466335720ef22064e1 ""
+  "imagenes/lagrange_2_variables.png" 1749881341.26664 46149 1e903029717af8890253eda873aa966a ""
   "imagenes/limites_iterados.png" 1745192338 23181 81cecea76d138dedd44ebe628c668361 ""
   "imagenes/limites_radiales.png" 1745197767 15442 52a0acc56c3146f22a50d586179a513d ""
   "imagenes/plano-tg.png" 1747616948.30458 76378 fc4e629881da8950e94c9cb30df8fca5 ""
   "imagenes/valor_medio.png" 1745252536 37822 e8ed21752ba40d0ddb163682de91d316 ""
-  "resumen.aux" 1749793854.59157 13154 5b75ded1380991e77e00d18391f0757e "pdflatex"
-  "resumen.bbl" 1749790455.35601 11404 32050f2c602ef885fdbca96818d2fa75 "biber resumen"
-  "resumen.out" 1749793854.59346 8779 45bcbeaf5d8776d48ea2e8068823b786 "pdflatex"
-  "resumen.run.xml" 1749793854.59545 2382 99b53f1b0e16e7b97142b40a66041c29 "pdflatex"
-  "resumen.tex" 1749793849.00136 68866 a31fce33c162fa203ffab65d0fcd4dd2 ""
-  "resumen.toc" 1749793854.59545 4655 d0e090ca3535d595210c5e606a721abb "pdflatex"
+  "resumen.aux" 1749889515.03236 14087 96f071a78a1fe07dec8d59f102f32d2c "pdflatex"
+  "resumen.bbl" 1749889003.958 11404 32050f2c602ef885fdbca96818d2fa75 "biber resumen"
+  "resumen.out" 1749889515.03412 9231 84e540294718be1691000c2051d30630 "pdflatex"
+  "resumen.run.xml" 1749889515.03623 2382 99b53f1b0e16e7b97142b40a66041c29 "pdflatex"
+  "resumen.tex" 1749889505.05994 87971 51d2221c62e28daee2845312ed6c078d ""
+  "resumen.toc" 1749889515.03623 4857 ae3fb6edb0587b8f58d43192e31182ad "pdflatex"
   (generated)
   "resumen.aux"
   "resumen.bcf"

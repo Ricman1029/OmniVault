@@ -1355,8 +1355,452 @@ Si calculamos la determinante en el punto $ (1,1) $ obtenemos $ \det(H_{f}(1,1))
 \end{tikzpicture}
 \end{center}
 
+\underline{Ejemplo 4:} Una caja rectangular sin tapa debe hacerse con $ 12 m^2 $ de cartón. Determine el volumen máximo de esa caja.
+
+Podemos decir que la caja va a tener un largo $ x $, ancho $ y $, y alto $ z $. Entonces el volumen de la caja es:
+\[
+  V=xyz
+\]
+
+Este volumen $ V $ lo podemos expresar como una función de solo dos variables $ x $ y $ y $ si podemos escribir a $ z $ en función de $ (x,y) $. Para eso lo que podemos hacer es buscar cuál es el área de de las caras de la caja que tenemos que armar y despejar $ z $ de ahí.
+
+Los datos que tenemos son que contamos con $ 12m^2 $ de cartón, con los que tenemos que armar una caja rectangular sin tapa. Osea que con esos $ 12m^2 $ tenemos que poder armar las cinco caras de la caja (no son seis porque no tiene tapa). 
+
+\begin{center}
+\begin{tikzpicture} % coordenadas son (y,z,x)
+\newcommand{\ancho}{3}
+\newcommand{\alto}{3}
+\newcommand{\largo}{5}
+\coordinate (O) at (0,0,0);
+\coordinate (A) at (0,0,\ancho);
+\coordinate (B) at (0,\alto,\ancho);
+\coordinate (C) at (\largo,\alto,\ancho);
+\coordinate (D) at (\largo,0,\ancho);
+\coordinate (E) at (0,\alto,0);
+\coordinate (F) at (\largo,\alto,0);
+\coordinate (G) at (\largo,0,0);
+
+\fill [blue!30] (O) -- (A) -- (D) -- (G) -- cycle;	% abajo
+\fill [blue!30] (O) -- (E) -- (F) -- (G) -- cycle;	% atras
+\fill [blue!30] (O) -- (A) -- (B) -- (E) -- cycle;	% atras
+\fill [blue!50] (D) -- (G) -- (F) -- (C) -- cycle;	% adelante
+\fill [blue!50] (A) -- (B) -- (C) -- (D) -- cycle;	% derecha
+
+\draw   (D) edge[below, ] node{$ x $} (G)
+	(A) edge[below, ] node{$ y $} (D)
+	(A) edge[left, ] node{$ z $} (B)
+	(D) edge[, ] node{} (C)
+	(G) edge[, ] node{} (F)
+	(O) edge[dashed ] node{} (G)
+	(O) edge[dashed, ] node{} (A)
+	(O) edge[dashed, ] node{} (E)
+;
+\end{tikzpicture}
+\end{center}
+
+La suma del area de las 5 caras nos tiene que dar los $ 12m^2 $ de los que disponemos. Tenemos entonces dos caras que podemos calcular su área como $ xz $, dos caras cuya área es $ zy $ y una cara que es la de abajo $ xy $. Entonces la ecuación nos queda así:
+\[
+  12 = 2xz + 2zy + xy
+\]
+
+Ahora podemos despejar $ z $ de la ecuación:
+\begin{align*}
+  2xz + 2zy + xy &= 12\\
+  2z(x+y)+xy &= 12\\
+  \frac{12-xy}{2(x+y)} &= z
+\end{align*}
+
+Y con esto, podemos reemplazar $ z $ en la ecuación del volumen $ V $:
+\[
+	V = xy\left(\frac{12-xy}{2(x+y)}\right) = \frac{12xy-x^2y^2}{2(x+y)}
+\]
+
+Y ahora que ya tenemos nuestra función de dos variables, solo queda realizar los pasos anteriores y determinar los extremos de la función. Como estamos buscando la caja que tenga el volumen máximo, tenemos que buscar valores máximos de la función.
+
+Calculamos las derivadas parciales:
+\begin{align*}
+  \pdv[]{V}{x} = \frac{y^2(12-2xy-x^2)}{2(x+y)^2} && \pdv[]{V}{y} = \frac{x^2(12-2xy-y^2)}{2(x+y)^2}
+\end{align*}
+
+Igualamos a creo las derivadas parciales y resolvemos el sistema de ecuaciones:
+\[
+\left\{
+\begin{aligned}
+  \pdv[]{V}{x} = \frac{y^2(12-2xy-x^2)}{2(x+y)^2} = 0 \\
+  \pdv[]{V}{y} = \frac{x^2(12-2xy-y^2)}{2(x+y)^2} = 0
+\end{aligned}
+\right.
+\]  
+
+Vemos que parece que hay un punto crítico en el punto $ (0,0) $ pero en realidad no es así ya que en ese punto la ecuación no es derivable (el denominador se hace cero). Así que hay que resolver el sistema normalmente:
+\[
+  \left\{
+  \begin{aligned}
+    12-2xy-x^2 = 0 \\
+    12-2xy-y^2 = 0
+  \end{aligned}
+  \right.  \implies x^2 = y^2  \implies x = y
+\]
+
+Si reemplazamos cualquier ecuación con $ x = y $ obtenemos $ 12 - 3x^2 = 0 $, que nos da $ x = \pm 2 $, o si reemplazamos con $ y=x $, $ y=\pm 2 $. De esta manera sabemos que hay puntos críticos en $ (2,2) $ y $ (-2,-2) $.
+
+El siguiente paso sería calcular $ H_{f} $ y evaluar su determinante en los puntos críticos, pero en este caso esa matríz es dificil de calcular. Lo que sí podemos hacer es analizar el problema y pensarlo logicamente: sabemos que el volumen máximo se va a encontrar en alguno de los puntos críticos. Tenemos los $ x $ y $ y $ de los puntos críticos, pero para calcular el volumen necesitamos conocer el valor de $ z $ también. Esto lo podemos hacer facil reemplazando los valores del punto crítico en la ecuación que habíamos encontrado para $ z $ un poco mas arriba. Entonces, para $ (2,2) $ tenemos:
+\[
+  z = \frac{12-2 \cdot  2}{2(2+2)} = 1
+\]
+
+, nos queda entonces el punto $ (2,2,1) $. Y para el punto $ (-2,-2) $ tenemos:
+\[
+  z = \frac{12-(-2)\cdot (-2)}{2((-2)+(-2))} = -1
+\]
+
+, quedándonos el punto $ (-2,-2,-1) $. 
+
+Vayamos ahora a calcular el volumen en los dos puntos obtenidos y fijémonos cuál es el máximo.
+Para $ (2,2,1) $ tenemos:
+\[
+  V = 2\cdot 2\cdot 1 = 4
+\]
+
+Para $ (-2,-2,-1) $ tenemos:
+\[
+  V = (-2)\cdot (-2) \cdot (-1) = -4
+\]
+
+Un volumen negativo no tiene sentido, así que el volumen máximo de la caja que se puede alcanzar con $ 12m^2 $ de cartón es $ 4m^3 $.
+
+\subsection{Valores máximos y mínimos absolutos}
+Para una función $ f $ de una variable, el teorema de los valores extremos establece que si $ f $ es continua en un intervalo cerra $ \left[a,b\right] $, $ f $ tiene un valor mínimo absoluto y valor máximo absoluto. Esos valores se determinan evaluando $ f $ no solo en los números críticos, sino también en los puntos extremos $ a $ y $ b $. 
+
+Lo mismo que pasaba para las funciones escalares, pasa para las funciones de varias variables.
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Teorema de los valores extremos para funciones de dos variables}
+
+Si $ f $ es continua en un conjunto cerrado y acotado $ D $ en $ \mathbb{R}^{2} $, entonces $ f $ alcanza un valor máximo absoluto $ f(x_{1},y_{1}) $ y un valor mínimo absoluto $ f(x_{2},y_{2}) $ en algunos puntos en $ D $.
+}}\vspace{0.2cm}
+
+De esta manera, podemos extender el teorema de los valores extremos relativos
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{}
+
+Para determinar los valores máximo y mínimo absolutos de una función continua $ f $ en un conjunto cerrado y acotado $ D $:
+\begin{enumerate}[1.]
+  \item Determinamos los valores de $ f $ en los puntos críticos de en $ f $ en $ D $.
+
+  \item Determinamos los valores extremos de $ f $ en la frontera de $ D $.
+
+  \item El mayor de los valores de los pasos 1 y 2 es el valor máximo absoluto; el menor de esos valores es el mínimo absoluto.
+\end{enumerate}
+}}\vspace{0.2cm}
+
+\underline{Ejemplo:} Hallar los valores máximo y mínimo absoluto de la función $ f(x,y)=x^2-2xy+2y $ en el rectángulo $ D=\left\{(x,y) \;/\; 0 \leq x \leq 3  \land 0 \leq y \leq 2\right\} $.
+
+Sabemos que $ f $ es continua en el rectángulo cerrado y acotado $ D $ porque es una función polinómica. Lo primero que hacemos entonces es determinar los puntos críticos:
+\begin{align*}
+  f_{x}=2x-2y = 0 && f_{y}=-2x+2 = 0
+\end{align*}
+
+El único punto crítico es $ (1,1) $, y el valor de $ f $ ahí es $ f(1,1)=1 $.
+
+El siguiente paso es determinar los valores extremos de $ f $ en la frontera de $ D $, que en este caso son los cuatro segmentos de recta $ L_{1},L_{2},L_{3},L_{4} $ que delimitan el cuadrado $ D $.
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    width=8cm, % height=9cm,
+    %every axis/.append style={font=\Large},
+    axis lines=center,
+    xtick={0,...,3},
+    ytick={0,...,2},
+    xmin=-0.5, xmax=3.5,
+    ymin=-0.5, ymax=2.5,
+  ]
+     \addplot [domain=0:3, blue]{2}
+	     node[above, pos=0.5]{$ L_{3} $};
+     \addplot [domain=0:3, blue]{0}
+	     node[above, pos=0.5]{$ L_{1} $};
+     \addplot [domain=0:2, blue]({3},x)
+	     node[right, pos=0.5]{$ L_{2} $};
+     \addplot [domain=0:2, blue]({0},x)
+	     node[right, pos=0.5]{$ L_{4} $};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+El segmento $ L_{1} $ está dado por la ecuación $ L_{1}:y=0  \land 0\leq x\leq 3 $. Si evaluamos la recta $ L_{1} $ en la ecuación $ f $ obtenemos:
+\[
+  f(x,0)=x^2 \qquad 0\leq x\leq 3
+\]
+el valor mínimo de esta función es $ f(0,0)=0 $ y el máximo es $ f(3,0)=9 $.
+
+Para $ L_{2} $ tenemos que:
+\[
+  f(3,y)=9-4y \qquad 0\leq y\leq 2
+\]
+el valor máximo es $ f(3,0)=9 $ y su valor mínimo es $ f(3,2)=1 $.
+
+Para $ L_{3} $ tenemos:
+\[
+  f(x,2)=x^2-4x+4 \qquad 0\leq x\leq 3
+\]
+el valor mínimo de esta función es $ f(2,2)=0 $ y el valor máximo es $ f(0,2)=4 $. 
+
+Por último, para $ L_{4} $ tenemos:
+\[
+  f(0,y)=2y \qquad 0\leq y\leq 2
+\]
+que tiene valor mínimo $ f(0,0)=0 $ y valor máximo $ f(0,2)=4 $. 
+
+De esta manera, determinamos que el valor máximo en la frontera es 9 y el valor mínimo en la misma es 0.
+
+En el paso 3 tenemos que comparar los valores de la función evaluada en la frontera contra los valores de la función en los puntos críticos. Y ahora sí podemos concluir que el valor máximo absoluto de $ f $ en $ D $ es $ f(3,0)=9 $ y el valor mínimo absoluto es $ f(0,0)=f(2,2)=0 $.
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    title={$f(x,y)=x^2-2xy+2y$},
+    clip=false,
+    xlabel={$x$}, ylabel={$y$}, zlabel={$f(x,y)$},
+    view={110}{20},
+    axis lines=center,
+    %axis on top=true,
+    domain=0:3, y domain=0:2,
+    zmax=9, point meta max=9,
+  ]
+  \addplot3 [surf, shader=flat, colormap/viridis, ]
+    {x^2-2*x*y+2*y};
+  \addplot3 [only marks, mark=*, mark size=5pt, color=red,]
+    coordinates{(0,0,0)};
+  \node at (axis cs:0,0,0) [anchor=south] {$P(0,0,0)$};
+  \addplot3 [only marks, mark=*, mark size=5pt, color=red,]
+    coordinates{(2,2,0)};
+  \node at (axis cs:2,2,0) [anchor=north] {$P(2,2,0)$};
+  \addplot3 [only marks, mark=*, mark size=5pt, color=red,]
+    coordinates{(3,0,9)};
+  \node at (axis cs:3,0,9) [anchor=north] {$P(3,0,9)$};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\subsection{Multiplicadores de Lagrange}
+Hace un rato habíamos resuelto un ejercicio en el que teníamos que maximizar una función de volumen $ V = xyz $ que estaba sujeta a una restricción $ 2xz + 2yz + xy = 12 $, que representaba la condición secundaria de que el área del cartón que teníamos para armar la caja era de $ 12m^2 $. Este tipo de operaciones, en las que buscamos maximizar o minimizar una función general $ f(x,y,z) $ (en nuestro caso era la función del volumen) sujeta a una restricción de la forma $ g(x,y,z)=k $ (en nuestro caso era la función del área=12) es mucho mas fácil resolverlas usando el método de Lagrange.
+
+Este método conviene primero analizarlo para funciones de dos variables y una vez que lo entendemos geométricamente podemos estudiarlo para funciones de tres variables. Entonces, supongamos que tenemos una función $ f(x,y) $ y queremos encontrar los valores extremos cuando el punto $ (x,y) $ está restringido a residir en la curva de nivel $ g(x,y)=k $. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{imagenes/lagrange_2_variables.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Extremos de una función $ f $ restringida a la curva de nivel $ g(x,y)=k $.}
+  \label{fig:lagrange}
+\end{figure}
+
+En la Figura \ref{fig:lagrange} podemos ver la curva $ g(x,y)=k $ y varias curvas de nivel de $ f $, dadas por $ f(x,y)=c $ donde $ c= 7,8,9,10,11 $. Maximizar $ f(x,y) $ sujeta a $ g(x,y)=k $ consiste en encontrar el mayor valor de $ c $ tal que la curva $ f(x,y)=c $ interseque $ g(x,y)=k $. Podemos ver que esto sucede cuando dichas curvas apenas se tocan, osea, cuando tienen una recta tangente común. Esto significa que las rectas normales a cada curva en el punto $ (x_{0},y_{0}) $ donde se tocan son indénticas. Lo que quiere decir que los vectores gradiente son paralelos; es decir, $ \nabla f(x_{0},y_{0}) = \lambda \nabla g(x_{0},y_{0}) $ con $ \lambda  \in \mathbb{R}^{} $.
+
+El mismo argumento aplica cuando queremos encontrar valores extremos de $ f(x,y,z) $ sujeta a la restricción $ g(x,y,z)=k $, solo ahora en vez de pensar en curvas de nivel tenemos que pensar en superficies de nivel. Como los vectores gradiente de $ f $ y $ g $ son paralelos, podemos decir que si $ \nabla g(x_{0},y_{0},z_{0})\neq \vv{0} $, existe un $ \lambda  \in \mathbb{R}^{} $ tal que
+\[
+  \nabla f(x_{0},y_{0},z_{0}) = \lambda \nabla g(x_{0},y_{0},z_{0})
+\]
+
+El número $ \lambda $ se llama \textbf{multiplicador de Lagrange}.
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Método de multiplicadores de Lagrange}
+
+Para determinar los valores máximo y mínimo de $ f(x,y,z) $ sujetos a la restricción $ g(x,y,z)=k $ (suponiendo que esos valores existen y que $ \nabla g \neq \vv{0} $ en la superficie $ g(x,y,z)=k $):
+\begin{enumerate}[1.]
+  \item Determinamos todos los valores de $ x $, $ y $, $ z $ y $ \lambda $ tales que
+	  \[
+	    \nabla f(x,y,z)=\lambda \nabla g(x,y,z)
+	  \]
+	  y
+	  \[
+	    g(x,y,z)=k
+	  \]
+
+  \item Evaluamos $ f $ en todos los puntos $ (x,y,z) $ que resulten del paso (1). El mayor de esos valores es el valor máximo de $ f $; el menor es el valor mínimo de $ f $.
+\end{enumerate}
+}}\vspace{0.2cm}
+
+Cuando escribamos la ecuación $ \nabla f = \lambda \nabla g $ vamos a tener un sistema de cuatro ecuaciones con cuatro incógnitas
+\[
+  \left\{
+  \begin{aligned}
+	  f_{x} &= \lambda g_{x} \\
+	  f_{y} &= \lambda g_{y} \\
+	  f_{z} &= \lambda g_{z} \\
+	  g(x,y,z) &= k
+  \end{aligned}
+  \right.
+\]
+pero no es necesario encontrar valores para $ \lambda $.
 
 
+\underline{Ejemplo:} Se quiere armar una caja rectangular sin tapa con $ 12m^2 $ de cartón. Determine el volumen máximo de esa caja.
+
+Este es el mismo ejemplo que habíamos hecho antes, solo que ahora lo vamos a resolver usando el método de los multiplicadores de Lagrange. Igual que hicimos antes, vamos a definir $ x $, $ y $ y $ z $ como la longitud, ancho y alto de la caja. Así que la función que queremos maximizar es:
+\[
+  V=xyz
+\]
+sujeta a la restricción
+\[
+  g(x,y,z)=2xz+2yz+xy=12
+\]
+
+Lo que tenemos que hacer es buscar los valores de $ x $, $ y $, $ z $ y $ \lambda $ tales que $ \nabla V = \lambda \nabla g $ y $ g(x,y,z)=12 $. Tenemos entonces el siguiente sistema de ecuaciones:
+\[
+  \left\{
+  \begin{aligned}
+	  V_{x} &= \lambda g_{x} \\
+	  V_{y} &= \lambda g_{y} \\
+	  V_{z} &= \lambda g_{z} \\
+	  12 &=2xz + 2yz + xy 
+  \end{aligned}
+  \right. \implies \left\{
+  \begin{aligned}
+	  yz &= \lambda \left(2z+y\right) & (1)\\
+	  xz &= \lambda \left(2z+x\right) & (2)\\
+	  xy &= \lambda \left(2x+2y\right) & (3)\\
+	  12 &=2xz + 2yz + xy & (4)\\
+  \end{aligned}
+  \right.
+\]
+
+Y ahora hay que ingeniarselas y resolver el sistema.
+
+Lo primero que vemos es que $ \lambda $ no puede ser cero porque implicaría que $ yz=xz=xy $ y esto es imposible por la última ecuación. Por otro lado, podemos multiplicar (1) por $ x $, (2) por $ y $ y (3) por $ z $ y vemos que nos quedan los tres lados izquierdos de la ecuación todos iguales.
+\[
+  \left\{
+  \begin{aligned}
+	  xyz &= \lambda \left(2xz+xy\right) & (5)\\
+	  yxz &= \lambda \left(2yz+yx\right) & (6)\\
+	  zxy &= \lambda \left(2zx+2zy\right) & (7)\\
+	  12 &=2xz + 2yz + xy & (4)
+  \end{aligned}
+  \right.
+\]
+
+De (6) y (7) podemos decir que 
+\[
+  2xz + xy = 2yz + xy
+\]
+que nos dice que $ xz=yz $. Pero $ z\neq 0 $ porque el volúmen de la caja no puede ser cero, así que $ x=y $. De (7) y (8) tenemos que
+\[
+  2yz + xy = 2xz + 2yz
+\]
+de donde sale que $ xy=2xz $, y por lo tanto $ y=2z $ ya que $ x\neq 0 $. Y ya resolvimos nuestro sistema de ecuaciones. Ahora podemos poner $ x=y=2z $ en (4) y obtenemos
+\[
+  4z^2+4z^2+4z^2 = 12
+\]
+
+Como $ x $, $ y $ y $ z $ son positivas (porque no podemos tener volumen o áreas negativas), se tiene que $ z=1 $, así que $ x=y=2 $. Y esta respuesta es la misma a la que habíamos llegado antes.
+
+\underline{Ejemplo 2:} Determinar los valores extremos de la función $ f(x,y)=x^2+2y^2 $ en el círculo $ x^2+y^2=1 $
+
+Usando el método de Lagrange resolvemos el sistema $ \nabla f = \lambda \nabla g $.
+\[
+  \left\{
+  \begin{aligned}
+	  2x &= \lambda 2x & (1) \\
+	  4y &= \lambda 2y & (2) \\
+	  1 &= x^2 + y^2 & (3)
+  \end{aligned}
+  \right.
+\]
+
+De (1) sabemos que $ x=0 $ o $ \lambda = 1 $. Si $ x=0 $, entonces (3) da $ y=\pm 1 $. Si $ \lambda = 1 $, entonces $ y=0 $ por la ecuación (2), así que (3) da $ x=\pm1 $. Por lo tanto, $ f $ tiene posibles valores extremos en los puntos $ (0,1) $, $ (0,-1) $, $ (1,0) $ y $ (-1,0) $. Si evaluamos $ f $ en dichos puntos tenemos 
+\begin{align*}
+  f(0,1) = 2 & f(0,-1)=2 & f(1,0)=1 & f(-1,0) = 1
+\end{align*}
+
+De manera que el valor máximo de $ f $ en el círculo $ x^2+y^2=1 $ es $ f(0,\pm1)=2 $ y el valor mínimo es $ f(\pm1,0)=1 $
+
+\underline{Ejemplo 3:} Hallar los puntos en la esfera $ x^2+y^2+z^2=4 $ que están mas cerca y mas lejos del punto $ (3,1,-1) $.
+
+La distancia desde un punto $ (x,y,z) $ al punto $ (3,1,-1) $ es 
+\[
+  d=\sqrt[]{(x-3)^2+(y-1)^2+(z+1)^2}
+\]
+
+Podemos decir que nuestra función $ f $ es
+\[
+  f(x,y,z)=d^2=(x-3)^2+(y-1)^2+(z+1)^2
+\]
+
+la restricción es que el punto $ (x,y,z) $ reside en la esfera, osea
+\[
+  g(x,y,z)=x^2+y^2+z^2=4
+\]
+
+Planteamos las ecuaciones $ \nabla f=\lambda \nabla g $ y $ g=4 $.
+\[
+  \left\{
+  \begin{aligned}
+	  2(x-3) &= \lambda 2x & (1) \\
+	  2(y-1) &= \lambda 2y & (2) \\
+	  2(z+1) &= \lambda 2z & (3) \\
+	  x^2 + y^2 + z^2 &= 4 & (4)
+  \end{aligned}
+\right.
+\]
+
+En este caso nos conviene despejar $ x $, $ y $ y $ z  $ en función de $ \lambda $ y sustituir después esos valores en (4). De (1) tenemos que 
+\[
+  x-3=\lambda x  \implies x(1-\lambda)=3  \implies x=\frac{3}{1-\lambda}
+\]
+
+De igual manera obtenemos
+\begin{align*}
+  y = \frac{1}{1-\lambda} & z = \frac{(-1)}{1-\lambda}
+\end{align*}
+
+Reemplazando en (4) tenemos
+\[
+  \frac{3^2}{(1-\lambda)^2}+\frac{1^2}{(1-\lambda)^2}+\frac{(-1)^2}{(1-\lambda)^2}=4
+\]
+y de ahí llegamos a
+\[
+	(1-\lambda)^2=\frac{11}{4}  \implies 1-\lambda=\pm \frac{\sqrt[]{11}}{2}  \implies \lambda = 1 \pm \frac{\sqrt[]{11}}{2}
+\]
+
+Estos valores de $ \lambda $ dan los siguientes puntos $ (x,y,z) $:
+\begin{align*}
+	\left(\frac{6}{\sqrt[]{11}},\frac{2}{\sqrt[]{11}},-\frac{2}{\sqrt[]{11}}\right) && \text{y} && \left(-\frac{6}{\sqrt[]{11}},-\frac{2}{\sqrt[]{11}},\frac{2}{\sqrt[]{11}}\right)
+\end{align*}
+
+Al calcular la distancia desde estos puntos al punto $ (3,1,-1) $ vemos que el primero es el punto mas cercano, y el segundo es el mas alejado.
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    title={$f(x,y)=x^2+y^2+z^2$},
+    clip=false,
+    xlabel={$x$}, ylabel={$y$}, zlabel={$f(x,y)$},
+    view={135}{60},
+    axis lines=center,
+    %axis on top=true,
+    domain=0:360,
+    y domain=0:180,
+    xmin=-7, xmax=7,
+    ymin=-7, ymax=7,
+    zmin=-7, zmax=7,
+  ]
+  \addplot3 [surf, shader=flat, colormap/viridis,]
+	(
+	  {4*sin(y)*cos(x)},
+	  {4*sin(y)*sin(x)},
+	  {4*cos(y)}
+	);
+  \addplot3 [only marks, mark=*, mark size=5pt, color=red,]
+    coordinates{(3,1,-1)};
+  \node at (axis cs:3,1,-1) [anchor=north] {$P(3,1,-1)$};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
 
 
 \newpage
