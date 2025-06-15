@@ -24,7 +24,9 @@
 \usepackage{pgfplots}
 \usepackage{tikz, color}
 \usepackage{tikz-3dplot}
-\pgfplotsset{width=15cm, compat=1.12}
+\pgfplotsset{width=15cm, compat=1.18}
+\usepgfplotslibrary{external}
+\tikzexternalize[prefix=figs/]
 
 
 % Encabezados
@@ -1226,7 +1228,7 @@ Al evaluar la función en el punto $ (1, y) $ nos queda $ (y-3)^2 \geq 0 $, y cu
   \begin{axis}[
     title={$ f(x,y)=(x-1)^2+(y-3)^2+4 $},
     xlabel=$x$, ylabel=$y$, zlabel={$f(x,y)$},
-    view={110}{10},
+    view={120}{10},
     xmin=0, xmax=6,
     ymin=0, ymax=6,
     zmin=0, zmax=15,
@@ -1337,8 +1339,10 @@ Si calculamos la determinante en el punto $ (1,1) $ obtenemos $ \det(H_{f}(1,1))
     axis lines=center,
     axis on top=true,
     domain=-2:2, y domain=-2:2,
+    xmin=-2, xmax=2,
+    ymin=-2, ymax=2,
     zmax=5, point meta max=5,
-    samples=40,
+    samples=60,
   ]
   \addplot3 [surf, shader=flat, colormap/viridis,]
 	  {pow(x,4)+pow(y,4)-4*x*y+2};
@@ -1775,36 +1779,99 @@ Estos valores de $ \lambda $ dan los siguientes puntos $ (x,y,z) $:
 Al calcular la distancia desde estos puntos al punto $ (3,1,-1) $ vemos que el primero es el punto mas cercano, y el segundo es el mas alejado.
 
 \begin{center}
+\pgfmathparse{6/sqrt(11)} \let\acoord\pgfmathresult
+\pgfmathparse{2/sqrt(11)} \let\bcoord\pgfmathresult
+\pgfmathparse{-2/sqrt(11)} \let\ccoord\pgfmathresult
+\pgfmathparse{-6/sqrt(11)} \let\dcoord\pgfmathresult
+
+{\large $x^2+y^2+z^2=4$}
+
 \begin{tikzpicture}
   \begin{axis}[
-    title={$f(x,y)=x^2+y^2+z^2$},
     clip=false,
-    xlabel={$x$}, ylabel={$y$}, zlabel={$f(x,y)$},
-    view={135}{60},
+    xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+    xtick={-2,2}, ytick={-2,2},
+    view={135}{40},
     axis lines=center,
-    %axis on top=true,
+    axis on top=true,
     domain=0:360,
     y domain=0:180,
-    xmin=-7, xmax=7,
-    ymin=-7, ymax=7,
-    zmin=-7, zmax=7,
+    xmin=-3, xmax=3,
+    ymin=-3, ymax=3,
+    zmin=-3, zmax=3,
   ]
   \addplot3 [surf, shader=flat, colormap/viridis,]
 	(
-	  {4*sin(y)*cos(x)},
-	  {4*sin(y)*sin(x)},
-	  {4*cos(y)}
+	  {2*sin(y)*cos(x)},
+	  {2*sin(y)*sin(x)},
+	  {2*cos(y)}
 	);
   \addplot3 [only marks, mark=*, mark size=5pt, color=red,]
     coordinates{(3,1,-1)};
   \node at (axis cs:3,1,-1) [anchor=north] {$P(3,1,-1)$};
+  \addplot3 [only marks, mark=*, mark size=5pt, color=cyan,]
+	  coordinates{ (\acoord,\bcoord,\ccoord) };
+  \node at (axis cs:\acoord,\bcoord,\ccoord) [anchor=east] {$P(\frac{6}{\sqrt[]{11}},\frac{2}{\sqrt[]{11}},\frac{-2}{\sqrt[]{11}})$};
+  \addplot3 [only marks, mark=*, mark size=5pt, color=cyan,]
+    coordinates{(\dcoord,\ccoord,\bcoord)};
+  \node at (axis cs:\dcoord,\ccoord,\bcoord) [anchor=west] {$P(\frac{-6}{\sqrt[]{11}},\frac{-2}{\sqrt[]{11}},\frac{2}{\sqrt[]{11}})$};
   \end{axis}
 \end{tikzpicture}
 \end{center}
 
+\subsubsection{Dos restricciones}
+También nos pueden pedir que encontremos los valores máximo y mínimo de una función $ f(x,y,z) $ sujeta a dos restricciones de la forma $ g(x,y,z)=k $ y $ h(x,y,z)=c $. Geométricamente, esto significa que se buscan los valores extremos de $ f $ cuando $ (x,y,z) $ está restringido a residir en la \textit{curva de intersección} $ C $ de las superficies de nivel $ g(x,y,z)=k $ y $ h(x,y,z)=c $.
 
-\newpage
+Supongamos que $ f $ tiene un extremo en un punto $ P(x_{0},y_{0},z_{0}) $; sabemos que $ \nabla f $ va a ser ortogonal a la curva $ C $ en el punto $ P $. Pero también sabemos que $ \nabla g $ es ortogonal a $ g(x,y,z)=k $ y que $ \nabla h $ es ortogonal a $ h(x,y,z)=c $, así que $ \nabla g $ y $ \nabla h $ son ortogonales a $ C $. 
+
+Cuando teníamos el caso de una sola restricción habíamos dicho que $ \nabla f=\lambda \nabla g $ y esto lo podemos pensar como que $ \nabla f $ es combinación lineal de $ \nabla g $. Exactamente el mismo concepto es el que tenemos que aplicar en el caso de dos restricciones: $ \nabla f $ debe ser combinación lineal de los vectores $ \nabla g $ y $ \nabla h $. Esto significa que el vector gradiente $ \nabla f(x_{0},y_{0},z_{0}) $ está en el plano determinado por $ \nabla g(x_{0},y_{0},z_{0}) $ y $  \nabla g(x_{0},y_{0},z_{0})  $.
+\[
+	\boxed{\nabla f(x_{0},y_{0},z_{0})=\lambda \nabla g(x_{0},y_{0},z_{0}) + \mu \nabla h(x_{0},y_{0},z_{0})} 
+\]
+
+Los valores $ \nabla $ y $ \mu $ son denominados multiplicadores de Lagrange.
+
+Al haber ahora dos restricciónes, el sistema de ecuaciones que tendremos que resolver será de cinco ecuaciones con cinco incógnitas.
+\[
+  \left\{
+  \begin{aligned}
+    f_{x}=\lambda g_{x} + \mu h_{x} \\
+    f_{y}=\lambda g_{y} + \mu h_{y} \\
+    f_{z}=\lambda g_{z} + \mu h_{z} \\
+    g(x,y,z)=k \\
+    h(x,y,z)=c
+  \end{aligned}
+  \right.
+\]
+
+\underline{Ejemplo:} Encontrar el valor máximo de la función $ f(x,y,z)=x+2y+3z $ en la curva de intersección del plano $ x-y+z=1 $ y el cilindro $ x^2+y^2=1 $.
+
+Planteamos el sistema de ecuaciones:
+\[
+  \left\{
+  \begin{aligned}
+	  1 = \lambda + 2x\mu &&(1) \\
+	  2 = -\lambda + 2y\mu &&(2) \\
+	  3 = \lambda &&(3) \\
+	  x-y+z=1 &&(4) \\
+	  x^2 + y^2 = 1 &&(5)
+  \end{aligned}
+  \right.
+\]
+
+De (3) sale $ \lambda = 3 $, que si lo ponemos en (1) nos queda $ 2x\mu = -2 \implies x=-1/\mu $. Podemos hacer lo mismo en (2) para obtener $ y=5/(2\mu) $. Ahora podemos sustituir $ x $ y $ y $ en (5):
+\[
+  \frac{1}{\mu^2} + \frac{25}{4\mu^2} = 1
+\]
+y por lo tanto, $ \mu^2=\frac{29}{4} \implies \mu=\pm \sqrt[]{29}/2 $. Entonces, $ x=\mp 2/\sqrt[]{29} $, $ y=\pm 5/\sqrt[]{29} $ y podemos meter estos valores en (4) de manera que $ z=1-x+y=1\pm 7/\sqrt[]{29} $. Los valores correspondientes de $ f $ son:
+\[
+  \mp \frac{2}{\sqrt[]{29}}+2\left(\pm\frac{5}{\sqrt[]{29}}\right)+3\left(1\pm\frac{7}{\sqrt[]{29}}\right)=3\pm \sqrt[]{29}
+\]
+
+De esta manera, encontramos el valor máximo de $ f $ en la curva dada y es $ 3+\sqrt[]{29} $.
+
 \section{Integrales múltiples}
+
 
 
 
