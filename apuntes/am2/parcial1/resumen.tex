@@ -25,6 +25,7 @@
 \usepackage{tikz, color}
 \usepackage{tikz-3dplot}
 \pgfplotsset{width=15cm, compat=1.18}
+\usepgfplotslibrary{fillbetween}
 \usepgfplotslibrary{external}
 \tikzexternalize[prefix=figs/]
 
@@ -1871,8 +1872,255 @@ y por lo tanto, $ \mu^2=\frac{29}{4} \implies \mu=\pm \sqrt[]{29}/2 $. Entonces,
 De esta manera, encontramos el valor máximo de $ f $ en la curva dada y es $ 3+\sqrt[]{29} $.
 
 \section{Integrales múltiples}
+\subsection{Integrales dobles en rectángulos}
+En análisis 1 habíamos visto las integrales para las funciones de una variable. Si $ f(x) $ se define para $ a\leq x\leq b $, lo primero que hacíamos era dividir el intervalo $ \left[a,b\right] $ en $ n $ subintervalos $ \left[x_{i-1},x_{i}\right] $ de igual ancho $ \Delta x=(b-a)/n $ y sumábamos todos los intervalos (armábamos la suma de Riemann)
+\[
+  \sum_{i=1}^{n} f(x_{i})\Delta x
+\]
+y decíamos que la integral de $ f(x) $ de $ a $ a $ b $ era el resultado de la suma de Riemann cuando $ x $ tiende a infinito.
+\[
+  \int_{a}^{b} f(x) \,dx = \lim_{n \to \infty}\sum_{i=1}^{n} f(x)\Delta x
+\]
 
+El resultado de la integral lo podíamos interpretar como el área bajo la curva en el segmento $ \left[a,b\right] $.
 
+En el caso de funciones de dos variables la idea es la misma, solo que ahora tenemos que tener en cuenta que estamos trabajando con una dimensión mas. Cuando nosotros queramos definir la integral en cierto intervalo, este intervalo ahora va a tener dos dimensiones así que podría ser un cuadrado por ejemplo, o una circunferencia, o una elipse, etc. Entonces vamos a tener que integrar la función $ f(x,y) $ (que ahora en vez de ser una curva en $ \mathbb{R}^{2} $ es una superficie en $ \mathbb{R}^{3} $) dentro del área que nos pidan.
+
+Si consideramos una función $ f $ de dos variables definida en un rectángulo cerrado 
+\[
+  R = \left[a,b\right]\times \left[c,d\right] = \left\{(x,y) \in \mathbb{R}^{2} \;/\; a\leq x\leq b  \land c\leq y\leq d\right\}
+\]
+, la gráfica de $ f $ es una superficie con ecuación $ z=f(x,y) $. Llamemos $ S $ al sólido que se encuentra entre el rectángulo $ R $ y la función $ f $
+\[
+  S=\left\{(x,y,z) \in \mathbb{R}^{3} \;/\; 0\leq z\leq f(x,y) \land (x,y) \in \mathbb{R}^{}\right\}
+\]
+, lo que nos permite la integral doble es obtener el volúmen de $ S $.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imagenes/vol-integrado-1.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Superficie $ z=f(x,y) $ sobre el rectángulo $ R $.}
+  \label{fig:integrales-1}
+\end{figure}
+
+Como dijimos, la idea para resolver este cálculo es el mismo que se usa cuando teníamos integrales simples. Lo que vamos a hacer ahora es dividir el rectángulo $ R $ en cuadraditos mas chicos. Esto se hace dividiendo el intervalo $ \left[a,b\right] $ en $ m $ subintervalos $ \left[x_{i-1},x_{i}\right] $ de igual ancho $ \Delta x=(b-a)/m $ y dividiendo $ \left[c,d\right] $ en $ n $ subintervalos $ \left[y_{j-1},y_{j}\right] $ de igual ancho $ \Delta y=(d-c)/n $. Sabemos que cada cuadradito que nos quede tendrá un área determinada, y si multiplicamos ese área por el valor en $ z $ que está asociado al mismo, tenemos el volúmen que hay entre cada cuadradito y la función $ z=f(x,y) $. Esto lo repetimos para todos los cuadrados que tengamos y vamos a tener una aproximación del volúmen de $ S $. 
+\[
+  V\approx \sum_{i=1}^{m} \sum_{j=1}^{n} f(x_{ij},y_{ij}\Delta A  
+\]
+
+Esta doble sumatoria quiere decir que para cada $ i $ se hace la sumatoria desde $ j=1 $ hasta $ j=n $ del producto de $ f(x,y)\cdot \Delta A $. En este caso, la sumatoria de $ j=1 $ se repite $ m $ veces; una para cada $ i $.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{imagenes/vol-integrado-2.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Visualización de la suma doble de Riemann.}
+  \label{fig:integrales-2}
+\end{figure}
+
+A medida que los cuadrados seán mas y mas chicos, y haya mas y mas cuadrados nos vamos a ir acercando cada vez mas al valor real del volumen. Para lograr esto podemos calcular la suma cuando $ m $ y $ n $ se tienden a infinito, y esto es la definición de una integral doble.
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Integral doble}
+
+La \textbf{integral doble} de $ f $ en el rectángulo $ R $ es 
+\[
+  \iint_{R} f(x,y) \,dA = \lim_{m,n \to \infty} f(x_{ij},y_{ij})\Delta A
+\]
+}}\vspace{0.2cm}
+
+\subsubsection{Integrales iteradas}
+Todo esto está muy lindo, pero es muy dificil evaluar las integrales a partir de su definición (mucho mas las integrales dobles). Lo bueno es que las integrales dobles las podemos expresar como integrales iteradas, que después las podemos evaluar como integrales simples.
+
+Supongamos que $ f $ es una función de dos variables integrable en el rectángulo $ R=\left[a,b\right]\times \left[c,d\right] $. Lo que podemos hacer es algo parecido a lo que hacíamos con las derivadas parciales: integramos respecto de alguna variable, digamos $ y $ desde $ c $ hasta $ d $. De esta manera, $ \int_{c}^{d} f(x,y) \,dy $ es un número que depende de $ x $ (ya que acabamos de integrar la variable $ y $), así que la podemos pensar como una función de $ x $:
+\[
+  H(x)=\int_{c}^{d} f(x,y) \,dy
+\]
+
+Y ahora podemos integrar a la función $ H(x) $ desde $ a $ hasta $ b $ como si fuese una integral simple (de hecho, \textbf{es} una integral simple ahora):
+\[
+  \int_{a}^{b} H(x) \,dx
+\]
+
+Como sabemos que $ H(x) $ es la integral de $ f(x,y) $ respecto de $ y $, podemos pensar a la integral doble de la siguiente manera:
+\[
+  \int_{a}^{b} H(x) \,dx = \int_{a}^{b} \left[\int_{c}^{d} f(x,y) \,dy\right] \,dx = \int_{a}^{b} \int_{c}^{d} f(x,y) \,dy\,dx
+\]
+
+\underline{Ejemplo:} Evalar la siguiente integral:
+\[
+  \int_{0}^{3} \int_{1}^{2} x^2y \,dy\,dx
+\]
+
+Por la notación que nos dieron, sabemos que primero tenemos que integrar en $ y $, y el resultado que obtenemos lo integramos en $ x $.
+
+\[
+  \int_{1}^{2} x^2y \,dy = \Bigg.x^2\frac{y^2}{2}\Bigg]_{1}^{2} = x^2\left(\frac{4}{2}\right) - x^2\left(\frac{1}{2}\right) = \frac{3}{2}x^2
+\]
+
+Ahora tenemos que integrar el resultado obtenido respecto de $ x $
+\[
+  \int_{0}^{3} \frac{3}{2}x^2 \,dx = \Bigg.\frac{x^3}{2}\Bigg]_{0}^{3}=\frac{27}{2}
+\]
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Teorema de Fubini}
+
+Si $ f $ es continua en el rectángulo $ R=\left\{(x,y) \;/\; a\leq x\leq b \land c\leq y\leq d\right\} $, entonces
+\[
+  \iint_{R} f(x,y) \,dA = \int_{a}^{b} \int_{c}^{d} f(x,y) \,dy\,dx = \int_{c}^{d} \int_{a}^{b} f(x,y) \,dx\,dy
+\]
+}}\vspace{0.2cm}
+
+\underline{Ejemplo:} Podemos calcular la integral del ejemplo anterior pero ahora integrando al revés ya que $ f(x,y)=x^2y $ es continua.
+
+Ahora primero intgramos respecto de $ x $.
+\[
+  \int_{0}^{3} x^2y \,dx = \Bigg.\frac{x^3}{3}y\Bigg]_{0}^{3} = 9
+\]
+
+Y luego integramos el resultado de la operación respecto de $ y $.
+\[
+  \int_{1}^{2} 9y \,dy = \Bigg.\frac{9}{2}y^2\Bigg]_{1}^{2} = 18 - \frac{9}{2} = \frac{27}{2}
+\]
+
+Vemos que llegamos al mismo resultado a pesar de haber integrado en distinto orden. Esto solo pasa cuando se cumplen las condiciones del teorema de Fubini.
+
+\underline{Ejemplo de ejercicio de integrales:} Determinar el volumen del sólido $ S $ acotado por el paraboloide elíptico $ x^2+2y^2+z=16 $, los planos $ x=2 $ y $ y=2 $, y los tres planos coordenados.
+
+Lo primero que tenemos que hacer es determinar cuál es la integral que nos pide la consigna que calculemos, y sobre qué región quiere que la calculemos. La consigna habla de un sólido, habíamos visto al principio de esta sección que a la integral doble la podíamos pensar como el volumen del sólido $ S $, estando el sólido por debajo de la función $ z = f(x,y) $ y por encima del rectángulo $ R $.
+
+En este caso la función $ z=f(x,y) $ la despejamos de la ecuación del paraboloide elíptico: $ z = 16-x^2-y^2 $, y el cuadrado $ R $ está dado por los puntos de intersección de los planos coordenados con los planos $ x=2 $ y $ y=2 $. De esta manera, $ R=\left[0,2\right]\times \left[0,2\right] $.
+\begin{align*}
+  V &= \iint_{R} 16-x^2-y^2 \,dA = \int_{0}^{2} \int_{0}^{2} 16-x^2-y^2 \,dx\,dy\\
+   &= \int_{0}^{2} \Bigg.16x-\frac{1}{3}x^3-2y^2x\Bigg]_{x=0}^{x=2} \,dy\\
+   &= \int_{0}^{2} \frac{88}{3}-4y^2 \,dy = \Bigg.\frac{88}{3}y-\frac{4}{3}y^3\Bigg]_{0}^{2}=48
+\end{align*}
+
+En el caso especial en que $ f(x,y) $ pueda escribirse como el producto de una función que dependa solo de $ x $ y otra que dependa solo de $ y $, podemos escribir la integral doble de una forma mas simple de leer gracias al teorema de Fubini.
+
+Supongamos que tenemos la función $ f(x,y) $ y que la podemos reescribir como $ f(x,y)=g(x)\cdot h(y) $. Entonces:
+\[
+  \iint_{R} f(x,y) \,dA = \int_{c}^{d} \int_{a}^{b} g(x)\cdot h(y) \,dx\,dy = \int_{c}^{d} \left[\int_{a}^{b} g(x)\cdot h(y) \,dx\right] \,dy
+\]
+
+Pero cuando integramos respecto de $ x $, $ y $ es una constante así que la podemos sacar afuera de la integral
+\[
+  \int_{c}^{d} \left[\int_{a}^{b} g(x)\cdot h(y) \,dx\right] \,dy = \int_{c}^{d} \left[h(y)\cdot \left(\int_{a}^{b} g(x) \,dx\right)\right] \,dy = \int_{a}^{b} g(x) \,dx\cdot \int_{c}^{d} h(y) \,dy
+\]
+
+\subsubsection{Valor promedio}
+El valor promedio de una función $ f $ de una variable en un intervalo $ \left[a,b\right] $ lo podemos calcular como
+\[
+  f_{prom}=\frac{1}{b-a}\int_{a}^{b} f(x) \,dx
+\]
+y tiene sentido. Si queremos calcular el promedio de algo, por ejemplo la nota promedio en una clase, lo que hacemos es sumar las notas de todos los trabajos que había que entregar, y dividimos esa suma por la cantidad de trabajos. Esta fórmula hace lo mismo: la integral suma los resultados de los infinitos puntos en el intervalo $ \left[a,b\right] $ y luego divide ese resultado por el intervalo $ \left[a,b\right] $.
+
+Para funciones de dos variables, el \textbf{valor promedio} se define de forma similar
+\[
+  f_{prom}=\frac{1}{A(R)}\iint_{R} f(x,y) \,dA
+\]
+donde $ A(R) $ es el área de R.
+
+\subsection{Integrales dobles en regiones generales}
+Ya aprendimos a integrar funciones dentro de regiones cuadradas. Pero la idea es que podamos integrar regiones $ D $ que sean de cualquier forma. Para encontrar una forma de lograr esto vamos a usar un par de truquitos, junto con el teorema de Fubini. 
+
+Si nos piden integrar $ f $ dentro de una región $ D $ que no es un rectángulo, lo primero que vamos a hacer es usar un rectángulo ;) (estos pasos que vienen ahora son simplemente para poder ver de dónde sale la fórmula que nos interesa, no los vamos a volver a usar probablemente). Lo primero que hacemos es armar un rectángulo $ R $ que encierre a la región $ D $ y definimos una nueva función $ F(x,y) $ con dominio $ R $ de la siguiente forma:
+\[
+  F(x,y)=
+  \begin{cases}
+  f(x,y) & \text{si (x,y) está en $ D $}\\
+  0 & \text{si (x,y) está en $ R $ pero no en $ D $}
+  \end{cases}
+\]
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{imagenes/integral-region-general.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Visualización de la región $ R $ que contiene a $ D $.}
+  \label{fig:integral-region-general}
+\end{figure}
+
+Se dice que una región $ D $ en un plano es de \textbf{tipo I} si la podemos definir entre las gráficas de dos funciones continuas de $ x $, es decir
+\[
+  D=\left\{(x,y)  \;/\;  a\leq x\leq b, g_{1}(x)\leq y\leq g_{2}(x)\right\}
+\]
+donde $ g_{1} $ y $ g_{2} $ son continuas en $ \left[a,b\right] $. En la figura \ref{fig:regiones-tipo-1} se ven algunos ejemplos de estas regiones.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{imagenes/regiones-tipo-1.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Algunas regiones tipo I.}
+  \label{fig:regiones-tipo-1}
+\end{figure}
+
+Para evaluar $ \iint_{D} f(x,y) \,dA $ cuando $ D $ es una región de tipo I, elegimos un rectángulo $ R=\left[a,b\right]\times \left[c,d\right] $ que contenga $ D $, y definimos $ F $ como dijimos mas arriba. Así, por el teorema de Fubini,
+\[
+  \iint_{D} f(x,y) \,dA=\iint_{R} F(x,y) \,dA=\int_{a}^{b} \int_{c}^{d} F(x,y) \,dy\,dx
+\]
+
+Al estar en una región de tipo I, y por cómo está definida $ F $ sabemos que $ F(x,y)=0 $ si $ y<g_{1}(x) $ o $ y>g_{2}(x) $. Por lo tanto,
+\[
+  \int_{c}^{d} F(x,y) \,dy = \int_{g_{1}(x)}^{g_{2}(x)} F(x,y) \,dy=\int_{g_{1}(x)}^{g_{2}(x)} f(x,y) \,dy
+\]
+porque $ F(x,y)=f(x,y) $ cuando $ g_{1}(x)\leq y\leq g_{2}(x) $.
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{}
+
+Si $ f $ es continua en una región $ D $ tipo I, tal que 
+\[
+  D=\left\{(x,y) \;/\; a\leq x\leq b \land g_{1}(x)\leq y\leq g_{2}(x)\right\}
+\]
+entonces
+\[
+  \iint_{D} f(x,y) \,dA = \int_{a}^{b} \int_{g_{1}(x)}^{g_{2}(x)} f(x,y) \,dy\,dx
+\]
+}}\vspace{0.2cm}
+
+También existen las regiones en un plano de \textbf{tipo II}, que pueden expresarse como
+\[
+  D=\left\{(x,y) \;/\; c\leq y\leq d \land h_{1}(y)\leq x\leq h_{2}(y)\right\}
+\]
+donde $ h_{1} $ y $ h_{2} $ son continuas.
+
+Usando los mismo métodos que usamos recién, podemos demostrar que
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{}
+\[
+  \iint_{D} f(x,y) \,dA=\int_{c}^{d} \int_{h_{1}(y)}^{h_{2}(y)} f(x,y) \,dx\,dy
+\]
+donde $ D $ es una región de tipo II.
+}}\vspace{0.2cm}
+
+\underline{Ejemplo 1:} Evluar $ \iint_{D} x+2y \,dA $, donde $ D $ es la región acotada por las parábolas $ y=2x^2 $ y $ y=1+x^2 $.
+
+\begin{figure}[htbp]
+  \centering
+  {\large }
+  \tikzsetnextfilename{regiones-1}
+  \begin{tikzpicture}
+    \begin{axis}[
+      clip=false,
+      xlabel={$x$}, ylabel={$y$},
+      axis lines=center,
+      axis on top=true,
+      width=10cm,
+    ]
+      \addplot [black, thick, name path=A, domain=-1.2:1.2] {2*x^2}
+          node[right, pos=0.60] {$ y=2x^2 $};
+      \addplot [black, thick, name path=B, domain=-1.2:1.2,] {1+x^2}
+	  node[above, pos=0.60, yshift=10pt] {$ y=1+x^2 $};
+      \addplot [blue!30] fill between [of=A and B, soft clip={domain=-1:1}];
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Ejemplo 1}
+  \label{grf:regiones1}
+\end{figure}
 
 
 \newpage
