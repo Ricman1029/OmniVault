@@ -25,6 +25,7 @@
 \usepackage{tikz, color}
 \usepackage{tikz-3dplot}
 \pgfplotsset{width=15cm, compat=1.18}
+\usetikzlibrary{backgrounds}
 \usepgfplotslibrary{fillbetween}
 \usepgfplotslibrary{external}
 \tikzexternalize[prefix=figs/]
@@ -1955,12 +1956,12 @@ Como sabemos que $ H(x) $ es la integral de $ f(x,y) $ respecto de $ y $, podemo
 Por la notación que nos dieron, sabemos que primero tenemos que integrar en $ y $, y el resultado que obtenemos lo integramos en $ x $.
 
 \[
-  \int_{1}^{2} x^2y \,dy = \Bigg.x^2\frac{y^2}{2}\Bigg]_{1}^{2} = x^2\left(\frac{4}{2}\right) - x^2\left(\frac{1}{2}\right) = \frac{3}{2}x^2
+  \int_{1}^{2} x^2y \,dy = \Bigg[x^2\frac{y^2}{2}\Bigg]_{1}^{2} = x^2\left(\frac{4}{2}\right) - x^2\left(\frac{1}{2}\right) = \frac{3}{2}x^2
 \]
 
 Ahora tenemos que integrar el resultado obtenido respecto de $ x $
 \[
-  \int_{0}^{3} \frac{3}{2}x^2 \,dx = \Bigg.\frac{x^3}{2}\Bigg]_{0}^{3}=\frac{27}{2}
+  \int_{0}^{3} \frac{3}{2}x^2 \,dx = \Bigg[\frac{x^3}{2}\Bigg]_{0}^{3}=\frac{27}{2}
 \]
 
 \vspace{0.2cm}
@@ -1977,12 +1978,12 @@ Si $ f $ es continua en el rectángulo $ R=\left\{(x,y) \;/\; a\leq x\leq b \lan
 
 Ahora primero intgramos respecto de $ x $.
 \[
-  \int_{0}^{3} x^2y \,dx = \Bigg.\frac{x^3}{3}y\Bigg]_{0}^{3} = 9
+  \int_{0}^{3} x^2y \,dx = \Bigg[\frac{x^3}{3}y\Bigg]_{0}^{3} = 9
 \]
 
 Y luego integramos el resultado de la operación respecto de $ y $.
 \[
-  \int_{1}^{2} 9y \,dy = \Bigg.\frac{9}{2}y^2\Bigg]_{1}^{2} = 18 - \frac{9}{2} = \frac{27}{2}
+  \int_{1}^{2} 9y \,dy = \Bigg[\frac{9}{2}y^2\Bigg]_{1}^{2} = 18 - \frac{9}{2} = \frac{27}{2}
 \]
 
 Vemos que llegamos al mismo resultado a pesar de haber integrado en distinto orden. Esto solo pasa cuando se cumplen las condiciones del teorema de Fubini.
@@ -1994,8 +1995,8 @@ Lo primero que tenemos que hacer es determinar cuál es la integral que nos pide
 En este caso la función $ z=f(x,y) $ la despejamos de la ecuación del paraboloide elíptico: $ z = 16-x^2-y^2 $, y el cuadrado $ R $ está dado por los puntos de intersección de los planos coordenados con los planos $ x=2 $ y $ y=2 $. De esta manera, $ R=\left[0,2\right]\times \left[0,2\right] $.
 \begin{align*}
   V &= \iint_{R} 16-x^2-y^2 \,dA = \int_{0}^{2} \int_{0}^{2} 16-x^2-y^2 \,dx\,dy\\
-   &= \int_{0}^{2} \Bigg.16x-\frac{1}{3}x^3-2y^2x\Bigg]_{x=0}^{x=2} \,dy\\
-   &= \int_{0}^{2} \frac{88}{3}-4y^2 \,dy = \Bigg.\frac{88}{3}y-\frac{4}{3}y^3\Bigg]_{0}^{2}=48
+   &= \int_{0}^{2} \Bigg[16x-\frac{1}{3}x^3-2y^2x\Bigg]_{x=0}^{x=2} \,dy\\
+   &= \int_{0}^{2} \frac{88}{3}-4y^2 \,dy = \Bigg[\frac{88}{3}y-\frac{4}{3}y^3\Bigg]_{0}^{2}=48
 \end{align*}
 
 En el caso especial en que $ f(x,y) $ pueda escribirse como el producto de una función que dependa solo de $ x $ y otra que dependa solo de $ y $, podemos escribir la integral doble de una forma mas simple de leer gracias al teorema de Fubini.
@@ -2097,9 +2098,13 @@ Usando los mismo métodos que usamos recién, podemos demostrar que
 donde $ D $ es una región de tipo II.
 }}\vspace{0.2cm}
 
-\underline{Ejemplo 1:} Evluar $ \iint_{D} x+2y \,dA $, donde $ D $ es la región acotada por las parábolas $ y=2x^2 $ y $ y=1+x^2 $.
+\underline{Ejemplo 1:} Evaluar la integral doble $ \iint_{D} x+2y \,dA $, donde $ D $ es la región acotada por las parábolas $ y=2x^2 $ y $ y=1+x^2 $.
 
-\begin{figure}[htbp]
+Lo primero que tenemos que hacer es identificar qué tipo de región es $ D $. Para esto, lo mejor sería graficar la región en la que nos piden integrar de manera que podamos dibujar una flecha vertical u horizontal, dependiendo de lo que nos convenga. Al dibujar la flecha, la cola de la flecha nos marca la frontera inferior de integración y la punta la frontera superior. Si la flecha que dibujamos es una flecha vertical, entonces la región $ D $ es de tipo I; si dibujamos una flecha horizontal, la región $ D $ es de tipo II.
+
+En este caso vemos que nos conviene dibujar una flecha vertical, como se muestra en la Figura \ref{grf:regiones1}.
+
+\begin{figure}[H]
   \centering
   {\large }
   \tikzsetnextfilename{regiones-1}
@@ -2109,18 +2114,666 @@ donde $ D $ es una región de tipo II.
       xlabel={$x$}, ylabel={$y$},
       axis lines=center,
       axis on top=true,
-      width=10cm,
+      width=9cm,
     ]
       \addplot [black, thick, name path=A, domain=-1.2:1.2] {2*x^2}
           node[right, pos=0.60] {$ y=2x^2 $};
       \addplot [black, thick, name path=B, domain=-1.2:1.2,] {1+x^2}
 	  node[above, pos=0.60, yshift=10pt] {$ y=1+x^2 $};
       \addplot [blue!30] fill between [of=A and B, soft clip={domain=-1:1}];
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(-1,2)};
+      \node at (axis cs:-1,2) [anchor=south west] {$P(-1,2)$};
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(1,2)};
+      \node at (axis cs:1,2) [anchor=south east] {$P(1,2)$};
+      \addplot [-stealth, very thick, red!70] coordinates {(-0.5,0) (-0.5,1.5)};
     \end{axis}
   \end{tikzpicture}
   \caption{Ejemplo 1}
   \label{grf:regiones1}
 \end{figure}
+
+Fijemonos que en este caso no conviene dibujar la flecha de forma horizontal, ya que en algunas partes del gráfico entraríamos por una función y saldríamos por otra, y en otras partes entramos y salimos por la misma. Encima tendríamos que dividir la función en dos partes, porque por encima de $ y=1 $ entraríamos dos veces a la función y saldríamos dos veces también, un quilombo.
+
+\begin{figure}[H]
+  \centering
+  {\large }
+  \tikzsetnextfilename{regiones-2}
+  \begin{tikzpicture}
+    \begin{axis}[
+      clip=false,
+      xlabel={$x$}, ylabel={$y$},
+      axis lines=center,
+      axis on top=true,
+      width=9cm,
+    ]
+      \addplot [black, thick, name path=A, domain=-1.2:1.2] {2*x^2}
+          node[right, pos=0.60] {$ y=2x^2 $};
+      \addplot [black, thick, name path=B, domain=-1.2:1.2,] {1+x^2}
+	  node[above, pos=0.60, yshift=10pt] {$ y=1+x^2 $};
+      \addplot [blue!30] fill between [of=A and B, soft clip={domain=-1:1}];
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(-1,2)};
+      \node at (axis cs:-1,2) [anchor=south west] {$P(-1,2)$};
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(1,2)};
+      \node at (axis cs:1,2) [anchor=south east] {$P(1,2)$};
+      \addplot [-stealth, very thick, red!70] coordinates {(-1,1.5) (1,1.5)};
+      \addplot [-stealth, very thick, red!70] coordinates {(-1,0.5) (1,0.5)};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Ejemplo 1}
+  \label{grf:regiones2}
+\end{figure}
+
+Ahora que ya identificamos la región, la escribimos
+\[
+  D=\left\{(x,y) \;/\; -1\leq x\leq 1 \land 2x^2\leq y\leq 1+x^2\right\}
+\]
+
+Al ser de tipo I, la integral doble nos queda así
+\[
+  \iint_{D} x+2y \,dA = \int_{-1}^{1} \int_{2x^2}^{1+x^2} x+2y \,dy\,dx
+\]
+
+Y ahora resolver es facil
+\begin{align*}
+  \iint_{D} x+2y \,dA &= \int_{-1}^{1} \int_{2x^2}^{1+x^2} x+2y \,dy\,dx \\
+   &= \int_{-1}^{1} \Bigg[xy+y^2\Bigg]_{y=2x^2}^{y=1+x^2} \,dx\\
+    &= \int_{-1}^{1} x\left(1+x^2\right)+\left(1+x^2\right)^2 - x\left(2x^2\right)-\left(2x^2\right)^2 \,dx\\
+    &= \int_{-1}^{1} -3x^4-x^3+2x^2+x+1 \,dx\\
+     &= \Bigg[-3\frac{x^5}{5}-\frac{x^4}{4}+2\frac{x^3}{3}+\frac{x^2}{2}+x\Bigg]_{-1}^{1} = \frac{32}{15}
+\end{align*}
+
+\underline{Ejemplo 2:} Determinar el volumen del sólido que se encuentra bajo el paraboloide $ z=x^2+y^2 $ y sobre la región $ D $ en el plano $ xy $ acotado por la recta $ y=2x $ y la parábola $ y=x^2 $.
+
+Primero identificamos la región:
+\begin{figure}[H]
+  \centering
+  {\large }
+  \tikzsetnextfilename{integral-doble-ej3}
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=9cm,
+      clip=false,
+      xlabel={$x$}, ylabel={$y$},
+      axis lines=center,
+      axis on top=true,
+    ]
+      \addplot [black, thick, name path=A, domain=-0.5:2.5,] {2*x}
+	      node [above, pos=0.5] {$ y=2x $};
+      \addplot [black, thick, name path=B, domain=-0.5:2.5,] {x^2}
+	      node [right, pos=0.3] {$ y=x^2 $};
+      \addplot [blue!30] fill between [of=A and B, soft clip={domain=0:2}];
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(0,0)};
+      \node at (axis cs:0,0) [anchor=south] {$P(0,0)$};
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(2,4)};
+      \node at (axis cs:2,4) [anchor=south east] {$P(2,4)$};
+      \addplot [-stealth, very thick, red!70] coordinates {(1,0) (1,4)};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Ejemplo 2. Representación de $ D $ como una región tipo I.}
+  \label{grf:integral-doble-ej2}
+\end{figure}
+
+Podemos dibujar una vertical, como en el ejemplo anterior y la región sería de tipo I. Entonces ahora la podemos escribir
+\[
+  D=\left\{(x,y) \;/\; 0\leq x\leq 2 \land x^2\leq y\leq 2x\right\}
+\]
+
+Ahora ya podemos escribir la integral y resolver
+\begin{align*}
+  V &= \iint_{D} x^2+y^2 \,dA = \int_{0}^{2} \int_{y=x^2}^{2x} x^2+y^2 \,dy\,dx\\
+   &= \int_{0}^{2} \Bigg[x^2y+\frac{y^3}{3}\Bigg]_{y=x^2}^{2x} \,dx\\
+   &= \int_{0}^{2} -\frac{x^6}{3}-x^4+\frac{14x^3}{3} \,dx\\
+    &= \Bigg[-\frac{x^7}{21}-\frac{x^5}{5}+\frac{7x^4}{6}\Bigg]_{0}^{2} = \frac{216}{35}
+\end{align*}
+
+Fijemonos, que esta integral la podríamos haber resuelto como si fuese una región tipo II también, ya que podríamos dibujar una línea vertical y no habría problema
+
+\begin{figure}[H]
+  \centering
+  {\large }
+  \tikzsetnextfilename{integral-doble-ej2-2}
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=9cm,
+      clip=false,
+      xlabel={$x$}, ylabel={$y$},
+      axis lines=center,
+      axis on top=true,
+    ]
+      \addplot [black, thick, name path=A, domain=-0.5:2.5,] {2*x}
+	      node [above, pos=0.5] {$ y=2x $};
+      \addplot [black, thick, name path=B, domain=-0.5:2.5,] {x^2}
+	      node [right, pos=0.3] {$ y=x^2 $};
+      \addplot [blue!30] fill between [of=A and B, soft clip={domain=0:2}];
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(0,0)};
+      \node at (axis cs:0,0) [anchor=south] {$P(0,0)$};
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(2,4)};
+      \node at (axis cs:2,4) [anchor=south east] {$P(2,4)$};
+      \addplot [-stealth, very thick, red!70] coordinates {(0,2) (2,2)};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Ejemplo 2. Representación de $ D $ como una región tipo II.}
+  \label{grf:integral-doble-ej2-2}
+\end{figure}
+
+En este caso la región $ D $ queda definida de la siguiente manera
+\[
+  D=\left\{(x,y) \;/\; 0\leq y\leq 4 \land \frac{1}{2}y\leq x\leq \sqrt[]{y}\right\}
+\]
+
+Notar que tuvimos que buscar la expresión para $ x $ en función de $ y $ equivalente a las funciones originales.
+
+Al resolver esta integral deberíamos llegar al mismo resultado de antes
+\begin{align*}
+  V &= \iint_{D} x^2+y^2 \,dA = \int_{0}^{4} \int_{x=\frac{1}{2}y}^{x=\sqrt[]{y}} x^2+y^2 \,dx\,dy\\
+   &= \int_{0}^{4} \Bigg[\frac{x^3}{3}+y^2x\Bigg]_{x=\frac{1}{2}y}^{x=\sqrt[]{y}} \,dy\\
+   &= \int_{0}^{4} \frac{y^{\frac{3}{2}}}{3}+y^{\frac{5}{2}}-\frac{y^3}{24}-\frac{y^3}{2} \,dy\\
+   &= \Bigg[\frac{2}{15}y^\frac{5}{2}+\frac{2}{7}y^\frac{7}{2}-\frac{13}{96}y^4\Bigg]_{0}^{4} = \frac{216}{35}
+\end{align*}
+
+\underline{Ejemplo 3:} Evaluar $ \iint_{D} xy \,dA $, donde $ D $ es la región acotada por la recta $ y=x-1 $ y la parábola $ y^2=2x+6 $.
+
+En este caso vamos a ver que la región $ D $ también es tanto tipo I como tipo II, pero la descripción de $ D $ como tipo I es mas complicada porque la frontera inferior consta de dos partes. En estos casos siempre conviene usar la región cuya expresión sea la mas sencilla.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    {\large }
+
+    \tikzsetnextfilename{integrales-dobles-ej3-I}
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=\textwidth,
+        clip=false,
+        xlabel={$x$}, ylabel={$y$},
+        axis lines=center,
+        axis on top=true,
+      ]
+      \addplot [black, thick, name path=A, domain=-3.5:4.5] ({x^2/2-3},{x})
+	      node [left, pos=0.5] {$ y^2=2x+6 $};
+      \addplot [black, thick, name path=B, domain=-3.5:5.5] {x-1}
+	      node [right, pos=0.7] {$ y=x-1 $};
+      \scoped [on background layer]
+      \fill [blue!30, intersection segments={of=A and B, sequence={L2 -- R2}}];
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(-1,-2)};
+      \node at (axis cs:-1,-2) [anchor=west, xshift=15pt] {$P(-1,-2)$};
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(5,4)};
+      \node at (axis cs:5,4) [anchor=north west] {$P(5,4)$};
+      \addplot [-stealth, very thick, red!70] coordinates {(1,0) (1,3)};
+      \addplot [-stealth, very thick, red!70] coordinates {(-1,-2) (-1,2)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Ejemplo 3 considerando a $ D $ como una región tipo I.}
+    \label{grf:integrales-dobles-ej3-I}
+  \end{minipage}\hfill
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    {\large }
+
+    \tikzsetnextfilename{integrales-dobles-ej3-II}
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=\textwidth,
+        clip=false,
+        xlabel={$x$}, ylabel={$y$},
+        axis lines=center,
+        axis on top=true,
+      ]
+      \addplot [black, thick, name path=A, domain=-3.5:4.5] ({x^2/2-3},{x})
+	      node [left, pos=0.5] {$ y^2=2x+6 $};
+      \addplot [black, thick, name path=B, domain=-3.5:5.5] {x-1}
+	      node [right, pos=0.7] {$ y=x-1 $};
+      \scoped [on background layer]
+      \fill [blue!30, intersection segments={of=A and B, sequence={L2 -- R2}}];
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(-1,-2)};
+      \node at (axis cs:-1,-2) [anchor=west, xshift=15pt] {$P(-1,-2)$};
+      \addplot [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(5,4)};
+      \node at (axis cs:5,4) [anchor=north west] {$P(5,4)$};
+      \addplot [-stealth, very thick, red!70] coordinates {(-1,2) (3,2)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Ejemplo 3 considerando a $ D $ como una región tipo II.}
+    \label{grf:integrales-dobles-ej3-II}
+  \end{minipage}
+\end{figure}
+
+Tenemos que definir la región $ D $ para que sea de tipo II
+\[
+  D=\left\{(x,y) \;/\; -2\leq y\leq 4 \land \frac{y^2}{2}-3\leq x\leq y+1\right\}
+\]
+
+Y ahora resolvemos teniendo en cuenta que estamos integrando sobre una región tipo II
+\begin{align*}
+  \iint_{D} xy \,dA &= \int_{-2}^{4} \int_{x=\frac{y^2}{2}-3}^{x=y+1} xy \,dx\,dy\\
+   &= \int_{-2}^{4} \Bigg[\frac{x^2}{2}y\Bigg]_{x=\frac{y^2}{2}-3}^{x=y+1} \,dy\\
+    &= \frac{1}{2}\int_{-2}^{4} y\left[\left(y+1\right)^2-\left(\frac{y^2}{2}-3\right)^2\right] \,dy\\
+     &= \frac{1}{2}\int_{-2}^{4} -\frac{y^5}{4}+4y^3+2y^2-8y \,dy\\
+     &= \frac{1}{2}\left[-\frac{y^6}{24}+y^4+2\frac{y^3}{3}-4y^2\right]_{-2}^{4}=36
+\end{align*}
+
+Si hubiesemos expresado la región $ D $ como tipo I tendríamos
+\[
+  \iint_{D} xy \,dA=\int_{-3}^{-1} \int_{\sqrt[]{2x+6}}^{-\sqrt[]{2x+6}} xy \,dy\,dx + \int_{-1}^{5} \int_{x-1}^{\sqrt[]{2x+6}} xy \,dy\,dx
+\]
+que es bastante mas trabajoso.
+
+\underline{Ejemplo 4:} Determinar el volumen del tetraedro acotado por los planos $ x+2y+z=2 $, $ x=2y $, $ x=0 $, y $ z=0 $.
+
+En estos casos sirve mucho dibujar dos diagramas: uno del sólido tridimensional y otro de la región en un plano $ D $ en la que se encuentra. 
+
+\begin{figure}[H]
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    {\large }
+
+    \tikzsetnextfilename{integrales-dobles-ej4-3d}
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=\textwidth,
+        clip=false,
+        xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+        xtick=\empty, ytick=\empty, ztick=\empty,
+        view={70}{20},
+        axis lines=center,
+        axis on top=true,
+        xmin=0, xmax=1.5,
+        ymin=0, ymax=2,
+        zmin=0, zmax=2.5,
+      ]
+      \addplot3 [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(0,1,0)};
+      \node at (axis cs:0,1,0) [anchor=south west] {$P(0,1,0)$};
+      \addplot3 [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(1,1/2,0)};
+      \node at (axis cs:1,1/2,0) [anchor=west] {$P(1,1/2,0)$};
+      \addplot3 [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(0,0,0)};
+      \node at (axis cs:0,0,0) [anchor=north] {$P(0,0,0)$};
+      \addplot3 [only marks, mark=*, mark size=5pt, color=blue!50,]
+          coordinates {(0,0,2)};
+      \node at (axis cs:0,0,2) [anchor=west] {$P(0,0,2)$};
+      \draw [fill=blue!30, opacity=0.5]
+                (axis cs:0,0,0) -- (axis cs:1,1/2,0) -- (axis cs:0,0,2) -- cycle;
+      \node at (axis cs:0,0.3,0.3) {$ x=2y $};
+      \draw [fill=blue!50, opacity=0.5]
+                (axis cs:0,0,2) -- (axis cs:1,1/2,0) -- (axis cs:0,1,0) -- cycle;
+	\node at (axis cs:0,0.5,0.5) [anchor=south west] {$ x+2y+z=2 $};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Tetraedro en tres dimensiones}
+    \label{grf:integrales-dobles-ej4-3d}
+  \end{minipage}\hfill
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    {\large }
+
+    \tikzsetnextfilename{integrales-dobles-ej4-2d}
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=\textwidth,
+        clip=false,
+        xlabel={$x$}, ylabel={$y$},
+        axis lines=center,
+        axis on top=true,
+	xmin=-0.5, xmax=1.5,
+	ymin=-0.2, ymax=1.5,
+      ]
+        \addplot [black, thick, name path=A, domain=0:1] {1-x/2}
+		node [right, pos=0.3] {$ y=1-\frac{x}{2} $};
+	\addplot [black, thick, name path=B, domain=0:1,] {x/2}
+		node [right, pos=0.3] {$ y=\frac{x}{2} $};
+	\addplot [blue!30] fill between [of=A and B, soft clip={}];
+	\addplot [only marks, mark=*, mark size=5pt, color=blue!30,]
+	    coordinates {(1,1/2)};
+	\node at (axis cs:1,1/2) [anchor=south] {$P(1,1/2)$};
+	\addplot [-stealth, very thick, red!70] coordinates {(0.2,0) (0.2,1)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Región $ D $ sobre la que se va a integrar.}
+    \label{grf:integrales-dobles-ej4-2d}
+  \end{minipage}
+\end{figure}
+
+El tetraedro está formado por los planos coordenados $ x=0 $ y $ z=0 $, el plano vertical $ x=2y $ y el plano $ x+2y+z=2 $. Con esta información podemos armar dos lados de la base del tetraedro en el plano $ xy $: uno de esos lados es la recta $ x=0 $ y el otro lado es la recta $ x=2y $. Pero nos falta uno de los lados del triángulo. Este sale al buscar la intersección del plano $ x+2y+z=2 $ con el plano $ xy $, obteniendo la recta $ x+2y=2 $. 
+
+El plano $ x+2y+z=2 $ es el plano que pasa por toda la región que acabamos de identificar así que esa es la función que vamos a integrar. La función la escribimos en función de $ x $ y de $ y $: $ z=2-x-2y $ y definimos la región $ D $.
+\[
+  D=\left\{(x,y) \;/\; 0\leq x\leq 1 \land \frac{x}{2}\leq y\leq 1-\frac{x}{2}\right\}
+\]
+
+Ya podemos resolver la integral
+\begin{align*}
+  V &= \iint_{D} 2-x-2y \,dA\\
+   &= \int_{0}^{1} \int_{y=x/2}^{y=1-x/2} 2-x-2y \,dy\,dx\\
+    &= \int_{0}^{1} \Bigg[2y-xy-2\frac{y^3}{3}\Bigg]_{y=x/2}^{y=1-x/2} \,dx\\
+     &= \int_{0}^{1} 2-x-x\left(1-\frac{x}{2}\right)-\left(1-\frac{x}{2}\right)^2-x+\frac{x^2}{2}+\frac{x^2}{4} \,dx\\
+      &= \int_{0}^{1} x^2-2x+1 \,dx = \Bigg[\frac{x^3}{3}-x^2+x\Bigg]_{0}^{1}=\frac{1}{3}
+\end{align*}
+
+\subsubsection{Propiedades de las integrales dobles}
+Las propiedades de las integrales dobles son las mismas que las de las integrales simples:
+\begin{enumerate}[1.]
+  \item \[
+	  \iint_{D} \left[f(x,y)+g(x,y)\right] \,dA = \iint_{D} f(x,y) \,dA + \iint_{D} g(x,y) \,dA
+  \]
+
+  \item \[
+    \iint_{D} cf(x,y) \,dA = c\iint_{D} f(x,y) \,dA \qquad \text{donde $ c $ es una constante}
+  \]
+
+  \item Si $ f(x,y)\geq g(x,y) $ para todas las $ (x,y) $ en $ D $ entonces
+	  \[
+	    \iint_{D} f(x,y) \,dA \geq \iint_{D} g(x,y) \,dA
+	  \]
+\end{enumerate}
+
+Una propiedad que sí me parece interesante es la siguiente:
+\begin{itemize}
+  \item Si se integra la función constante $ f(x,y)=1 $ en una región $ D $, se obtiene el área de $ D $:
+	  \[
+	    \iint_{D} 1 \,dA = \iint_{D}  \,dA = \int_{a}^{b} \int_{c}^{d}  \,dy\,dx = A(D)
+	  \]
+\end{itemize}
+
+Y tiene sentido si lo pensamos un poco. Hasta ahora veníamos pensando al resultado de las integradles dobles como el volumen del sólido dispuesto entre la función $ f(x,y) $ y la región $ D $. Pero el volumen es el área de un objeto multiplicado por su altura. En nuestro caso, el area del solido sería la región $ D $ sobre la cual estamos integrando y la altura son los infinitos valores que nos da la integral en esa región. Pero si decimos que $ f(x,y)=1 $ es constante a lo largo y ancho de toda la región $ D $, el volumen de esa región es su área multiplicada por uno. Y el área multiplicada por uno es el mismo área. Entonces, podemos pensar a la integral de la función constante $ f(x,y)=1 $ como el área de la región $ D $.
+
+\subsection{Integrales en coordenadas polares}
+Supongamos que queremos evaluar una integral doble $ \iint_{R} f(x,y) \,dA $, donde $ R $ es una de las regiones que aparecen en las figuras de abajo
+
+\begin{figure}[H]
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    {\large }
+
+    \tikzsetnextfilename{integrar-coord-polares1}
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=\textwidth,
+        clip=false,
+        xlabel={$x$}, ylabel={$y$},
+        axis lines=center,
+        axis on top=true,
+	xmin=-1.5, xmax=1.5,
+	ymin=-1.5, ymax=1.5,
+      ]
+      \addplot [black, thick, domain=0:360, fill=blue!30, samples=100] ({cos(x)},{sin(x)});
+      \node at (axis cs:-0.5,0.5) {$ R $};
+      \node at (axis cs:1,1) {$ x^2+y^2=1 $};
+      \end{axis}
+    \end{tikzpicture}
+    $ R=\left\{(r,\theta) \;/\; 0\leq r\leq 1 \land 0\leq \theta\leq 2\pi\right\} $
+  \end{minipage}\hfill
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    {\large }
+
+    \tikzsetnextfilename{integrar-coord-polares2}
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=\textwidth,
+        clip=false,
+        xlabel={$x$}, ylabel={$y$},
+        axis lines=center,
+        axis on top=true,
+	xmin=-2.5, xmax=2.5,
+	ymin=0, ymax=2.5,
+	yscale=0.7,
+	ytick={0,1,2},
+      ]
+        \addplot [black, thick, name path=A, domain=0:180, samples=100] ({2*cos(x)}, {2*sin(x)});
+	\addplot [black, thick, name path=B, domain=0:180, samples=100] ({cos(x)},{sin(x)});
+	\addplot [blue!30] fill between [of=A and B, soft clip={}];
+	\node at (axis cs:-1,1) [] {$R$};
+	\node at (axis cs:1.5,2) [] {$ x^2+y^2=4 $};
+	\node at (axis cs:1,0.5) [] {$ x^2+y^2=1 $};
+      \end{axis}
+    \end{tikzpicture}
+    $ R=\left\{(r,\theta) \;/\; 1\leq r\leq 2 \land 0\leq \theta\leq \pi\right\} $
+  \end{minipage}
+  \caption{Dos regiones en coordenadas polares.}
+  \label{grf:integrales-dobles-coord-polares}
+\end{figure}
+
+Recordemos las coordenadas polares:
+\[
+  r^2=x^2+y^2 \qquad x=r\cos^{}(\theta) \qquad y=r\sin^{}(\theta)
+\]
+
+Las regiones de la Figura \ref{grf:integrales-dobles-coord-polares} son casos especiales de un \textbf{rectángulo polar}
+\[
+  R=\left\{(r,\theta) \;/\; a\leq r\leq b \land \alpha\leq \theta\leq \beta\right\}
+\]
+
+Se llama rectángulo polar porque podemos armar un plano de $ \mathbb{R}^{2} $ cuyos ejes son $ r $ y $ \theta $ de manera que la región que es una circunferencia en el plano con bases canónicas, es un cuadrado en el plano con bases polares.
+\begin{figure}[H]
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    {\large }
+
+    \tikzsetnextfilename{circ-plano-cartesiano}
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=\textwidth,
+        clip=false,
+        xlabel={$x$}, ylabel={$y$},
+        axis lines=center,
+        axis on top=true,
+	xmin=-1.5, xmax=1.5,
+	ymin=-1.5, ymax=1.5,
+      ]
+      \addplot [black, thick, name path=A, domain=0:360, fill=blue!30, samples=100] ({cos(x)},{sin(x)});
+      \node at (axis cs:0.5,0.5) [] {$ R $};
+      \end{axis}
+    \end{tikzpicture}
+    Región $ R $ en el plano cartesiano.
+  \end{minipage}\hfill
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    {\large }
+
+    \tikzsetnextfilename{circ-plano-polar}
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=\textwidth,
+        clip=false,
+        xlabel={$r$}, ylabel={$\theta$},
+        axis lines=center,
+        axis on top=true,
+	xmin=0, xmax=1.5,
+	ymin=0, ymax=8,
+	xtick={0,0.5,1},
+	ytick={0,3.14,6.28},
+	yticklabels={$ 0 $,$ \pi $,$ 2\pi $},
+      ]
+        \addplot [black, thick, name path=A, domain=0:1] {6.28};
+	\addplot [black, thick, name path=B, domain=0:6.28,] ({1},x);
+	\addplot [black, thick, name path=C, domain=0:1,] {0};
+	\addplot [blue!30] fill between [of=A and C, soft clip={}];
+	\node at (axis cs:0.5,3.14) [] {$ R $};
+      \end{axis}
+    \end{tikzpicture}
+    Región $ R $ en el plano polar.
+  \end{minipage}
+  \caption{Visualización de rectángulo polar}
+\end{figure}
+
+Al usar coordenadas polares vemos que es mucho mas facil calcular las integrales ya que pasamos de tener que calcular regiones circulares a regiones rectangulares.
+
+Las integrales en coordenadas polares se calculan de forma similar a cuando lo hacíamos en coordenadas cartesianas, pero con un pequeño detalle. La idea es la misma de antes, queremos dividir el cuadrado que tenemos en coordenadas polares en cuadrados mas chicos (tan chicos como podamos), calcular el área de cada cuadrado y multiplicarlo por el valor de la función en ese punto. PERO OJO! Hay que recordar que, por mas que estemos calculando la integral en un cuadrado, esta integral es en realidad la de una circunferencia! \textbf{El área de cada cuadrado en el plano de coordenadas polares es en realidad una porción de la circunferencia}, por lo que para calcular el área no podemos hacer base x altura ($ r\theta $). El área de cada cuadrado se calcula como una porción de cículo de radio $ r $ y ángulo $ \theta $.
+
+% Y ¿cómo se calculaba el área de una porción de círculo? (yo no me acordaba y lo tuve que ir a buscar a internet). Vamos a deducir la fórmula que es re sencillo.
+%
+% Sabemos que el área de un círculo es $ A_{circulo} = \pi r^2 $. En realidad la forma real de calcular el área de un círculo es agarrar el ángulo $ \theta $ de la porción de círculo que quiero calcular el área, dividirlo por el ángulo total que hay en el círculo ($ 2\pi $) y multiplicarlo por $ \pi r^2 $. Lo que pasa es que cuando calculamos el área de todo el círculo estamos considerando que $ \theta=2\pi $, entonces los $ 2\pi $ se cancelan y nos queda la fórmula de siempre $ A_{circulo}=\frac{2\pi}{2\pi}\pi r^2=\pi r^2 $. Pero si queremos calcular el área de solo una porción de círculo sí tenemos que usar la fórmula entera. De esta manera, el área de una porción de círculo es:
+% \[
+%   A_{porcion}=\frac{\theta}{2\pi}\pi r^2 = \frac{1}{2}\theta r^2
+% \]
+%
+% Todo esto para decir lo siguiente: cuando vamos a calcular una integral en coordenadas polares, es lo mismo que en coordenadas cartesianas solo que ahora nuestro diferencial de 
+
+Para ajustar esta diferencia lo que hay que hacer es calcular la integral doble y multiplicarla por algo que se llama \textbf{Jacobiano}. No lo vamos a ver todavía, porque creo que no es necesario para esta parte. Lo que voy a decir es que el Jacobiano es la determinante de una matriz que se arma con las derivadas parciales de unas funciones que resultan de efectuar un cambio de variables en la función $ f(x,y) $. Que en realidad es lo que estamos haciendo, pero lo bueno es que este Jacobiano SIEMPRE nos va a dar igual a $ r $. Por eso es que no lo quiero explicar.
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Cambio de coordenadas a polares en una integral doble}
+
+Si $ f $ es continua en un rectángulo polar $ R $ dado por $ 0\leq a\leq r\leq b  \land \alpha\leq \theta\leq \beta $, donde $ 0\leq \beta - \alpha\leq 2\pi $, entonces
+\[
+  \iint_{R} f(x,y) \,dA = \int_{\alpha}^{\beta} \int_{a}^{b} f(r\cos^{}\theta,r\sin^{}\theta)r \,dr\,d\theta
+\]
+}}\vspace{0.2cm}
+
+\textbf{Resumen}
+
+Al convertir integrales dobles a coordenadas polares escribimos $ x=r\cos^{}(\theta) $ y $ y=r\sin^{}(\theta) $, usamos los límites de integración apropiados para $ r $ y $ \theta $ y reemplazamos $ dA $ por $ r\,dr\,d\theta $. \textbf{No hay que olvidarse de agregar ese $ r $ adicional.}
+
+\underline{Ejemplo 1:} Evaluar $ \iint_{R} \left(3x+4y^2\right) \,dA $, donde $ R $ es la región en el semiplano superior acotado por los círculos $ x^2+y^2=1 $ y $ x^2+y^2=4 $. (semiplano superior es porque son semicírculos, solo trabajamos con $ y\geq 0 $)
+
+Primero escribimos la región $ R $
+\[
+  R=\left\{(r,\theta) \;/\; 1\leq r\leq 2 \land 0\leq \theta\leq \pi\right\}
+\]
+
+Ahora resolvemos. \textbf{No olvidarse de agregar el $ r $}.
+\begin{align*}
+	\iint_{R} \left(3x+4y^2\right) \,dA &= \int_{0}^{\pi} \int_{1}^{2} \left(3r\cos^{}(\theta)+4r^2\sin^{2}(\theta)\right)r \,dr\,d\theta\\
+	 &= \int_{0}^{\pi} \int_{1}^{2} \left(3r^2\cos^{}(\theta)+4r^3\sin^{2}(\theta)\right) \,dr\,d\theta\\
+	 &= \int_{0}^{\pi} \Bigg[r^3\cos^{}(\theta)+r^4\sin^{2}(\theta)\Bigg]_{r=1}^{r=2} \,d\theta\\
+	 &= \int_{0}^{\pi} \left(8\cos^{}(\theta)+16\sin^{2}(\theta)-\cos^{}(\theta)-\sin^{2}(\theta)\right) \,d\theta\\
+	 &= \int_{0}^{\pi} \left(7\cos^{}(\theta)+15\sin^{2}(\theta)\right) \,d\theta\\
+	 &= \int_{0}^{\pi} \left(7\cos^{}(\theta)+\frac{15}{2}(1-\cos^{}(2\theta)\right) \,d\theta\\
+	 &= \Bigg[7\sin^{}(\theta)+\frac{15}{2}\theta-\frac{15}{4}\sin^{}(2\theta)\Bigg]_{\theta=\pi}^{\theta=0}=\frac{15\pi}{2}
+\end{align*}
+
+En este caso usamos la identidad trigonométrica
+\[
+  \sin^{2}(\theta)=\frac{1}{2}\left(1-\cos^{}(2\theta)\right)
+\]
+y el uso de identidades va a ser usual al trabajar con coordenadas polares así que hay que aprenderlas.
+
+\underline{Ejemplo 2:} Hallar el volumen del sólido acotado por el plano $ z=0 $ y el paraboloide $ z=1-x^2-y^2 $.
+
+Al hacer la intersección del plano $ z=0 $ con el paraboloide, obtenemos $ x^2+y^2=1 $. Esto significa que el plano interseca al paraboloide en el círculo $ x^2+y^2=1 $, así que el sólido es el que está abajo del paraboloide y arriba de la región circular $ D $ dada por $ x^2+y^2\leq 1 $. Escribamos la región $ D $ en coordenadas polares
+\[
+  D=\left\{(r,\theta) \;/\; 0\leq r\leq 1 \land 0\leq \theta\leq 2\pi\right\}
+\]
+
+Ahora tenemos que pasar la ecuación del paraboloide a polares. Sabemos que $ r^2=x^2+y^2 $, en la ecuación tenemos eso pero multiplicado por $ (-1) $, así que $ -r^2=-x^2-y^2 $. Reemplazando nos queda $ z=1-r^2 $ y ya podemos resolver la integral
+\begin{align*}
+  V &= \iint_{D} \left(1-x^2-y^2\right) \,dA = \int_{0}^{2\pi} \int_{0}^{1} \left(1-r^2\right)r \,dr\,d\theta\\
+   &= \int_{0}^{2\pi} \,d\theta \int_{0}^{1} \left(r-r^3\right) \,dr = 2\pi\Bigg[\frac{r^2}{2}-\frac{r^4}{4}\Bigg]_{r=0}^{r=1}=\frac{\pi}{2}
+\end{align*}
+
+\begin{figure}[H]
+  \centering
+  {\large }
+
+  \tikzsetnextfilename{integrales-coord-polares-ej2}
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.9\textwidth,
+      clip=false,
+      xlabel={$x$}, ylabel={$y$}, zlabel={$f(x,y)$},
+      view={110}{35},
+      axis lines=center,
+      axis on top=true,
+      xtick={-1,0,1}, ytick={-1,0,1}, ztick={0,1},
+      domain=0:1,
+      y domain=0:360,
+      z buffer=sort,
+      xmin=-1.5, xmax=1.5,
+      ymin=-1.5, ymax=1.5,
+      zmin=0, zmax=1.2,
+    ]
+      \addplot3 [surf, shader=interp, opacity=0.7, colormap/viridis,]
+	      ({x*cos(y)},{x*sin(y)},{0});
+      \addplot3 [surf, shader=interp, opacity=0.7, colormap/viridis,]
+	      ({x*cos(y)},{x*sin(y)},{1-x^2});
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Visualización del ejemplo 2.}
+  \label{grf:integral-coord-polar-ej2}
+\end{figure}
+
+Si hubiesemos usado coordenadas cartesianas para resolverlo tendríamos que resolver
+\[
+  V=\iint_{D} \left(1-x^2-y^2\right) \,dA=\int_{-1}^{1} \int_{-\sqrt[]{1-x^2}}^{\sqrt[]{1-x^2}} \left(1-x^2-y^2\right) \,dy\,dx
+\]
+que es mas complicado.
+
+Al trabajar con coordenadas polares también podemos resolver integrales de regiones mas complicadas. Podemos usar la misma fórmula que usabamos para regiones generales en coordenadas cartesianas
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{}
+
+Si $ f $ es continua en una región polar de la forma 
+\[
+  D=\left\{(r,\theta) \;/\; \alpha\leq \theta\leq \beta \land h_{1}(\theta)\leq r\leq h_{2}(\theta)\right\}
+\]
+entonces
+\[
+  \iint_{D} f(x,y) \,dA=\int_{\alpha}^{\beta} \int_{h_{1}(\theta)}^{h_{2}(\theta)} f(r\cos^{}(\theta),r\sin^{}(\theta))r \,dr\,d\theta
+\]
+}}\vspace{0.2cm}
+
+\underline{Ejemplo 3:} Usar la integral doble para encontrar el área encerrada por un lazo de la rosa de cuatro pétalos $ r=\cos^{}(2\theta) $.
+
+\begin{figure}[H]
+  \centering
+  {\large }
+
+  \tikzsetnextfilename{integrales-polares-ej3}
+  \begin{tikzpicture}[scale=3]
+	  % ESTE ME LO HIZO EL CHAT, YA ESTABA CANSADO. LO TENGO QUE INVESTIGAR IGUAL 
+    % Curva polar completa (r = cos(2θ))
+    \draw[domain=0:360,smooth,variable=\t, samples=200]
+      plot ({cos(2*\t)*cos(\t)}, {cos(2*\t)*sin(\t)});
+
+    % Relleno de la región entre -π/4 y π/4
+    \fill[blue!30, opacity=0.6, domain=-45:45, smooth, variable=\t, samples=200]
+      plot ({cos(2*\t)*cos(\t)}, {cos(2*\t)*sin(\t)})
+      -- (0,0) -- cycle;
+
+    % Ejes
+    \draw[-stealth] (-1.2,0) -- (1.2,0);
+    \draw[-stealth] (0,-1.2) -- (0,1.2);
+
+    % Líneas angulares
+    \draw[dashed] (0,0) -- ({1.2*cos(45)}, {1.2*sin(45)});
+    \draw[dashed] (0,0) -- ({1.2*cos(-45)}, {1.2*sin(-45)});
+
+    % Etiquetas
+    \node at ({1.4*cos(45)}, {1.4*sin(45)}) {$\theta = \frac{\pi}{4}$};
+    \node at ({1.4*cos(-45)}, {1.4*sin(-45)}) {$\theta = -\frac{\pi}{4}$};
+  \end{tikzpicture}
+  \caption{Visualización del ejemplo 3.}
+  \label{tkz:integrales-coord-polares-ej3}
+\end{figure}
+
+En la Figura \ref{tkz:integrales-coord-polares-ej3} podemos ver que un lazo está dado por la región
+\[
+  D=\left\{(r,\theta) \;/\; -\frac{\pi}{4}\leq \theta\leq \frac{\pi}{4} \land 0\leq r\leq \cos^{}(2\theta)\right\}
+\]
+
+Si queremos encontrar el área, habíamos dicho que hay que usar la integral doble de la función constante $ f=1 $. Entonces
+\begin{align*}
+  A(D) &= \iint_{D}  \,dA=\int_{-\pi/4}^{\pi/4} \int_{0}^{\cos^{}(2\theta)} r \,dr\,d\theta\\
+   &= \int_{-\pi/4}^{\pi/4} \Bigg[\frac{1}{2}r^2\Bigg]_{r=0}^{r=\cos^{}(2\theta)} \,d\theta=\frac{1}{2}\int_{-\pi/4}^{\pi/4} \cos^{2}(2\theta) \,d\theta\\
+   &= \frac{1}{4}\int_{-\pi/4}^{\pi/4} \left(1+\cos^{}(4\theta)\right) \,d\theta = \frac{1}{4}\Bigg[\theta+\frac{1}{4}\sin^{}(4\theta)\Bigg]_{-\pi/4}^{\pi/4}=\frac{\pi}{8}
+\end{align*}
 
 
 \newpage

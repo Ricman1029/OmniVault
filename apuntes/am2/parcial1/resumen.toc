@@ -56,4 +56,6 @@
 \contentsline {subsubsection}{\numberline {6.1.1}Integrales iteradas}{47}{subsubsection.6.1.1}%
 \contentsline {subsubsection}{\numberline {6.1.2}Valor promedio}{49}{subsubsection.6.1.2}%
 \contentsline {subsection}{\numberline {6.2}Integrales dobles en regiones generales}{50}{subsection.6.2}%
-\contentsline {section}{Referencias}{52}{figure.17}%
+\contentsline {subsubsection}{\numberline {6.2.1}Propiedades de las integrales dobles}{57}{subsubsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.3}Integrales en coordenadas polares}{58}{subsection.6.3}%
+\contentsline {section}{Referencias}{63}{figure.28}%

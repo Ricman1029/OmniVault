@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  16 JUN 2025 03:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  17 JUN 2025 04:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -583,7 +583,13 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen291
-))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.external.code.tex (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibraryexternal.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzexternalshared.code.tex)))
+))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box69
+\pgf@layerboxsaved@background=\box70
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.fillbetween.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfcontrib/tikzlibraryfillbetween.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex
+\pgf@intersect@solutions=\count346
+)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfcontrib/tikzlibrarydecorations.softclip.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfcontrib/pgflibraryfillbetween.code.tex))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.decorations.softclip.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.external.code.tex (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibraryexternal.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzexternalshared.code.tex)))
 No auxiliary output files.
 
 \w@pgfexternal@auxout=\write4
@@ -610,53 +616,53 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count346
+\lrq@indent=\count347
 (/usr/local/texlive/2025/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count347
-\c@listtotal=\count348
-\c@listcount=\count349
-\c@liststart=\count350
-\c@liststop=\count351
-\c@citecount=\count352
-\c@citetotal=\count353
-\c@multicitecount=\count354
-\c@multicitetotal=\count355
-\c@instcount=\count356
-\c@maxnames=\count357
-\c@minnames=\count358
-\c@maxitems=\count359
-\c@minitems=\count360
-\c@citecounter=\count361
-\c@maxcitecounter=\count362
-\c@savedcitecounter=\count363
-\c@uniquelist=\count364
-\c@uniquename=\count365
-\c@refsection=\count366
-\c@refsegment=\count367
-\c@maxextratitle=\count368
-\c@maxextratitleyear=\count369
-\c@maxextraname=\count370
-\c@maxextradate=\count371
-\c@maxextraalpha=\count372
-\c@abbrvpenalty=\count373
-\c@highnamepenalty=\count374
-\c@lownamepenalty=\count375
-\c@maxparens=\count376
-\c@parenlevel=\count377
-\blx@tempcnta=\count378
-\blx@tempcntb=\count379
-\blx@tempcntc=\count380
-\c@blx@maxsection=\count381
-\blx@maxsegment@0=\count382
-\blx@notetype=\count383
-\blx@parenlevel@text=\count384
-\blx@parenlevel@foot=\count385
-\blx@sectionciteorder@0=\count386
-\blx@sectionciteorderinternal@0=\count387
-\blx@entrysetcounter=\count388
-\blx@biblioinstance=\count389
+\c@tabx@nest=\count348
+\c@listtotal=\count349
+\c@listcount=\count350
+\c@liststart=\count351
+\c@liststop=\count352
+\c@citecount=\count353
+\c@citetotal=\count354
+\c@multicitecount=\count355
+\c@multicitetotal=\count356
+\c@instcount=\count357
+\c@maxnames=\count358
+\c@minnames=\count359
+\c@maxitems=\count360
+\c@minitems=\count361
+\c@citecounter=\count362
+\c@maxcitecounter=\count363
+\c@savedcitecounter=\count364
+\c@uniquelist=\count365
+\c@uniquename=\count366
+\c@refsection=\count367
+\c@refsegment=\count368
+\c@maxextratitle=\count369
+\c@maxextratitleyear=\count370
+\c@maxextraname=\count371
+\c@maxextradate=\count372
+\c@maxextraalpha=\count373
+\c@abbrvpenalty=\count374
+\c@highnamepenalty=\count375
+\c@lownamepenalty=\count376
+\c@maxparens=\count377
+\c@parenlevel=\count378
+\blx@tempcnta=\count379
+\blx@tempcntb=\count380
+\blx@tempcntc=\count381
+\c@blx@maxsection=\count382
+\blx@maxsegment@0=\count383
+\blx@notetype=\count384
+\blx@parenlevel@text=\count385
+\blx@parenlevel@foot=\count386
+\blx@sectionciteorder@0=\count387
+\blx@sectionciteorderinternal@0=\count388
+\blx@entrysetcounter=\count389
+\blx@biblioinstance=\count390
 \labelnumberwidth=\skip69
 \labelalphawidth=\skip70
 \biblabelsep=\skip71
@@ -668,9 +674,9 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@bcfin=\read4
 \blx@bcfout=\write5
 \blx@langwohyphens=\language91
-\c@mincomprange=\count390
-\c@maxcomprange=\count391
-\c@mincompwidth=\count392
+\c@mincomprange=\count391
+\c@maxcomprange=\count392
+\c@mincompwidth=\count393
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-dm.def
@@ -683,84 +689,84 @@ File: apa.dbx 2023/03/20 v9.17 APA biblatex style data model
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count393
-\c@savedafterword=\count394
-\c@annotator=\count395
-\c@savedannotator=\count396
-\c@author=\count397
-\c@savedauthor=\count398
-\c@bookauthor=\count399
-\c@savedbookauthor=\count400
-\c@commentator=\count401
-\c@savedcommentator=\count402
-\c@editor=\count403
-\c@savededitor=\count404
-\c@editora=\count405
-\c@savededitora=\count406
-\c@editorb=\count407
-\c@savededitorb=\count408
-\c@editorc=\count409
-\c@savededitorc=\count410
-\c@foreword=\count411
-\c@savedforeword=\count412
-\c@holder=\count413
-\c@savedholder=\count414
-\c@introduction=\count415
-\c@savedintroduction=\count416
-\c@namea=\count417
-\c@savednamea=\count418
-\c@nameb=\count419
-\c@savednameb=\count420
-\c@namec=\count421
-\c@savednamec=\count422
-\c@translator=\count423
-\c@savedtranslator=\count424
-\c@shortauthor=\count425
-\c@savedshortauthor=\count426
-\c@shorteditor=\count427
-\c@savedshorteditor=\count428
-\c@narrator=\count429
-\c@savednarrator=\count430
-\c@execproducer=\count431
-\c@savedexecproducer=\count432
-\c@execdirector=\count433
-\c@savedexecdirector=\count434
-\c@with=\count435
-\c@savedwith=\count436
-\c@labelname=\count437
-\c@savedlabelname=\count438
-\c@institution=\count439
-\c@savedinstitution=\count440
-\c@lista=\count441
-\c@savedlista=\count442
-\c@listb=\count443
-\c@savedlistb=\count444
-\c@listc=\count445
-\c@savedlistc=\count446
-\c@listd=\count447
-\c@savedlistd=\count448
-\c@liste=\count449
-\c@savedliste=\count450
-\c@listf=\count451
-\c@savedlistf=\count452
-\c@location=\count453
-\c@savedlocation=\count454
-\c@organization=\count455
-\c@savedorganization=\count456
-\c@origlocation=\count457
-\c@savedoriglocation=\count458
-\c@origpublisher=\count459
-\c@savedorigpublisher=\count460
-\c@publisher=\count461
-\c@savedpublisher=\count462
-\c@language=\count463
-\c@savedlanguage=\count464
-\c@origlanguage=\count465
-\c@savedoriglanguage=\count466
-\c@citation=\count467
-\c@savedcitation=\count468
-\c@pageref=\count469
-\c@savedpageref=\count470
+\c@afterword=\count394
+\c@savedafterword=\count395
+\c@annotator=\count396
+\c@savedannotator=\count397
+\c@author=\count398
+\c@savedauthor=\count399
+\c@bookauthor=\count400
+\c@savedbookauthor=\count401
+\c@commentator=\count402
+\c@savedcommentator=\count403
+\c@editor=\count404
+\c@savededitor=\count405
+\c@editora=\count406
+\c@savededitora=\count407
+\c@editorb=\count408
+\c@savededitorb=\count409
+\c@editorc=\count410
+\c@savededitorc=\count411
+\c@foreword=\count412
+\c@savedforeword=\count413
+\c@holder=\count414
+\c@savedholder=\count415
+\c@introduction=\count416
+\c@savedintroduction=\count417
+\c@namea=\count418
+\c@savednamea=\count419
+\c@nameb=\count420
+\c@savednameb=\count421
+\c@namec=\count422
+\c@savednamec=\count423
+\c@translator=\count424
+\c@savedtranslator=\count425
+\c@shortauthor=\count426
+\c@savedshortauthor=\count427
+\c@shorteditor=\count428
+\c@savedshorteditor=\count429
+\c@narrator=\count430
+\c@savednarrator=\count431
+\c@execproducer=\count432
+\c@savedexecproducer=\count433
+\c@execdirector=\count434
+\c@savedexecdirector=\count435
+\c@with=\count436
+\c@savedwith=\count437
+\c@labelname=\count438
+\c@savedlabelname=\count439
+\c@institution=\count440
+\c@savedinstitution=\count441
+\c@lista=\count442
+\c@savedlista=\count443
+\c@listb=\count444
+\c@savedlistb=\count445
+\c@listc=\count446
+\c@savedlistc=\count447
+\c@listd=\count448
+\c@savedlistd=\count449
+\c@liste=\count450
+\c@savedliste=\count451
+\c@listf=\count452
+\c@savedlistf=\count453
+\c@location=\count454
+\c@savedlocation=\count455
+\c@organization=\count456
+\c@savedorganization=\count457
+\c@origlocation=\count458
+\c@savedoriglocation=\count459
+\c@origpublisher=\count460
+\c@savedorigpublisher=\count461
+\c@publisher=\count462
+\c@savedpublisher=\count463
+\c@language=\count464
+\c@savedlanguage=\count465
+\c@origlanguage=\count466
+\c@savedoriglanguage=\count467
+\c@citation=\count468
+\c@savedcitation=\count469
+\c@pageref=\count470
+\c@savedpageref=\count471
 \shorthandwidth=\skip77
 \shortjournalwidth=\skip78
 \shortserieswidth=\skip79
@@ -784,19 +790,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count471
-\c@textcitetotal=\count472
-\c@textcitemaxnames=\count473
-\c@biburlbigbreakpenalty=\count474
-\c@biburlbreakpenalty=\count475
-\c@biburlnumpenalty=\count476
-\c@biburlucpenalty=\count477
-\c@biburllcpenalty=\count478
+\c@textcitecount=\count472
+\c@textcitetotal=\count473
+\c@textcitemaxnames=\count474
+\c@biburlbigbreakpenalty=\count475
+\c@biburlbreakpenalty=\count476
+\c@biburlnumpenalty=\count477
+\c@biburlucpenalty=\count478
+\c@biburllcpenalty=\count479
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count479
+\c@smartand=\count480
 )
 Package biblatex Info: Trying to load bibliography style 'apa'...
 Package biblatex Info: ... file 'apa.bbx' found.
@@ -806,8 +812,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count480
-\c@bbx:relatedtotal=\count481
+\c@bbx:relatedcount=\count481
+\c@bbx:relatedtotal=\count482
 )
 Package biblatex Info: Delimiter 'nameyeardelim' in context 'bib' already defined, overwriting.
 Package biblatex Info: Delimiter 'nameyeardelim' in context 'biblist' already defined, overwriting.
@@ -854,33 +860,33 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 64.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 66.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 No file "figs/nombre archivo".aux.
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Info: Redefining \. on input line 64.
-LaTeX Info: Redefining \% on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Info: Redefining \. on input line 66.
+LaTeX Info: Redefining \% on input line 66.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 64.
+(babel)             Reported  on input line 66.
 *geometry* detected driver: <none>
 *geometry* verbose mode - [ preamble ] result:
 * driver: \Gm@driver 
@@ -916,16 +922,16 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count482
+\scratchcounter=\count483
 \scratchdimen=\dimen292
-\scratchbox=\box69
-\nofMPsegments=\count483
-\nofMParguments=\count484
+\scratchbox=\box71
+\nofMPsegments=\count484
+\nofMParguments=\count485
 \everyMPshowfont=\toks52
-\MPscratchCnt=\count485
+\MPscratchCnt=\count486
 \MPscratchDim=\dimen293
-\MPnumerator=\count486
-\makeMPintoPDFobject=\count487
+\MPnumerator=\count487
+\makeMPintoPDFobject=\count488
 \everyMPtoPDFconversion=\toks53
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -934,7 +940,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \providecommand\hyper@newdestlabel[2]{}
-Package hyperref Info: Link coloring ON on input line 64.
+Package hyperref Info: Link coloring ON on input line 66.
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 Package biblatex Info: Trying to load language 'spanish' -> 'spanish-apa'...
@@ -957,8 +963,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file '"figs/nombre archivo".bbl' not found.
 No file "figs/nombre archivo".bbl.
-Package biblatex Info: Reference section=0 on input line 64.
-Package biblatex Info: Reference segment=0 on input line 64.
+Package biblatex Info: Reference section=0 on input line 66.
+Package biblatex Info: Reference segment=0 on input line 66.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: \Gm@driver 
 * paper: a4paper
@@ -998,29 +1004,29 @@ No file "figs/nombre archivo".toc.
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 107.
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 109.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 107.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 109.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 107.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 109.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 107.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 109.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 107.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 109.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 107.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 109.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 107.
-LaTeX Font Info:    Trying to load font information for U+esvect on input line 107.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 109.
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 109.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
@@ -1033,23 +1039,23 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'am2monllor' on page 5 undefined on input line 242.
+LaTeX Warning: Citation 'am2monllor' on page 5 undefined on input line 244.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=\linewidth ]{imagenes/incrementos_de_funcion.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'am2monllor' on page 6 undefined on input line 276.
+LaTeX Warning: Citation 'am2monllor' on page 6 undefined on input line 278.
 
 
-LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 284.
+LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 286.
 
 
-LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 291.
+LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 293.
 
 
-LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 298.
+LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 300.
 
 
 
@@ -1059,11 +1065,11 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/limites_iterados.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'am2monllor' on page 8 undefined on input line 352.
+LaTeX Warning: Citation 'am2monllor' on page 8 undefined on input line 354.
 
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/limites_radiales.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'am2monllor' on page 8 undefined on input line 377.
+LaTeX Warning: Citation 'am2monllor' on page 8 undefined on input line 379.
 
 
 
@@ -1075,18 +1081,18 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `fig:derivada_parcial_x' on page 11 undefined on input line 507.
+LaTeX Warning: Reference `fig:derivada_parcial_x' on page 11 undefined on input line 509.
 
 The command '\includegraphics [width=0.3\linewidth ]{imagenes/interp_geom_derivada_paracial_x.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 11 undefined on input line 512.
+LaTeX Warning: Citation 'stewart2' on page 11 undefined on input line 514.
 
 
-LaTeX Warning: Reference `fig:derivada_parcial_y' on page 11 undefined on input line 516.
+LaTeX Warning: Reference `fig:derivada_parcial_y' on page 11 undefined on input line 518.
 
 The command '\includegraphics [width=0.3\linewidth ]{imagenes/interp_geom_derivada_paracial_y.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 11 undefined on input line 521.
+LaTeX Warning: Citation 'stewart2' on page 11 undefined on input line 523.
 
 
 
@@ -1096,19 +1102,19 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/interp_geom_diferencial.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'thomas_calc_uv' on page 13 undefined on input line 576.
+LaTeX Warning: Citation 'thomas_calc_uv' on page 13 undefined on input line 578.
 
 
-LaTeX Warning: Reference `fig:interp_geom_diferencial' on page 13 undefined on input line 580.
+LaTeX Warning: Reference `fig:interp_geom_diferencial' on page 13 undefined on input line 582.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `fig:interp_geom_diferencial' on page 14 undefined on input line 628.
-
-
 LaTeX Warning: Reference `fig:interp_geom_diferencial' on page 14 undefined on input line 630.
+
+
+LaTeX Warning: Reference `fig:interp_geom_diferencial' on page 14 undefined on input line 632.
 
 
 
@@ -1118,53 +1124,50 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/valor_medio.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 16 undefined on input line 701.
+LaTeX Warning: Citation 'stewart2' on page 16 undefined on input line 703.
 
 
-LaTeX Warning: Reference `sec:incrementos_func' on page 16 undefined on input line 708.
+LaTeX Warning: Reference `sec:incrementos_func' on page 16 undefined on input line 710.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.7\linewidth ]{imagenes/incremento_total.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'thomas_calc_vv' on page 17 undefined on input line 746.
+LaTeX Warning: Citation 'thomas_calc_vv' on page 17 undefined on input line 748.
 
 
-LaTeX Warning: Reference `fig:incremento_total' on page 17 undefined on input line 750.
+LaTeX Warning: Reference `fig:incremento_total' on page 17 undefined on input line 752.
 
-
-
-The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `fig:plano-tg' on page 19 undefined on input line 845.
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+LaTeX Warning: Reference `fig:plano-tg' on page 19 undefined on input line 847.
 
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/plano-tg.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 19 undefined on input line 849.
+LaTeX Warning: Citation 'stewart2' on page 19 undefined on input line 851.
 
 
-LaTeX Warning: Reference `fig:plano-tg' on page 19 undefined on input line 853.
+LaTeX Warning: Reference `fig:plano-tg' on page 19 undefined on input line 855.
 
 
-LaTeX Warning: Reference `eq:plano-tg' on page 19 undefined on input line 855.
+LaTeX Warning: Reference `eq:plano-tg' on page 19 undefined on input line 857.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=\linewidth ]{imagenes/aprox-lineal.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 20 undefined on input line 910.
+LaTeX Warning: Citation 'stewart2' on page 20 undefined on input line 912.
 
 
-LaTeX Warning: Reference `fig:aprox-lineal' on page 20 undefined on input line 914.
+LaTeX Warning: Reference `fig:aprox-lineal' on page 20 undefined on input line 916.
 
-
-
-The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
@@ -1175,11 +1178,14 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `fig:dv-direccional' on page 24 undefined on input line 1054.
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+LaTeX Warning: Reference `fig:dv-direccional' on page 24 undefined on input line 1056.
 
 The command '\includegraphics [width=0.6\linewidth ]{imagenes/dv-direccional.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 24 undefined on input line 1059.
+LaTeX Warning: Citation 'stewart2' on page 24 undefined on input line 1061.
 
 
 
@@ -1188,19 +1194,19 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `eq:sup-nivel' on page 26 undefined on input line 1164.
+LaTeX Warning: Reference `eq:sup-nivel' on page 26 undefined on input line 1166.
 
 
-LaTeX Warning: Reference `eq:dv-sup-nivel-Ft' on page 26 undefined on input line 1169.
+LaTeX Warning: Reference `eq:dv-sup-nivel-Ft' on page 26 undefined on input line 1171.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
-
-LaTeX Warning: Reference `eq:plano-tg-punto' on page 27 undefined on input line 1182.
-
 
 LaTeX Warning: Reference `eq:plano-tg-punto' on page 27 undefined on input line 1184.
+
+
+LaTeX Warning: Reference `eq:plano-tg-punto' on page 27 undefined on input line 1186.
 
 
 
@@ -1228,13 +1234,13 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.4\linewidth ]{imagenes/lagrange_2_variables.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 33 undefined on input line 1601.
+LaTeX Warning: Citation 'stewart2' on page 33 undefined on input line 1603.
 
 
-LaTeX Warning: Citation 'stewart2' on page 33 undefined on input line 1601.
+LaTeX Warning: Citation 'stewart2' on page 33 undefined on input line 1603.
 
 
-LaTeX Warning: Reference `fig:lagrange' on page 33 undefined on input line 1605.
+LaTeX Warning: Reference `fig:lagrange' on page 33 undefined on input line 1607.
 
 
 
@@ -1249,11 +1255,11 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1787.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1789.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1787.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1789.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1787.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1789.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
@@ -1263,11 +1269,11 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/vol-integrado-1.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 39 undefined on input line 1901.
+LaTeX Warning: Citation 'stewart2' on page 39 undefined on input line 1903.
 
 The command '\includegraphics [width=\linewidth ]{imagenes/vol-integrado-2.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 39 undefined on input line 1915.
+LaTeX Warning: Citation 'stewart2' on page 39 undefined on input line 1917.
 
 
 
@@ -1280,36 +1286,80 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=\linewidth ]{imagenes/integral-region-general.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 42 undefined on input line 2040.
+LaTeX Warning: Citation 'stewart2' on page 42 undefined on input line 2042.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `fig:regiones-tipo-1' on page 43 undefined on input line 2048.
+LaTeX Warning: Reference `fig:regiones-tipo-1' on page 43 undefined on input line 2050.
 
 The command '\includegraphics [width=\linewidth ]{imagenes/regiones-tipo-1.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 43 undefined on input line 2053.
+LaTeX Warning: Citation 'stewart2' on page 43 undefined on input line 2055.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
-! Undefined control sequence.
-l.2103   {\larget
-                 ítulo}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+LaTeX Warning: Reference `grf:regiones1' on page 44 undefined on input line 2105.
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+LaTeX Warning: Reference `grf:integrales-dobles-coord-polares' on page 49 undefined on input line 2555.
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2741 \caption
+               {descripción}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
  
 Here is how much of TeX's memory you used:
- 42756 strings out of 469608
- 961708 string characters out of 5470607
- 1683933 words of memory out of 5000000
- 68991 multiletter control sequences out of 15000+600000
+ 43377 strings out of 469608
+ 981596 string characters out of 5470607
+ 1704416 words of memory out of 5000000
+ 69586 multiletter control sequences out of 15000+600000
  657222 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,17n,108p,1133b,2811s stack positions out of 10000i,1000n,20000p,200000b,200000s

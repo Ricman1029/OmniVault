@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  16 JUN 2025 03:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.8)  16 JUN 2025 21:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -583,7 +583,11 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen291
-))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.fillbetween.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfcontrib/tikzlibraryfillbetween.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex
+))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box69
+\pgf@layerboxsaved@background=\box70
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.fillbetween.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfcontrib/tikzlibraryfillbetween.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex
 \pgf@intersect@solutions=\count346
 )) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfcontrib/tikzlibrarydecorations.softclip.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfcontrib/pgflibraryfillbetween.code.tex))) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.decorations.softclip.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.external.code.tex (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibraryexternal.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzexternalshared.code.tex)))
 No auxiliary output files.
@@ -856,33 +860,33 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 65.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 66.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 No file figs/regiones-1.aux.
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Info: Redefining \. on input line 66.
+LaTeX Info: Redefining \% on input line 66.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 65.
+(babel)             Reported  on input line 66.
 *geometry* detected driver: <none>
 *geometry* verbose mode - [ preamble ] result:
 * driver: \Gm@driver 
@@ -920,7 +924,7 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count483
 \scratchdimen=\dimen292
-\scratchbox=\box69
+\scratchbox=\box71
 \nofMPsegments=\count484
 \nofMParguments=\count485
 \everyMPshowfont=\toks52
@@ -936,7 +940,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \providecommand\hyper@newdestlabel[2]{}
-Package hyperref Info: Link coloring ON on input line 65.
+Package hyperref Info: Link coloring ON on input line 66.
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 Package biblatex Info: Trying to load language 'spanish' -> 'spanish-apa'...
@@ -959,8 +963,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'figs/regiones-1.bbl' not found.
 No file figs/regiones-1.bbl.
-Package biblatex Info: Reference section=0 on input line 65.
-Package biblatex Info: Reference segment=0 on input line 65.
+Package biblatex Info: Reference section=0 on input line 66.
+Package biblatex Info: Reference segment=0 on input line 66.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: \Gm@driver 
 * paper: a4paper
@@ -1000,29 +1004,29 @@ No file figs/regiones-1.toc.
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 108.
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 109.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 108.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 109.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 108.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 109.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 108.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 109.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 109.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 109.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
-LaTeX Font Info:    Trying to load font information for U+esvect on input line 108.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 109.
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 109.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
@@ -1035,23 +1039,23 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'am2monllor' on page 5 undefined on input line 243.
+LaTeX Warning: Citation 'am2monllor' on page 5 undefined on input line 244.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=\linewidth ]{imagenes/incrementos_de_funcion.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'am2monllor' on page 6 undefined on input line 277.
+LaTeX Warning: Citation 'am2monllor' on page 6 undefined on input line 278.
 
 
-LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 285.
+LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 286.
 
 
-LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 292.
+LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 293.
 
 
-LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 299.
+LaTeX Warning: Reference `fig:inc_funcion' on page 6 undefined on input line 300.
 
 
 
@@ -1061,11 +1065,11 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/limites_iterados.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'am2monllor' on page 8 undefined on input line 353.
+LaTeX Warning: Citation 'am2monllor' on page 8 undefined on input line 354.
 
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/limites_radiales.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'am2monllor' on page 8 undefined on input line 378.
+LaTeX Warning: Citation 'am2monllor' on page 8 undefined on input line 379.
 
 
 
@@ -1077,18 +1081,18 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `fig:derivada_parcial_x' on page 11 undefined on input line 508.
+LaTeX Warning: Reference `fig:derivada_parcial_x' on page 11 undefined on input line 509.
 
 The command '\includegraphics [width=0.3\linewidth ]{imagenes/interp_geom_derivada_paracial_x.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 11 undefined on input line 513.
+LaTeX Warning: Citation 'stewart2' on page 11 undefined on input line 514.
 
 
-LaTeX Warning: Reference `fig:derivada_parcial_y' on page 11 undefined on input line 517.
+LaTeX Warning: Reference `fig:derivada_parcial_y' on page 11 undefined on input line 518.
 
 The command '\includegraphics [width=0.3\linewidth ]{imagenes/interp_geom_derivada_paracial_y.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 11 undefined on input line 522.
+LaTeX Warning: Citation 'stewart2' on page 11 undefined on input line 523.
 
 
 
@@ -1098,19 +1102,19 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/interp_geom_diferencial.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'thomas_calc_uv' on page 13 undefined on input line 577.
+LaTeX Warning: Citation 'thomas_calc_uv' on page 13 undefined on input line 578.
 
 
-LaTeX Warning: Reference `fig:interp_geom_diferencial' on page 13 undefined on input line 581.
+LaTeX Warning: Reference `fig:interp_geom_diferencial' on page 13 undefined on input line 582.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `fig:interp_geom_diferencial' on page 14 undefined on input line 629.
+LaTeX Warning: Reference `fig:interp_geom_diferencial' on page 14 undefined on input line 630.
 
 
-LaTeX Warning: Reference `fig:interp_geom_diferencial' on page 14 undefined on input line 631.
+LaTeX Warning: Reference `fig:interp_geom_diferencial' on page 14 undefined on input line 632.
 
 
 
@@ -1120,53 +1124,50 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/valor_medio.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 16 undefined on input line 702.
+LaTeX Warning: Citation 'stewart2' on page 16 undefined on input line 703.
 
 
-LaTeX Warning: Reference `sec:incrementos_func' on page 16 undefined on input line 709.
+LaTeX Warning: Reference `sec:incrementos_func' on page 16 undefined on input line 710.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.7\linewidth ]{imagenes/incremento_total.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'thomas_calc_vv' on page 17 undefined on input line 747.
+LaTeX Warning: Citation 'thomas_calc_vv' on page 17 undefined on input line 748.
 
 
-LaTeX Warning: Reference `fig:incremento_total' on page 17 undefined on input line 751.
+LaTeX Warning: Reference `fig:incremento_total' on page 17 undefined on input line 752.
 
-
-
-The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `fig:plano-tg' on page 19 undefined on input line 846.
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+LaTeX Warning: Reference `fig:plano-tg' on page 19 undefined on input line 847.
 
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/plano-tg.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 19 undefined on input line 850.
+LaTeX Warning: Citation 'stewart2' on page 19 undefined on input line 851.
 
 
-LaTeX Warning: Reference `fig:plano-tg' on page 19 undefined on input line 854.
+LaTeX Warning: Reference `fig:plano-tg' on page 19 undefined on input line 855.
 
 
-LaTeX Warning: Reference `eq:plano-tg' on page 19 undefined on input line 856.
+LaTeX Warning: Reference `eq:plano-tg' on page 19 undefined on input line 857.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=\linewidth ]{imagenes/aprox-lineal.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 20 undefined on input line 911.
+LaTeX Warning: Citation 'stewart2' on page 20 undefined on input line 912.
 
 
-LaTeX Warning: Reference `fig:aprox-lineal' on page 20 undefined on input line 915.
+LaTeX Warning: Reference `fig:aprox-lineal' on page 20 undefined on input line 916.
 
-
-
-The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
@@ -1177,11 +1178,14 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `fig:dv-direccional' on page 24 undefined on input line 1055.
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+LaTeX Warning: Reference `fig:dv-direccional' on page 24 undefined on input line 1056.
 
 The command '\includegraphics [width=0.6\linewidth ]{imagenes/dv-direccional.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 24 undefined on input line 1060.
+LaTeX Warning: Citation 'stewart2' on page 24 undefined on input line 1061.
 
 
 
@@ -1190,19 +1194,19 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `eq:sup-nivel' on page 26 undefined on input line 1165.
+LaTeX Warning: Reference `eq:sup-nivel' on page 26 undefined on input line 1166.
 
 
-LaTeX Warning: Reference `eq:dv-sup-nivel-Ft' on page 26 undefined on input line 1170.
+LaTeX Warning: Reference `eq:dv-sup-nivel-Ft' on page 26 undefined on input line 1171.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `eq:plano-tg-punto' on page 27 undefined on input line 1183.
+LaTeX Warning: Reference `eq:plano-tg-punto' on page 27 undefined on input line 1184.
 
 
-LaTeX Warning: Reference `eq:plano-tg-punto' on page 27 undefined on input line 1185.
+LaTeX Warning: Reference `eq:plano-tg-punto' on page 27 undefined on input line 1186.
 
 
 
@@ -1230,13 +1234,13 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.4\linewidth ]{imagenes/lagrange_2_variables.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 33 undefined on input line 1602.
+LaTeX Warning: Citation 'stewart2' on page 33 undefined on input line 1603.
 
 
-LaTeX Warning: Citation 'stewart2' on page 33 undefined on input line 1602.
+LaTeX Warning: Citation 'stewart2' on page 33 undefined on input line 1603.
 
 
-LaTeX Warning: Reference `fig:lagrange' on page 33 undefined on input line 1606.
+LaTeX Warning: Reference `fig:lagrange' on page 33 undefined on input line 1607.
 
 
 
@@ -1251,11 +1255,11 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1788.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1789.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1788.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1789.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1788.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1789.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
@@ -1265,11 +1269,11 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=0.5\linewidth ]{imagenes/vol-integrado-1.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 39 undefined on input line 1902.
+LaTeX Warning: Citation 'stewart2' on page 39 undefined on input line 1903.
 
 The command '\includegraphics [width=\linewidth ]{imagenes/vol-integrado-2.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 39 undefined on input line 1916.
+LaTeX Warning: Citation 'stewart2' on page 39 undefined on input line 1917.
 
 
 
@@ -1282,50 +1286,69 @@ The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [width=\linewidth ]{imagenes/integral-region-general.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 42 undefined on input line 2041.
+LaTeX Warning: Citation 'stewart2' on page 42 undefined on input line 2042.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `fig:regiones-tipo-1' on page 43 undefined on input line 2049.
+LaTeX Warning: Reference `fig:regiones-tipo-1' on page 43 undefined on input line 2050.
 
 The command '\includegraphics [width=\linewidth ]{imagenes/regiones-tipo-1.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Citation 'stewart2' on page 43 undefined on input line 2054.
+LaTeX Warning: Citation 'stewart2' on page 43 undefined on input line 2055.
 
 
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+LaTeX Warning: Reference `grf:regiones1' on page 44 undefined on input line 2105.
+
 \openout4 = `figs/regiones-1.dpth'.
 
-Package pgfplots info on input line 2119: fill between: activating layered graphics
-\pgf@layerbox@axis background=\box70
-\pgf@layerboxsaved@axis background=\box71
-\pgf@layerbox@axis grid=\box72
-\pgf@layerboxsaved@axis grid=\box73
-\pgf@layerbox@axis ticks=\box74
-\pgf@layerboxsaved@axis ticks=\box75
-\pgf@layerbox@axis lines=\box76
-\pgf@layerboxsaved@axis lines=\box77
-\pgf@layerbox@axis tick labels=\box78
-\pgf@layerboxsaved@axis tick labels=\box79
-\pgf@layerbox@pre main=\box80
-\pgf@layerboxsaved@pre main=\box81
-\pgf@layerbox@axis descriptions=\box82
-\pgf@layerboxsaved@axis descriptions=\box83
-\pgf@layerbox@axis foreground=\box84
-\pgf@layerboxsaved@axis foreground=\box85
-Package pgfplots info on input line 2119: Setting layers 'axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground'...
-Package pgfplots info on input line 2119: the combination of 'axis on top' and 'activate layers' implies 'set layers=axis on top'. Deactivate 'axis on top' if you want other layers.
-Package pgfplots info on input line 2119: Setting layers 'axis background,pre main,main,axis grid,axis ticks,axis lines,axis tick labels,axis descriptions,axis foreground'...
+Package pgfplots info on input line 2131: fill between: activating layered graphics
+\pgf@layerbox@axis background=\box72
+\pgf@layerboxsaved@axis background=\box73
+\pgf@layerbox@axis grid=\box74
+\pgf@layerboxsaved@axis grid=\box75
+\pgf@layerbox@axis ticks=\box76
+\pgf@layerboxsaved@axis ticks=\box77
+\pgf@layerbox@axis lines=\box78
+\pgf@layerboxsaved@axis lines=\box79
+\pgf@layerbox@axis tick labels=\box80
+\pgf@layerboxsaved@axis tick labels=\box81
+\pgf@layerbox@pre main=\box82
+\pgf@layerboxsaved@pre main=\box83
+\pgf@layerbox@axis descriptions=\box84
+\pgf@layerboxsaved@axis descriptions=\box85
+\pgf@layerbox@axis foreground=\box86
+\pgf@layerboxsaved@axis foreground=\box87
+Package pgfplots info on input line 2131: Setting layers 'axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground'...
+Package pgfplots info on input line 2131: the combination of 'axis on top' and 'activate layers' implies 'set layers=axis on top'. Deactivate 'axis on top' if you want other layers.
+Package pgfplots info on input line 2131: Setting layers 'axis background,pre main,main,axis grid,axis ticks,axis lines,axis tick labels,axis descriptions,axis foreground'...
 [44
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
 
 The command '\includegraphics [height=1.2cm]{~/imagenes/logo_utn.png}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Empty bibliography on input line 2128.
+LaTeX Warning: Empty bibliography on input line 2398.
 
  ***********
 LaTeX2e <2024-11-01> patch level 2
@@ -1344,15 +1367,15 @@ Package logreq Info: Writing requests to 'figs/regiones-1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43833 strings out of 469608
- 993566 string characters out of 5470607
- 1702693 words of memory out of 5000000
- 70028 multiletter control sequences out of 15000+600000
+ 43943 strings out of 469608
+ 996784 string characters out of 5470607
+ 1704393 words of memory out of 5000000
+ 70135 multiletter control sequences out of 15000+600000
  662924 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,17n,108p,1133b,2811s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on figs/regiones-1.pdf (1 page, 36416 bytes).
+Output written on figs/regiones-1.pdf (1 page, 37271 bytes).
 PDF statistics:
  42 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream
