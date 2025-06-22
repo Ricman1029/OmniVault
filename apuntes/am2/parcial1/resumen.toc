@@ -48,4 +48,23 @@
 \contentsline {subsubsection}{\numberline {5.9.2}Maximización de la derivada direccional}{29}{subsubsection.5.9.2}%
 \contentsline {subsection}{\numberline {5.10}Planos tangentes a superficies}{30}{subsection.5.10}%
 \contentsline {subsection}{\numberline {5.11}Máximos y mínimos}{31}{subsection.5.11}%
-\contentsline {section}{Referencias}{32}{subsection.5.11}%
+\contentsline {subsection}{\numberline {5.12}Valores máximos y mínimos absolutos}{37}{subsection.5.12}%
+\contentsline {subsection}{\numberline {5.13}Multiplicadores de Lagrange}{39}{subsection.5.13}%
+\contentsline {subsubsection}{\numberline {5.13.1}Dos restricciones}{44}{subsubsection.5.13.1}%
+\contentsline {section}{\numberline {6}Integrales múltiples}{45}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Integrales dobles en rectángulos}{45}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Integrales iteradas}{47}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Valor promedio}{49}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Integrales dobles en regiones generales}{50}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Propiedades de las integrales dobles}{57}{subsubsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.3}Integrales en coordenadas polares}{58}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Aplicaciones de las integrales dobles}{63}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}Densidad y masa}{63}{subsubsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.2}Centros de masa}{63}{subsubsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.3}Momento de inercia}{64}{subsubsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.4}Área de una superficie}{64}{subsubsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.5}Integrales triples}{64}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}Aplicaciones de las integrales triples}{68}{subsubsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.6}Integrales triples en coordenadas cilíndricas}{69}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Integrales triples en coordenadas esféricas}{70}{subsection.6.7}%
+\contentsline {section}{Referencias}{74}{figure.37}%

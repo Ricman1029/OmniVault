@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+% Interlineado 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+% Fuente Times New Roman
+\usepackage{mathptmx}
+
+% Acomodar margenes del documento
+\usepackage[a4paper, margin=2cm, top=3cm, headheight=50pt]{geometry}
+
+% Paquetes comunes
+\usepackage{graphicx, float}
+\usepackage{amsfonts, amssymb, amsmath}
+\usepackage{physics, esvect}
+\usepackage{enumerate}
+\usepackage[colorlinks=true, citecolor=blue]{hyperref}
+
+% Para graficar
+\usepackage{pgfplots}
+\usepackage{tikz, color}
+\usepackage{tikz-3dplot}
+\pgfplotsset{width=15cm, compat=1.12}
+
+% Para automatas
+\usetikzlibrary{automata, positioning, arrows, calc}
+\tikzset{
+        ->,  % makes the edges directed
+        >=stealth, % makes the arrow heads bold
+        shorten >=2pt, shorten <=2pt, % shorten the arrow
+        node distance=3cm, % specifies the minimum distance between two nodes. Change if n
+        every state/.style={draw=blue!55,very thick,fill=blue!20}, % sets the properties for each ’state’ n
+        initial text=$ $, % sets the text that appears on the start arrow
+}
+
+% Encabezados
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\fancyhead[L]{
+  \includegraphics[height=1.2cm]{~/imagenes/logo_utn.png}
+  \shortstack[l]{
+    {\footnotesize Universidad Tecnológica Nacional} \\
+    {\footnotesize Facultad Regional Córdoba} \\
+    {\footnotesize Extensión Áulica Bariloche}
+  }
+}
+\fancyhead[C]{
+  \shortstack[c]{
+    {\footnotesize Sintáxis y semántica de los lenguajes} \\
+    {\footnotesize Resumen de Unidades 5 - 7} \\
+    {\footnotesize }
+  }
+}
+\fancyhead[R]{
+  \shortstack[r]{
+    {\footnotesize Profesor: Santiago Oliva} \\
+    {\footnotesize Alumno: Ricardo Nicolás Freccero} \\
+    {\footnotesize Fecha: 05/06/2025}
+  }
+}
+
+% Para bibliografía
+%\usepackage[backend=biber, style=apa]{biblatex}
+%\addbibresource{bibliografia.bib}
+
+\begin{document}
+\newgeometry{margin=2cm, top=1.5cm}
+  \begin{titlepage}
+    \centering
+    \includegraphics[width=\linewidth]{~/imagenes/logo_utn_frc.jpg}\\
+
+    \textsc{
+      \LARGE Universidad Tecnológica Nacional\\
+      \Large Facultad Regional Córdoba - Extensión Áulica Bariloche\\
+      \large Ingeniería en Sistemas de Información\\
+      Año lectivo 2025\\[0.5cm]
+    }
+
+    \rule{\linewidth}{1.0mm}\\[0.4cm]
+    \Huge
+    \textbf{Sintáxis y semántica de los lenguajes}\\
+    Resumen de Unidades 5 - 7\\[0.2cm]
+    \LARGE
+    Título
+    \rule{\linewidth}{1.0mm}\\
+    \large
+    \begin{flushleft}
+      Profesor: Santiago Oliva
+
+      Ayudante: 
+
+      Fecha: 05/06/2025
+    \end{flushleft}
+
+    \vfill
+    \begin{flushright}
+      Alumno: Ricardo Nicolás Freccero
+
+      Número de legajo: 415753
+    \end{flushright}
+  \end{titlepage}
+
+  \restoregeometry
+  \tableofcontents
+  \newpage
+
+  \section{Unidad 5}
+  $ \Gamma $
+  
+
+
+  %\newpage
+  %\addcontentsline{toc}{section}{Referencias}
+  %\printbibliography
+
+\end{document}

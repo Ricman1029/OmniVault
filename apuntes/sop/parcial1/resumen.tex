@@ -496,12 +496,417 @@
     \item \textbf{Cuotas de disco.} Para evitar que los usuarios ocupen demasiado espacio en disco, los sistemas operativos multiusuario proporcionan un mecanismo para imponer las cuotas de disco.
   \end{itemize}
 
-  \section{Unidad 4 - Administracion de Procesos}
+  \section{Unidad 3 - Administracion de Procesos}
+  \subsection{¿Qué es un proceso?}
+  Podemos definir un proceso como un programa en ejecución. Los procesos se caracterizan por tener una serie de elementos, incluyendo los siguientes:
+  \begin{itemize}
+    \item \textbf{Identificador (PID)}. Un identificador único asociado a cada proceso, para distingirlo del resto.
 
+    \item \textbf{Estado}. Si está en ejecución, detenido, o finalizado.
+
+    \item \textbf{Prioridad}. Nivel de prioridad relativo al resto de procesos.
+
+    \item \textbf{Contador de programa}. La dirección de la siguiente instrucción del programa que se ejecutará.
+
+    \item \textbf{Punteros a memoria}. Punteros al código de programa y los datos asociados a dicho proceso, además de cualquier bloque de memoria compartido con otros procesos.
+
+    \item \textbf{Datos de contexto}. Los datos que están presentes en los registros del procesador cuando es proceso está corriendo.
+
+    \item \textbf{Información de estado de E/S}. Las peticiones de E/S pendientes, dispositivos de E/S asignados a dicho proceso, una lista de ficheros en uso por el mismo, etc.
+
+    \item \textbf{Información de auditoría}. Puede incluir la cantidad de tiempo de procesador y de tiempo de reloj utilizados, así como los límites de tiempo, registros contables, etc.
+  \end{itemize}
+
+  Toda esta información se almacena en una estructura de datos, que se suele llamar \textbf{Bloque de Control de Procesos (PCB)}, que es creada y gestionada por el sistema operativo. El PCB es una herramienta clave que permite al sistema operativo dar soporte a múltiples procesos y proporcionar multiprogramación.
+
+  ``Cuando un proceso se interrumpe, los valores actuales del contador de programa y los registros de procesador (datos de contexto) se guardan en los campos correspondientes del PCB y el estado del proceso se cambia a cualquier otro valor. El sistema operativo ahora es libre de poner otro proceso en estado de ejecución, para después recuperar el PC y los datos de contexto para poder volver a ejecutar el procesos donde como si nada hubiese pasado.''
+
+  \subsection{Estados de los procesos}
+  Dijimos que un proceso es un programa en ejecución. Sabemos que el que se encarga de ejecutar los programas es el procesador de la computadora. Este va ejecutando las instrucciones en una secuencia dada por el cambio del PC (Program Counter) [Recordar materia arquitectura]. Lo que vamos a ver ahora es que a lo largo del tiempo el PC puede apuntar al código de diferentes programas que son parte de diferentes procesos.
+
+  En la Figura \ref{fig:procesos-ejecución} podemos ver un ejemplo de la disposición de 3 procesos en la memoria principal. Ademas, hay un programa adicional llamado \textbf{activador} que es el que se encarga de decirle al procesador cuál proceso debe ejecutar. Ademas, en la Figura \ref{fig:trazas-procesos}, podemos ver las \textbf{trazas} de los procesos, que no es mas que las direcciones en memoria de cada una de las instrucciones que tiene cada proceso.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{imagenes/proceso-en-ejecucion.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Ejemplo de la ejecución de procesos.}
+    \label{fig:procesos-ejecución}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/trazas-procesos.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Trazas de los procesos A, B y C.}
+    \label{fig:trazas-procesos}
+  \end{figure}
+
+  Ahora, en la siguiente figura podemos ver cuáles son los valores que va tomando el PC durante los primeros 52 ciclos de ejecución. En este ejemplo estamos suponiendo que el sistema operativo sólo deja que un proceso se ejecute durante seis cíclos de instrucción, para después interrumpirse y darle paso a la ejecución de otro proceso. De esta manera se evita que un solo proceso monopolice el uso del tiempo del procesador. Vemos además que entre la ejecución de los procesos A, B y C, se ejecuta el programa que habíamos llamado activador, ya que es este el que se encarga de modificar el valor del PC una vez pasados los 6 cíclos de reloj para que apunte a otro proceso.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/ejecucion-de-tres-procesos.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Ejemplo de ejecución de tres procesos.}
+    \label{fig:ejec-tres-procesos}
+  \end{figure}
   
+  \subsubsection{Un modelo de procesos de dos estados}
+  Para que el sistema operativo pueda controlar la ejecución de procesos como acabamos de ver, tiene que saber sí o sí en qué estado se encuentra cada proceso. Necesita saber si el proceso A se está ejecutando para poder decidir si debe pararlo o no, y necesita saber lo mismo de los procesos B y C para poder decidir si debe ejecutarlos o no.
 
+  El modelo mas simple posible para controlar la ejecución de procesos es el modelo de dos estados. En este modelo un procesos puede tener solo uno de dos estados: Ejecutando o No Ejecutando. De este análisis super sencillo ya podemos deducir que en el sistema operativo, los procesos van a tener que representarse de alguna manera que indiquen si se están ejecutando o no. Los que no se estén ejecutando podrían estar en alguna especie de cola, esperando a que llegue su turno de ejecución (ver Figura \ref{fig:procesos-dos-estados}).
 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagenes/procesos-dos-estados.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Modelo de procesos de dos estados.}
+    \label{fig:procesos-dos-estados}
+  \end{figure}
+
+  Cuando los procesos son creados, el sistema operativo debe encargarse de generar la estrucutra de datos que se usa para manejar el proceso (PCB) y reservar el espacio de direcciones en memoria principal.
+
+  Las Figuras \ref{fig:creacion-proceso} y \ref{fig:terminacion-proceso} describen las razones por las cuales un proceso puede crearse o terminarse.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/creacion-proceso.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Razones para la creación de un proceso.}
+    \label{fig:creacion-proceso}
+  \end{figure}
   
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/terminacion-proceso.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Razones para la terminación de un proceso.}
+    \label{fig:terminacion-proceso}
+  \end{figure}
+
+  \subsubsection{Modelo de procesos de cinco estados}
+  Este modelo que describimos recién sirve para darnos una idea de cómo manejar la ejecución de programas, pero la verdad que no sirve en la realidad. Cuando tenemos solo dos estados de los procesos, y todos comparten una misma cola de ejecución, puede surgir el problema de que hayan procesos que están próximos a ser ejecutados pero que todavía no están listos porque necesitan que se complete alguna operación de E/S. Y van a haber programas que sí están listos para ejecutarse ya, pero como no es su turno en la cola tienen que esperar a que todos los de mas adelante se ejecuten primero. 
+
+  Una forma de solucionar este tipo de problemas es agregar mas estados:
+  \begin{itemize}
+    \item \textbf{Ejecutando}. El procesos está actualmente en ejecución.
+
+    \item \textbf{Listo}. Un proceso que está esperando su turno para ejecutar y que ya está listo para ejecutarse.
+
+    \item \textbf{Bloqueado}. Un proceso que está esperando su turno para ejecutar pero que todavía no está listo ya que debe esperar que se cumpla un evento determinado o que se complete alguna operación de E/S.
+
+    \item \textbf{Nuevo}. Un proceso que se acaba de crear. Este proceso ya tiene su PCB pero todavía no está cargado en la memoria principal.
+
+    \item \textbf{Saliente}. Un proceso que ya no está mas en la lista de procesos ejecutables por cualquier razón.
+  \end{itemize}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/procesos-cinco-estados.png}
+    \caption{Imanen sacada de \parencite{sostallings}. Modelo de procesos de cinco estados.}
+    \label{fig:proc-cinco-estados}
+  \end{figure}
+
+  En la Figura \ref{fig:proc-cinco-estados} podemos ver cómo sería la gestión de este modelo de procesos. Las posibles transiciones son las siguientes:
+  \begin{itemize}
+    \item \textbf{Null $  \to  $ Nuevo}. Se crea un nuevo proceso.
+
+    \item \textbf{Nuevo $  \to  $ Listo}. Cuando el sistema operativo está listo, admite al proceso nuevo. La mayoría de sistemas operativos fijan un límite basado en el número de procesos existentes.
+
+    \item \textbf{Listo $  \to  $ Ejecutando}. El sistema operativo selecciona uno de los procesos que se encuentre en estado Listo y lo ejecuta.
+
+    \item \textbf{Ejecutando $  \to  $ Saliente}. El sistema operativo finaliza el proceso que estaba en ejecución.
+
+    \item \textbf{Ejecutando $  \to  $ Listo}. Lo mas normal es que el procesos en ejecución alcanzó su cuota máxima de tiempo posible de ejecución. 
+
+    \item \textbf{Ejecutando $  \to  $ Bloqueado}. Generalmente porque el proceso solicita algo por lo que tiene que esperar.
+
+    \item \textbf{Bloqueado $  \to  $ Listo}. Cuando sucede el evento por el cual el proceso estaba esperando, se mueve a Listo.
+
+    \item \textbf{Listo $  \to  $ Saliente}. Puede ser que el proceso haya sido creado por un proceso padre, y este fue terminado, por lo que el proceso hijo que estaba listo para ejecutar, ahora es un proceso saliente.
+
+    \item \textbf{Bloqueado $  \to  $ Saliente}. Lo mismo que el caso anterior.
+  \end{itemize}
+
+  Para este tipo de sistemas lo mas conveniente es usar un sistema de dos colas, en vez de una sola: una cola para los procesos Listos, y otra para los Bloqueados. Y mejor aún, se pueden usar varias colas para los procesos bloqueados: una para cada evento que está siendo esperado. De esta manera, cuando existen muchos procesos esperando distintos eventos, no hay que recorrer un cola extremadamente larga hasta encontrar al proceso que esperaba al evento que acaba de ocurrir, sino que solo ingresa a la cola de Listos el siguiente proceso de la cola de dicho evento. Quizás se puede ver un poco mejor en la Figura \ref{fig:colas-eventos}.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/colas-bloqueados.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Modelo de colas para cada evento.}
+    \label{fig:colas-eventos}
+  \end{figure}
+
+  \subsubsection{Procesos suspendidos}
+  Los tres principales estados que describimos recién (Listo, Ejecutando, Bloqueado) sirven para modelar y diseñar un sistema operativo. Sin embargo, todavía se pueden agregar más estados. Recordemos que todo lo que estamos haciendo es intentar aprovechar al máximo el tiempo de procesamiento del procesador, ya que la velocidad de las operaciones de E/S son muy lentas en comparación. La diferencia entre estas velocidades es tal que, aún si usamos este método de cinco estados en un sistema multiprogramado, el procesador puede estar ocioso la mayor parte del tiempo.
+
+  Esto quiere decir que al procesador todavía le dá para procesar muchos mas procesos de los que somos capaces de gestionar en la memoria principal, y adquirir mayores cantidades de memoria no resulta factible. Lo que sí se puede hacer es usar una técnica que se conoce como \textbf{swapping}. Esta técnica consiste en agarrar los estados que se encuentran en estado de Bloqueados, y quitarlos de la memoria principal para mandarlos al disco, dejándolos en un nuevo estado que se conoce como \textbf{Suspendido}. Esta técnica es de mucha utilidad ya que le permite a la computadora gestionar una mucho mayor cantidad de procesos al mismo tiempo, sin tener que usar tanta memoria principal.
+
+  Aunque, en realidad no es tan sencillo como agregar un solo estado llamado Suspendido, porque podemos tener un proceso que estaba Bloqueado en memoria principal y fue trasladado al disco, pero aún después de haber transcurrido un cierto tiempo puede que todavía no haya ocurrido el evento que lo pondría en estado de Listo. Por lo que si este proceso es llevado de vuelta a la memoria principal, seguiría estando bloqueado. 
+
+  Teniendo en cuenta esto, lo que conviene hacer ahora es agregar no uno, sino dos nuevos estados además de Listo y Bloqueado:
+  \begin{itemize}
+    \item \textbf{Listo}. El proceso está en memoria principal disponible para su ejecución.
+
+    \item \textbf{Bloqueado}. El proceso está en memoria principal y esperando un evento.
+
+    \item \textbf{Bloqueado/Suspendido}. El proceso está en almacenamiento secundario (disco) Y esperando un evento.
+
+    \item \textbf{Listo/Suspendido}. El proceso está en almacenamiento secundario pero está disponible para su ejecución tan pronto como sea cargado en memoria principal.
+  \end{itemize}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/procesos-suspendidos.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Procesos con dos estados suspendidos.}
+    \label{fig:proc-suspendidos}
+  \end{figure}
+
+  En la siguiente Figura se pueden ver las razones por las cuales un proceso podría suspenderse.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/suspension-proceso.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Razones para la suspensión de un proceso.}
+    \label{fig:susp-proceso}
+  \end{figure}
+
+  \subsubsection{Estructuras de control de procesos}
+  El sistema operativo se encarga de la gestión de procesos y recursos, y para esto construye y mantiene tablas de información sobre cada entidad que gestiona. Los detalles pueden variar de un sistema operativo a otro pero, fundamentalmente, todos los sistemas operativos mantienen información sobre: memoria, E/S, archivos y procesos.
+
+  Para el sistema operativo poder manejar los procesos, necesita conocer dónde están localizados los procesos, y cuáles son sus atributos. 
+
+  \paragraph{Localización de los procesos}\mbox{}\\
+  Para localizar un proceso su utiliza el concepto de \textbf{imagen del proceso}. Una imagen de un proceso es un conjunto de elementos que nos permiten identificarlo. En ella están el conjunto de programas a ejecutar, las pocisiones de memoria que necesita y usa, la pila que está asociada a él y su PCB.
+  
+  \paragraph{Atributos de proceso}\mbox{}\\
+  La información sobre todos los atributos del proceso se encuentra en el PCB. La tabla completa real con toda la información que contiene el PCB para que el sistema operativo use es muy larga y no viene al caso. Lo que sí tenemos que saber es que en el PCB se almacena información en tres categorías principales:
+  \begin{itemize}
+    \item \textbf{Identificación del proceso}. PID, identificadores de usuario, identificadores del proceso padre.
+
+    \item \textbf{Información de estado del procesador}. Indica los contenidos de los registros del procesador. 
+
+    \item \textbf{Información de control de proceso}. Información de estado y planificación del proceso, privilegios del proceso, gestión de memoria, comunicación con otros procesos, etc.
+  \end{itemize}
+
+  \textit{El bloque de control de procesos (PCB) es la estructura de datos mas importante del sistema operativo.} Cada bloque de control de proceso contiene toda la información sobre un proceso que necesita el sistema operativo y todo funciona en base a ello. Se puede decir que el conjunto de llos bloques de control de proceso definen el estado del sistema operativo.
+
+  \subsection{Control de procesos}
+  \subsubsection{Modos de ejecución}
+  La mayoría de los procesadores proporcionan dos modos de ejecución: \textbf{modo usuario}, que es el modo menor privilegiado; y \textbf{modo kernel}.
+
+  El motivo de la existencia de estos dos modos es la protección del sistema operativo y las tablas de información, de la interferencia con programas de usuario. Basicamente, es para que los usuarios no se puedan mandar cagadas y borren datos que son críticos para el funcionamiento de la computadora.
+
+  La forma en que el sistema operativo le hace saber al procesador en qué modo debe ejecutar cada programa es a través de un bit en la palabra de estado de programa (\textit{Program State Word} PSW) que indica el modo de ejecución.
+
+  \subsubsection{Creación de procesos}
+  Cuando el sistema operativo decide crear un proceso, por cualquier razón, procede de la siguiente manera:
+  \begin{enumerate}[1.]
+    \item \textbf{Asignar un identificador de proceso único al proceso}. Se añade una nueva entrada a la tabla de procesos, que contiene una entrada por proceso.
+
+    \item \textbf{Reservar espacio para proceso}. Se debe reservar espacio suficiente para todos los elementos de la imagen del proceso.
+
+    \item \textbf{Inicialización del bloque de control de proceso}. 
+
+    \item \textbf{Establecer enlaces apropiados}. Por ejemplo, el sistema operativo debe situar el proceso en la cola de Listos o Listos/Suspendidos.
+
+    \item \textbf{Creación o expansión de otras estructuras de datos}. Por ejemplo, el sistema operativo puede mantener un registro de auditoría por cada proceso que se puede utilizar posteriormente a efectos de facturación y/o análisis de rendiemiento del sistema.
+  \end{enumerate}
+
+  \subsubsection{Cambio de proceso}
+  Un cambio de proceso es cuando se está ejecutando un proceso A, y este es interrumpido para que se pueda ejecutar el proceso B.
+
+  Los cambios de proceso puden ocurrir en cualquier instante en el que el sistema operativo obtiene el control sobre el proceso que está actualmente en ejecución. En general, puede deberse a tres causas:
+  \begin{itemize}
+    \item \textbf{System Call}. Puede ocurrir que el programa necesita abrir un archivo y realiza una llama al sistema, dándole control al sistema operativo para gestione la operación de abrir el archivo solicitado.
+
+    \item \textbf{Interrupción}. Un ejemplo puede ser que el sistema operativo haya determinado que el proceso en ejecución ha excedido su tiempo de ejecución y lo interrumpe. En las interrupciones el control se transfiere inicialmente al manejador de interrupción, que realiza determinadas tareas internas y que posteriormente salta a una rutina del sistema operativo.
+
+    \item \textbf{Traps}. Son interrupciones asociadas a una condición de error o algún acceso no permitido a un archivo.
+  \end{itemize}
+
+  \subsubsection{Cambio de modo}
+  Generalmente, el cambio de modo ocurre cuando sucede una interrupción de un proceso en ejecución. En este caso el sistema operativo actúa de la siguiente manera: 
+  \begin{enumerate}[1.]
+    \item Coloca el contador de programa en la dirección de comienzo de la rutina del programa manejador de la interrupción.
+
+    \item Cambia de modo usuario a modo núcleo de forma que el código de tratamiento de la interrupción pueda incluir instrucciones privilegiadas.
+  \end{enumerate}
+
+  \subsubsection{Cambio de estado del proceso}
+  Un cambio de estado del proceso y un cambio de modo son dos cosas distintas. Un cambio de estado de un proceso puede ocurrir sin que haya un cambio de modo y viceversa. Cuando un proceso va a cambiar de estado Ejecutando a cualquier otro estado, el sistema operativo tiene que realizar cambios importantes en su entorno. Los pasos que realiza son los siguientes:
+  \begin{enumerate}[1.]
+    \item Guardar el estado del procesador (PC y otros registros).
+
+    \item Actualizar el PCB del proceso que está actualmente en ejecución.
+
+    \item Mover el PCB a la cola correspondiente al nuevo estado.
+
+    \item Seleccionar el nuevo proceso a ejecutar.
+
+    \item Actualizar el PCB del proceso elegido pasándolo al estado Ejecutando.
+
+    \item Actualizar las estructuras de datos de gestión de memoria.
+
+    \item Si el proceso no es nuevo, restaurar el estado del procesador al que tenía el proceso antes de salir del estado Ejecutando la última vez.
+  \end{enumerate}
+
+  \subsection{Hilos}
+  Acá viene un cambio re copado sobre lo que veníamos viendo. Hasta ahora dijimos que básicamente los procesos tenían dos características:
+  \begin{itemize}
+    \item \textbf{Propiedad de recursos}. Cada proceso cuenta con un espacio de direcciones de memoria para el manejo de la imagen del proceso; la imágen era un conjunto de programa, datos, pila y el PCB.
+
+    \item \textbf{Planificación/Ejecución}. La ejecución de un proceso sigue una ruta de ejecución (traza) a través de uno  o más progamas. Esta ejecución puede estar intercalada con ese u otros procesos. De esta manera, un proceso tiene un estado de ejecución y una prioridad de activación, y ésta es la entidad que se planifica y activa por el sistema operativo.
+  \end{itemize}
+
+  Lo que pasa ahora es que hoy en día, la mayoría de los sistemas operativos tratan a estas dos características como independientes una de otra. Para distinguirlas, a la característica que se activa (Planificación/Ejecución) se la denomina \textbf{hilo} o \textbf{thread}, mientras que a la parte de Propiedad de recursos se la denomina \textbf{proceso}.
+
+  \subsubsection{Multihilo}
+  Lo que nos permite hacer esta diferenciación es que, ahora, un sistema operativo puede ser capaz de dar soporte a \textit{múltiples hilos} de ejecución dentro de \textit{un solo proceso}. Hasta ahora veníamos estudiando los procesos que admitían un solo hilo a la vez, pero vamos a ver ahora que tener múltiples hilos por proceso es mucho mas eficiente.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/multihilos.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Hilos y procesos.}
+    \label{fig:multihilos}
+  \end{figure}
+
+  En un entorno multihilo, un proceso se define como la unidad de asignación de recursos y una unidad de protección. Un proceso tiene:
+  \begin{itemize}
+    \item Un espacio de direcciones de memoria que soporta la imagen del proceso.
+
+    \item Acceso protegido a procesadores, otros procesos, archivos y recursos de E/S.
+  \end{itemize}
+
+  Dentro de un proceso puede haber uno o más hilos, cada uno con:
+  \begin{itemize}
+    \item Un estado de ejecución por hilo (Ejecutando, Listo, etc).
+
+    \item Un contexto de hilo que se almacena cuando no está en ejecución. Serían como los datos necesarios para poder retomar el hilo donde había quedado cuando se vuelva a ejecutar.
+
+    \item Una pila de ejecución.
+
+    \item Por cada hilo, espacio de almacenamiento para variables locales.
+
+    \item Acceso a la memoria y recursos de su proceso, compartido con todos los hilos de su mismo proceso.
+  \end{itemize}
+
+  En un entorno multihilo, sigue habiendo un único bloque de control del proceso y un espacio de direcciones de usuario asociado al proceso, pero ahora hay varias pilas separadas para cada hilo, así como un bloque de control para cada hilo que contiene los valores de los registros, la prioridad, etc. Lo hilos de un mismo proceso comparten el estado y los recursos de ese proceso, reciben el mismo espacio de direcciones y tienen acceso a los mismo datos. 
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagenes/mono-vs-multihilo.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Modelos de proceso con único hilo y multihilo.}
+    \label{fig:mono-vs-multihilo}
+  \end{figure}  
+
+  Los beneficios de los hilos son:
+  \begin{enumerate}[1.]
+    \item Lleva mucho menos tiempo (10 veces menos) crear un nuevo hilo en un proceso existente que crear un proceso totalmente nuevo.
+
+    \item Lleva menos tiempo finalizar un hilo que un proceso.
+
+    \item Lleva menos tiempo cambiar entre dos hilos dentro del mismo proceso.
+
+    \item los hilos mejoran la eficiencia de la comunicación entre diferentes programas que están ejecutando.
+  \end{enumerate}
+
+  Ejemplos de usos de hilos:
+  \begin{itemize}
+    \item \textbf{Trabajo en primer plano y segundo plano}. Un hilo puede estar mostrando un menú en un excel mientras otro hilo está actualizando la hoja.
+
+    \item \textbf{Procesamiento asíncrono}. Se puede crear un hilo que cada minuto escriba el \textit{buffer} de memoria RAM de un archivo en el disco (guarda los cambios del archivo cada un minuto).
+
+    \item \textbf{Velocidad de ejecución}. Un hilo puede estar esperando a la E/S mientras otro sigue procesando datos.
+  \end{itemize}
+
+  \subsubsection{Funcionalidades de los hilos}
+  Los hilos, al igual que los procesos, tienen estados de ejecución y se pueden sincronizar entre ellos. Los principales estados de los hilos son: Ejecutando, Listo y Bloqueado. No tiene sentido hablar de hilos Suspendidos ya que eso es un concepto del proceso. Los hilos tienen que poder sincronizarse para que no interfieran entre ellos o corrompan la estructura de datos. No puede pasar que dos hilos intenten hacer cambios distintos al mismo tiempo en un mismo archivo.
+
+  En la siguiente figura vemos cómo mejora la eficiencia de un programa que realiza una llamada a procedimiento remoto (RPC) a dos máquinas diferentes utilizando un único procesador.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagenes/mono-vs-multihilo-2.png}
+    \caption{Imagen sacada de \parencite{sostallings}. RPC utilizando hilos.}
+    \label{fig:mono-vs-mulithilo-2}
+  \end{figure}
+
+  \subsubsection{Hilos de nivel de usuario y de nivel de núcleo}
+  Existen dos tipos de hilos: los de nivel de usuario (\textit{user-level threads}, \textbf{ULT}) y los de nivel de núcleo (\textit{kernel-level threads}, \textbf{KLT}).
+
+  \paragraph{Hilos de nivel de usuario}\mbox{}\\
+  En un entorno ULT puro, la aplicación gestiona todo el trabajo de los hilos y el núcleo no es consciente de la existencia de los mismos. Cualquier aplicación puede programarse para ser multihilo a través del uso de una biblioteca de hilos. Esta biblioteca contiene código para la creación y destrucción de hilos, para paso de mensajes y datos entre los hilos, para planificar la ejecución de los hilos, y para guardar y resetaurar el contexto de los hilos. Esto se hace en el espacio de usuario y dentro de un solo proceso; el núcleo continúa planificando el proceso como una unidad y le asigna un único estado.
+
+  Ventajas del uso de ULT en vez de KLT:
+  \begin{itemize}
+    \item El cambio de hilo no requiere privilegios de modo núcleo.
+
+    \item La planificación puede especificarse como parte de la aplicación. Una aplicación podría tener un algorítmo de planificación cíclico, mientras otra podría planificar basado en prioridades.
+
+    \item Los ULT puede ejecutar en cualquier sistema operativo.
+  \end{itemize}
+
+  Desventajas:
+  \begin{itemize}
+    \item Cuando UTL realiza una system call que sea bloqueante, no solo se bloquea el hilo que hizo la llamada sino que todo el proceso entero se bloquea con él.
+
+    \item Si el entorno es ULT puro, la aplicación no puede usar multiproceso ya que el núcleo le asigna un solo proceso a cada aplicación.
+  \end{itemize}
+
+  \paragraph{Hilos de nivel de núcleo}\mbox{}\\
+  En un entorno KLT puro, el núcleo gestiona todo el trabajo de gestión de h ilos. No hay código de gestión de hilos en la aplicación, solamente una interfaz de programación de aplicación (API) para acceder a las utilidades de hilos del núcleo. Windows es un ejemplo de esto.
+
+  Este tipo de entornos resuelve las dos desventajas que aprecen en entornos ULT puros ya que el núcleo puede planificar simultáneamente múltiples hilos de un solo proceso en múltiples procesadores, y si se bloquea un hilo de un proceso, el núcleo puede planificar otro hilo del mismo proceso.
+
+  La principal desventaja del enfoque KLT es que la transferencia de control de un hilo a otro del mismo proceso requiere un cambio de modo al núcleo y esto significa un aumento muy significativo en el tiempo requierido para realizar dicha acción. Por ejemplo, crear un hilo a nivel usuario puede tardar al rededor de 34$ \mu S $, mientras que hacerlo a nivel de núcleo demora unos 948$ \mu S $.
+
+  \paragraph{Enfoques combinados}\mbox{}\\
+  Existen sistemas operativos que usan ULT y KLT al mismo tiempo. Si está bien implementado, se pueden aprovechar las ventajas de los dos enfoques minimizando las desventajas.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/hilos-ult-klt.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Hilos de nivel usuario y de nivel de núcleo.}
+    \label{fig:hilos-ult-klt}
+  \end{figure}
+
+  \subsection{Multiprocesamiento simétrico (SMP)}
+  El SMP es un enfoque que se usa para proporcionar paralelismo entre procesos. La arquitectura de un sistema SMP está diseñada para que cada procesador pueda ejecutar el núcleo del sistema operativo, y normalemte cada procesador realiza su propia planificación del conjunto disponible de procesos e hilos. El núcleo a su vez puede construirse como múltiples procesos o hilos para permitir la ejecución de partes del mismo en paralelo.
+
+  En un sistema SMP existen múltiples procesadores, cada uno con acceso a una memoria principal compartida y dispositivos de E/S a través de algún mecanismo de interconexión. Los procesadores se puede comunicar entre sí a través de la memoria
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/organizacion-smp.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Organización de los SMP.}
+    \label{fig:organizacion-smp}
+  \end{figure}
+
+  \subsection{Micronúcleos}
+  Los primeros sistemas operativos que se desarrollaron eran \textbf{sistemas monolíticos}, donde prácticamente desde cualquier procedimiento se podía llamar a cualquier otro. No había estructura en la implementación del código y esto se hizo insostenible a medida que los sistemas operativos fueron creciendo. 
+
+  Luego aparecieron los sistemas operativos por capas, que estaban mas organizados pero igual seguían habiendo problemas. En estos, cada capa tenía distintas funcionalidades y se conectaba con las capas adyacentes. El problema es que si se realizaba un cambio en una capa, había que modificar las adyacentes también y los programas eran de millones de líneas de código.
+
+  Entonces apareció la idea de el \textbf{micronúcleo}. La idea era que solo las funciones absolutamente esenciales del sistema operativo estén en el núcleo, y el resto de servicios y aplicaciones se construyen sobre el micronúcleo y se ejecutan en modo usuario. De esta forma, el micronúcleo funciona como un intercambiador de mensajes: valida mensajes, los pasa entre los componentes, y concede el acceso al hardware. 
+
+  \subsubsection{Beneficios de una organización micronúcleo}
+  \begin{itemize}
+    \item \textbf{Interfaz uniforme}. No hace falta diferenciar entre servicios a nivel de núcleo o usuario porque todos se proporcionan a través de paso de mensajes.
+
+    \item \textbf{Extensibilidad}. Si se quiere añadir o modificar algún servicio, no hace falta rediseñar todo el núcleo, solo el módulo deseado.
+
+    \item \textbf{Felxibilidad}. Se pueden añadir nuevas características o quitar existentes para una implementación mas pequeña y eficiente.
+
+    \item \textbf{Portabilidad}. Es mas facil adaptar el núcleo a diferentes procesadores ya que todo el sistema operativo está en el micronúcleo.
+
+    \item \textbf{Fiabilidad}. Un micronúcleo se puede verificar de forma rigurosa al no ser un código tan extenso.
+
+    \item \textbf{Soporte de sistemas distribuidos}. 
+
+    \item \textbf{Soporte de sistemas operativos orientados a objetos}. 
+  \end{itemize}
+
+  \subsubsection{Rendimiento del micronúcleo}
+
+
+
+
+
 
   \newpage
   \addcontentsline{toc}{section}{Referencias}

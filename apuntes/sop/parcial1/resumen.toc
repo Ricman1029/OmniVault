@@ -1,0 +1,68 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Unidad 1 - Concepto de Sistemas Operativos}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}¿Qué es el sistema operativo?}{3}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}El sistema operativo como una interaz de usuario/computador}{3}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}El sistema operativo como gestor de recursos}{4}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Facilidad de evolución de un sistema operativo}{5}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}Evolución de los sistemas operativos}{5}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Procesamiento en serie}{5}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Sistemas en lotes sencillos}{5}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Sistemas en lotes multiprogramados}{5}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Sistemas de tiempo compartido}{6}{subsubsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.3}Desarrollos que llevaron a los sistemas operativos modernos}{6}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Arquitectura micronúcleo o microkernel}{6}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Multithreading}{6}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Multiprocesamiento simétrico (SMP)}{6}{subsubsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}Sistema operativo distribuído}{7}{subsubsection.1.3.4}%
+\contentsline {subsubsection}{\numberline {1.3.5}Diseño orientado a objetos}{7}{subsubsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.4}Sistemas UNIX tradicionales}{7}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Linux}{8}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Unidad 2 - Administración y Gestión de Archivos}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Archivos}{9}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Estructura de archivos}{9}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Tipos de archivos}{10}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Acceso a archivos}{11}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Atributos de archivos}{11}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Operaciones de archivos}{12}{subsubsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.2}Directorios}{13}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Sistemas de direcorios de un solo nivel}{13}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Sistemas de directorios jerárquicos}{13}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Nombres de rutas}{13}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Operaciones de directorios}{14}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}Implementación de File Systems}{14}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Distribución del sistema de archivos}{15}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Implementación de archivos}{15}{subsubsection.2.3.2}%
+\contentsline {paragraph}{Asignación contigua}{15}{section*.2}%
+\contentsline {paragraph}{Asignación de lista enlzada (linked list)}{16}{section*.3}%
+\contentsline {paragraph}{Asignación de lista enlazada utilizando una tabla en memoria}{17}{section*.4}%
+\contentsline {paragraph}{i-nodos}{17}{section*.5}%
+\contentsline {subsubsection}{\numberline {2.3.3}Implementación de directorios}{18}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Archivos compartidos}{19}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Administracion y optimizacion de sistemas de archivos}{21}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Unidad 3 - Administracion de Procesos}{22}{section.3}%
+\contentsline {subsection}{\numberline {3.1}¿Qué es un proceso?}{22}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Estados de los procesos}{22}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Un modelo de procesos de dos estados}{25}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Modelo de procesos de cinco estados}{27}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Procesos suspendidos}{29}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Estructuras de control de procesos}{31}{subsubsection.3.2.4}%
+\contentsline {paragraph}{Localización de los procesos}{31}{section*.6}%
+\contentsline {paragraph}{Atributos de proceso}{31}{section*.7}%
+\contentsline {subsection}{\numberline {3.3}Control de procesos}{32}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Modos de ejecución}{32}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Creación de procesos}{32}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Cambio de proceso}{32}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Cambio de modo}{33}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Cambio de estado del proceso}{33}{subsubsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.4}Hilos}{34}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Multihilo}{34}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Funcionalidades de los hilos}{36}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Hilos de nivel de usuario y de nivel de núcleo}{37}{subsubsection.3.4.3}%
+\contentsline {paragraph}{Hilos de nivel de usuario}{37}{section*.8}%
+\contentsline {paragraph}{Hilos de nivel de núcleo}{38}{section*.9}%
+\contentsline {paragraph}{Enfoques combinados}{38}{section*.10}%
+\contentsline {subsection}{\numberline {3.5}Multiprocesamiento simétrico (SMP)}{39}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Micronúcleos}{39}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Beneficios de una organización micronúcleo}{40}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Rendimiento del micronúcleo}{40}{subsubsection.3.6.2}%
+\contentsline {section}{Referencias}{41}{subsubsection.3.6.2}%
