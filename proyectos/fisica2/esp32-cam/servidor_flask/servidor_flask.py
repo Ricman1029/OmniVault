@@ -10,6 +10,7 @@ def recibir_foto():
     filename = f"foto_{now}.jpg"
     with open(filename, 'wb') as f:
         f.write(request.data)
+    print(f"Guardada: {filename}")
     return "Imagen recibida", 200
 
 if __name__ == '__main__':

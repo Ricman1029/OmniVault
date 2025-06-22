@@ -2,6 +2,7 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <time.h>
+#include "esp_sleep.h" // para entrar en modo deep sleep
 
 //
 // WARNING!!! PSRAM IC required for UXGA resolution and high JPEG quality
@@ -47,6 +48,9 @@ const char *servidor = "http://192.168.1.12:8080/";
 const char *ntp_server = "pool.ntp.org";
 const long gmt_offset = -10800;  //10800s = 3hs
 const int daylight_offset = 0;
+
+// Tiempo en microsegundos
+#define FACTOR_uS_a_S 1000000ULL
 
 void setupLedFlash(int pin);
 
@@ -155,34 +159,45 @@ void setup() {
 
   configTime(gmt_offset, daylight_offset, ntp_server);
   Serial.println("\nHora sincronizada");
+
+  int hora_establecida = 12;
+  int minuto_establecido = 0;
+
+  struct tm hora_actual;
+    if (!getLocalTime(&hora_actual)) {
+      Serial.println("No se pudo obtener la hora");
+      return;
+    }
+
+  int minutos_actuales = hora_actual.tm_hour * 60 + hora_actual.tm_min;
+  int minutos_establecidos = hora_establecida * 60 + minuto_establecido;
+  int diferencia = minutos_establecidos - minutos_actuales;
+
+  Serial.printf("La diferencia es de %ld minutos hasta las %02d:%02d\n", diferencia, hora_establecida, minuto_establecido);
+  long siesta;
+
+  if (diferencia <= -2) {
+    // Ya pasó la hora establecida, hay que dormir hasta el día siguiente
+    siesta = 3600 * 23 + diferencia * 60L;
+
+  } else if (diferencia >= 2) {
+    siesta = diferencia * 60L;
+
+  } else {
+    tomar_y_enviar_foto();
+    siesta = 3600 * 23;
+  }
+
+  Serial.printf("Durmiendo por %ld segundos hasta las %02d:%02d\n", siesta, hora_establecida, minuto_establecido);
+
+  esp_sleep_enable_timer_wakeup(siesta * FACTOR_uS_a_S);
+  esp_deep_sleep_start();  
 }
 
-int hora_establecida = 12;
-int minuto_establecido = 0;
-bool foto_tomada = false;
+
 
 void loop() {
-  struct tm hora_actual;
-  if (!getLocalTime(&hora_actual)) {
-    Serial.println("No se pudo obtener la hora");
-    return;
-  }
-
-  int hora = hora_actual.tm_hour;
-  int minuto = hora_actual.tm_min;
-
-  // Si es la hora establecida, tomo una sola foto
-  if (hora == hora_establecida && minuto == minuto_establecido && !foto_tomada) {
-    tomar_y_enviar_foto();
-    foto_tomada = true;
-  }
-
-  // Cuando deja de ser la hora establecida, puedo volver a poner la variable foto_tomada en false
-  if (hora != hora_establecida && minuto != minuto_establecido) {
-    foto_tomada = false;
-  }
-
-  delay(10000);  // Se realiza el proceso cada 10s
+  
 }
 
 void tomar_y_enviar_foto() {
