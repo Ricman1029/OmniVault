@@ -2775,6 +2775,459 @@ Si queremos encontrar el área, habíamos dicho que hay que usar la integral dob
    &= \frac{1}{4}\int_{-\pi/4}^{\pi/4} \left(1+\cos^{}(4\theta)\right) \,d\theta = \frac{1}{4}\Bigg[\theta+\frac{1}{4}\sin^{}(4\theta)\Bigg]_{-\pi/4}^{\pi/4}=\frac{\pi}{8}
 \end{align*}
 
+\underline{Ejemplo 4:} Determinar el volumen del sólido que se encuentra bajo el paraboloide $ z=x^2+y^2 $, sobre el plano $ xy $, y dentro del cilindro $ x^2+y^2=2x $.
+
+El sólido que tenemos que calcular está entre el disco $ D $ de ecuación $ x^2+y^2=2x $ y el paraboloide. Si completamos los cuadrados del disco nos queda
+\[
+	(x-1)^2+y^2=1
+\]
+
+En coordenadas polares tenemos que $ x^2+y^2=r^2 $ y $ x=r\cos^{}(\theta) $, así que a $ D $ lo podemos expresar como $ r^2=2r\cos^{}(\theta) $ o $ r=2\cos^{}(\theta) $. De esta manera, el disco $ D $ está dado por 
+\[
+  D=\left\{(r,\theta) \;/\; /\pi/2\leq \theta\leq \pi/2 \land 0\leq r\leq 2\cos^{}(\theta)\right\}
+\]
+
+Y ahora resolvemos con los datos que tenemos
+\begin{align*}
+  V &= \iint_{D} \left(x^2+y^2\right) \,dA=\int_{-\pi/2}^{\pi/2} \int_{0}^{2\cos^{}(\theta)} r^2r \,dr\,d\theta=\int_{-\pi/2}^{\pi/2} \Bigg[\frac{r;4}{4}\Bigg]_{0}^{2\cos^{}(\theta)} \,d\theta\\
+   &= 4\int_{-\pi/2}^{\pi/2} \cos^{4}(\theta) \,d\theta=8\int_{0}^{\pi/2} \cos^{4}(\theta) \,d\theta=8\int_{0}^{\pi/2} \left(\frac{1+\cos^{}(2\theta)}{2}\right)^2 \,d\theta\\
+    &= 2\int_{0}^{\pi/2} \Bigg[1+2\cos^{}(2\theta)+\frac{1}{2}\left(1+\cos^{}(4\theta)\right)\Bigg] \,d\theta\\
+     &= 2\Bigg[\frac{3}{2}+\sin^{}(2\theta)+\frac{1}{8}\sin^{}(4\theta)\Bigg]_{0}^{\pi/2}=2\frac{3}{2}\frac{\pi}{2}=\frac{3\pi}{2}
+\end{align*}
+
+\subsection{Aplicaciones de las integrales dobles}
+\subsubsection{Densidad y masa}
+Con las integrales dobles podemos calcular la masa total de una lámina con densidad variable. Sabemos que la masa de un objeto es la densidad $ \rho $ por el área $ A $. Entonces si queremos calcular la masa total $ m $ de una lámina, podemos integrar la densidad respecto del área.
+\[
+  m=\iint_{D} \rho(x,y) \,dA
+\]
+
+En física (y esto lo usamos en física 2) se calcula la densidad de carga en una región $ D $ de la misma manera, solo que ahora la densidad de carga esta dada por $ \sigma(x,y) $ y la carga total es $ Q $
+\[
+  Q=\iint_{D} \sigma(x,y) \,dA
+\]
+
+\subsubsection{Centros de masa}
+Para calcular el centro de masa de un objeto, lo que tenemos que hacer es sumar los productos de la masa de cada partícula y su distancia dirigida a un eje (esto se llama momento), y luego divirlo por la masa total. Para calcular el centro de masa de una lámina primero encontramos los momento de cada uno de los ejes
+\[
+  M_{x}=\iint_{D} y\rho(x,y) \,dA
+\]
+\[
+  M_{y}=\iint_{D} x\rho(x,y) \,dA
+\]
+
+y luego dividimos cada resultado por la masa total de la lámina, obteniendo un vector que indica la posición del centro de masa.
+
+Las coordenadas $ (x,y) $ del centro de masa de la lámina son 
+\[
+  x=\frac{M_{y}}{m}=\frac{1}{m}\iint_{D} x\rho(x,y) \,dA \qquad   y=\frac{M_{x}}{m}=\frac{1}{m}\iint_{D} y\rho(x,y) \,dA
+\]
+
+donde la masa $ m $ está dada por 
+\[
+  m=\iint_{D} \rho(x,y) \,dA
+\]
+
+\subsubsection{Momento de inercia}
+El momento de inercia de una partícula de masa $ m $ alrededor de un eje se define como $ mr^2 $, donde $ r $ es la distancia de la partícula al eje.
+
+De esta manera, los momentos de inercia de una lámina alrededor del eje $ x $ es y el eje $ y $ son	
+\[
+  I_{x}=\iint_{D} y^2\rho(x,y) \,dA \qquad I_{y}=\iint_{D} x^2\rho(x,y) \,dA
+\]
+
+El momento de inercia al rededor del origen es 
+\[
+  I_{o}=I_{x}+I_{y}= \iint_{D} y^2\rho(x,y) \,dA + \iint_{D} x^2\rho(x,y) \,dA = \iint_{D} (x^2+y^2)\rho(x,y) \,dA
+\]
+
+\subsubsection{Área de una superficie}
+Sea $ S $ una superficie con ecuación $ z=f(x,y) $, si queremos calcular el área de la superficie, lo que hacemos es dividir la superficie en cuadrados infinitamente chicos, obtener el plano tangente a la superficie en cada punto, y calcular el área de dicho plano. Para esto podemos decir que $ \vv{a} $ y $ \vv{b} $ son los vectores que parten de cada punto $ P $ de la superficie y son los lados del plano tangente $ T $ a la superficie $ S $ en el punto $ P $. $ \vv{a} $ y $ \vv{b} $ forman un paralelogramo, y recordemos de Algebra I que el módulo del producto vectorial de dos vectores es igual al área del paralelogramo formado por ellos. Si desarrollamos esta cuenta llegamos a que 
+\[
+  \lVert\vv{a}\times \vv{b}\rVert=\sqrt[]{\left[f_{x}(x,y)\right]^2+\left[f_{y}(x,y)\right]^2+1}\Delta A
+\]
+
+De esta manera, el área de la superficie con ecuación $ z=f(x,y) $ es
+\[
+  A(S)=\iint_{D} \sqrt[]{\left[f_{x}(x,y)\right]^2+\left[f_{y}(x,y)\right]^2+1} \,dA
+\]
+
+\subsection{Integrales triples}
+Bueno, se viene lo chido. Na mentira, la lógica de las integrales triples es la misma que para las integrales simples y dobles. Vamos a empezar analizando el caso de cajas rectangulares primero y de a poco vamos a ir generalizando.
+
+Cuando teníamos integrales simples nos hacían integrar en intervalos de recta; en integrales dobles integrabamos en regiones de dos dimensiones que podían ser rectángulos, esferas, o cualquier forma en 2D; para las integrales triples, las regiones sobre las que vamos a integrar van a ser volúmenes.
+
+Como primero vamos a trabajar con cajas rectangulares, vamos a definir ese espacio $ B $
+\[
+  B=\left\{(x,y,z) \;/\; a\leq x\leq b \land c\leq y\leq d \land r\leq z\leq s\right\}
+\]
+
+Como siempre, la idea es dividir la caja ahora en cubos infinitamente chicos y realizar la suma de los volúmenes de cada cubo. La integral triple de $ f $ en la caja $ B $ es 
+\[
+  \iiint_{B} f(x,y,z) \,dV
+\]
+
+Acá también aplica el teorema de Fubini, así que 
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Fubini para integrales triples}
+
+Si $ f $ es continua en la caja rectangular $ B=\left[a,b\right]\times \left[c,d\right]\times \left[r,s\right] $, entonces
+\[
+  \iiint_{B} f(x,y,z) \,dV=\int_{r}^{s} \int_{c}^{d} \int_{a}^{b} f(x,y,z) \,dx\,dy\,dz
+\]
+}}\vspace{0.2cm}
+
+\underline{Ejemplo 1:} Evaluar la integral triple $ \iiint_{B} xyz^2 \,dV $, donde $ B $ es la caja rectagular dada por
+\[
+  B=\left\{(x,y,z) \;/\; 0\leq x\leq 1 \land -1\leq y\leq 2 \land 0\leq z\leq 3\right\}
+\]
+
+En este caso podemos usar cualquier orden de integración
+\begin{align*}
+  \iiint_{B} xyz^2 \,dV &= \int_{0}^{3} \int_{-1}^{2} \int_{0}^{1} xyz^2 \,dx\,dy\,dz=\int_{0}^{3} \int_{-1}^{2} \Bigg[\frac{x^2yz^2}{2}\Bigg]_{x=0}^{x=1} \,dy\,dz\\
+   &= \int_{0}^{3} \int_{-1}^{2} \frac{yz^2}{2} \,dy\,dz=\int_{0}^{3} \Bigg[\frac{y^2z^2}{2}\Bigg]_{y=-1}^{y=2} \,dz\\
+    &= \int_{0}^{3} \frac{3z^2}{4} \,dz = \Bigg[\frac{z^3}{4}\Bigg]_{0}^{3}=\frac{27}{4}
+\end{align*}
+
+Ahora, para \textbf{regiones generales} en el espacio tridimensional, podemos hacer lo mismo que hicimos con las integrales dobles. En este, si queremos integrar sobre una región general $ E $, la encerramos en una caja $ B $ y definimos una función $ F $ de tal forma que coincida con $ f $ en $ E $, aunque sea 0 para puntos en $ B $ fuera de $ E $. 
+
+La región $ E $ será de \textbf{tipo I} si está entre las graficas de dos funciones continuas de $ x $ y $ y $
+\[
+	E=\left\{(x,y,z) \;/\; (x,y) \in D \land u_{1}(x,y)\leq z\leq u_{2}(x,y)\right\}
+\]
+donde $ D $ es la proyección de $ E $ en el plano xy.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imagenes/int_triple_region_tipoI.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Región sólida tipo I.}
+  \label{int_triple_tipoI}
+\end{figure}
+
+Una vez que determinamos el tipo de la región $ E $, tenemos que determinar el tipo de la región $ D $. Si la región $ D $ es también de tipo I, la región de integración nos queda así
+\[
+  E=\left\{(x,y,z) \;/\; a\leq x\leq b \land g_{1}(x)\leq y\leq g_{2}(x) \land u_{1}(x,y)\leq z\leq u_{2}(x,y)\right\}
+\]
+
+y la ecuación de la integral se convierte en 
+\[
+  \iiint_{E} f(x,y,z) \,dV=\int_{a}^{b} \int_{g_{1}(x)}^{g_{2}(x)} \int_{u_{1}(x,y)}^{u_{2}(x,y)} f(x,y,z) \,dz\,dy\,dx
+\]
+
+Una región $ E $ tipo II sería cuando $ D $ es la proyección en el plano $ yz $, y en este caso quedaría definida de la siguiente forma
+\[
+	E=\left\{(x,y,z) \;/\; (x,z) \in D \land u_{1}(x,z)\leq y\leq u_{2}(x,z)\right\}
+\]
+
+Si por otro lado, $ D $ es la proyección de $ E $ en el plano $ xz $ la región será de tipo III y es de la forma
+\[
+  E=\left\{(x,y,z) \;/\; (y,z) \in D \land u_{1}(y,z)\leq x\leq u_{2}(y,z)\right\}
+\]
+
+\underline{Ejemplo:} Evaluar $ \iiint_{E} \sqrt[]{x^2+z^2} \,dV $, donde $ E $ es la región acotada por el paraboloide $ y=x^2+z^2 $ y el plano $ y=4 $.
+
+Lo mejor para resolver las integrales triples es graficar la región sólida $ E $ y su proyección $ D $ sobre el plano.
+
+\begin{figure}[H]
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    {\large }
+
+    \tikzsetnextfilename{integ-triples-ej1}
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=\textwidth,
+        clip=false,
+        xlabel={$x$}, ylabel={$y$}, zlabel={$f(x,y)$},
+        view={110}{20},
+        axis lines=center,
+        axis on top=true,
+	domain=0:2,
+	y domain=0:360,
+	z buffer=sort,
+	xmin=0, xmax=4,
+	ymin=0, ymax=6,
+	zmin=-1, zmax=4,
+      ]
+      \addplot3 [surf, shader=interp, opacity=0.8, colormap/viridis,]
+	      ({x*cos(y)},{x^2},{x*sin(y)});
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Región de integración}
+    \label{grf:integral-triple-ej1}
+  \end{minipage}\begin{minipage}{0.5\textwidth}
+    \centering
+    {\large }
+
+    \tikzsetnextfilename{integ-triple-ej1-proy}
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=\textwidth,
+        clip=false,
+        xlabel={$x$}, ylabel={$y$},
+        axis lines=center,
+        axis on top=true,
+	ymin=0, ymax=5,
+      ]
+        \addplot [black, thick, name path=A, domain=-2.2:2.2] {x^2};
+	\addplot [black, thick, name path=B, domain=-3:3,] {4};
+	\addplot [blue!30] fill between [of=A and B, soft clip={domain=-2:2}];
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Proyección en el plano $ xy $}
+    \label{grf:integral-triple-ej1-proy}
+  \end{minipage}
+  \caption{Ejemplo 1 de integrales triples}
+  \label{fig:integrales-triples-ej1}
+\end{figure}
+
+De $ y=x^2+z^2 $ se obtiene $ z=\pm \sqrt[]{y-x^2} $, así que ahí tenemos las dos fronteras inferior y superior de $ E $. La descripción de $ E $ como tipo I es
+\[
+  E=\left\{(x,y,z) \;/\; -2\leq x\leq 2 \land x^2\leq y\leq 4 \land -\sqrt[]{y-x^2}\leq z\leq \sqrt[]{y-x^2}\right\}
+\]
+
+y se obtiene
+\[
+  \iiint_{E} \sqrt[]{x^2+z^2} \,dV=\int_{-2}^{2} \int_{x^2}^{4} \int_{-\sqrt[]{y-x^2}}^{\sqrt[]{y-x^2}} \sqrt[]{x^2+z^2} \,dz\,dy\,dx
+\]
+
+Aunque esta expresión es correcta, es muy dificil de evaluar. Y ya sabemos que si pasa esto, probablemente es mucho mejor considerar la región como si fuese de otro tipo para ver qué pasa.
+
+En este caso, lo mejor es considerar a $ E $ como una región de tipo III ya que la proyección del paraboloide sobre el eje $ xz $ es una circunferencia $ x^2+z^2\leq 4 $ como se vé en la siguiente figura.
+
+\begin{figure}[H]
+  \centering
+  {\large }
+
+  \tikzsetnextfilename{integ-triple-ej3-proy3}
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.5\textwidth,
+      clip=false,
+      xlabel={$x$}, ylabel={$y$},
+      axis lines=center,
+      axis on top=true,
+      xmin=-3, xmax=3,
+      ymin=-3, ymax=3,
+    ]
+    \addplot [black, thick, fill=blue!30, name path=A, domain=0:360, samples=100] ({2*cos(x)},{2*sin(x)});
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Proyección en el plano $ xz $}
+  \label{}
+\end{figure}
+
+La región $ E $ ahora nos queda definida como 
+\[
+	E=\left\{(x,y,z) \;/\; -2\leq x\leq 2 \land -\sqrt[]{4-x^2}\leq z\leq \sqrt[]{4-x^2} \land x^2+z^2\leq y\leq 4\right\}
+\]
+
+La integral entonces nos queda de la siguiente manera
+\[
+  \iiint_{E} \sqrt[]{x^2+z^2} \,dV=\iint_{D} \left[\int_{x^2+z^2}^{4} \sqrt[]{x^2+z^2} \,dy\right] \,dA = \iint_{D} \left(4-x^2-z^2\right)\sqrt[]{x^2+z^2} \,dA
+\]
+
+Para resolverla mas facil, podemos usar coordenadas polares en el plano $ xz $: $x=r\cos^{}(\theta) $, $ z=r\sin^{}(\theta) $
+\begin{align*}
+	\iiint_{E} \sqrt[]{x^2+z^2} \,dV &= \iint_{D} (4-x^2-z^2)\sqrt[]{x^2+z^2} \,dA\\
+	 &= \int_{0}^{2\pi} \int_{0}^{2} (4-r^2)rr \,dr\,d\theta=\int_{0}^{2\pi} \int_{0}^{2} (4r^2-r^4) \,dr\,d\theta\\
+	  &= 2\pi\Bigg[\frac{4r^3}{3}-\frac{r^5}{5}\Bigg]_{0}^{2}=\frac{128\pi}{15}
+\end{align*}
+
+\subsubsection{Aplicaciones de las integrales triples}
+Si la integral simple $ \int_{a}^{b} f(x) \,dx $ representa el área bajo la curva, la integral doble $ \iint_{D} f(x,y) \,dA $ representa el volumen bajo la superficie, entonces la correspondiente interpretación de la integral triple $ \iiint_{B} f(x,y,z) \,dV $ sería el ``hipervolumen'' de un objeto tetradimensional. No sirve de nada pensarlo así, pero eso no quita que le podamos dar diferentes interpretaciones a la integral triple dependiendo del contexto.
+
+Si $ f $ es la función constante $ f(x,y,z)=1 $, entonces sí podemos interpretar el resultado de la integral treiple como el volumen de $ E $.
+\[
+  V(E)=\iiint_{E}  \,dV
+\]
+
+Ademas, todas las aplicaciones de las integrales dobles, se puede aplicar a las integrales triples. Por ejemplo, si la función de densidad de un obejto sólido que ocupa la región $ E $ es $ \rho(x,y,z) $, en unidades de masa por unidad de volumen, en cualquier punto dado $ (x,y,z) $ su \textbf{masa} es
+\[
+  m=\iiint_{E} \rho(x,y,z) \,dV
+\]
+
+y sus \textbf{momentos} alrededor de los tres planos coordenados son
+\[
+  M_{yz}=\iiint_{E} x\rho(x,y,z) \,dV \qquad M_{xz}=\iiint_{E} y\rho(x,y,z) \,dV \qquad M_{xy}=\iiint_{E} z\rho(x,y,z) \,dV
+\]
+
+El \textbf{centro de masa} del objeto está en el punto 
+\[
+  \left(\frac{M_{yz}}{m},\frac{M_{xz}}{m},\frac{M_{xy}}{m}\right)
+\]
+
+Los \textbf{momentos de inercia} alrededor de los tres ejes de coordenadas son
+\[
+  I_{x}=\iiint_{E} (y^2+z^2)\rho(x,y,z) \,dV \qquad I_{y}=\iiint_{E} (x^2+z^2)\rho(x,y,z) \,dV \qquad I_{z}=\iiint_{E} (x^2+y^2)\rho(x,y,z) \,dV
+\]
+
+\subsection{Integrales triples en coordenadas cilíndricas}
+En tres dimensiones hay un \textit{sistema de coordenadas cilíndricas}, que es similar al de coordenadas polares. En realidad, es todo lo mismo, solo que ahora hay que agregar el eje $ z $ a la tupla $ (r,\theta) $, que ahora se transforma en una terna $ ((r,\theta,z) $, donde $ r $ y $ \theta $ son las coordenadas polares de la proyección de un punto $ P $ en el plano $ xy $, y $ z $ es la distancia dirigida del plano $ xy $ a $ P $. Para convertir de coordenadas polares a cartesianas se usand las ecuaciones
+\[
+  x=r\cos^{}(\theta)\qquad y=r\sin^{}(\theta) \qquad z=z
+\]
+y para convertir de coordenadas rectangulares a cilíndricas se usan
+\[
+  r^2=x^2+y^2 \qquad \tg^{}(\theta)=\frac{y}{x}\qquad z=z
+\]
+
+Supongamos entonces que $ E $ es una región tipo I cuya proyección $ D $ en el plano $ xy $ es descrita en coordenadas polares
+\[
+  E=\left\{(x,y,z) \;/\; (x,y) \in D \land u_{1}(x,y)\leq z\leq u_{2}(x,y)\right\}
+\]
+donde $ D $ está dada en coordenadas polares por 
+\[
+  D=\left\{(r,\theta) \;/\; \alpha\leq \theta\leq \beta \land h_{1}(\theta)\leq r\leq h_{2}(\theta)\right\}
+\]
+
+Vimos antes que podemos evaluar las integrales triples de la siguiente forma
+\[
+  \iiint_{E} f(x,y,z) \,dV=\iint_{D} \left[\int_{u_{1}(x,y)}^{u_{2}(x,y)} f(x,y,z) \,dz\right] \,dA
+\]
+
+Pero también sabemos cómo evaluar integrales dobles en coordenadas polares. Podemos entonces combinar estas dos formas de evaluar las integrales y obtenemos lo siguiente
+\[
+  \iiint_{E} f(x,y,z) \,dV=\int_{\alpha}^{\beta} \int_{h_{1}(\theta)}^{h_{2}(\theta)} \int_{u_{1}(x,y)}^{u_{2}(x,y)} f(r\cos^{}(\theta),r\sin^{}(\theta),z)r \,dz\,dr\,d\theta
+\]
+
+\underline{Ejemplo:} Un sólido $ E $ se encuentra dentro del cilindro $ x^2+y^2=1 $, bajo el plano $ z=4 $ y sobre el paraboloide $ z=1-x^2-y^2 $. La densidad en cualquier punto es proporcional a su distancia desde el eje del cilindro. Determine la masa de $ E $.
+
+Se vé complicado pero se puede. Vamos paso a paso.
+
+En coordenadas cilíndricas, el cilindro es $ r=1 $ y el paraboloide es $ z=1-r^2 $, así que podemos escribir $ E $ así
+\[
+E=\left\{(r,\theta,z) \;/\; 0\leq \theta\leq 2\pi \land 0\leq r\leq 1 \land 1-r^2\leq z\leq 4\right\}
+\]
+
+Bien, ya tenemos la región sobre la cuál queremos integrar. Lo que nos falta ahora es averiguar cuál es la función que queremos integrar. En este caso nos piden calcular la masa, así que necesitamos la función de la densidad. El enunciado nos dice que la densidad $ \rho(x,y,z) $ es proporcional a la distancia desde el eje del cilindro, que es el eje $ z $, así que la función de densidad es
+\[
+  \rho(x,y,z)=K\sqrt[]{x^2+y^2}=Kr
+\]
+donde $ K $ es la constante de proporcionalidad. \textbf{No hay que olvidarse de poner esa constante nunca.}
+
+Ahora sí, ya tenemos todos los datos que necesitabamos así que podemos calcular la masa del sólido $ E $.
+\begin{align*}
+  m &= \iiint_{E} K\sqrt[]{x^2+y^2} \,dV=\int_{0}^{2\pi} \int_{0}^{1} \int_{1-r^2}^{4} (Kr)r \,dz\,dr\,d\theta\\
+   &= \int_{0}^{2\pi} \int_{0}^{1} Kr^2\left[4-(1-r^2)\right] \,dr\,d\theta=K\int_{0}^{2\pi} \int_{0}^{1} 3r^2+r^4 \,dr\,d\theta\\
+    &= K\int_{0}^{2\pi} \Bigg[r^3+\frac{r^5}{5}\Bigg]_{r=0}^{r=1} \,d\theta=K\int_{0}^{2\pi} \frac{6}{5} \,d\theta = \Bigg[\frac{6\theta}{5}\Bigg]_{0}^{2\pi}=\frac{12K\pi}{5}
+\end{align*}
+
+\subsection{Integrales triples en coordenadas esféricas}
+Otro sistema de coordenadas en tres dimensiones que nos resulta útil es el \textit{sistema de coordenadas esféricas}. Este sistema representa las coordenadas de un punto $ P $ por medio de una terna $ (\rho,\theta,\phi) $, donde $ \rho=\left|OP\right| $ es la distancia del origen a $ P $, $ \theta $ es el mismo ángulo que en coordenadas cilíndricas y $ \phi $ es el ángulo entre el eje $ z $ positivo y el segmento de recta $ OP $.
+\[
+  \rho\geq 0\qquad 0\leq \phi\leq \pi
+\]
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{imagenes/coord-esfericas.png}
+	\caption{Imagen sacada de \parencite{stewart2}.}
+	\label{fig:coord-esfericas}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{imagenes/coord-esfericas2.png}
+	\caption{Imagen sacada de \parencite{stewart2}.}
+	\label{fig:coord-esfericas2}
+  \end{minipage}
+\end{figure}
+
+Este sistema es útil en problemas en los que hay simetría en torno a un punto y el origen se encuentra en ese punto.
+
+La relación entre las coordenadas rectangulares y esféricas se puede ver en la Figura \ref{fig:coord-esfericas2}.
+
+De los triángulos $ OPQ $ y $ OPP^{\prime} $ se tiene 
+\[
+  z=\rho\cos^{}(\phi)\qquad r=\rho\sin^{}(\phi)
+\]
+
+Pero, $ x=r\cos^{}(\theta) $ y $ y=r\sin^{}(\theta) $, así que para convertir de coordenadas esféricas a rectangulares se usan las ecuaciones
+\[
+  x=\rho\sin^{}(\phi)\cos^{}(\theta)\qquad y=\rho\sin^{}(\phi)\sin^{}(\theta) \qquad z=\rho\cos^{}(\phi)
+\]
+
+La fórmula de la distancia nos dice que 
+\[
+  \rho=x^2+y^2+z^2
+\]
+
+En el sistema de coordenadas esféricas la región $ E $ que vamos a integrar se define de la forma siguiente
+\[
+  E=\left\{(\rho,\theta,\phi) \;/\; a\leq \rho\leq b \land \alpha\leq \theta\leq \beta \land c\leq \phi\leq d\right\}
+\]
+
+donde $ \alpha\geq 0 $ y $ \beta-\alpha\leq 2\pi $ y $ d-c\leq \pi $.
+
+La fórmula para integración triple con coordenadas esféricas es la siguiente (PRE-PA-RA-TE)
+\[
+  \iiint_{E} f(x,y,z) \,dV = \int_{c}^{d} \int_{\alpha}^{\beta} \int_{a}^{b} f(\rho\sin^{}(\phi)\cos^{}(\theta),\rho\sin^{}(\phi)\sin^{}(\theta),\rho\cos^{}(\phi))\rho^2\sin^{}(\phi) \,d\rho\,d\theta\,d\phi
+\]
+donde $ E $ es la región dada por la fórmula que vimos recién.
+
+\underline{Ejemplo:} Evaluar $ \iiint_{B} e^{\left(x^2+y^2+z^2\right)^\frac{3}{2}} \,dV $, donde $ B $ es la pelota unitaria:
+\[
+  B=\left\{(x,y,z) \;/\; x^2+y^2+z^2\leq 1\right\}
+\]
+
+Como la frontera de $ B $ es una esfera, conviene muchisimo usar coordenadas esféricas
+\[
+  B=\left\{(\rho,\theta,\phi) \;/\; 0\leq \rho\leq 1 \land 0\leq \theta\leq 2\pi \land 0\leq \phi\leq \pi\right\}
+\]
+
+De esta manera, la integral triple en coordenadas esféricas es 
+\begin{align*}
+  \iiint_{B} e^{\left(x^2+y^2+z^2\right)^\frac{3}{2}} \,dV &= \int_{0}^{\pi} \int_{0}^{2\pi} \int_{0}^{1} e^{(\rho^2)^\frac{3}{2}}\rho^2\sin^{}(\phi) \,d\rho\,d\theta\,d\phi\\
+   &= \int_{0}^{\pi} \sin^{}(\phi) \,d\phi\int_{0}^{2\pi}  \,d\theta\int_{0}^{1} \rho^2e^{\rho^3} \,d\rho\\
+   &= \Bigg[-\cos^{}(\phi)\Bigg]_{0}^{\pi}(2\pi)\Bigg[\frac{1}{3}e^{\rho^3}\Bigg]_{0}^{1}=\frac{4}{3}\pi(e-1) 
+\end{align*}
+
+\underline{Ejemplo 2:} Usar coordenadas esféricas para determinar el volumen del sólido que se encuentra sobre el cono $ z=\sqrt[]{x^2+y^2} $ y bajo la esfera $ x^2+y^2+z^2=z $
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{imagenes/coord-esfericas-ej2.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Visualización de la consigna del ejemplo 2.}
+  \label{fig:coord-esf-ej2}
+\end{figure}
+
+En este caso la esfera pasa por el origen y tiene centro en $ (0,0,\frac{1}{2}) $. La ecuación de la esfera en coordenadas esféricas queda como
+\[
+  \rho^2=\rho\cos^{}(\phi) \implies \rho=\cos^{}(\phi)
+\]
+
+La ecuación del cono la podemos escribir como 
+\[
+  \rho\cos^{}(\phi)=\sqrt[]{\rho^2\sin^{2}(\phi)\cos^{2}(\theta)+\rho^2\sin^{2}(\phi)\sin^{2}(\theta)}=\rho\sin^{}(\phi)
+\]
+
+Como $ \sin^{}(\phi)=\cos^{}(\phi) $, sabemos que $ \phi=\pi/4 $. Así que la descripción del sólido $ E $ en coordenadas esféricas es 
+\[
+E\left\{(\rho,\theta\phi) \;/\; 0\leq \theta\leq 2\pi \land 0\leq \phi\leq \pi/4 \land 0\leq \rho\leq \cos^{}(\phi)\right\}
+\]
+
+En este caso vamos a integrar primero respecto de $ \rho $, luego respecto de $ \phi $ y por último respecto de $ \theta $. (No me queda claro por qué, habría que preguntar)
+
+\begin{align*}
+  V(E) &= \iiint_{E} \,dV = \int_{0}^{2\pi} \int_{0}^{\pi/4} \int_{0}^{\cos^{}(\phi)} \rho^2\sin^{}(\phi) \,d\rho\,d\phi\,d\theta\\
+       &= \int_{0}^{2\pi}  \,d\theta\int_{0}^{\pi/4} \sin^{}(\phi) \Bigg[\frac{\rho^3}{3}\Bigg]_{\rho=0}^{\rho=\cos^{}(\phi)} \,d\phi\\
+        &= \frac{2\pi}{3}\int_{0}^{\pi/4} \sin^{}(\phi)\cos^{3}(\phi) \,d\phi=\frac{2\pi}{3}\Bigg[-\frac{\cos^{4}(\phi)}{4}\Bigg]_{0}^{\pi/4}=\frac{\pi}{8}
+\end{align*}
+
+En la siguiente figura se muestra cómo fue el orden de integración que acabamos de realizar
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{imagenes/orden-integracion-esfericas-ej2.png}
+  \caption{Imagen sacada de \parencite{stewart2}. Orden de integración realizado en el ejemplo 2.}
+  \label{fig:coord-esf-resolucion-ej2}
+\end{figure}
+
+
 
 \newpage
 \addcontentsline{toc}{section}{Referencias}
