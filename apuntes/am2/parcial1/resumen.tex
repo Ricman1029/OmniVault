@@ -4,6 +4,7 @@
 \usepackage{csquotes}
 
 % Interlineado 1.5
+\usepackage{mathpazo}
 \usepackage{setspace}
 \onehalfspacing
 
@@ -260,7 +261,7 @@ Cuando está dada de la forma: $ z = f(x,y) $
 Cuando está dada de la forma: $ f(x,y,z) = 0 $
 
 \subsubsection{Líneas o Curvas de Nivel}
-Para una función $ z = f(x,y) $ es el conjunto de todos los puntos $ (x,y) $ en los que la función toma el mismo valor.
+Una curva de nivel para una función $ z = f(x,y) $ es el conjunto de todos los puntos $ (x,y) $ en los que la función toma el mismo valor $ f(x,y)=k $.
 
 Lo podemos pensar como la proyección sobre el plano $ xy $ de la intersección de la función $ z = f(x,y) $ con un plano paralelo al plano $ xy $.
 
@@ -315,13 +316,13 @@ El problema es que ahora, como tenemos dos variables, las trayectorias que exist
 
 Una forma de demostrar la existencia de un límite de dos variables es calcularlo aplicando la definición, pero esto se puede volver muy complicado.
 
-Lo que sí podemos hacer se algo parecido a lo que veníamos haciendo para límites de una sola variable, y si llegamos a una indeterminación vemos cómo nos las arreglamos.
+Lo que sí podemos hacer se algo parecido a lo que veníamos haciendo para límites de una sola variable: reemplazar $ x $ y $ y $ por los valores a los que tiende cada uno y resolver la ecuación. Si llegamos a una indeterminación vemos cómo nos las arreglamos.
 
 \underline{Ejemplo 1}:
 \[
 	\lim_{(x,y) \to (3,1)}{\left(xy - y^{2}\right)}
 \]
-En este caso podemos directamente reemplazar $ (x,y) $ por $ (3,1) $ y el resultado es $ L = 2 $. Esto quiere decir que por cualquier camino que nos aproximemos al punto $ P_{0}(3,1) $ los valores de la función van a tender a 2.
+Al reemplazar $ (x,y) $ por $ (3,1) $ el resultado del límite es $ L = 2 $. Esto quiere decir que por cualquier camino que nos aproximemos al punto $ P_{0}(3,1) $ los valores de la función van a tender a 2.
 
 En este caso, como no hay problema con ningúna de las variables, decimos que la función tiene Límite Doble y es $ L = 2 $.
 
@@ -329,7 +330,7 @@ En este caso, como no hay problema con ningúna de las variables, decimos que la
 \[
 \lim_{(x,y) \to (0,0)}{\frac{\sin^{} 3xy}{x}}
 \]
-En este caso, si evaluamos la función en el $ (0,0) $ tenemos una indeterminación, pero la podemos salvar:
+En el ejemplo 2, si evaluamos la función en el $ (0,0) $ tenemos una indeterminación, pero la podemos salvar:
 \[
 \lim_{(x,y) \to (0,0)}{\frac{\sin^{} 3xy}{x}} = \lim_{(x,y) \to (0,0)}{\frac{3y\sin^{}3xy}{3xy}} = \left(\lim_{(x,y) \to (0,0)}{3y}\right)\times\left(\lim_{(x,y) \to (0,0)}{\frac{\sin^{}3xy}{3xy}}\right) = 0\times1 = 0
 \]
@@ -339,14 +340,14 @@ Vemos entonces que la función tiene Límite Doble $ L = 0 $.
 \[
 \lim_{(x,y) \to (0,0)}{\frac{3x^{2}+y}{x^{2}-y}}
 \]
-En este caso llegamos a una indeterminación si evaluamos la función en el $ (0,0) $ pero no hay forma de salvarla. La forma de saber si existe el límite en estos casos es calcularlo con la definición o fijarnos si aproximandonos por todas las infinitas direcciones obtenemos el mismo resultado. Y no queremos hacer ninguna de las dos cosas.
+Si evaluamos la función en el $ (0,0) $ vamos a llegar a una indeterminación que no puede ser salvada. La forma de saber si existe el límite en estos casos es calcularlo con la definición o fijarnos si aproximandonos por todas las infinitas direcciones obtenemos el mismo resultado. Y no queremos hacer ninguna de las dos cosas.
 
-Entonces, no podemos (o es muy dificil) confirmar la existencia del límite, pero sí puede ser mas sencillo afirmar cuando \textbf{no} existe el mismo, ya que si los límites calculados por dos trayectorias son diferentes, el límite no existe.
+En casos como este, no podemos (o es muy dificil) confirmar la existencia del límite, pero lo que sí podemos hacer es afirmar cuándo \textbf{no} existe el mismo, ya que si los límites calculados por dos trayectorias son diferentes, el límite no existe.
 
 Vamos a ver dos formas de hacer esto: usando \textbf{Límites Iterados}, y \textbf{Límites Radiales}.
 
 \subsection{Límites Iterados}
-Podemos calcular los límites de una función por trayectorias particulares, denominadas \textbf{Trayectorias Escalonadas}, constituidas por rectas paralelas a los ejes cartesianos y que consiste en llegar al punto $ P_{0} $ partiendo de $ P $ y pasando por $ P_{1} $, y luego hacer lo mismo pero pasando por $ P_{2} $ para comparar los resultados.
+Podemos calcular los límites de una función siguiendo trayectorias particulares, denominadas \textbf{Trayectorias Escalonadas}. Estas trayectorias están constituidas por rectas paralelas a los ejes cartesianos y el método consiste en calcular los límites en el punto $ P_{0} $ partiendo de $ P $ y pasando una vez por $ P_{1} $, y luego hacer lo mismo pero pasando por $ P_{2} $. De esta manera, podemos comparar los resultados y fijarnos: si los dos límites nos dieron distinto, quiere decir que el límite de esa función en el punto $ P_{0} $ no existe;
 
 \begin{figure}[H]
   \centering
@@ -371,7 +372,7 @@ Que los límites iterados sean iguales no garantiza que la función tenga límit
 }}
 
 \subsection{Límites Radiales}
-Consiste entomar el límite siguiendo las trayectorias del haz de rectas que pasan por el punto $ P_{0}(x_{0}, y_{0}) $:
+Consiste en tomar el límite siguiendo las trayectorias del haz de rectas que pasan por el punto $ P_{0}(x_{0}, y_{0}) $:
 
 \begin{figure}[H]
   \centering
@@ -430,14 +431,14 @@ $ la trayectoria es $ y = mx $
 \lim_{x \to 0}{\frac{2x^{2}mx}{x^{4}+3(mx)^{2}}} = \lim_{x \to 0}{\frac{2mx}{x^{2}+3m^{2}}} = 0
 \]
 
-Obtuvimos el mismo valor de límite a lo largo de cualquier trayectoria paralela a los ejes coordenados (límites iterados) y de cualquier recta que pase por el origen. \textbf{Pero esto NO demuestra que el límite de la función sea 0}, porque hay infinitas trayectorias que hay que analizar y no las analizamos todas. Por ejemplo, analicemos la trayectoria de la parábola $ y = x^{2} $, y veamos si el límite nos sigue dando 0.
+Obtuvimos el mismo valor de límite a lo largo de cualquier trayectoria paralela a los ejes coordenados (límites iterados) y de cualquier recta que pase por el origen. \textbf{Pero esto NO demuestra que el límite de la función sea 0}, porque hay infinitas trayectorias que hay que analizar y no las analizamos todas. Por ejemplo, analicemos la trayectoria de la parábola $ y = x^{2} $ y veamos si el límite nos sigue dando 0.
 \[
 	\lim_{(x,y) \to (0,0)}{\frac{2x^{2}y}{x^{4}+3y^{2}}} =\lim_{(x,y) \to (0,0)}{\frac{2x^{2}x^{2}}{x^{4}+3(x^{2})^{2}}} = \lim_{(x,y) \to (0,0)}{\frac{2x^{4}}{x^{4}+3x^{4}}} = \frac{1}{2}
 \]
 
 Obtuvimos un valor distinto de límite, por lo tanto el límite para esta función cuando $ P $ tiende a $ (0,0) $ NO EXISTE.
 
-\textbf{Estos métodos no sirven para demostrar si existe el límite, solo nos sirven para demostrar cuándo la funcion NO lo tiene.}
+\textbf{Estos métodos entonces solo nos sirven para demostrar cuándo la funcion NO tiene límite en un punto dado.}
 
 \section{Continuidad}
 Es lo mismo que siempre. Sea la función $ z = f(x,y) $ y $ P_{0}(x_{0}, y_{0}) $, $ z $ es continua en $ P_{0} $ si:
@@ -461,7 +462,7 @@ Si no existe el límite en ese punto, la discontinuidad es \textbf{esencial}.
 Si existe el límite, pero la función no es continua, la discontinuidad es \textbf{evitable}. Lo que se hace es redefinir la función para que sea continua.
 
 \section{Derivadas Parciales}
-Sea la función $ z = f(x,y) $, de dos variables independientes, y consideremos que se mantiene a $ y $ constante, haciendo variar solamente a $ x $, encontes la función planteada se comporta como una función \textbf{derivada parcial de la función con respecto a "$ x $"}, que se expresa así:
+Dada una función $ z = f(x,y) $ de dos variables independientes que describe a una superficie $ S $, y dado un plano vertical $ \pi:y=y_{0} $, la intersección de la superficie $ S $ con el plano $ \pi $ describe una curva que tiene la forma de $ z=f(x,y_{0}) $ (Figura \ref{fig:derivada_parcial_x}). Si nos movemos a través del plano $ \pi $, la variable $ y $ se mantiene constante de manera que podemos considerar que la única variable de la función es $ x $. Si nosotros ahora derivamos la función, considerando a la variable $ y $ como una constante, lo que estamos haciendo es calcular la \textbf{derivada parcial de la función con respecto a "$ x $"}, que se expresa así:
 \[
 \pdv[]{f(x,y)}{x} = \lim_{\Delta x \to 0}{\frac{\Delta_{x}f(x,y)}{\Delta x}} = \lim_{\Delta x \to 0}{\frac{f(x + \Delta x,y) - f(x,y)}{\Delta x}}
 \]
@@ -471,7 +472,7 @@ Otras formas de escribir la derviada parcial son las siguientes:
 \pdv[]{f(x,y)}{x} = \pdv[]{z}{x} = \pdv[]{f}{x} = z_{x}^\prime = f_{x} = \dots
 \]
 
-De igual manera, podemos mantener constante a $ x $ y derivar a la función para obtener la \textbf{derivada parcial respecto de "$ y $"}
+De igual manera, podemos mantener constante a $ x $ y derivar a la función para obtener la \textbf{derivada parcial respecto de "$ y $"}.
 \[
 \pdv[]{f(x,y)}{y} = \lim_{\Delta y \to 0}{\frac{\Delta_{y}f(x,y)}{\Delta y}} = \lim_{\Delta y \to 0}{\frac{f(x,y + \Delta y) - f(x,y)}{\Delta y}}
 \]
@@ -530,7 +531,7 @@ Una función de varias variables independientes es derivable en un punto si es c
 \subsection{Derivadas parciales sucesivas}
 Igual que con las derivadas normales, una derivada parcial la podemos derivar cuantas veces queramos obteniendo derivadas parciales segundas, terceras, etc., con respecto a cada una de las variables consideradas.
 
-Así para una función de dos variables independientes sus derivadas parciales son:
+Así, para una función de dos variables independientes sus derivadas parciales son:
 \begin{align*}
 	z &= f(x,y) & z &= x^{4}\sin^{}5y\\
 	\pdv[]{z}{x} &= f_{x}^{\prime}(x,y) & \pdv[]{z}{x} &= 4x^{3}\sin^{}5y\\
@@ -549,9 +550,34 @@ Y así siempre que existan las derivadas correspondientes, se pueden seguir deri
 
 Estas derivadas parciales sucesivas vemos que no son todas distintas entre sí. Hay un teorema que dice que: "\textit{Si las derivadas sucesivas a calcular son continuas, el orden de derivación no altera la derivada, siempre que la cantidad de veces que se derive respceto a cada variable sea la misma}."
 
-Es decir, que si derivamos primero respecto a $ x $ y luego respecto a $ y $, o primero respecto a $ y $ y luego respecto a $ x $, SIEMPRE QUE TODAS LAS DERIVADAS QUE CALCULAMOS SEAN CONTINUAS vamos a llegar al mismo resultado.
+Es decir, que si derivamos primero respecto a $ x $ y luego respecto a $ y $, o primero respecto a $ y $ y luego respecto a $ x $, siempre que todas las derivadas que calculamos sean continuas vamos a llegar al mismo resultado.
 
 Esto se puede demostrar con el teorema de Schwartz, pero no lo vemos en clase.
+
+\subsubsection{Expresiones matriciales de las derivadas}
+Suele ser útil expresar las derivadas de las funciones en su forma matricial. Así, dada una función $ f:\mathbb{R}^{n} \to \mathbb{R}^{} $ podemos expresar las derivdas de la misma con una matriz fila. Esta matríz se denota $ Df(x,y) $:
+\[
+  Df(x_{1},\dots ,x_{n})=\begin{bmatrix}
+	  \pdv[]{f}{x_{1}} & \dots & \pdv[]{f}{x_{n}}
+  \end{bmatrix}
+\]
+
+Para el caso general en que $ f:\mathbb{R}^{n} \to \mathbb{R}^{m} $, la matriz derivada va a tener $ m $ filas y $ n $ columnas:
+\[
+  Df(\vv{x})=\begin{bmatrix}
+	  \pdv[]{f_{1}}{x_{1}} & \dots & \pdv[]{f_{1}}{x_{n}}\\
+	  \vdots & \ddots & \vdots \\
+	  \pdv[]{f_{m}}{x_{1}} & \dots & \pdv[]{f_{m}}{x_{n}}
+  \end{bmatrix}
+\]
+
+También existe una forma matricial para las derivadas de segundo orden. Esta matriz tiene el nombre de \textbf{matriz Hessiana} y se denota como $ Hf $
+\[
+  Hf(x,y)=\begin{bmatrix}
+	  f_{xx} & f_{xy} \\
+	  f_{yx} & f_{yy}
+  \end{bmatrix}
+\]
 
 \subsection{Diferencial}
 Para explicar qué es el diferencial vamos a volver a trabajar con funciones de $ \mathbb{R}^{}\to\mathbb{R}^{} $ y después vamos a aplicar los conocimientos en las funciones de $ \mathbb{R}^{n}\to\mathbb{R}^{m} $.
@@ -586,7 +612,7 @@ Vemos en la figura \ref{fig:interp_geom_diferencial} que la diferencial $ dy $ e
   \Delta L &= f^{\prime}(a)dx
 \end{align*}
 
-Entonces, $ \Delta L = dy $ y representa la magnitud que se eleva o baja la recta tangente cuando $ x $ cambia en una cantidad $ dx = \Delta x $.
+Entonces, $ \Delta L = dy $ representa la magnitud que se eleva o baja la recta tangente cuando $ x $ cambia en una cantidad $ dx = \Delta x $.
 
 Si $ dx \neq 0 $, entonces el cociente de la diferencial $ dy $ entre la diferencial $ dx $ es igual a la derivada $ f^{\prime} (x,y) $.
 
@@ -749,7 +775,7 @@ Entonces la ecuación del incremento de $ z $ queda así:
   \label{fig:incremento_total}
 \end{figure}
 
-Miremos la figura \ref{fig:incremento_total}. Lo que acabamos de hacer en cuentas lo podemos explicar graficamente de la siguiente forma. 
+Miremos la figura \ref{fig:incremento_total}. Lo que acabamos de hacer en cuentas, lo podemos explicar graficamente de la siguiente forma. 
 
 Partimos del punto $ P_{0} $ que sería nuestro $ f(x,y) $. De ahí, lo que habíamos hecho era movernos sobre el eje $ x $ una distancia $ \Delta x $ manteniendo un $ y = cte $, que sería lo mismo que movernos desde $ P_{0} $ hacia $ P^{\prime\prime} $. Esto representaría el incremento del $ z_{1} $ que habíamos identificado antes. Ese incremento sería el módulo del segmento $ \overline{P^{\prime\prime}Q} $.
 
@@ -927,6 +953,7 @@ se llama \textbf{aproximación lineal} del plano tangente de $ f $ en $ (1,1) $.
 
 \subsection{La regla de la cadena}
 La regla de la cadena funciona de manera similar a como lo hacía cuando trabajabamos con funciones reales, solo que ahora al tener mas variables se agregan algunas cosas. La regla conviene explicarla en dos casos separados y después presentar el caso general que aplica para cualquier función $ f:\mathbb{R}^{n} \to \mathbb{R}^{m} $.
+
 \subsubsection{Caso 1}
 Supongamos que $ z=f(x,y) $ es una función derivable de $ x $ y $ y $, donde $ x=g(t) $ y $ y=h(t) $ son funciones derivables de $ t $. Entonces, $ z $ es una funcion derivable de $ t $ y
 \[
@@ -978,6 +1005,11 @@ Supongamos que $ u $ es una función derivable de las $ n $ variables $ x_{1},x_
 
 para cada $ i=1,2,\dots ,m $.
 
+También podemos usar la forma matricial para aplicar la regla de la cadena. Sean $ g:U  \subset \mathbb{R}^{n} \to \mathbb{R}^{m} $ y $ f:V \subset \mathbb{R}^{m} \to \mathbb{R}^{p} $ funciones dadas tales que $ g $ transforma $ U $ en $ V $, de forma que está definida $ f \circ g $. Supongamos que $ g $ es diferenciable en $ \vv{x_{0}} $ y que $ f $ es diferenciable en $ \vv{y_{0}}=g(\vv{x_{0}}) $. Entonces $ f\circ g $ es diferenciable en $ \vv{x_{0}} $ y 
+\[
+  D(f\circ g)(\vv{x_{0}})=Df(\vv{y_{0}})Dg(\vv{x_{0}})
+\]
+
 \underline{Ejemplo:}
 
 Si $ u=x^4y+y^2z^3 $, donde $ x=rse^t $, $ y=rs^2e^{-t} $, y $ z=r^2s\sin^{}(t) $, determinar el valor de $ \partial u/\partial s $ cuando $ r=2 $, $ s=1 $, $ t=0 $.
@@ -1002,6 +1034,74 @@ Y evaluamos cuando $ r=2 $, $ s=1 $ y $ t=0 $.
 \pdv[]{u}{s} = (64)(2) + (16)(4) + (0)(0) = 192
 \]
 
+\underline{Ejemplo 2:} Dada $ g(x,y)=(x^2+1,y^2) $ y $ f(u,v)=(u+v,u,v^2) $, calcular la derivada de $ f\circ g $ en $ (1,1) $ usando la regla de la cadena
+
+Las matrices de derivadas parciales son
+\begin{align*}
+  Df(u,v)=\begin{bmatrix}
+	  \pdv[]{f_{1}}{u} & \pdv[]{f_{1}}{v} \\[1.5ex]
+	  \pdv[]{f_{2}}{u} & \pdv[]{f_{2}}{v} \\[1.5ex]
+	  \pdv[]{f_{3}}{u} & \pdv[]{f_{3}}{v}
+  \end{bmatrix}=\begin{bmatrix}
+	  1 & 1 \\
+	  1 & 0 \\
+	  0 & 2v
+  \end{bmatrix} && \text{y} &&
+  Dg(x,y)=\begin{bmatrix}
+	  2x & 0 \\
+	  0 & 2y
+  \end{bmatrix}
+\end{align*}
+
+Cuando $ (x,y)=(1,1) $, $ g(x,y)=(u,v)=(2,1) $. Por lo tanto
+\[
+	D(f\circ g)(1,1)=Df(2,1)Dg(1,1)=\begin{bmatrix}
+		1 & 1 \\
+		1 & 0 \\
+		0 & 2
+	\end{bmatrix}\begin{bmatrix}
+		2 & 0 \\
+		0 & 2
+	\end{bmatrix}=\begin{bmatrix}
+		2 & 2 \\
+		2 & 0 \\
+		0 & 4
+	\end{bmatrix}
+\]
+
+\subsubsection{Teorema de Taylor}
+El hermoso (horrible) teorema Taylor también aparece en funciones de varias variables. Este teorema, al igual que en análisis I, lo podemos usar para aproximar funciones. La forma de calcularlo es muy parecida a cuando lo hacíamos con una sola variable, solo que ahora tenemos que tener en cuenta que tenemos varias variables.
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Taylor para varias variables}
+
+Sea $ f:U \subset \mathbb{R}^{n} \to \mathbb{R}^{} $ con derivadas parciales continuas hasta de segundo orden al rededor del punto $ \vv{x_{0}}=(x_{0},\dots ,x_{n}) $. Entonces podemos escribir
+\[
+  f(\vv{x})=f(\vv{x_{0}}) + \sum_{i=1}^{n} (\vv{x}-\vv{x_{i}})\pdv[]{f}{x_{i}}\left(\vv{x_{0}}\right)+\frac{1}{2}\sum_{i,j=1}^{n} \left(\vv{x}-\vv{x_{i}}\right)\left(\vv{x}-\vv{x_{j}}\right)\frac{\partial^2f}{\partial x_{i}\partial x_{j}}\left(\vv{x_{0}}\right)+R_{2}(\Delta \vv{x},\vv{x_{0}})
+\]
+}}\vspace{0.2cm}
+
+En el caso de funciones de dos variables (y en general, pero en el curso vamos a usarlo para funciones de $ \mathbb{R}^{2} $), también podemos escribir el polinomio de Taylor usando las expresiones matriciales de la siguiente manera
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Taylor con matrices}
+
+Sea $ f $ una funcion que va de $ \mathbb{R}^{2} \to \mathbb{R}^{} $, diferenciable en el punto $ (x_{0},y_{0}) $, podemos escribir el polinomio de Taylor de segundo orden como sigue
+\[
+f(x,y)=f(x_{0},y_{0}) + f_{x}(x_{0},y_{0})(\Delta x) + f_{y}(x_{0},y_{0})(\Delta y) + \begin{bmatrix}
+	\Delta x & \Delta y
+\end{bmatrix}\begin{bmatrix}
+	f_{xx} & f_{xy} \\
+	f_{yx} & f_{yy}
+\end{bmatrix}\begin{bmatrix}
+  \Delta x \\
+  \Delta y
+\end{bmatrix}+\text{Resto}
+\]
+}}\vspace{0.2cm}
+
 \subsection{Derivación implícita}
 Podemos usar la regla de la cadena para encontrar la derivada de una función que esté dada de forma implícita. Recordemos que una función está dada de forma explícita cuando se presenta de la forma $ z=f(x,y) $. Otra forma que existe de definir a $ z $ en función de $ x,y $ es $ F(x,y,z)=0 $, que se llama forma implícita de $ z $. 
 
@@ -1017,7 +1117,17 @@ Pero $ dx/dx=1 $, así que si $ F_{y} \neq 0 $ podemos despejar $ dy/dx $ para o
 \boxed{
   \dv[]{y}{x}=-\frac{\pdv[]{F}{x}}{\pdv[]{F}{y}}=-\frac{F_{x}}{F_{y}}
 } 
+\label{eq:derivacion-implicita}
 \end{equation}
+
+Existe un teorema, que se suele comprobar en cálculo avanzado, que establece las condiciones en las cuales esto es válido
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Teorema de la función implícita (una variable)}
+
+Dada una función $ F $ definida en un disco $ D $ alrededor del punto $ (a,b) $, donde $ F(a,b)=0 $, $ F_{y}(a,b)\neq 0 $, y $ F_{x} $ y $ F_{y} $ son continuas en el disco, la ecuación $ F(x,y)=0 $ define a $ y $ como una función de $ x $ en el disco $ D $ con centro en $ (a,b) $, y la derivada de esta función está dada por la ecuación \ref{eq:derivacion-implicita} para cada $ x  \in D $.
+}}\vspace{0.2cm}
 
 \underline{Ejemplo:}
 
@@ -1048,7 +1158,15 @@ Así que la ecuación se convierte en
 Si $ \partial F/\partial z \neq 0 $, podemos despejar $ F_{x} $. El procedimiento es el mismo para despejar $ F_{y} $ solo que derivamos respecto a $ y $. El resultado final de ambos despejes es el siguiente
 \begin{equation}
 z_{x}(x,y)=-\frac{F_{x}(x,y,z(x,y))}{F_{z}(x,y,z(x,y))} \qquad z_{y}(x,y)=-\frac{F_{y}(x,y,z(x,y))}{F_{z}(x,y,z(x,y))} 
+\label{eq:derivacion-implicita-2}
 \end{equation}
+
+\vspace{0.2cm}
+\fbox{\parbox{0.9\linewidth}{
+\textbf{Teorema de la función implícita (dos variables)}
+
+Dada una función $ F $ definida en una bola alrededor del punto $ (a,b,c) $, donde $ F(a,b,c)=0 $, $ F_{z}(a,b,c)\neq 0 $, y $ F_{x} $, $ F_{y} $ y $ F_{z} $ son continuas en un disco $ D  \subseteq  \mathbb{R}^{2} $, la ecuación $ F(x,y,z)=0 $ define a $ z $ como una función de $ (x,y) $ en el disco $ D $, y las derivadas parciales de esta función están dadas por las ecuaciones \ref{eq:derivacion-implicita-2} para cada $ (x,y) \in D $.
+}}\vspace{0.2cm}
 
 \subsection{Derivadas direccionales}
 Dada una función $ z=f(x,y) $, las derivadas parciales $ f_{x} $ y $ f_{y} $ representan las razones de cambio de $ z $ en las direcciones de $ x $ y $ y $. Podríamos pensarlo como que representan las razones de cambio en las direcciones de los versores $ \hat{\mathbf{i}} $ y $ \hat{\mathbf{j}} $.
@@ -1127,7 +1245,7 @@ D_{u}f = \nabla f \cdot \mathbf{u}
 \]
 
 \subsubsection{Maximización de la derivada direccional}
-Como la derivada direccional $ D_{u}f(x) $ es el producto escalar entre dos vectores $ \nabla f(x) \cdot \mathbf{\hat{u}} $, el \textbf{valor máximo} de la derivada direccional lo vamos a obtener cuando la dirección de $ \nabla f(x) $ sea la misma que el versor $ \mathbf{\hat{u}} $. Esto es porque cuando dichos vectores tienen la misma dirección el producto escalar dá su valor máximo ya que el $ \cos^{}(\theta)=1 $. Cuando esto ocurre, el valor de la derivada direccional $ D_{u}f(x) = \lVert\nabla f(x)\rVert $.
+Como la derivada direccional $ D_{u}f(x) $ es el producto escalar entre dos vectores $ \nabla f(x) \cdot \mathbf{\hat{u}} $, el \textbf{valor máximo} de la derivada direccional lo vamos a obtener cuando la dirección de $ \nabla f(x) $ sea la misma que el versor $ \mathbf{\hat{u}} $. Esto es porque cuando dichos vectores tienen la misma dirección el producto escalar dá su valor máximo ya que el $ \cos^{}(\theta)=1 $. Cuando esto ocurre, el valor de la derivada direccional es el módulo del vector gradiente $ D_{u}f(x) = \lVert\nabla f(x)\rVert $.
 
 \underline{Ejemplo:}
 
@@ -1209,7 +1327,7 @@ Si $ f(x,y) \geq f(a,b) $ cuando $ (x,y) $ está cerca de $ (a,b) $, $ f $ tiene
 
 Si las desigualdades de la definición anterior son válidas para todos los puntos $ (x,y) $ en el dominio de $ f $, entonces $ f $ tiene un \textbf{máximo absoluto} (o \textbf{mínimo absoluto}) en $ (a,b) $.
 
-Si $ f $ tiene un máximo o mínimo local en $ (a,b) $ y las derivadas parciales existen, entonces $ f_{x}(a,b)=0 $ y $ f_{y}(a,b)=0 $. En otras palabras, si hay un máximo o un mínimo en $ (a,b) $, el gradiente de $ f $ es cero $ \nabla f(a,b)=0 $.
+Si $ f $ tiene un máximo o un mínimo local en $ (a,b) $ y las derivadas parciales existen, entonces $ f_{x}(a,b)=0 $ y $ f_{y}(a,b)=0 $. En otras palabras, si hay un máximo o un mínimo en $ (a,b) $, el gradiente de $ f $ es cero $ \nabla f(a,b)=0 $.
 
 Un \textbf{punto crítico} de $ f $ es cuando $ f_{x}(a,b)=0 $ o $ f_{y}(a,b)=0 $ o si una de las derivadas parciales no existe. Todos los máximos y mínimos de $ f $ son puntos críticos, pero no todos los puntos críticos son máximos y mínimos de $ f $.
 
@@ -3061,7 +3179,7 @@ El \textbf{centro de masa} del objeto está en el punto
 
 Los \textbf{momentos de inercia} alrededor de los tres ejes de coordenadas son
 \[
-  I_{x}=\iiint_{E} (y^2+z^2)\rho(x,y,z) \,dV \qquad I_{y}=\iiint_{E} (x^2+z^2)\rho(x,y,z) \,dV \qquad I_{z}=\iiint_{E} (x^2+y^2)\rho(x,y,z) \,dV
+  I_{x}=\iiint_{E} (y^2+z^2)\rho(x,y,z) \,dV \quad I_{y}=\iiint_{E} (x^2+z^2)\rho(x,y,z) \,dV \quad I_{z}=\iiint_{E} (x^2+y^2)\rho(x,y,z) \,dV
 \]
 
 \subsection{Integrales triples en coordenadas cilíndricas}
