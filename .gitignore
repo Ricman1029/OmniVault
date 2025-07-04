@@ -1,0 +1,38 @@
+# Ignorar entorno virtual
+.venv/
+**/venv/
+**/.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos temporales de editores
+*.swp
+*~
+*.swo
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Archivos de sistema (macOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Salidas y compilados
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+
+# Archivos de Quarto (si genera alguno temporal)
+.quarto/
+
+# Archivos de configuraciones locales o backups
+*.bak
+*.old
+
+
