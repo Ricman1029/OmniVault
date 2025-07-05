@@ -1,0 +1,57 @@
+---
+lang: es
+author: Ricardo Freccero
+toc: true
+format:
+  html:
+    theme: cosmo
+    code-fold: true
+    html-math-method: katex
+bibliography: bibliografia.bib
+jupyter: python3
+---
+
+![](logo_utn_frc.jpg)
+
+::: { style="text-align: center" }
+::: { style="font-family: serif" }
+
+### UNIVERSIDAD TECNOLÓGICA NACIONAL
+
+#### FACULTAD REGIONAL CORDOBA - EXTENSIÓN ÁULICA BARILOCHE
+
+##### INGENIERÍA EN SISTEMAS DE INFORMACIÓN
+
+###### AÑO LECTIVO 2025
+
+:::
+
+---
+
+# Física 2
+### Resumen 2do Parcial
+
+---
+
+:::
+
+<div style="margin-top: 3rem;"></div>
+
+**Profesor:** Santiago Agustín Ibáñez
+
+**Ayudante:** Leandro algo
+
+<div style="margin-top: 10rem;"></div>
+
+::: { style="text-align: right" }
+
+**Alumno:** Ricardo Freccero
+
+**Número de legajo:** 415753
+
+:::
+
+---
+
+# Introducción
+hola
