@@ -1,0 +1,915 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+% Interlineado 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+% Fuente Times New Roman
+\usepackage{mathptmx}
+
+% Acomodar margenes del documento
+\usepackage[a4paper, margin=2cm, top=3cm, headheight=50pt]{geometry}
+
+% Paquetes comunes
+\usepackage{graphicx, float}
+\usepackage{amsfonts, amssymb, amsmath}
+\usepackage{physics, esvect}
+\usepackage{enumerate}
+\usepackage[colorlinks=true, citecolor=blue]{hyperref}
+
+% Para graficar
+\usepackage{pgfplots}
+\usepackage{tikz, color}
+\usepackage{tikz-3dplot}
+\pgfplotsset{width=15cm, compat=1.12}
+
+% Para automatas
+\usetikzlibrary{automata, positioning, arrows, calc}
+\tikzset{
+        ->,  % makes the edges directed
+        >=stealth, % makes the arrow heads bold
+        shorten >=2pt, shorten <=2pt, % shorten the arrow
+        node distance=3cm, % specifies the minimum distance between two nodes. Change if n
+        every state/.style={draw=blue!55,very thick,fill=blue!20}, % sets the properties for each ’state’ n
+        initial text=$ $, % sets the text that appears on the start arrow
+}
+
+% Encabezados
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\fancyhead[L]{
+  \includegraphics[height=1.2cm]{~/imagenes/logo_utn.png}
+  \shortstack[l]{
+    {\footnotesize Universidad Tecnológica Nacional} \\
+    {\footnotesize Facultad Regional Córdoba} \\
+    {\footnotesize Extensión Áulica Bariloche}
+  }
+}
+\fancyhead[C]{
+  \shortstack[c]{
+    {\footnotesize Sistemas Operativos} \\
+    {\footnotesize Resumen para el primer parcial} \\
+    {\footnotesize }
+  }
+}
+\fancyhead[R]{
+  \shortstack[r]{
+    {\footnotesize Profesor: Eduardo Tapia} \\
+    {\footnotesize Alumno: Ricardo Nicolás Freccero} \\
+    {\footnotesize Fecha: 24/05/2025}
+  }
+}
+
+% Para bibliografía
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{bibliografia.bib}
+
+\begin{document}
+\newgeometry{margin=2cm, top=1.5cm}
+  \begin{titlepage}
+    \centering
+    \includegraphics[width=\linewidth]{~/imagenes/logo_utn_frc.jpg}\\
+
+    \textsc{
+      \LARGE Universidad Tecnológica Nacional\\
+      \Large Facultad Regional Córdoba - Extensión Áulica Bariloche\\
+      \large Ingeniería en Sistemas de Información\\
+      Año lectivo 2025\\[0.5cm]
+    }
+
+    \rule{\linewidth}{1.0mm}\\[0.4cm]
+    \Huge
+    \textbf{Sistemas Operativos}\\
+    Resumen para el primer parcial\\[0.2cm]
+    \LARGE
+    Unidades 1, 2 y 3 de la cátedra
+    \rule{\linewidth}{1.0mm}\\
+    \large
+    \begin{flushleft}
+      Profesor: Eduardo Tapia
+
+      Ayudante: 
+
+      Fecha: 24/05/2025
+    \end{flushleft}
+
+    \vfill
+    \begin{flushright}
+      Alumno: Ricardo Nicolás Freccero
+
+      Número de legajo: 415753
+    \end{flushright}
+  \end{titlepage}
+
+  \restoregeometry
+  \tableofcontents
+  \newpage
+
+  \section{Unidad 1 - Concepto de Sistemas Operativos}
+  \subsection{¿Qué es el sistema operativo?}
+  Un sistema operativo es un programa que controla la ejecución de aplicaciones y programas. Es quien se encarga de ``conectar'' o ``comunicar'' las apliaciones con el hardeware de la computadora. Se puede considerar que un sistema operativo tiene tres objetivos:
+
+  \begin{itemize}
+    \item \textbf{Facilidad de uso.} Un sistema operativo facilita el uso de un computador.
+
+    \item \textbf{Eficiencia.} Un sistema operativo permite que los recursos de un sistema de computación se puedan utilizar de una manera eficiente.
+
+    \item \textbf{Capacidad para evolucionar.} Un sistema operativo se debe construir de tal forma que se puedan desarrollar, probar e introducir nuevas funciones en el sistema sin interferir con su servicio.
+  \end{itemize}
+
+  \subsubsection{El sistema operativo como una interaz de usuario/computador}
+  El hardware y software que le permiten al usuario acceder y utilizar las aplicaciones y programas de una computadora se pueden ver de forma jerárquica como muestra la Figura \ref{fig:jerarquia-sist-comp}. Al usuario no le suelen interesar los detalles del hardware de la computadora y vé al sistema de computación como un conjunto de aplicaciones. Por otro lado, cada aplicación se puede expresar en un lenguaje de programación y normalmente es desarrollada por un programador. Al programador sí le importan los detalles del hardware, pero no se comunica casi nunca directamente con él ya que suele ser una tarea extremadamente compleja. Para eso existe un \textit{conjunto de programas de sistema} que le permiten al programador comunicarse de una manera mas eficiente con el hardware. El programa de sistema mas importante es el \textbf{sistema operativo} que proporciona una interfáz entre el software y el hardware, actuando como mediador y facilitando el acceso del programador a las utilidades y servicios del sistema.
+
+  \begin{figure}[H]
+    \centering
+\includegraphics[width=0.4\linewidth]{imagenes/jerarquia-sist-comp.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Jerarquía de un sistema de computación.}
+    \label{fig:jerarquia-sist-comp}
+  \end{figure}
+
+  El sistema operativo proporciona normalmente servicios en las siguientes áreas:
+  \begin{itemize}
+    \item \textbf{Desarrollo de programas.} Ofrece editores y depuradores para asistir al programador en la creación de programas y aplicaciones.
+
+    \item \textbf{Ejecución de programas.} Se encarga de realizar todos los pasos necesarios para la ejecución de programas en nnombre del usuario.
+
+    \item \textbf{Acceso a dispositivos de E/S.} Facilita el acceso de los programadores a estos dispositivos.
+
+    \item \textbf{Acceso al sistema.} Protege los recursos y los datos,e vitando el uso no autorizado de los ususarios y resolviendo conflictos en el caso de conflico de recursos.
+
+    \item \textbf{Detección y respuesta a errores.} Debe proporcionar una respuesta a cualquier error que pueda surgir de manera que se elimine la condición de error, suponiendo el menor impacto en las aplicaciones que están en ejecución. 
+
+    \item \textbf{Contabilidad.} Recoge estadísticas de uso de los diferentes recursos y monitoriza parámetros de rendimiento. Esta información es útil para anticipar las necesidades de mejoras futuras y para optimizar el sistema a fin de mejorar su rendimiento.
+  \end{itemize}
+
+  \subsubsection{El sistema operativo como gestor de recursos}
+  El sistema operativo dirige al procesador en el uso de los recursos de la computadora y en el tiempo que debe tomarse para la ejecución de otros programas. Para eso, el sistema operativo cede el control para que el procesador realice sus tareas y luego retoma el control para decirle qué sigue.
+
+  El sistema operativo decide cuándo un programa en ejecución puede utilizar un dispositivo de E/S y controla el acceso y uso de los ficheros, además decide cuánto tiempo debe tomarse cada procesador para la ejecución de un programa.
+
+  \subsubsection{Facilidad de evolución de un sistema operativo}
+  Un sistema operativo debe evolucionar en el tiempo por las siguientes razones:
+  \begin{itemize}
+    \item Actualizacioes de hardware y nuevos tipos de hardware.
+
+    \item Nuevos servicios. (Por ejemplo, si es dificil mantener un buen rendimiento con las herramientas existentes, se pueden añadir al sistema operativo nuevas herramientas de medida y control.)
+
+    \item Resolución de fallos.
+  \end{itemize}
+
+  \subsection{Evolución de los sistemas operativos}
+  \subsubsection{Procesamiento en serie}
+  El programador interactuaba directamente con el hardware de la computadora, que contaba con una consola, luces, interruptores, algún dispositivo de entrada y una impresora; \textit{no existía ningún sistema operativo}. Los programas en código máquina se cargaban a través del dispositivo de entrada y si un error provocaba la parada del programa, las luces indicaban la condición de error. El programador podía examinar los registros del procesador y memoria principal para determinarl la causa del error. Si el programa terminaba de forma normal, la salida se imprimía.
+
+  \subsubsection{Sistemas en lotes sencillos}
+  Se empieza a usar un software denominado \textbf{monitor}, que permite que el usuario no tenga que acceder directamente a la máquina. En su lugar, el la computadora recibe una secuencia de trabajos que va a usar el monitor. El monitor de encarga de leer uno a uno cada trabajo y decirle al procesador que los vaya realizando en ese orden.
+
+  \subsubsection{Sistemas en lotes multiprogramados}
+  Aún usando un sistema de lotes sencillos, el procesador está haciendo nada la mayoría del tiempo ya que este es mucho mas rápido que los dispositivos de E/S. La computadora pasa mas tiempo buscando la información que tiene que procesar el procesador que procesando esa información. Lo que se puede hacer entonces es que mientras se está esperando por la E/S, se le puede asignar al procesador otro trabajo que no esté esperando por una operación de E/S. 
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imagenes/multiprogramacion.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Ejemplo de multiprogramación con tres programas.}
+    \label{fig:multiprog}
+  \end{figure}
+  
+
+  \subsubsection{Sistemas de tiempo compartido}
+  Son sistemas que comparten el tiempo de programación entre múltiples usuarios.
+
+  \subsection{Desarrollos que llevaron a los sistemas operativos modernos}
+  \subsubsection{Arquitectura micronúcleo o microkernel}
+  Antes, la mayoría de los sistemas operativos estaban formados por \textbf{núcleos monolíticos}. Estos núcleos proporcinaban la mayoría de las funcionalidades consideradas propias del sistema operativo, incluyendo planificación, los sistemas de ficheros, las redes, los controladores de dispositivos, la gestióno de memoria, etc. Una \textbf{arquitectura microkernel} asigna sólo unas pocas funciones esenciales al kernel, incluyendo los espacios de almacenamiento, comunicación entre procesos, y planificación básica.
+
+  \subsubsection{Multithreading}
+  Es una técnica en la cual un proceso, ejecutando una aplicación, se divide en una serie de \textit{hilos} o \textit{threads}.
+  \begin{itemize}
+    \item \textbf{Thread o hilo.} Es una unidad de trabajo. Incluye el contexto del procesador (que contiene el contador del programa y el puntero de pila) y su propia área de datos para una pila (para posibilitar el salto a subrutinas). Un hilo se ejecuta secuencialmente y se puede interrumpir para dar paso a otro hilo.
+
+    \item \textbf{Proceso.} Es una colección de uno o más hilos y sus recursos de sistema asociados. Es un programa en ejecución.
+  \end{itemize}
+
+  Esta técnica es útil para aplicaciones que llevan a cabo tareas que no necesitan correrse en serie, es decir, que se pueden ejecutar en simultáneo.
+
+  \subsubsection{Multiprocesamiento simétrico (SMP)}
+  Se refiere a la arquitectura del hardware de la computadora y al comportamiento del sistema operativo que explota dicha arquitectura. Tiene las siguientes características:
+  \begin{itemize}
+    \item Tiene múltiples procesadores.
+
+    \item Los procosadores comparten las mismas utilidades de momeira principal y de E/S.
+
+    \item Todos los procesadores pueden realizar las mismas funciones.
+  \end{itemize}
+
+  El sistema operativo de un SMP planifica procesos o hilos a través de todos los procesadores.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagenes/smp-vs-no-smp.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Multiprogramación y multiproceso.}
+    \label{fig:smp}
+  \end{figure}
+  
+  \subsubsection{Sistema operativo distribuído}
+  Da la ilusión de tener un solo espacio de memoria principal y un solo espacio de memoria secundario, cuando tenemos un ``cluster'' de computadoras (varias computadoras que operan como si fuese una sola).
+
+  \subsubsection{Diseño orientado a objetos}
+  Introduce una disciplina al proceso de añadir extensiones modulares a un pequeño núcleo. Permite a los programadores personalizar un sistema operativo sin eliminar la integridad del sistema.
+
+  \subsection{Sistemas UNIX tradicionales}
+  UNIX es un sistema operativo que se desarrollo inicialmente en los laboratorios de Bell y se hizo operacional en 1970. En la figura \ref{fig:arq-unix} se puede ver la arquitectura general de UNIX.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{imagenes/arquitectura-unix.png}
+    \caption{Imagen sacad de \parencite{sostallings}. Arquitectura general de UNIX.}
+    \label{fig:arq-unix}
+  \end{figure}
+
+  \subsection{Linux}
+  Linux comenzó como una variante UNIX. Linus Torvalds, un estudiante finlandés de informática, escribió la versión inicial. Linux es un sistema UNIX completo de software libre (cualquier persona puede ver y modificar el código fuente).
+
+  La mayoría de los núcleos de Linux son monolíticos.  Aunque no usa la técnica de microkernel, logra muchas de las ventajas potenciales de esta por medio de su arquitectura modular particular. Linux está estructurado como una colección de módulos, algunos de los cuales pueden cargarse y descargarse automáticamente bajo demanda. Estos bloques se denominan \textbf{módulos cargables}.
+
+  Los módulos cargables de Linux tienen dos características importantes:
+  \begin{itemize}
+    \item \textbf{Enlace dinámico}. Un módulo de núcleo puede cargarse y enlazarase al núcleo mientras el núcleo está en memoria y ejecutándose. Un módulo también puede desenlazarase y eliminarse de la memoria en cualquier momento.
+
+    \item \textbf{Módulos apilables}. Los módulos se gestionan como una jerarquía. Cuando un módulo superior en la jerarquía referencia a un módulo inferior, el primero actúa como módulo cliente y el segundo como biblioteca.
+  \end{itemize}
+
+  \section{Unidad 2 - Administración y Gestión de Archivos}
+  Los \textbf{archivos} son unidades logicas de informacion que pueden ser leidas o creadas por los procesos. La informacion que se almacena en los archivos debe ser persistente. Un archivo debe desaparecer solo cuando su propietario lo remueve de manera explicita.
+
+  Los archivos son administrados por el sistema operativo. La parte del sistema operativo que trata con los archivos se conoce como \textbf{sistema de archivos}.
+
+  \subsection{Archivos}
+  Los archivos proporcionan una manera de almacenar informacion en el disco y leerla despues. Cuando un proceso crea un archivo le proporciona un nombre. Cuando el proceso termina, el archivo sigue existiendo y puede ser utilizado por otros procesos mediante su nombre.
+
+  Algunos sistemas de archivos, como el de UNIX, diferencian las letras mayusculas de las minusculas, mientras que otros no.
+
+  Existen varios sistemas de archivos que vamos a analizar mas adelante. Por ahora solo vamos a decir que Windows 95 y 98 usan el sistema de archivos \textbf{FAT-16}. Windows 98 extendio FAT-16 e introdujo \textbf{FAT-32} pero estos dos sistemas son bastante similares. Las versiones mas nuevas de Windows admiten ambos sistemas FAT, que en realidad ya son obsoletos, pero tienen un sistema de archivos nativo que se conoce como \textbf{NTFS}.
+
+  Muchos sistemas operativos aceptan nombres de archivos en dos partes, separadas por un punto. La parte que va despues del punto se conoce como la \textbf{extension del archivo} y suele indicar algo acerca de la naturaleza de ese archivo.
+  
+  En algunos sistemas (como UNIX) las extensiones de archivo son solo convenciones y no son impuestas por el sistema operativo. Funcionan mas como un recordatorio para el propietario que como un medio para transportar informacion a la computadora. Sin embargo, en otros sistemas (como Windows) éste es consciente de las extensiones y les asigna significado. Los usuarios pueden registrar extensiones y asignar programas a cada una de manera que cuando se le hace doble click al nombre del archivo, el programa asignado a su extension se inicia con ese archivo como parametro.
+
+  \subsubsection{Estructura de archivos}
+  Los archivos se pueden estructurar de varias formas:
+  \begin{itemize}
+    \item \textbf{Secuencias de byte sin estructura.} El sistema operativo no sabe, ni le importa que hay en el archivo. Esto provee la maxima flexibilidad ya que los programas de usuario pueden colocar cualquier cosa que quieran en sus archivos y denominarlos de cualquier manera conveniente.
+
+    \item \textbf{Secuencia de registros.} Un archivo es una secuencia de registros de longitud fija, cada uno con cierta estructura interna. Estos sistemas se usaban cuando todavia se utilizaban las tarjetas perforadas de 80 columnas, de manera que cada registro consistia de 80 caracteres, simulando la tarjeta.
+
+    \item \textbf{Arbol.} Un archivo consiste en un arbol de registros, donde no todos son necesariamente de la misma longitud; cada uno de llos contiene un campo llave en una posicion fija dentro del registro. El arbol se ordena con base en el campo llave para permitir una busqueda rapida por una llave especifica.
+  \end{itemize} 
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/tipos-de-archivos.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Tres tipos de archivos.}
+    \label{fig:tipos-de-archivos}
+  \end{figure}
+
+  \subsubsection{Tipos de archivos}
+  Muchos sistemas operativos soportan varios tipos de archivos. Por ejemplo, UNIX y Windows tienen archivos y directorios regulares. UNIX también tiene archivos especiales de caracteres y de bloques. Los \textbf{archivos regulares} son los que contienen información del usuario. Los \textbf{directorios} son sistemas de archivos para mantener la estructura del sistema de archivos. Los \textbf{archivos especiales de caracteres} se relacionan con la E/S y se utilizan para modelar dispositivos de E/S en serie. Los \textbf{archivos especiales de bloques} se utilizan para modelar discos.
+
+  Por lo general, los \textbf{archivos regulares} son archivos ASCII o binarios. Los archivos ASCII consisten en líneas de texto, se pueden mostrar e imprimir como están, y se pueden editar con cualquier editor de texto. Los archivos binarios tienen código binario y una cierta estructura interna conocida para los programas que los utilizan. La Figura \ref{fig:archivos-binarios} muestra dos archivos binarios de las primeras versiones de UNIX. El primero es un archivo binario ejecutable. El segundo es una colección de procedimientos (módulos) de biblioteca compilados, pero no enlazados.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/archivos-binarios.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Dos archivos binarios distintos.}
+    \label{fig:archivos-binarios}
+  \end{figure}
+
+  \subsubsection{Acceso a archivos}
+  Los primeros sistemas operativos proporcionaban sólo un tipo de acceso: \textbf{acceso secuencial}. En estos sistemas, sólo se podían leer los bytes en orden secuencial, pero no se podía saltar entre bytes.
+
+  Mas adelante se crearon los \textbf{archivos de acceso aleatorio} en los que se pueden leer sus bytes en cualquier orden. En estos se pueden usar los métodos \verb|seek| (para establecer la posición desde la que se quiere comenzar a leer) y \verb|read| (para comenzar a leer de manera secuencial desde la posición actual).
+
+  \subsubsection{Atributos de archivos}
+  Todo archivo tiene un nombre y sus datos. Además, todos los sistemas operativos asoian otra información con cada archivo. A estos elementos adicionales se los conoce como \textbf{atributos}. A continuación se muestra una tabla con varios atributos, aunque no son todos, que \textit{pueden} tener los archivos en un sistema operativo.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/atributos-archivos.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Algunos atributos de archivos.}
+    \label{fig:atributos-archivos}
+  \end{figure}
+  
+  \subsubsection{Operaciones de archivos}
+  Las llamadas al sistema (system calls) mas comunes relacionadas con los archivos son las siguientes:
+  \begin{enumerate}[1.]
+    \item \verb|Create|. El archivo se crea sin datos.
+
+    \item \verb|Delete|. Se elimina el archivo, liberando el espacio en disco.
+
+    \item \verb|Open|. Se llevan los atributos y la lista de direcciones de disco a memoria principal para tener acceso rápido al archivo.
+
+    \item \verb|Close|. Se libera el espacio que ocupaba el archivo en la memoria principal.
+
+    \item \verb|Read|. Se leen los datos del archivo desde la posición actual.
+
+    \item \verb|Write|. Se escriben datos en el archivo desde la posición actual.
+
+    \item \verb|Append|. Se escriben datos al final del archivo.
+
+    \item \verb|Seek|. Se modifica la posición actual del puntero del archivo.
+
+    \item \verb|Get attributes|. Se obtienen los atributos de un archivo.
+
+    \item \verb|Set attributes|. Algunos de los atributos los puede establecer el usuario y se pueden modificar después de haber creado el archivo.
+
+    \item \verb|Rename|. Se cambia el nombre del archivo.
+  \end{enumerate}
+
+  \subsection{Directorios}
+  Para llevar el registro de los archivos, los sistemas de archivos por lo general tiene \textbf{directorios}, que en muchos sistemas también son archivos.
+
+  \subsubsection{Sistemas de direcorios de un solo nivel}
+  La forma más simple de un sistema de directorios es tener un directorio que contenga todos los archivos. Como si en nuestra computadora solo tuviesemos una sola carpeta, y en ella existan todos los archivos que necesitamos.
+
+  \subsubsection{Sistemas de directorios jerárquicos}
+  El sistema anterior es útil para aplicaciones simples, pero nos podemos imaginar que sería un caos si fuese el caso de nuestra computadora. Lo que se hace ahora es tener un \textbf{árbol de directorios}. De esta manera, existe un directorio raíz (que en UNIX suele ser ``/'') del que se desprenden tantos directorios como quiera el usuario para agrupar los archivos de la forma mas conveniente.
+
+  \subsubsection{Nombres de rutas}
+  Al tener el File System organizado como un árbol de directorios, se necesita cierta forma de especificar los nombres de los archivos y existen dos métodos para lograr esto.
+  \begin{itemize}
+    \item \textbf{Nombre de ruta absoluto.} Consiste en usar el camino desde el directorio raíz hasta el archivo. Un ejemplo en Linux es \verb|/home/ricman/uni/apuntes/sop/parcial1/resumen.pdf|, que es la dirección en donde se encuentra este documento.
+
+    \item \textbf{Nombre de ruta relativa.} Consiste en nombrar al archivo siguiendo el camino desde el \textbf{directorio actual}, que es el directorio de trabajo, en el que está parado el usuario, hasta el archivo deseado. Por ejemplo, si nuestro directorio actual es \verb|/home/ricman/uni/|, y quiero referenciar este archivo, su nombre de ruta relativa sería \verb|apuntes/sop/parcial1/resumen.pdf|.
+  \end{itemize}
+
+  La mayoría de sistemas operativos que proporcionan un sistema de directorios jerárquico tienen dos entradas especiales en cada directorio ``.''(punto) y ``..''(puntopunto). \textit{Punto} se refiere al directorio actual; \textit{puntopunto} se refiere al directorioi padre del directorio actual. Esto es útil cuando queremos acceder a archivos que se encuentran en el directorio padre del directorio actual, pero no queremos usar una ruta absoluta para acceder a él.
+
+  El directorio \textit{punto} suele ser utilizado cuando, por ejemplo, queremos copiar algún archivo de un directorio externo al directorio actual. Para eso podemos usar el comando \verb|cp| (copy) y pasarle primero el nombre del archivo que queremos copiar y luego el directorio actual usando \textit{punto}.
+
+  \verb|cp /home/ricman/uni/apuntes/hola.txt .|
+
+  Lo anterior es lo mismo que decir 
+
+  \verb|cp /home/ricman/uni/apuntes/hola.txt /home/ricman/uni/apuntes/sop/parcial1/|
+
+  \subsubsection{Operaciones de directorios}
+  Al igual que con los archivos, podemos realizar varias operaciones con los directorios. En el libro \parencite{tanenbaum} se nombran unas operaciones que me parece que son viejisimas y no las vamos a usar en la cátedra. Pongo a continuación las que yo considero que son equivalentes y sí vamos a usar en la cátedra:
+  \begin{enumerate}[1.]
+    \item \verb|mkdir| (MaKe DIRectory). Crea un directorio vacío, excepto por \textit{punto} y \textit{puntopunto} que el sistema coloca de manera automática.
+
+    \item \verb|rm -r| (RemoVe). En realidad \verb|rm| es un comando que se utiliza para borrar archivos, pero al pasarle el argumento \verb|-r| es capaz de borrar directorios.
+
+    \item \verb|cd| (Change Directory). Este comando los usamos para movernos entre los directorios del File System.
+
+    \item \verb|mv| (MoVe). Al igual que \verb|rm|, el comando \verb|mv| se usa para ``mover'' archivos o directorios de un lugar a otro dentro del File System. Esto lo hace tomando como primer parámetro el archivo o directorio que deseamos mover, y como segundo el lugar a donde lo queremos mover, entonces crea una copia del archivo en la dirección especificada y borra el original. Esto lo podemos usar para \textit{renombrar} directorios si le decimos que lo mueva desde un directorio hacia el mismo lugar pero con otro nombre. Por ejemplo \verb|mv /home/ricman/uni/ /home/ricman/versi| renombra el directorio ``uni'' como ``versi''.
+
+    \item \verb|ln| (LiNk). Crea un \textbf{vínculo} desde un archivo existente hasta el nombre especificado por la ruta. De esta forma, el mismo archivo puede aparecer en varios directorios. 
+  \end{enumerate}
+
+  Una variante sobre la idea de vincular archivos es el \textbf{vínculo simbólico}. En vez de tener dos nombres que apunten a la misma estructura de datos interna que representa un archivo (como hace un vínculo), se puede crear un nombre que apunte a un archivo que nombre a otro.
+
+  \subsection{Implementación de File Systems}
+  Ya vimos qué son los archivos y cuáles son sus propiedades, y qué son los directorios y cuáes son sus propiedades. Ahora vamos a ver cómo se almacenan, cómo se administra el espacio en el disco y cómo hacer que todo funcione con eficiencia y confiabilidad.
+
+  \subsubsection{Distribución del sistema de archivos}
+  Los sistemas de archivos se alamacenan en discos. La mayoría de discos se pueden dividir en una o más particiones, con sistemas de archivos independientes en cada partición. El sector 0 del disco se conoce como el \textbf{MBR} (\textit{Master Boot Record}) y se utiliza para arrancar la computadora. El final del MBR contiene la tabla de particiones, la cual proporciona las direcciones de inicio y fin de cada partición. Una de las particiones en la tabla se marca como activa. Cuando se arranca la computadora, el BIOS lee y ejecuta el MBR. Lo primero que hace el programa MBR es localizar la partición activa, leer su primero bloque, conocido como el \textbf{bloque de arranque}, y ejecutarlo. El programa en el bloque de arranque carga el sistema operativo contenido en esa partición. 
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/distro-sistema-archivos.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Una posible distribución del sistema de archivos.}
+    \label{fig:distro-file-system}
+  \end{figure}
+  
+  \subsubsection{Implementación de archivos}
+  Existen varias formas para implementar el almacenamiento de archivos.
+
+  \paragraph{Asignación contigua}\mbox{}\\
+  El esquema de asignación más simple es almacenar cada archivo como una serie contigua de bloques de disco. Así, en un disco con bloques de 1 KB, a un archivo de 50 KB se le asignarían 50 bloques consecutivos.
+
+  Este sistema es facil de implementar ya que solo hay que saber dónde empieza y dónde termina cada archivo, y el rendimiento de lectura es excelente ya que se lee secuencialmente. Sin embargo, tiene una gran desventaja debido a que con el transcurso del tiempo, los discos se fragmentan. Podemos ver en la siguiente figura que a medida que vamos eliminando o modificando los archivos, empiezan a aparecer espacios vacíos entre archivos. Y si después queremos reutilizar ese espacio tendríamos que estar viendo que el archivo que queramos meter ahí entre justo en el hueco para no desaprovechar espacio. Otra opción sería compactar todo el espacio, moviendo todos los archivos para volver a dejar el espacio libre al fondo del disco. Ambas opciones son extremadamente costosas y no termina siendo ``worth''.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/asignacion-contigua.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. (a) Asignación contigua de espacio de disco para siete archivos. (b) El estado del disco después de haber removido los archivos D y F.}
+    \label{fig:asignacion-contigua}
+  \end{figure}
+  
+
+  \paragraph{Asignación de lista enlzada (linked list)}\mbox{}\\
+  Otro método es mantener cada archivo como una lista enlazada de bloques de disco. La primera palabra de cada bloque se utiliza como apuntador al siguiente. El resto del bloque es para los datos.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagenes/asign-lista-enlazada.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Almacenamiento de archivos como lista enlazada.}
+    \label{fig:aign-lista-enlazada}
+  \end{figure}
+
+  Con este método no se pierde espacio debido a la fragmentación (salvo por la fragmentación interna del último bloque), y para acceder al archivo sólo hace falta saber la ubicación en disco del primer bloque. Sin embargo, el acceso aleatorio es super lento y, al tener que usar una parte del espacio de cada bloque para referenciar al siguiente, perdemos espacio de almacenamiento del archivo.
+
+  \paragraph{Asignación de lista enlazada utilizando una tabla en memoria}\mbox{}\\
+  Las dos desventajas de la asignación de lista enlzada se pueden eliminar si tomamos la palabra del puntero de cada bloque de disco y la ponemos en una tabla en memoria. En la Figura \ref{fig:asign-lista-enlazada-tabla} vemos un archivo A que utiliza los bloques de disco 4, 7, 2, 10 y 12, en ese orden y el archivo B que utiliza los bloques de disco 6, 3, 11 y 14, en ese orden.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imagenes/asign-lista-enlazada-tabla.png}
+      \caption{Imagen sacada de \parencite{tanenbaum}.}
+    \label{fig:asign-lista-enlazada-tabla}
+  \end{figure}
+
+  La principal desventaja de este método es que toda la tabla debe estar en memoria principal todo el tiempo para que funcione y esto es muy poco práctico.
+
+  \paragraph{i-nodos}\mbox{}\\
+  El último método que vamos a ver es el de asociar con cada archivo una estructura de datos conocida como \textbf{i-nodo}(\textbf{nodo-indice}), que lista los atributos y las direcciones de disco de los bloques del archivo. La gran ventaja de esto es que el i-nodo necesita estar en memoria sólo cuando está abierto el archivo correspondiente. Si cada i-nodo ocoupa $ n $ bytes, y puede haber un máximo de $ k $ archivos abiertos a la vez, la memoria total ocupada por el arreglo que contiente los i-nodos para los archivos abiertos es $ kn $ bytes.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imagenes/i-nodo.png}
+    \caption{Imanen sacada de \parencite{tanenbaum}. Un i-nodo de ejemplo.}
+    \label{fig:i-nodo}
+  \end{figure}
+  
+
+  \subsubsection{Implementación de directorios}
+  Cuando vamos a guardar un arhivo dentro de un directorio, tenemos dos posibilidades principales para almacenar los atributos de los mimsmo. Podemos almacenarlos directamente en la entrada del directorio, como se muestra en la Figura \ref{fig:almac-atrib-archivos} (a). Otra forma es almacenar los atributos en los i-nodos, en vez de hacerlo en la entrada de los directorios, como se muestra en la Figura \ref{fig:atributos-archivos}.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/almac-atrib-archivos.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. (a) Un directorio simple en Windows. (b) Un directorio en UNIX.}
+    \label{fig:almac-atrib-archivos}
+  \end{figure}
+
+  Estas formas de almacenar los archivos son válidas pero traen problemas si queremos almacenar nombres de archivos mas largos, ya que la logitud de cada bloque es fija, por lo que los archivos que tengan nombres cortos estarían desperdiciando todo el espacio que les sobra.
+
+  Una alternativa es que la estructura este dada en tres partes: una primera parte para indicar la longitud de la entrada, una segunda parte para almacenar los atributos, y la tercer parte continene el nombre del archivo, siendo este tan largo o corto como quiera el usuario. Esto se ve en la Figura \ref{fig:almac-nom-archivos} (a). Sin embargo esto trae problemas de fragmentación, aunque ahora es mas factible compactar el directorio ya que se encuentra en memoria principal.
+
+  Otra manera de manejar los nombres de longitud variable es hacer que las entradas de directorio sean de longitud fija y mantener los nombres de los archivos juntos en un heap al final del directorio, como se muestra en la Figura \ref{fig:almac-nom-archivos} (b).
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/almac-nombres-archivos.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Dos maneras de manejar nombres de archivos de longitud variable. (a) En línea. (b) En un heap.}
+    \label{fig:almac-nom-archivos}
+  \end{figure}
+
+  \subsubsection{Archivos compartidos}
+  Cuando hay varios usuarios trabajando en conjunto en un proyecto, a menudo necesitan compartir archivos. De esta manera, resulta conveniente que un mismo archivo aparezca en dos directorios distintos (uno para cada usuario), como se vé en la Figura \ref{fig:archivo-compartido}. La conexión entre el directorio $ B $ y el archivo compartido del directorio $ C $ se conoce como \textbf{vínculo}. El sistema de archivos en sí ahora pasa a ser un \textbf{Grafo acíclico dirigido} (\textit{Directed Acyclic Graph}, \textbf{DAG}) en vez de un árbol.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imagenes/archivo-compartido.png}
+    \caption{Imagen sacada de \parencite{tanenbaum}. Sistema que contiene un archivo compartido.}
+    \label{fig:archivo-compartido}
+  \end{figure}
+
+  También existe lo que se conoce como \textbf{link simbólico} o \textbf{vínculo simbólico} en el que, al hacer el vínculo del directorio $ B $ a uno de los archivos de $ C $, el nuevo archivo (el que se crea como link en $ B $) contiene sólo el nombre de la ruta del archivo al cual está vinculado. 
+  
+  Ambos métodos tiene sus desventajas. En el caso de los \textit{hard-links} (los vínculos normales), supongamos el caso de la figura \ref{fig:archivo-compartido}. Si en algún momento el directorio $ C $ trata de eliminar el archivo que está vinculado con $ B $, el archivo va a seguir existiendo pero $ B $ será el único usuario con acceso al mismo, aunque el propietario sigue siendo $ C $ ya que no se puede eliminar el i-nodo del archivo en el que se encuentran los atributos (tampoco se puede modificar quién es el propietario). Entonces todos los cambios que haga $ B $ sobre el archivo se le van a acreditar a $ C $, muy probablemente quitándole espacio de almacenamiento por un archivo al que no puede acceder.
+
+  Con los vínculos simbólicos no sucede esto ya que, como el archivo en $ B $ guarda la ruta del archivo en $ C $, si $ C $ elimina el archivo, la ruta que hay en $ B $ ya no es válida así que esta vez el archivo sí desaparece sin problemas. Sin embargo, la desventaja en este caso está en que cuando $ B $ quiere modificar el archivo se requiere de un mayor nivel de procesamiento ya que hay que leer la ruta del archivo a la que apunta, verificar si existe, ir hasta la ruta, acceder a su espacio en disco y recién ahí realizar los cambios requeridos.
+
+  Existen muchos otros sistemas de archivos entre los que se encuentran: \textbf{Sistemas de archivos estructurados por registro}, \textbf{Sistemas de archivos por bitácora}, \textbf{Sistemas de archivos virtuales}. Estos últimos son sistemas de archivos que utiliza UNIX principalmente para poder integrar varios sistemas de archivos distintos en uno solo. 
+
+  La mayoría de los sistemas UNIX utilizan el concepto de \textbf{VFS} (\textit{Virtual File System}) en el que todas las llamadas al sistema relacionadas con archivos se dirigen al sistema de archivos virtual para su procesamiento inicial. EStas llamadas, que provienen de procesos de usuarios, son las llamadas de POSIX estándar tales como \verb|open|, \verb|read|, \verb|write|, etc.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagenes/vfs.png}
+    \caption{Imanen sacada de \parencite{tanenbaum}. Posición del sistema de archivos virtual.}
+    \label{fig:vfs}
+  \end{figure}
+
+  \subsection{Administracion y optimizacion de sistemas de archivos}
+  Siempre la idea de crear un sistema de archivos es hacerlo de manera eficiente. Por lo general los archivos se almacenan en disco, asi que la administracion del espacio en disco es una cuestion importante. Los puntos a tener en cuenta son:
+  \begin{itemize}
+    \item \textbf{Tamano de bloque.} Lo mas eficiente es almacenar los archivos en bloques de tamano fijo para evitar la fragmentacion del espacio. Es importante decidir el tamano que debe tener cada bloque ya que si se usan bloques de tamano muy grande, archivos de tamano pequeno desperdician el espacio. Por el contrario, si usamos bloques demasiado pequenos se pierde tiempo al leer los archivos.
+
+    \item \textbf{Registro de bloques libres.} El siguiente paso es determinar c'omo llevar el regisro de los bloques libres. Se puede hacer de dos formas tambien: con una lista enlazada de bloques de disco, donde cada bloque contiene tantos numeros de bloques de disco libres como pueda. Con un bloque de 1 KB y un numero de disco de 32 bits, cada bloque en la lista de bloques libres contiene los numeros de 255 bloques libres (para un disco de 500 GB, se requieren aproximadamente 1.9 millones de bloques). La otra opcion es crear un mapa de bits, donde cada bit referencia a un bloque de disco. Si el bit es 0, el bloque esta libre, si el bit es 1 quiere decir que el bloque no esta vacio (para un disco de 500 GB ahora se necesitan aproximadamente 60.000 bloques).
+
+    \item \textbf{Cuotas de disco.} Para evitar que los usuarios ocupen demasiado espacio en disco, los sistemas operativos multiusuario proporcionan un mecanismo para imponer las cuotas de disco.
+  \end{itemize}
+
+  \section{Unidad 3 - Administracion de Procesos}
+  \subsection{¿Qué es un proceso?}
+  Podemos definir un proceso como un programa en ejecución. Los procesos se caracterizan por tener una serie de elementos, incluyendo los siguientes:
+  \begin{itemize}
+    \item \textbf{Identificador (PID)}. Un identificador único asociado a cada proceso, para distingirlo del resto.
+
+    \item \textbf{Estado}. Si está en ejecución, detenido, o finalizado.
+
+    \item \textbf{Prioridad}. Nivel de prioridad relativo al resto de procesos.
+
+    \item \textbf{Contador de programa}. La dirección de la siguiente instrucción del programa que se ejecutará.
+
+    \item \textbf{Punteros a memoria}. Punteros al código de programa y los datos asociados a dicho proceso, además de cualquier bloque de memoria compartido con otros procesos.
+
+    \item \textbf{Datos de contexto}. Los datos que están presentes en los registros del procesador cuando es proceso está corriendo.
+
+    \item \textbf{Información de estado de E/S}. Las peticiones de E/S pendientes, dispositivos de E/S asignados a dicho proceso, una lista de ficheros en uso por el mismo, etc.
+
+    \item \textbf{Información de auditoría}. Puede incluir la cantidad de tiempo de procesador y de tiempo de reloj utilizados, así como los límites de tiempo, registros contables, etc.
+  \end{itemize}
+
+  Toda esta información se almacena en una estructura de datos, que se suele llamar \textbf{Bloque de Control de Procesos (PCB)}, que es creada y gestionada por el sistema operativo. El PCB es una herramienta clave que permite al sistema operativo dar soporte a múltiples procesos y proporcionar multiprogramación.
+
+  ``Cuando un proceso se interrumpe, los valores actuales del contador de programa y los registros de procesador (datos de contexto) se guardan en los campos correspondientes del PCB y el estado del proceso se cambia a cualquier otro valor. El sistema operativo ahora es libre de poner otro proceso en estado de ejecución, para después recuperar el PC y los datos de contexto para poder volver a ejecutar el procesos donde como si nada hubiese pasado.''
+
+  \subsection{Estados de los procesos}
+  Dijimos que un proceso es un programa en ejecución. Sabemos que el que se encarga de ejecutar los programas es el procesador de la computadora. Este va ejecutando las instrucciones en una secuencia dada por el cambio del PC (Program Counter) [Recordar materia arquitectura]. Lo que vamos a ver ahora es que a lo largo del tiempo el PC puede apuntar al código de diferentes programas que son parte de diferentes procesos.
+
+  En la Figura \ref{fig:procesos-ejecución} podemos ver un ejemplo de la disposición de 3 procesos en la memoria principal. Ademas, hay un programa adicional llamado \textbf{activador} que es el que se encarga de decirle al procesador cuál proceso debe ejecutar. Ademas, en la Figura \ref{fig:trazas-procesos}, podemos ver las \textbf{trazas} de los procesos, que no es mas que las direcciones en memoria de cada una de las instrucciones que tiene cada proceso.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{imagenes/proceso-en-ejecucion.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Ejemplo de la ejecución de procesos.}
+    \label{fig:procesos-ejecución}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/trazas-procesos.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Trazas de los procesos A, B y C.}
+    \label{fig:trazas-procesos}
+  \end{figure}
+
+  Ahora, en la siguiente figura podemos ver cuáles son los valores que va tomando el PC durante los primeros 52 ciclos de ejecución. En este ejemplo estamos suponiendo que el sistema operativo sólo deja que un proceso se ejecute durante seis cíclos de instrucción, para después interrumpirse y darle paso a la ejecución de otro proceso. De esta manera se evita que un solo proceso monopolice el uso del tiempo del procesador. Vemos además que entre la ejecución de los procesos A, B y C, se ejecuta el programa que habíamos llamado activador, ya que es este el que se encarga de modificar el valor del PC una vez pasados los 6 cíclos de reloj para que apunte a otro proceso.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/ejecucion-de-tres-procesos.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Ejemplo de ejecución de tres procesos.}
+    \label{fig:ejec-tres-procesos}
+  \end{figure}
+  
+  \subsubsection{Un modelo de procesos de dos estados}
+  Para que el sistema operativo pueda controlar la ejecución de procesos como acabamos de ver, tiene que saber sí o sí en qué estado se encuentra cada proceso. Necesita saber si el proceso A se está ejecutando para poder decidir si debe pararlo o no, y necesita saber lo mismo de los procesos B y C para poder decidir si debe ejecutarlos o no.
+
+  El modelo mas simple posible para controlar la ejecución de procesos es el modelo de dos estados. En este modelo un procesos puede tener solo uno de dos estados: Ejecutando o No Ejecutando. De este análisis super sencillo ya podemos deducir que en el sistema operativo, los procesos van a tener que representarse de alguna manera que indiquen si se están ejecutando o no. Los que no se estén ejecutando podrían estar en alguna especie de cola, esperando a que llegue su turno de ejecución (ver Figura \ref{fig:procesos-dos-estados}).
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagenes/procesos-dos-estados.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Modelo de procesos de dos estados.}
+    \label{fig:procesos-dos-estados}
+  \end{figure}
+
+  Cuando los procesos son creados, el sistema operativo debe encargarse de generar la estrucutra de datos que se usa para manejar el proceso (PCB) y reservar el espacio de direcciones en memoria principal.
+
+  Las Figuras \ref{fig:creacion-proceso} y \ref{fig:terminacion-proceso} describen las razones por las cuales un proceso puede crearse o terminarse.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/creacion-proceso.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Razones para la creación de un proceso.}
+    \label{fig:creacion-proceso}
+  \end{figure}
+  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/terminacion-proceso.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Razones para la terminación de un proceso.}
+    \label{fig:terminacion-proceso}
+  \end{figure}
+
+  \subsubsection{Modelo de procesos de cinco estados}
+  Este modelo que describimos recién sirve para darnos una idea de cómo manejar la ejecución de programas, pero la verdad que no sirve en la realidad. Cuando tenemos solo dos estados de los procesos, y todos comparten una misma cola de ejecución, puede surgir el problema de que hayan procesos que están próximos a ser ejecutados pero que todavía no están listos porque necesitan que se complete alguna operación de E/S. Y van a haber programas que sí están listos para ejecutarse ya, pero como no es su turno en la cola tienen que esperar a que todos los de mas adelante se ejecuten primero. 
+
+  Una forma de solucionar este tipo de problemas es agregar mas estados:
+  \begin{itemize}
+    \item \textbf{Ejecutando}. El procesos está actualmente en ejecución.
+
+    \item \textbf{Listo}. Un proceso que está esperando su turno para ejecutar y que ya está listo para ejecutarse.
+
+    \item \textbf{Bloqueado}. Un proceso que está esperando su turno para ejecutar pero que todavía no está listo ya que debe esperar que se cumpla un evento determinado o que se complete alguna operación de E/S.
+
+    \item \textbf{Nuevo}. Un proceso que se acaba de crear. Este proceso ya tiene su PCB pero todavía no está cargado en la memoria principal.
+
+    \item \textbf{Saliente}. Un proceso que ya no está mas en la lista de procesos ejecutables por cualquier razón.
+  \end{itemize}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/procesos-cinco-estados.png}
+    \caption{Imanen sacada de \parencite{sostallings}. Modelo de procesos de cinco estados.}
+    \label{fig:proc-cinco-estados}
+  \end{figure}
+
+  En la Figura \ref{fig:proc-cinco-estados} podemos ver cómo sería la gestión de este modelo de procesos. Las posibles transiciones son las siguientes:
+  \begin{itemize}
+    \item \textbf{Null $  \to  $ Nuevo}. Se crea un nuevo proceso.
+
+    \item \textbf{Nuevo $  \to  $ Listo}. Cuando el sistema operativo está listo, admite al proceso nuevo. La mayoría de sistemas operativos fijan un límite basado en el número de procesos existentes.
+
+    \item \textbf{Listo $  \to  $ Ejecutando}. El sistema operativo selecciona uno de los procesos que se encuentre en estado Listo y lo ejecuta.
+
+    \item \textbf{Ejecutando $  \to  $ Saliente}. El sistema operativo finaliza el proceso que estaba en ejecución.
+
+    \item \textbf{Ejecutando $  \to  $ Listo}. Lo mas normal es que el procesos en ejecución alcanzó su cuota máxima de tiempo posible de ejecución. 
+
+    \item \textbf{Ejecutando $  \to  $ Bloqueado}. Generalmente porque el proceso solicita algo por lo que tiene que esperar.
+
+    \item \textbf{Bloqueado $  \to  $ Listo}. Cuando sucede el evento por el cual el proceso estaba esperando, se mueve a Listo.
+
+    \item \textbf{Listo $  \to  $ Saliente}. Puede ser que el proceso haya sido creado por un proceso padre, y este fue terminado, por lo que el proceso hijo que estaba listo para ejecutar, ahora es un proceso saliente.
+
+    \item \textbf{Bloqueado $  \to  $ Saliente}. Lo mismo que el caso anterior.
+  \end{itemize}
+
+  Para este tipo de sistemas lo mas conveniente es usar un sistema de dos colas, en vez de una sola: una cola para los procesos Listos, y otra para los Bloqueados. Y mejor aún, se pueden usar varias colas para los procesos bloqueados: una para cada evento que está siendo esperado. De esta manera, cuando existen muchos procesos esperando distintos eventos, no hay que recorrer un cola extremadamente larga hasta encontrar al proceso que esperaba al evento que acaba de ocurrir, sino que solo ingresa a la cola de Listos el siguiente proceso de la cola de dicho evento. Quizás se puede ver un poco mejor en la Figura \ref{fig:colas-eventos}.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/colas-bloqueados.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Modelo de colas para cada evento.}
+    \label{fig:colas-eventos}
+  \end{figure}
+
+  \subsubsection{Procesos suspendidos}
+  Los tres principales estados que describimos recién (Listo, Ejecutando, Bloqueado) sirven para modelar y diseñar un sistema operativo. Sin embargo, todavía se pueden agregar más estados. Recordemos que todo lo que estamos haciendo es intentar aprovechar al máximo el tiempo de procesamiento del procesador, ya que la velocidad de las operaciones de E/S son muy lentas en comparación. La diferencia entre estas velocidades es tal que, aún si usamos este método de cinco estados en un sistema multiprogramado, el procesador puede estar ocioso la mayor parte del tiempo.
+
+  Esto quiere decir que al procesador todavía le dá para procesar muchos mas procesos de los que somos capaces de gestionar en la memoria principal, y adquirir mayores cantidades de memoria no resulta factible. Lo que sí se puede hacer es usar una técnica que se conoce como \textbf{swapping}. Esta técnica consiste en agarrar los estados que se encuentran en estado de Bloqueados, y quitarlos de la memoria principal para mandarlos al disco, dejándolos en un nuevo estado que se conoce como \textbf{Suspendido}. Esta técnica es de mucha utilidad ya que le permite a la computadora gestionar una mucho mayor cantidad de procesos al mismo tiempo, sin tener que usar tanta memoria principal.
+
+  Aunque, en realidad no es tan sencillo como agregar un solo estado llamado Suspendido, porque podemos tener un proceso que estaba Bloqueado en memoria principal y fue trasladado al disco, pero aún después de haber transcurrido un cierto tiempo puede que todavía no haya ocurrido el evento que lo pondría en estado de Listo. Por lo que si este proceso es llevado de vuelta a la memoria principal, seguiría estando bloqueado. 
+
+  Teniendo en cuenta esto, lo que conviene hacer ahora es agregar no uno, sino dos nuevos estados además de Listo y Bloqueado:
+  \begin{itemize}
+    \item \textbf{Listo}. El proceso está en memoria principal disponible para su ejecución.
+
+    \item \textbf{Bloqueado}. El proceso está en memoria principal y esperando un evento.
+
+    \item \textbf{Bloqueado/Suspendido}. El proceso está en almacenamiento secundario (disco) Y esperando un evento.
+
+    \item \textbf{Listo/Suspendido}. El proceso está en almacenamiento secundario pero está disponible para su ejecución tan pronto como sea cargado en memoria principal.
+  \end{itemize}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/procesos-suspendidos.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Procesos con dos estados suspendidos.}
+    \label{fig:proc-suspendidos}
+  \end{figure}
+
+  En la siguiente Figura se pueden ver las razones por las cuales un proceso podría suspenderse.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imagenes/suspension-proceso.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Razones para la suspensión de un proceso.}
+    \label{fig:susp-proceso}
+  \end{figure}
+
+  \subsubsection{Estructuras de control de procesos}
+  El sistema operativo se encarga de la gestión de procesos y recursos, y para esto construye y mantiene tablas de información sobre cada entidad que gestiona. Los detalles pueden variar de un sistema operativo a otro pero, fundamentalmente, todos los sistemas operativos mantienen información sobre: memoria, E/S, archivos y procesos.
+
+  Para el sistema operativo poder manejar los procesos, necesita conocer dónde están localizados los procesos, y cuáles son sus atributos. 
+
+  \paragraph{Localización de los procesos}\mbox{}\\
+  Para localizar un proceso su utiliza el concepto de \textbf{imagen del proceso}. Una imagen de un proceso es un conjunto de elementos que nos permiten identificarlo. En ella están el conjunto de programas a ejecutar, las pocisiones de memoria que necesita y usa, la pila que está asociada a él y su PCB.
+  
+  \paragraph{Atributos de proceso}\mbox{}\\
+  La información sobre todos los atributos del proceso se encuentra en el PCB. La tabla completa real con toda la información que contiene el PCB para que el sistema operativo use es muy larga y no viene al caso. Lo que sí tenemos que saber es que en el PCB se almacena información en tres categorías principales:
+  \begin{itemize}
+    \item \textbf{Identificación del proceso}. PID, identificadores de usuario, identificadores del proceso padre.
+
+    \item \textbf{Información de estado del procesador}. Indica los contenidos de los registros del procesador. 
+
+    \item \textbf{Información de control de proceso}. Información de estado y planificación del proceso, privilegios del proceso, gestión de memoria, comunicación con otros procesos, etc.
+  \end{itemize}
+
+  \textit{El bloque de control de procesos (PCB) es la estructura de datos mas importante del sistema operativo.} Cada bloque de control de proceso contiene toda la información sobre un proceso que necesita el sistema operativo y todo funciona en base a ello. Se puede decir que el conjunto de llos bloques de control de proceso definen el estado del sistema operativo.
+
+  \subsection{Control de procesos}
+  \subsubsection{Modos de ejecución}
+  La mayoría de los procesadores proporcionan dos modos de ejecución: \textbf{modo usuario}, que es el modo menor privilegiado; y \textbf{modo kernel}.
+
+  El motivo de la existencia de estos dos modos es la protección del sistema operativo y las tablas de información, de la interferencia con programas de usuario. Basicamente, es para que los usuarios no se puedan mandar cagadas y borren datos que son críticos para el funcionamiento de la computadora.
+
+  La forma en que el sistema operativo le hace saber al procesador en qué modo debe ejecutar cada programa es a través de un bit en la palabra de estado de programa (\textit{Program State Word} PSW) que indica el modo de ejecución.
+
+  \subsubsection{Creación de procesos}
+  Cuando el sistema operativo decide crear un proceso, por cualquier razón, procede de la siguiente manera:
+  \begin{enumerate}[1.]
+    \item \textbf{Asignar un identificador de proceso único al proceso}. Se añade una nueva entrada a la tabla de procesos, que contiene una entrada por proceso.
+
+    \item \textbf{Reservar espacio para proceso}. Se debe reservar espacio suficiente para todos los elementos de la imagen del proceso.
+
+    \item \textbf{Inicialización del bloque de control de proceso}. 
+
+    \item \textbf{Establecer enlaces apropiados}. Por ejemplo, el sistema operativo debe situar el proceso en la cola de Listos o Listos/Suspendidos.
+
+    \item \textbf{Creación o expansión de otras estructuras de datos}. Por ejemplo, el sistema operativo puede mantener un registro de auditoría por cada proceso que se puede utilizar posteriormente a efectos de facturación y/o análisis de rendiemiento del sistema.
+  \end{enumerate}
+
+  \subsubsection{Cambio de proceso}
+  Un cambio de proceso es cuando se está ejecutando un proceso A, y este es interrumpido para que se pueda ejecutar el proceso B.
+
+  Los cambios de proceso puden ocurrir en cualquier instante en el que el sistema operativo obtiene el control sobre el proceso que está actualmente en ejecución. En general, puede deberse a tres causas:
+  \begin{itemize}
+    \item \textbf{System Call}. Puede ocurrir que el programa necesita abrir un archivo y realiza una llama al sistema, dándole control al sistema operativo para gestione la operación de abrir el archivo solicitado.
+
+    \item \textbf{Interrupción}. Un ejemplo puede ser que el sistema operativo haya determinado que el proceso en ejecución ha excedido su tiempo de ejecución y lo interrumpe. En las interrupciones el control se transfiere inicialmente al manejador de interrupción, que realiza determinadas tareas internas y que posteriormente salta a una rutina del sistema operativo.
+
+    \item \textbf{Traps}. Son interrupciones asociadas a una condición de error o algún acceso no permitido a un archivo.
+  \end{itemize}
+
+  \subsubsection{Cambio de modo}
+  Generalmente, el cambio de modo ocurre cuando sucede una interrupción de un proceso en ejecución. En este caso el sistema operativo actúa de la siguiente manera: 
+  \begin{enumerate}[1.]
+    \item Coloca el contador de programa en la dirección de comienzo de la rutina del programa manejador de la interrupción.
+
+    \item Cambia de modo usuario a modo núcleo de forma que el código de tratamiento de la interrupción pueda incluir instrucciones privilegiadas.
+  \end{enumerate}
+
+  \subsubsection{Cambio de estado del proceso}
+  Un cambio de estado del proceso y un cambio de modo son dos cosas distintas. Un cambio de estado de un proceso puede ocurrir sin que haya un cambio de modo y viceversa. Cuando un proceso va a cambiar de estado Ejecutando a cualquier otro estado, el sistema operativo tiene que realizar cambios importantes en su entorno. Los pasos que realiza son los siguientes:
+  \begin{enumerate}[1.]
+    \item Guardar el estado del procesador (PC y otros registros).
+
+    \item Actualizar el PCB del proceso que está actualmente en ejecución.
+
+    \item Mover el PCB a la cola correspondiente al nuevo estado.
+
+    \item Seleccionar el nuevo proceso a ejecutar.
+
+    \item Actualizar el PCB del proceso elegido pasándolo al estado Ejecutando.
+
+    \item Actualizar las estructuras de datos de gestión de memoria.
+
+    \item Si el proceso no es nuevo, restaurar el estado del procesador al que tenía el proceso antes de salir del estado Ejecutando la última vez.
+  \end{enumerate}
+
+  \subsection{Hilos}
+  Acá viene un cambio re copado sobre lo que veníamos viendo. Hasta ahora dijimos que básicamente los procesos tenían dos características:
+  \begin{itemize}
+    \item \textbf{Propiedad de recursos}. Cada proceso cuenta con un espacio de direcciones de memoria para el manejo de la imagen del proceso; la imágen era un conjunto de programa, datos, pila y el PCB.
+
+    \item \textbf{Planificación/Ejecución}. La ejecución de un proceso sigue una ruta de ejecución (traza) a través de uno  o más progamas. Esta ejecución puede estar intercalada con ese u otros procesos. De esta manera, un proceso tiene un estado de ejecución y una prioridad de activación, y ésta es la entidad que se planifica y activa por el sistema operativo.
+  \end{itemize}
+
+  Lo que pasa ahora es que hoy en día, la mayoría de los sistemas operativos tratan a estas dos características como independientes una de otra. Para distinguirlas, a la característica que se activa (Planificación/Ejecución) se la denomina \textbf{hilo} o \textbf{thread}, mientras que a la parte de Propiedad de recursos se la denomina \textbf{proceso}.
+
+  \subsubsection{Multihilo}
+  Lo que nos permite hacer esta diferenciación es que, ahora, un sistema operativo puede ser capaz de dar soporte a \textit{múltiples hilos} de ejecución dentro de \textit{un solo proceso}. Hasta ahora veníamos estudiando los procesos que admitían un solo hilo a la vez, pero vamos a ver ahora que tener múltiples hilos por proceso es mucho mas eficiente.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/multihilos.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Hilos y procesos.}
+    \label{fig:multihilos}
+  \end{figure}
+
+  En un entorno multihilo, un proceso se define como la unidad de asignación de recursos y una unidad de protección. Un proceso tiene:
+  \begin{itemize}
+    \item Un espacio de direcciones de memoria que soporta la imagen del proceso.
+
+    \item Acceso protegido a procesadores, otros procesos, archivos y recursos de E/S.
+  \end{itemize}
+
+  Dentro de un proceso puede haber uno o más hilos, cada uno con:
+  \begin{itemize}
+    \item Un estado de ejecución por hilo (Ejecutando, Listo, etc).
+
+    \item Un contexto de hilo que se almacena cuando no está en ejecución. Serían como los datos necesarios para poder retomar el hilo donde había quedado cuando se vuelva a ejecutar.
+
+    \item Una pila de ejecución.
+
+    \item Por cada hilo, espacio de almacenamiento para variables locales.
+
+    \item Acceso a la memoria y recursos de su proceso, compartido con todos los hilos de su mismo proceso.
+  \end{itemize}
+
+  En un entorno multihilo, sigue habiendo un único bloque de control del proceso y un espacio de direcciones de usuario asociado al proceso, pero ahora hay varias pilas separadas para cada hilo, así como un bloque de control para cada hilo que contiene los valores de los registros, la prioridad, etc. Lo hilos de un mismo proceso comparten el estado y los recursos de ese proceso, reciben el mismo espacio de direcciones y tienen acceso a los mismo datos. 
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagenes/mono-vs-multihilo.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Modelos de proceso con único hilo y multihilo.}
+    \label{fig:mono-vs-multihilo}
+  \end{figure}  
+
+  Los beneficios de los hilos son:
+  \begin{enumerate}[1.]
+    \item Lleva mucho menos tiempo (10 veces menos) crear un nuevo hilo en un proceso existente que crear un proceso totalmente nuevo.
+
+    \item Lleva menos tiempo finalizar un hilo que un proceso.
+
+    \item Lleva menos tiempo cambiar entre dos hilos dentro del mismo proceso.
+
+    \item los hilos mejoran la eficiencia de la comunicación entre diferentes programas que están ejecutando.
+  \end{enumerate}
+
+  Ejemplos de usos de hilos:
+  \begin{itemize}
+    \item \textbf{Trabajo en primer plano y segundo plano}. Un hilo puede estar mostrando un menú en un excel mientras otro hilo está actualizando la hoja.
+
+    \item \textbf{Procesamiento asíncrono}. Se puede crear un hilo que cada minuto escriba el \textit{buffer} de memoria RAM de un archivo en el disco (guarda los cambios del archivo cada un minuto).
+
+    \item \textbf{Velocidad de ejecución}. Un hilo puede estar esperando a la E/S mientras otro sigue procesando datos.
+  \end{itemize}
+
+  \subsubsection{Funcionalidades de los hilos}
+  Los hilos, al igual que los procesos, tienen estados de ejecución y se pueden sincronizar entre ellos. Los principales estados de los hilos son: Ejecutando, Listo y Bloqueado. No tiene sentido hablar de hilos Suspendidos ya que eso es un concepto del proceso. Los hilos tienen que poder sincronizarse para que no interfieran entre ellos o corrompan la estructura de datos. No puede pasar que dos hilos intenten hacer cambios distintos al mismo tiempo en un mismo archivo.
+
+  En la siguiente figura vemos cómo mejora la eficiencia de un programa que realiza una llamada a procedimiento remoto (RPC) a dos máquinas diferentes utilizando un único procesador.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{imagenes/mono-vs-multihilo-2.png}
+    \caption{Imagen sacada de \parencite{sostallings}. RPC utilizando hilos.}
+    \label{fig:mono-vs-mulithilo-2}
+  \end{figure}
+
+  \subsubsection{Hilos de nivel de usuario y de nivel de núcleo}
+  Existen dos tipos de hilos: los de nivel de usuario (\textit{user-level threads}, \textbf{ULT}) y los de nivel de núcleo (\textit{kernel-level threads}, \textbf{KLT}).
+
+  \paragraph{Hilos de nivel de usuario}\mbox{}\\
+  En un entorno ULT puro, la aplicación gestiona todo el trabajo de los hilos y el núcleo no es consciente de la existencia de los mismos. Cualquier aplicación puede programarse para ser multihilo a través del uso de una biblioteca de hilos. Esta biblioteca contiene código para la creación y destrucción de hilos, para paso de mensajes y datos entre los hilos, para planificar la ejecución de los hilos, y para guardar y resetaurar el contexto de los hilos. Esto se hace en el espacio de usuario y dentro de un solo proceso; el núcleo continúa planificando el proceso como una unidad y le asigna un único estado.
+
+  Ventajas del uso de ULT en vez de KLT:
+  \begin{itemize}
+    \item El cambio de hilo no requiere privilegios de modo núcleo.
+
+    \item La planificación puede especificarse como parte de la aplicación. Una aplicación podría tener un algorítmo de planificación cíclico, mientras otra podría planificar basado en prioridades.
+
+    \item Los ULT puede ejecutar en cualquier sistema operativo.
+  \end{itemize}
+
+  Desventajas:
+  \begin{itemize}
+    \item Cuando UTL realiza una system call que sea bloqueante, no solo se bloquea el hilo que hizo la llamada sino que todo el proceso entero se bloquea con él.
+
+    \item Si el entorno es ULT puro, la aplicación no puede usar multiproceso ya que el núcleo le asigna un solo proceso a cada aplicación.
+  \end{itemize}
+
+  \paragraph{Hilos de nivel de núcleo}\mbox{}\\
+  En un entorno KLT puro, el núcleo gestiona todo el trabajo de gestión de h ilos. No hay código de gestión de hilos en la aplicación, solamente una interfaz de programación de aplicación (API) para acceder a las utilidades de hilos del núcleo. Windows es un ejemplo de esto.
+
+  Este tipo de entornos resuelve las dos desventajas que aprecen en entornos ULT puros ya que el núcleo puede planificar simultáneamente múltiples hilos de un solo proceso en múltiples procesadores, y si se bloquea un hilo de un proceso, el núcleo puede planificar otro hilo del mismo proceso.
+
+  La principal desventaja del enfoque KLT es que la transferencia de control de un hilo a otro del mismo proceso requiere un cambio de modo al núcleo y esto significa un aumento muy significativo en el tiempo requierido para realizar dicha acción. Por ejemplo, crear un hilo a nivel usuario puede tardar al rededor de 34$ \mu S $, mientras que hacerlo a nivel de núcleo demora unos 948$ \mu S $.
+
+  \paragraph{Enfoques combinados}\mbox{}\\
+  Existen sistemas operativos que usan ULT y KLT al mismo tiempo. Si está bien implementado, se pueden aprovechar las ventajas de los dos enfoques minimizando las desventajas.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{imagenes/hilos-ult-klt.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Hilos de nivel usuario y de nivel de núcleo.}
+    \label{fig:hilos-ult-klt}
+  \end{figure}
+
+  \subsection{Multiprocesamiento simétrico (SMP)}
+  El SMP es un enfoque que se usa para proporcionar paralelismo entre procesos. La arquitectura de un sistema SMP está diseñada para que cada procesador pueda ejecutar el núcleo del sistema operativo, y normalemte cada procesador realiza su propia planificación del conjunto disponible de procesos e hilos. El núcleo a su vez puede construirse como múltiples procesos o hilos para permitir la ejecución de partes del mismo en paralelo.
+
+  En un sistema SMP existen múltiples procesadores, cada uno con acceso a una memoria principal compartida y dispositivos de E/S a través de algún mecanismo de interconexión. Los procesadores se puede comunicar entre sí a través de la memoria
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{imagenes/organizacion-smp.png}
+    \caption{Imagen sacada de \parencite{sostallings}. Organización de los SMP.}
+    \label{fig:organizacion-smp}
+  \end{figure}
+
+  \subsection{Micronúcleos}
+  Los primeros sistemas operativos que se desarrollaron eran \textbf{sistemas monolíticos}, donde prácticamente desde cualquier procedimiento se podía llamar a cualquier otro. No había estructura en la implementación del código y esto se hizo insostenible a medida que los sistemas operativos fueron creciendo. 
+
+  Luego aparecieron los sistemas operativos por capas, que estaban mas organizados pero igual seguían habiendo problemas. En estos, cada capa tenía distintas funcionalidades y se conectaba con las capas adyacentes. El problema es que si se realizaba un cambio en una capa, había que modificar las adyacentes también y los programas eran de millones de líneas de código.
+
+  Entonces apareció la idea de el \textbf{micronúcleo}. La idea era que solo las funciones absolutamente esenciales del sistema operativo estén en el núcleo, y el resto de servicios y aplicaciones se construyen sobre el micronúcleo y se ejecutan en modo usuario. De esta forma, el micronúcleo funciona como un intercambiador de mensajes: valida mensajes, los pasa entre los componentes, y concede el acceso al hardware. 
+
+  \subsubsection{Beneficios de una organización micronúcleo}
+  \begin{itemize}
+    \item \textbf{Interfaz uniforme}. No hace falta diferenciar entre servicios a nivel de núcleo o usuario porque todos se proporcionan a través de paso de mensajes.
+
+    \item \textbf{Extensibilidad}. Si se quiere añadir o modificar algún servicio, no hace falta rediseñar todo el núcleo, solo el módulo deseado.
+
+    \item \textbf{Felxibilidad}. Se pueden añadir nuevas características o quitar existentes para una implementación mas pequeña y eficiente.
+
+    \item \textbf{Portabilidad}. Es mas facil adaptar el núcleo a diferentes procesadores ya que todo el sistema operativo está en el micronúcleo.
+
+    \item \textbf{Fiabilidad}. Un micronúcleo se puede verificar de forma rigurosa al no ser un código tan extenso.
+
+    \item \textbf{Soporte de sistemas distribuidos}. 
+
+    \item \textbf{Soporte de sistemas operativos orientados a objetos}. 
+  \end{itemize}
+
+  \subsubsection{Rendimiento del micronúcleo}
+
+
+
+
+
+
+  \newpage
+  \addcontentsline{toc}{section}{Referencias}
+  \printbibliography
+
+\end{document}

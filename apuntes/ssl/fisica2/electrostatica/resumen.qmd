@@ -1,0 +1,207 @@
+---
+lang: es
+author: Ricardo Freccero
+toc: true
+format:
+  html:
+    math:
+      equationNumbers: true
+    theme: cosmo
+    code-fold: true
+    html-math-method: katex
+bibliography: bibliografia.bib
+jupyter: python3
+---
+
+![](logo_utn_frc.jpg)
+
+::: { style="text-align: center" }
+::: { style="font-family: serif" }
+
+### UNIVERSIDAD TECNOLÓGICA NACIONAL
+
+#### FACULTAD REGIONAL CORDOBA - EXTENSIÓN ÁULICA BARILOCHE
+
+##### INGENIERÍA EN SISTEMAS DE INFORMACIÓN
+
+###### AÑO LECTIVO 2025
+
+:::
+
+---
+
+# Física 2
+### Resumen 2do Parcial
+
+---
+
+:::
+
+<div style="margin-top: 3rem;"></div>
+
+**Profesor:** Santiago Agustín Ibáñez
+
+**Ayudante:** Leandro Milton Guzzardo
+
+<div style="margin-top: 10rem;"></div>
+
+::: { style="text-align: right" }
+
+**Alumno:** Ricardo Freccero
+
+**Número de legajo:** 415753
+
+:::
+
+---
+
+# Antes de empezar
+
+Primero que nada, quiero avisar que es muy recomendable haber leído el resumen de Análisis Matemático 2 antes de leer este. La razón es que en esta materia vamos a trabajar con campos vectoriales, y vamos a tener que hacer integrales dobles y triples, usar coordenadas cilíndricas, calcular gradientes, etc., y todo eso se vé en AMII.
+
+Segundo, antes de empezar con el resumen, me parece importante dar una pequeña introducción sobre lo que vamos a estar viendo este año en Física 2, ya que es bastante distinto de Física 1.
+
+En Física 1 empezamos estudiando cinemática del punto material, en donde aprendimos cómo se mueven los objetos en el espacio. Después pasamos a estudiar la dinámica del punto material, donde aprendimos por qué se movían los objetos y conocimos las tres leyes de Newton.
+
+Luego descurbrimos que los objetos "almacenan" energía, y aprendimos a calcular cuánta energía posee un sistema, y cómo su conservación nos permite predecir el comportamiento de los cuerpos.
+
+Por último, estudiamos la dinámica de los cuerpos rígidos, donde fuimos integrando todos los conocimientos previos para entender el movimiento de objetos mas parecidos a los de la vida real.
+
+Durante todo este camino, la única fuerza que tuvimos en cuenta era la fuerza gravitatoria, y de ella se desprendían otras fuerzas como el peso, el rozamiento, etc. Pero en la vida real existen otras tres fuerzas mas , además de la gravitatoria, que forman parte de las llamadas *cuatro fuerzas fundamentales*. Estas son: 
+
+- La gravitatoria.
+- La electromagnética.
+- La nuclear fuerte.
+- La nuclear débil.
+
+En Física 2 vamos a estudiar pura y exclusivamente las **fuerzas electromagnéticas**. 
+
+Las interacciones del *electromagnetismo* implican partículas que tienen una propiedad llamada *carga eléctrica*. De la misma manera que en Física 1 vimos que los objetos con masa eran acelerados por las fuerzas gravitatorias, en Fisica 2 vamos a ver que los objetos cargados eléctricamente son acelerados por las fuerzas eléctricas.
+
+# Introducción
+Como vimos en Física 1, Isaac Newton fue una figura muy importante para la física clásica moderna. Fue él quien formuló las leyes del movimiento y la gravitación universal, y su modelo se sigue usando hasta el día de hoy. Sin embargo, hay ciertos fenómenos que las leyes de Newton no pueden explicar, así que los científicos de la época se pusieron a pensar qué podría estar pasando. Algunos experimentos conocidos, que hacían quedar mal a las leyes de Newton eran los siguientes:
+
+- Supongamos que tenemos dos bombillas de plástico. En principio si las acercamos no pasa nada, pero si las frotamos contra la piel y volvemos a acercarlas, ahora se repelen.
+- Ahora supongamos que tenemos dos varillas de vidrio. Lo mismo, si al principio las acercamos entre sí, no pasa nada. Ni se atraen ni se repelen. Pero si las frotamos con seda y las acercamos una a la otra, estas se repelen.
+- Y encima, si ahora agarramos la bombilla de plástico que habíamos frotado contra la piel, y agarramos también la varilla de vidrio que frotamos con seda, al acercarlas se atraen.
+- Por último, si agarramos una bola de metal y agarramos la bombilla o el vidrio, no importa cuál, al principio la bola de metal y el objeto se atraen el uno al otro; pero si en un momento se tocan, inmediatamente después se repelen entre sí.
+
+Y cómo puede ser esto? Que a veces los materiales se repelen, otras se atraen, y otras no pase nada aunque lo único que esté pasando entre ellos es que se toquen entre sí. Bueno esto es lo que viene a explicar la **electrostática**, que es el primer tema que vamos a ver en la materia.
+
+# Ley de Coulomb
+Todos estos fenómenos que acabamos de ver se pueden explicar con una sola fórmula, conocida como **Ley de Coulomb**. Esta ley establece que hay algunos cuerpos que tienen una propiedad llamada *carga eléctrica*, denominada generalmente con la letra $q$, y esta carga eléctrica es medida en Coulombs. Además, si tenemos una entidad que tiene una carga eléctrica $q_{1}$, y otra entidad con una carga eléctrica $q_{2}$, ambas ejercen una fuerza sobre la otra, y **la magnitud** de esa fuerza está dada por la siguiente fórmula:
+
+$$
+  \left|F\right|=\frac{\left|q_{1}q_{2}\right|}{4\pi\varepsilon_{0}}\frac{1}{r^2}
+$$ {#eq-mod-coulomb}
+
+,donde $r$ es la distancia entre ambas partículas, y $\varepsilon_{0}$ es una constante tal que $\varepsilon_{0}\approx 8.854\times 10^{-12}C^2/N\cdot m^2$. Si queremos conocer el vector fuerza, lo único que tenemos que hacer es multiplicar la magnitud por la dirección del vector que va de $q_{1}$ a $q_{2}$.
+
+$$
+  \vec{F}=\frac{\left|q_{1}q_{2}\right|}{4\pi\varepsilon_{0}}\frac{1}{r^2}\frac{\vec{r}}{\lVert\vec{r}\rVert}=\frac{\left|q_{1}q_{2}\right|}{4\pi\varepsilon_{0}}\frac{\vec{r}}{\lVert\vec{r}\rVert^3}
+$$ {#eq-ley-coulomb}
+
+La Ley de Coulomb puede aparecer escrita de otra forma en la que se usa una constante $k=\frac{1}{4\pi\varepsilon_{0}}$. Esta forma puede ser útil en algunas ocasiones
+$$
+  \left|F\right|=k\frac{\left|q_{1}q_{2}\right|}{r^2}
+$$
+Y en su forma vectorial
+$$
+  \vec{F}=k\frac{\left|q_{1}q_{2}\right|}{r^3}\vec{r}
+$$
+El valor de esta constante es $k\approx 8.987\times 10^9N\cdot m^2/C^2$
+
+## Carga eléctrica y estructura de la materia
+En los ejemplos que dimos al principio, cuando se frotaba la varilla de vidrio contra la seda por ejemplo, no había ningún cambio visible en su apariencia que idicara que algo había cambiado. Para entender esto hay que analizar las propiedades eléctricas de los átomos de esa varilla de vidrio.
+
+Los átomos están constituidos por tres tipos de particulas: los **electrones**, con carga eléctrica negativa; los **protones**, con carga eléctrica positiva y de igual magnitud que los electrones; y los **neutrones**, sin carga. Los protones y los neutrones están formados por otras entidades llamadas *quarks*, que tienen cargas de $\pm\frac{1}{3}$ y $\pm\frac{2}{3}$ de la carga del electrón. Todos los electrones siempre tienen la misma carga eléctrica $q_{e}=-1.6\times10^{-19}C=-q_{p}$.
+
+Los protones y los neutrones en un átomo forma el **núcleo**. Los electrones rodean al núcleo y se mantienen dentro del átomo debido a las fuerzas eléctricas que ejercen los protones sobre ellos. (Los protones y los neutrones están unidos en el núcleo debido a la fuerza nuclear fuerte, que vence a la repulsión eléctrica entre los protones).
+
+## Propiedades de la carga eléctrica
+Del análisis anterior podemos deducir dos prinicpios importantes.
+
+- **La carga eléctrica se conserva:** La suma algebráica de todas las cargas eléctricas en cualquier sistema cerrado es constante.
+- **La carga eléctrica es discreta:** La magnitud de la carga del electrón o del protón es la unidad natural de carga. Todos los sistemas tendrán una carga que se puede expresar como un múltiplo de dicha carga.
+
+## Conductores, aislantes y cargas inducidas
+Algunos materiales permiten que las cargas eléctricas se muevan con facilidad de una región a otra, mientras que otros no lo hacen. Los primeros, reciben el nombre de **conductores** de electricidad. El alambre de cobre es un ejemplo de un conductor. Otros materiales, como una banda de caucho y un cordón de nailon no permiten que la carga eléctrica se transfiera, y reciben el nombre de **aislantes**.
+
+### Carga por inducción
+Si queremos transferir carga eléctrica de un cuerpo $A$ hacia otro cuerpo $B$, podemos simplemente acercar $A$ hacia $B$ para que $A$ ceda electrones a $B$, transfiriendole parte de su carga eléctrica. Sin embargo, existe otro proceso mediante el cual podemos cargar al cuerpo $B$ sin perder carga del cuerpo $A$. Este proceso se llama **carga por inducción**.
+
+En la @fig-carga-induccion podemos ver cómo es este proceso. Primero hay una esfera metálica sin carga sostenida por un soporte aislante. Al acercarse una varilla con carga negativa, los electrones libres en la esfera metálica son repelidos por los electrones excedentes en la varilla, de forma que se acumulan en el lado derecho de la esfera. Ahora, como el lado derecho de la esfera tiene una **carga inducida** negativa, al ponerla en contacto con un alambre conductor que está conectado a tierra, los electrones del lado derecho de la esfera son transferidos. De esta manera, la varilla nunca perdió electrones, y logramos transferir parte de la carga eléctrica de la esfera hacia la tierra. 
+
+![Imagen sacada de @sears2. Carga por inducción](/imagenes/carga-induccion.png){#fig-carga-induccion}
+
+::: {.callout-tip title="🔍" icon=false}
+## Ejemplos
+1. Comparar la magnitud de la fuerza electrostática con la gravitatoria entre:
+ - 2 protones.
+ - 2 electrones.
+ - 2 partículas $\alpha$.
+
+La magnitud de la fuerza electrostática la vimos aca @eq-mod-coulomb y es 
+
+$$\left|F_{e}\right|=\frac{\left|q_{1}q_{2}\right|}{4\pi\varepsilon_{0}}\frac{1}{r^2}$$
+
+Por otro lado, la magnitud de la fuerza gravitatoria es 
+
+$$\left|F_{g}\right|=G\frac{m_{1}m_{2}}{r^2}$$
+
+Para los protones:
+
+Habíamos dicho que su carga eléctrica es $q_{p}=1.6\times 10^{-19}C$, por lo que la magnitud de la fuerza entre los protones es 
+$$
+\begin{aligned}
+  \left|F_{e}\right|&=\frac{\left(1.6\times 10^{-19}\right)^2}{4\pi\varepsilon_{0}}\frac{1}{r^2}=k\frac{2.5\times 10^{-38}}{r^2}\\
+   &=\frac{2.5\times 10^{-38}\cdot 8.987\times 10^9}{r^2}=\frac{2.246\times 10^{-28}}{r^2}\\
+\end{aligned}
+$$
+
+La constante de gravitación es $G=6.674\times 10^{-11}N\cdot m^2/kg^2$, y la masa de un protón es $m_{p}=1.672\times 10^{-27}kg$, así que la magnitud de la fuerza gravitatoria entre dos protones es 
+$$
+\begin{aligned}
+  \left|F_{g}\right|&=\frac{6.674\times 10^{-11}\cdot \left(1.672\times 10^{-27}\right)^2}{r^2}\\
+   &=\frac{6.674\times 10^{-11}\cdot 2.795\times 10^{-54}}{r^2}\\
+   &=\frac{1.234\times 10^{-64}}{r^2}\\
+\end{aligned}
+$$
+
+Vemos que la magnitud de la fuerza gravitatoria es MUCHO menor que la de la fuerza eléctrica entre dos protones. Podemos calcular el cociente entre ambas fuerzas para mejor claridad.
+$$
+  \frac{\left|F_{e}\right|}{\left|F_{g}\right|}=\frac{2.246\times 10^{-28}}{1.234\times 10^{-64}}=1.820\times 10^{36}
+$$
+Osea que la fuerza eléctrica entre dos protones es aproximadamente $10^{36}$ veces mas grande que la gravitatoria. **Es literalmente un trillón de trillones de veces mas fuerte!**
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

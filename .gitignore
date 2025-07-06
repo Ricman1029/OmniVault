@@ -35,4 +35,7 @@ Thumbs.db
 *.bak
 *.old
 
+# Archivos HTML de quarto
+_site
 
+/.quarto/

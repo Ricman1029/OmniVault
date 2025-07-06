@@ -1,0 +1,13 @@
+project:
+  type: website
+
+website:
+  title: "Mis Resúmenes Universitarios"
+  navbar:
+    left:
+      - text: "Inicio"
+        href: index.qmd
+      - text: "Apuntes"
+        href: apuntes/index.qmd
+      - text: "Proyectos"
+        href: proyectos/index.qmd
