@@ -1,8 +1,10 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "Mis Resúmenes Universitarios"
+  title: "OmniVault"
+  site-url: https://ricman1029.github.io/OmniVault/
   navbar:
     left:
       - text: "Inicio"

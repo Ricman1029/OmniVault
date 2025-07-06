@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Resúmenes Universitarios",
+    "section": "",
+    "text": "Bienvenidos a mis resúmenes de proyectos y apuntes universitarios.\n\n\n\nFísica 2 \n\n\n\n\n\nAnálisis Matemático II\nFísica 2\nSistemas Operativos\nSintáxis y Semántica de los lenguajes"
+  },
+  {
+    "objectID": "index.html#proyectos",
+    "href": "index.html#proyectos",
+    "title": "Resúmenes Universitarios",
+    "section": "",
+    "text": "Física 2"
+  },
+  {
+    "objectID": "index.html#apuntes",
+    "href": "index.html#apuntes",
+    "title": "Resúmenes Universitarios",
+    "section": "",
+    "text": "Análisis Matemático II\nFísica 2\nSistemas Operativos\nSintáxis y Semántica de los lenguajes"
+  },
+  {
+    "objectID": "apuntes/ssl/index.html",
+    "href": "apuntes/ssl/index.html",
+    "title": "SSL",
+    "section": "",
+    "text": "SSL\nhola"
+  },
+  {
+    "objectID": "apuntes/sop/index.html",
+    "href": "apuntes/sop/index.html",
+    "title": "SOP",
+    "section": "",
+    "text": "SOP\nohla"
+  },
+  {
+    "objectID": "apuntes/fisica2/electrostatica/resumen.html",
+    "href": "apuntes/fisica2/electrostatica/resumen.html",
+    "title": "Física 2",
+    "section": "",
+    "text": "Profesor: Santiago Agustín Ibáñez\nAyudante: Leandro Milton Guzzardo"
+  },
+  {
+    "objectID": "apuntes/fisica2/electrostatica/resumen.html#carga-eléctrica-y-estructura-de-la-materia",
+    "href": "apuntes/fisica2/electrostatica/resumen.html#carga-eléctrica-y-estructura-de-la-materia",
+    "title": "Física 2",
+    "section": "Carga eléctrica y estructura de la materia",
+    "text": "Carga eléctrica y estructura de la materia\nEn los ejemplos que dimos al principio, cuando se frotaba la varilla de vidrio contra la seda por ejemplo, no había ningún cambio visible en su apariencia que idicara que algo había cambiado. Para entender esto hay que analizar las propiedades eléctricas de los átomos de esa varilla de vidrio.\nLos átomos están constituidos por tres tipos de particulas: los electrones, con carga eléctrica negativa; los protones, con carga eléctrica positiva y de igual magnitud que los electrones; y los neutrones, sin carga. Los protones y los neutrones están formados por otras entidades llamadas quarks, que tienen cargas de \\pm\\frac{1}{3} y \\pm\\frac{2}{3} de la carga del electrón. Todos los electrones siempre tienen la misma carga eléctrica q_{e}=-1.6\\times10^{-19}C=-q_{p}.\nLos protones y los neutrones en un átomo forma el núcleo. Los electrones rodean al núcleo y se mantienen dentro del átomo debido a las fuerzas eléctricas que ejercen los protones sobre ellos. (Los protones y los neutrones están unidos en el núcleo debido a la fuerza nuclear fuerte, que vence a la repulsión eléctrica entre los protones)."
+  },
+  {
+    "objectID": "apuntes/fisica2/electrostatica/resumen.html#propiedades-de-la-carga-eléctrica",
+    "href": "apuntes/fisica2/electrostatica/resumen.html#propiedades-de-la-carga-eléctrica",
+    "title": "Física 2",
+    "section": "Propiedades de la carga eléctrica",
+    "text": "Propiedades de la carga eléctrica\nDel análisis anterior podemos deducir dos prinicpios importantes.\n\nLa carga eléctrica se conserva: La suma algebráica de todas las cargas eléctricas en cualquier sistema cerrado es constante.\nLa carga eléctrica es discreta: La magnitud de la carga del electrón o del protón es la unidad natural de carga. Todos los sistemas tendrán una carga que se puede expresar como un múltiplo de dicha carga."
+  },
+  {
+    "objectID": "apuntes/fisica2/electrostatica/resumen.html#conductores-aislantes-y-cargas-inducidas",
+    "href": "apuntes/fisica2/electrostatica/resumen.html#conductores-aislantes-y-cargas-inducidas",
+    "title": "Física 2",
+    "section": "Conductores, aislantes y cargas inducidas",
+    "text": "Conductores, aislantes y cargas inducidas\nAlgunos materiales permiten que las cargas eléctricas se muevan con facilidad de una región a otra, mientras que otros no lo hacen. Los primeros, reciben el nombre de conductores de electricidad. El alambre de cobre es un ejemplo de un conductor. Otros materiales, como una banda de caucho y un cordón de nailon no permiten que la carga eléctrica se transfiera, y reciben el nombre de aislantes.\n\nCarga por inducción\nSi queremos transferir carga eléctrica de un cuerpo A hacia otro cuerpo B, podemos simplemente acercar A hacia B para que A ceda electrones a B, transfiriendole parte de su carga eléctrica. Sin embargo, existe otro proceso mediante el cual podemos cargar al cuerpo B sin perder carga del cuerpo A. Este proceso se llama carga por inducción.\nEn la Figura 1 podemos ver cómo es este proceso. Primero hay una esfera metálica sin carga sostenida por un soporte aislante. Al acercarse una varilla con carga negativa, los electrones libres en la esfera metálica son repelidos por los electrones excedentes en la varilla, de forma que se acumulan en el lado derecho de la esfera. Ahora, como el lado derecho de la esfera tiene una carga inducida negativa, al ponerla en contacto con un alambre conductor que está conectado a tierra, los electrones del lado derecho de la esfera son transferidos. De esta manera, la varilla nunca perdió electrones, y logramos transferir parte de la carga eléctrica de la esfera hacia la tierra.\n\n\n\n\n\n\nFigura 1: Imagen sacada de Young, D., y Freedman (2009). Carga por inducción\n\n\n\n\n\n\n\n\n\n🔍\n\n\n\nEjemplos\n\nComparar la magnitud de la fuerza electrostática con la gravitatoria entre:\n\n\n2 protones.\n2 electrones.\n2 partículas \\alpha.\n\nLa magnitud de la fuerza electrostática la vimos aca Ecuación 1 y es\n\\left|F_{e}\\right|=\\frac{\\left|q_{1}q_{2}\\right|}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}\nPor otro lado, la magnitud de la fuerza gravitatoria es\n\\left|F_{g}\\right|=G\\frac{m_{1}m_{2}}{r^2}\nPara los protones:\nHabíamos dicho que su carga eléctrica es q_{p}=1.6\\times 10^{-19}C, por lo que la magnitud de la fuerza entre los protones es \n\\begin{aligned}\n  \\left|F_{e}\\right|&=\\frac{\\left(1.6\\times 10^{-19}\\right)^2}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}=k\\frac{2.5\\times 10^{-38}}{r^2}\\\\\n   &=\\frac{2.5\\times 10^{-38}\\cdot 8.987\\times 10^9}{r^2}=\\frac{2.246\\times 10^{-28}}{r^2}\\\\\n\\end{aligned}\n\nLa constante de gravitación es G=6.674\\times 10^{-11}N\\cdot m^2/kg^2, y la masa de un protón es m_{p}=1.672\\times 10^{-27}kg, así que la magnitud de la fuerza gravitatoria entre dos protones es \n\\begin{aligned}\n  \\left|F_{g}\\right|&=\\frac{6.674\\times 10^{-11}\\cdot \\left(1.672\\times 10^{-27}\\right)^2}{r^2}\\\\\n   &=\\frac{6.674\\times 10^{-11}\\cdot 2.795\\times 10^{-54}}{r^2}\\\\\n   &=\\frac{1.234\\times 10^{-64}}{r^2}\\\\\n\\end{aligned}\n\nVemos que la magnitud de la fuerza gravitatoria es MUCHO menor que la de la fuerza eléctrica entre dos protones. Podemos calcular el cociente entre ambas fuerzas para mejor claridad. \n  \\frac{\\left|F_{e}\\right|}{\\left|F_{g}\\right|}=\\frac{2.246\\times 10^{-28}}{1.234\\times 10^{-64}}=1.820\\times 10^{36}\n Osea que la fuerza eléctrica entre dos protones es aproximadamente 10^{36} veces mas grande que la gravitatoria. Es literalmente un trillón de trillones de veces mas fuerte!"
+  },
+  {
+    "objectID": "apuntes/fisica2/electrostatica/resumen.html#ejemplos",
+    "href": "apuntes/fisica2/electrostatica/resumen.html#ejemplos",
+    "title": "Física 2",
+    "section": "Ejemplos",
+    "text": "Ejemplos\n\nComparar la magnitud de la fuerza electrostática con la gravitatoria entre:\n\n\n2 protones.\n2 electrones.\n2 partículas \\alpha.\n\nLa magnitud de la fuerza electrostática la vimos aca Ecuación 1 y es\n\\left|F_{e}\\right|=\\frac{\\left|q_{1}q_{2}\\right|}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}\nPor otro lado, la magnitud de la fuerza gravitatoria es\n\\left|F_{g}\\right|=G\\frac{m_{1}m_{2}}{r^2}\nPara los protones:\nHabíamos dicho que su carga eléctrica es q_{p}=1.6\\times 10^{-19}C, por lo que la magnitud de la fuerza entre los protones es \n\\begin{aligned}\n  \\left|F_{e}\\right|&=\\frac{\\left(1.6\\times 10^{-19}\\right)^2}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}=k\\frac{2.5\\times 10^{-38}}{r^2}\\\\\n   &=\\frac{2.5\\times 10^{-38}\\cdot 8.987\\times 10^9}{r^2}=\\frac{2.246\\times 10^{-28}}{r^2}\\\\\n\\end{aligned}\n\nLa constante de gravitación es G=6.674\\times 10^{-11}N\\cdot m^2/kg^2, y la masa de un protón es m_{p}=1.672\\times 10^{-27}kg, así que la magnitud de la fuerza gravitatoria entre dos protones es \n\\begin{aligned}\n  \\left|F_{g}\\right|&=\\frac{6.674\\times 10^{-11}\\cdot \\left(1.672\\times 10^{-27}\\right)^2}{r^2}\\\\\n   &=\\frac{6.674\\times 10^{-11}\\cdot 2.795\\times 10^{-54}}{r^2}\\\\\n   &=\\frac{1.234\\times 10^{-64}}{r^2}\\\\\n\\end{aligned}\n\nVemos que la magnitud de la fuerza gravitatoria es MUCHO menor que la de la fuerza eléctrica entre dos protones. Podemos calcular el cociente entre ambas fuerzas para mejor claridad. \n  \\frac{\\left|F_{e}\\right|}{\\left|F_{g}\\right|}=\\frac{2.246\\times 10^{-28}}{1.234\\times 10^{-64}}=1.820\\times 10^{36}\n Osea que la fuerza eléctrica entre dos protones es aproximadamente 10^{36} veces mas grande que la gravitatoria. Es literalmente un trillón de trillones de veces mas fuerte!"
+  },
+  {
+    "objectID": "apuntes/fisica2/index.html",
+    "href": "apuntes/fisica2/index.html",
+    "title": "Resumenes",
+    "section": "",
+    "text": "Resumenes\n\nelectrostática"
+  },
+  {
+    "objectID": "apuntes/am2/index.html",
+    "href": "apuntes/am2/index.html",
+    "title": "AM2",
+    "section": "",
+    "text": "AM2\nhola"
+  },
+  {
+    "objectID": "apuntes/index.html",
+    "href": "apuntes/index.html",
+    "title": "Apuntes",
+    "section": "",
+    "text": "Apuntes\nhola"
+  }
+]
