@@ -1,2 +1,3 @@
 # AM2
-hola
+
+- [Resumen del primer parcial](./parcial1-quarto/resumen.qmd)

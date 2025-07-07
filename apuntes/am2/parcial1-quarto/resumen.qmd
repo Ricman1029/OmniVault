@@ -1,0 +1,278 @@
+---
+lang: es
+author: Ricardo Freccero
+toc: true
+format:
+  html:
+    theme: cosmo
+    code-fold: true
+    html-math-method: katex
+bibliography: bibliografia.bib
+jupyter: python3
+---
+
+![](./imagenes/logo_utn_frc.jpg)
+
+::: { style="text-align: center" }
+::: { style="font-family: serif" }
+
+### UNIVERSIDAD TECNOLÓGICA NACIONAL
+
+#### FACULTAD REGIONAL CORDOBA - EXTENSIÓN ÁULICA BARILOCHE
+
+##### INGENIERÍA EN SISTEMAS DE INFORMACIÓN
+
+###### AÑO LECTIVO 2025
+
+:::
+
+---
+
+# Análisis Matemático 2
+### Resumen Primer Parcial
+
+---
+
+:::
+
+<div style="margin-top: 3rem;"></div>
+
+**Profesor:** Mónica Guraya
+
+**Ayudante:** Santiago Ward
+
+<div style="margin-top: 10rem;"></div>
+
+::: { style="text-align: right" }
+
+**Alumno:** Ricardo Freccero
+
+**Número de legajo:** 415753
+
+:::
+
+---
+
+# Conjuntos y puntos
+En $\mathbb{R}^{2}$ el **entorno de punto** $P_{0}(x_{0},y_{0})$ y de radio $\delta$ es el conjunto de puntos ubicados en el interior de un círculo de centro $P_{0}$ y radio $\delta$.
+En clase, al entorno lo vimo como **Bola**, así que vamos a usar la $B$ para representarlo.
+
+## Punto
+Consideramos como punto a cualquier vector del plano o el espacio que tenga origen en el $\vec{O}$.
+
+## Bola abierta
+Es el conjunto de puntos ubicados en un círculo de radio $\delta$ alrededor de un punto $P_{0}$.
+$$
+B(P_{0},\delta)=\left\{(x,y) \;/\; 0\leq \sqrt[]{(x-x_{0})^2-(y-y_{0})^2}<\delta,\delta \in \mathbb{R}^{}\right\}
+$$
+
+Otra notación mas facil de entender es la siguiente:
+$$
+  B(P_{0},\delta)=\left|P-P_{0}\right|<\delta,\delta \in \mathbb{R}^{}
+$$
+
+Que podemos interpretar como: la bola abierta $B(P_{0},\delta)$ es el conjunto de todos los puntos $P$ cuya distancia a $P_{0}$ es menor a $\delta$, siendo $\delta$ el radio de un círculo alrededor del punto $P_{0}$.
+
+## Bola abierta reducida
+Es lo mismo que la bola abierta, solo que ahora el punto $P_{0}$ no está incluído en el conjunto de puntos.
+
+La denotamos como $B_{0}$ y su ecuación es la siguiente:
+$$
+  B_{0}(P_{0},\delta)=0<\left|P-P_{0}\right|<\delta,\delta \in \mathbb{R}^{}
+$$
+
+## Bola cerrada
+Es el conjunto de puntos alrededor del punto $P_{0}$ que cumplen que su distancia es $\leq \delta$. La denotamos como $\overline{B}$.
+$$
+\overline{B}(P_{0},\delta)=\left|P-P_{0}\right|\leq \delta,\delta \in \mathbb{R}^{}
+$$
+
+## Tipos de puntos
+Dados un punto $P$ cualquiera y un conjunto no vacío $A$ de números definimos:
+
+### Punto interior
+Un punto $P_{0}$ es interior de un conjunto $A$ si existe una bola abierta alrededor de $P_{0}$ que esté totalmente contenida en $A$.
+$$
+  P_{0} \text{ es punto interior}  \iff  \exists B(P_{0}) \subset A
+$$
+
+### Punto de acumulación
+Cuando toda bola abierta reducida alrededor de un punto $P_{0}$ contiene puntos de $A$.
+$$
+P_{0} \text{ es punto de acumulación de } A  \iff  \forall B_{0}(P_{0},\delta): \exists P \;/\; P \in B_{0}(P_{0},\delta) \land P \in A
+$$
+
+### Punto aislado
+Cuando existe una bola abierta alrededor del punto $P_{0}$ cuya intersección con $A$ es el mismo punto.
+$$
+P_{0}\text{ es un punto aislado } \iff  \exists B(P_{0}) \;/\; B(P_{0}) \cap A=P_{0}
+$$
+**Nota:** Fijarse que $P_{0} \in A$. si bien es un punto que está separado del resto de los puntos de $A$, sigue formando parte de ese conjunto.
+
+### Punto exterior
+Este es lo mismo que el anterior, pero ahora $P_{0} \notin A$.
+$$
+  P_{0}\text{ es punto exterior } \iff  \exists B(P_{0}) \;/\; B(P_{0}) \cap A= \left\{\varnothing\right\}
+$$
+
+### Punto frontera
+Si hay una bola alrededor de un punto $P_{0}$ que contiene tanto puntos que pertenecen a $A$, como puntos que no pertenecen a $A$.
+$$
+  P_{0}\text{ es punto frontera } \iff  \forall B(P_{0})=\begin{cases}
+     \exists P_{1} \in B(P_{0}) \land P_{1} \in A \\
+     \exists P_{2} \in B(P_{0}) \land P_{2} \notin A
+  \end{cases}
+$$
+
+### Frontera de un conjunto
+Es el conjunto de todos los puntos frontera de un conjunto $A$.
+
+## Conjuntos
+### Conjunto abierto
+Es un conjunto cuyos puntos son todos interiores. No hay puntos frontera.
+
+### Conjunto cerrado
+Es un conjunto que contiene todos sus puntos de acumulación, es decir, contiene sus puntos interiores y contiene sus puntos frontera.
+
+### Conjunto acotado
+Es un conjunto para el cual es posible hallar un valor $M$ que es mayor que el módulo de cualquier punto $P_{0}$ de $A$.
+$$
+M \in \mathbb{R}^{+} \;/\; \left|P_{0}\right|<M,\forall P_{0} \in A
+$$
+Tambien lo podemos escribir de la siguiente forma
+$$
+\forall P_{0} \in A: \exists M \in \mathbb{R}^{+} \;/\; \left|P_{0}\right|<M
+$$
+
+### Complemento de un conjunto
+El complemento de un conjunto $A$ es el conjunto que contiene todos los elementos del conjunto universal de $A$ que no pertenecen a $A$.
+
+### Conjunto conexo
+Un conjunto es conexo si cualquier par de puntos del conjunto puede ser unido por un camino formado por sementos de recta contenidos en $A$.
+
+### Conjunto simplemente conexo
+Es cuando cualquier curva cerrada contenida en el conjunto tiene su interior totalmente contenido en el conjunto.
+
+# Funciones
+```{python}
+#| label: grf-incrementos
+#| fig-cap: Incrementos de una función
+
+import numpy as np
+import plotly.graph_objects as go
+
+# Superficie: z = f(x, y)
+x = np.linspace(0, 1, 20)
+y = np.linspace(0, 1, 20)
+x, y = np.meshgrid(x, y)
+z = -(x-1)**2 - (y-1)**2 + 2 # ejemplo
+
+# Puntos importantes
+points = {
+    "M": (0.6, 0.6, -(0.6-1)**2 - (0.6-1)**2 + 2),
+    "N": (1, 0.6, -(0.6-1)**2 + 2),
+    "T": (0.6, 1, -(0.6-1)**2 + 2),
+    "Q": (1, 1, 2),
+    "N1": (1, 0.6, -(0.6-1)**2 - (0.6-1)**2 + 2),
+    "T1": (0.6, 1, -(0.6-1)**2 - (0.6-1)**2 + 2),
+    "Q1": (1, 1, -(0.6-1)**2 - (0.6-1)**2 + 2),
+    "P0": (0.6, 0.6, -(0.6-1)**2 - (0.6-1)**2 + 2),
+    "P1": (1, 0.6, -(0.6-1)**2 + 2),
+    "P2": (0.6, 1, -(0.6-1)**2 + 2),
+    "P": (0.6, 0.6, 0),
+    "P1": (1, 0.6, 0),
+    "P2": (0.6, 1, 0),
+    "P0": (1, 1, 0),
+}
+
+aristas = [
+    ("P", "P1"), ("P1", "P0"), ("P0", "P2"), ("P2", "P"), 
+    ("M", "N1"), ("N1", "Q1"), ("Q1", "T1"), ("T1", "M"), 
+    ("P", "M"), ("P1", "N1"), ("P0", "Q1"), ("P2", "T1"), 
+]
+
+# Crear figura
+fig = go.Figure()
+
+# Superficie
+fig.add_trace(go.Surface(x=x, y=y, z=z, colorscale='Viridis', opacity=0.5, showscale=False))
+
+# Puntos
+for name, (x_, y_, z_) in points.items():
+    fig.add_trace(go.Scatter3d(
+        x=[x_], y=[y_], z=[z_],
+        mode='markers+text',
+        marker=dict(size=2, color='black'),
+        text=[name],
+        textposition='middle right',
+	showlegend=False,
+    ))
+
+# Dibujo las proyecciones
+for inicio, fin in aristas:
+	x0, y0, z0 = points[inicio]
+	x1, y1, z1 = points[fin]
+	fig.add_trace(go.Scatter3d(
+	       x=[x0,x1],
+	       y=[y0,y1],
+	       z=[z0,z1],
+	       mode="lines",
+	       line=dict(color="gray", width=2, dash="dash"),
+	       showlegend=False,
+	))
+
+# Línea entre puntos P → P0)
+fig.add_trace(go.Scatter3d(
+    x=[points["P"][0], points["P0"][0]],
+    y=[points["P"][1], points["P0"][1]],
+    z=[points["P"][2], points["P0"][2]],
+    mode='lines',
+    line=dict(color='blue', width=4, dash="longdash"),
+    name="ΔS"
+))
+
+# Incremento parcial de x
+fig.add_trace(go.Scatter3d(
+	x=[points["N1"][0], points["N"][0]],
+	y=[points["N1"][1], points["N"][1]],
+	z=[points["N1"][2], points["N"][2]],
+	mode="lines",
+	line=dict(color="yellow", width=4),
+	name="$\\Delta_{x} z$",
+	))
+# Incremento parcial de y
+fig.add_trace(go.Scatter3d(
+	x=[points["T1"][0], points["T"][0]],
+	y=[points["T1"][1], points["T"][1]],
+	z=[points["T1"][2], points["T"][2]],
+	mode="lines",
+	line=dict(color="green", width=4),
+	name="$\\Delta_{y} z$",
+	))
+# Incremento total de z
+fig.add_trace(go.Scatter3d(
+	x=[points["Q1"][0], points["Q"][0]],
+	y=[points["Q1"][1], points["Q"][1]],
+	z=[points["Q1"][2], points["Q"][2]],
+	mode="lines",
+	line=dict(color="red", width=4),
+	name="$\\Delta z$",
+	))
+
+fig.update_layout(scene=dict(
+    xaxis_title='x',
+    yaxis_title='y',
+    zaxis_title='z',
+    aspectratio=dict(x=1,y=1,z=1),
+    camera=dict(
+	eye=dict(x=-1.9, y=-0.1, z=0.7),
+	center=dict(x=1, y=0.2, z=-0.5),
+	)
+))
+
+fig.show()
+```
+
+
+
+

@@ -132,7 +132,7 @@ Si queremos transferir carga eléctrica de un cuerpo $A$ hacia otro cuerpo $B$, 
 
 En la @fig-carga-induccion podemos ver cómo es este proceso. Primero hay una esfera metálica sin carga sostenida por un soporte aislante. Al acercarse una varilla con carga negativa, los electrones libres en la esfera metálica son repelidos por los electrones excedentes en la varilla, de forma que se acumulan en el lado derecho de la esfera. Ahora, como el lado derecho de la esfera tiene una **carga inducida** negativa, al ponerla en contacto con un alambre conductor que está conectado a tierra, los electrones del lado derecho de la esfera son transferidos. De esta manera, la varilla nunca perdió electrones, y logramos transferir parte de la carga eléctrica de la esfera hacia la tierra. 
 
-![Imagen sacada de @sears2. Carga por inducción](/imagenes/carga-induccion.png){#fig-carga-induccion}
+![Imagen sacada de @sears2. Carga por inducción](./imagenes/carga-induccion.png){#fig-carga-induccion}
 
 ::: {.callout-tip title="🔍" icon=false}
 ## Ejemplos
@@ -173,8 +173,28 @@ $$
   \frac{\left|F_{e}\right|}{\left|F_{g}\right|}=\frac{2.246\times 10^{-28}}{1.234\times 10^{-64}}=1.820\times 10^{36}
 $$
 Osea que la fuerza eléctrica entre dos protones es aproximadamente $10^{36}$ veces mas grande que la gravitatoria. **Es literalmente un trillón de trillones de veces mas fuerte!**
+
+Los otros dos puntos son lo mismo que este así que los saltamos.
+
+2. Calcular el cociente $q/m$ entre la carga y la masa de dos partíulas idénticas que se repelen electrostáticamente con la misma fuerza con que se atraen gravitatoriamente. Comparar el valor hallado con el cociente $e/m$ para el electrón.
+
+Tenemos dos partículas idénticas y nos dicen que la magnitud de la fuerza de repulsión electrostática entre ellas es igual a la magnitud de la fuerza de atracción gravitatoria:
+$$
+  \left|F_{e}\right|=\left|F_{g}\right|
+$$
+
+$$
+\begin{aligned}
+  k\frac{q^2}{r^2} &= G\frac{m^2}{r^2}\\
+  \frac{q^2}{m^2} &= \frac{G}{k}\\
+  \frac{q}{m} &= \sqrt[]{\frac{G}{k}}
+\end{aligned}
+$$
+
 :::
 
+# Principio de superposición
+Ahora, la Ley de Coulomb está definida sólo cuando existen dos cargas que interactúan entre sí. Pero, ¿qué pasa si en vez de dos cargas tenemos tres?, ¿y si tenemos mas de tres?. Los experimentos demuestran que cuando dos cargas ejercen fuerza de manera simultánea sobre una tercer carga, la fuerza total que actúa sobre esa carga es la suma vectorial de las otras dos. Esta propiedad se conoce como **principio de superposición de fuerzas**, y se cumple para cualquier número de cargas.
 
 
 
