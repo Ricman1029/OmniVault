@@ -28,11 +28,67 @@
     "text": "SSL\nhola"
   },
   {
-    "objectID": "apuntes/sop/index.html",
-    "href": "apuntes/sop/index.html",
-    "title": "SOP",
+    "objectID": "apuntes/am2/parcial1-quarto/resumen.html",
+    "href": "apuntes/am2/parcial1-quarto/resumen.html",
+    "title": "Análisis Matemático 2",
     "section": "",
-    "text": "SOP\nohla"
+    "text": "Profesor: Mónica Guraya\nAyudante: Santiago Ward"
+  },
+  {
+    "objectID": "apuntes/am2/parcial1-quarto/resumen.html#punto",
+    "href": "apuntes/am2/parcial1-quarto/resumen.html#punto",
+    "title": "Análisis Matemático 2",
+    "section": "Punto",
+    "text": "Punto\nConsideramos como punto a cualquier vector del plano o el espacio que tenga origen en el \\vec{O}."
+  },
+  {
+    "objectID": "apuntes/am2/parcial1-quarto/resumen.html#bola-abierta",
+    "href": "apuntes/am2/parcial1-quarto/resumen.html#bola-abierta",
+    "title": "Análisis Matemático 2",
+    "section": "Bola abierta",
+    "text": "Bola abierta\nEs el conjunto de puntos ubicados en un círculo de radio \\delta alrededor de un punto P_{0}. \nB(P_{0},\\delta)=\\left\\{(x,y) \\;/\\; 0\\leq \\sqrt[]{(x-x_{0})^2-(y-y_{0})^2}&lt;\\delta,\\delta \\in \\mathbb{R}^{}\\right\\}\n\nOtra notación mas facil de entender es la siguiente: \n  B(P_{0},\\delta)=\\left|P-P_{0}\\right|&lt;\\delta,\\delta \\in \\mathbb{R}^{}\n\nQue podemos interpretar como: la bola abierta B(P_{0},\\delta) es el conjunto de todos los puntos P cuya distancia a P_{0} es menor a \\delta, siendo \\delta el radio de un círculo alrededor del punto P_{0}."
+  },
+  {
+    "objectID": "apuntes/am2/parcial1-quarto/resumen.html#bola-abierta-reducida",
+    "href": "apuntes/am2/parcial1-quarto/resumen.html#bola-abierta-reducida",
+    "title": "Análisis Matemático 2",
+    "section": "Bola abierta reducida",
+    "text": "Bola abierta reducida\nEs lo mismo que la bola abierta, solo que ahora el punto P_{0} no está incluído en el conjunto de puntos.\nLa denotamos como B_{0} y su ecuación es la siguiente: \n  B_{0}(P_{0},\\delta)=0&lt;\\left|P-P_{0}\\right|&lt;\\delta,\\delta \\in \\mathbb{R}^{}"
+  },
+  {
+    "objectID": "apuntes/am2/parcial1-quarto/resumen.html#bola-cerrada",
+    "href": "apuntes/am2/parcial1-quarto/resumen.html#bola-cerrada",
+    "title": "Análisis Matemático 2",
+    "section": "Bola cerrada",
+    "text": "Bola cerrada\nEs el conjunto de puntos alrededor del punto P_{0} que cumplen que su distancia es \\leq \\delta. La denotamos como \\overline{B}. \n\\overline{B}(P_{0},\\delta)=\\left|P-P_{0}\\right|\\leq \\delta,\\delta \\in \\mathbb{R}^{}"
+  },
+  {
+    "objectID": "apuntes/am2/parcial1-quarto/resumen.html#tipos-de-puntos",
+    "href": "apuntes/am2/parcial1-quarto/resumen.html#tipos-de-puntos",
+    "title": "Análisis Matemático 2",
+    "section": "Tipos de puntos",
+    "text": "Tipos de puntos\nDados un punto P cualquiera y un conjunto no vacío A de números definimos:\n\nPunto interior\nUn punto P_{0} es interior de un conjunto A si existe una bola abierta alrededor de P_{0} que esté totalmente contenida en A. \n  P_{0} \\text{ es punto interior}  \\iff  \\exists B(P_{0}) \\subset A\n\n\n\nPunto de acumulación\nCuando toda bola abierta reducida alrededor de un punto P_{0} contiene puntos de A. \nP_{0} \\text{ es punto de acumulación de } A  \\iff  \\forall B_{0}(P_{0},\\delta): \\exists P \\;/\\; P \\in B_{0}(P_{0},\\delta) \\land P \\in A\n\n\n\nPunto aislado\nCuando existe una bola abierta alrededor del punto P_{0} cuya intersección con A es el mismo punto. \nP_{0}\\text{ es un punto aislado } \\iff  \\exists B(P_{0}) \\;/\\; B(P_{0}) \\cap A=P_{0}\n Nota: Fijarse que P_{0} \\in A. si bien es un punto que está separado del resto de los puntos de A, sigue formando parte de ese conjunto.\n\n\nPunto exterior\nEste es lo mismo que el anterior, pero ahora P_{0} \\notin A. \n  P_{0}\\text{ es punto exterior } \\iff  \\exists B(P_{0}) \\;/\\; B(P_{0}) \\cap A= \\left\\{\\varnothing\\right\\}\n\n\n\nPunto frontera\nSi hay una bola alrededor de un punto P_{0} que contiene tanto puntos que pertenecen a A, como puntos que no pertenecen a A. \n  P_{0}\\text{ es punto frontera } \\iff  \\forall B(P_{0})=\\begin{cases}\n     \\exists P_{1} \\in B(P_{0}) \\land P_{1} \\in A \\\\\n     \\exists P_{2} \\in B(P_{0}) \\land P_{2} \\notin A\n  \\end{cases}\n\n\n\nFrontera de un conjunto\nEs el conjunto de todos los puntos frontera de un conjunto A."
+  },
+  {
+    "objectID": "apuntes/am2/parcial1-quarto/resumen.html#conjuntos",
+    "href": "apuntes/am2/parcial1-quarto/resumen.html#conjuntos",
+    "title": "Análisis Matemático 2",
+    "section": "Conjuntos",
+    "text": "Conjuntos\n\nConjunto abierto\nEs un conjunto cuyos puntos son todos interiores. No hay puntos frontera.\n\n\nConjunto cerrado\nEs un conjunto que contiene todos sus puntos de acumulación, es decir, contiene sus puntos interiores y contiene sus puntos frontera.\n\n\nConjunto acotado\nEs un conjunto para el cual es posible hallar un valor M que es mayor que el módulo de cualquier punto P_{0} de A. \nM \\in \\mathbb{R}^{+} \\;/\\; \\left|P_{0}\\right|&lt;M,\\forall P_{0} \\in A\n Tambien lo podemos escribir de la siguiente forma \n\\forall P_{0} \\in A: \\exists M \\in \\mathbb{R}^{+} \\;/\\; \\left|P_{0}\\right|&lt;M\n\n\n\nComplemento de un conjunto\nEl complemento de un conjunto A es el conjunto que contiene todos los elementos del conjunto universal de A que no pertenecen a A.\n\n\nConjunto conexo\nUn conjunto es conexo si cualquier par de puntos del conjunto puede ser unido por un camino formado por sementos de recta contenidos en A.\n\n\nConjunto simplemente conexo\nEs cuando cualquier curva cerrada contenida en el conjunto tiene su interior totalmente contenido en el conjunto."
+  },
+  {
+    "objectID": "apuntes/fisica2/index.html",
+    "href": "apuntes/fisica2/index.html",
+    "title": "Resumenes",
+    "section": "",
+    "text": "Resumenes\n\nelectrostática"
+  },
+  {
+    "objectID": "proyectos/index.html",
+    "href": "proyectos/index.html",
+    "title": "Proyectos",
+    "section": "",
+    "text": "Proyectos\nhola"
   },
   {
     "objectID": "apuntes/fisica2/electrostatica/resumen.html",
@@ -60,28 +116,28 @@
     "href": "apuntes/fisica2/electrostatica/resumen.html#conductores-aislantes-y-cargas-inducidas",
     "title": "Física 2",
     "section": "Conductores, aislantes y cargas inducidas",
-    "text": "Conductores, aislantes y cargas inducidas\nAlgunos materiales permiten que las cargas eléctricas se muevan con facilidad de una región a otra, mientras que otros no lo hacen. Los primeros, reciben el nombre de conductores de electricidad. El alambre de cobre es un ejemplo de un conductor. Otros materiales, como una banda de caucho y un cordón de nailon no permiten que la carga eléctrica se transfiera, y reciben el nombre de aislantes.\n\nCarga por inducción\nSi queremos transferir carga eléctrica de un cuerpo A hacia otro cuerpo B, podemos simplemente acercar A hacia B para que A ceda electrones a B, transfiriendole parte de su carga eléctrica. Sin embargo, existe otro proceso mediante el cual podemos cargar al cuerpo B sin perder carga del cuerpo A. Este proceso se llama carga por inducción.\nEn la Figura 1 podemos ver cómo es este proceso. Primero hay una esfera metálica sin carga sostenida por un soporte aislante. Al acercarse una varilla con carga negativa, los electrones libres en la esfera metálica son repelidos por los electrones excedentes en la varilla, de forma que se acumulan en el lado derecho de la esfera. Ahora, como el lado derecho de la esfera tiene una carga inducida negativa, al ponerla en contacto con un alambre conductor que está conectado a tierra, los electrones del lado derecho de la esfera son transferidos. De esta manera, la varilla nunca perdió electrones, y logramos transferir parte de la carga eléctrica de la esfera hacia la tierra.\n\n\n\n\n\n\nFigura 1: Imagen sacada de Young, D., y Freedman (2009). Carga por inducción\n\n\n\n\n\n\n\n\n\n🔍\n\n\n\nEjemplos\n\nComparar la magnitud de la fuerza electrostática con la gravitatoria entre:\n\n\n2 protones.\n2 electrones.\n2 partículas \\alpha.\n\nLa magnitud de la fuerza electrostática la vimos aca Ecuación 1 y es\n\\left|F_{e}\\right|=\\frac{\\left|q_{1}q_{2}\\right|}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}\nPor otro lado, la magnitud de la fuerza gravitatoria es\n\\left|F_{g}\\right|=G\\frac{m_{1}m_{2}}{r^2}\nPara los protones:\nHabíamos dicho que su carga eléctrica es q_{p}=1.6\\times 10^{-19}C, por lo que la magnitud de la fuerza entre los protones es \n\\begin{aligned}\n  \\left|F_{e}\\right|&=\\frac{\\left(1.6\\times 10^{-19}\\right)^2}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}=k\\frac{2.5\\times 10^{-38}}{r^2}\\\\\n   &=\\frac{2.5\\times 10^{-38}\\cdot 8.987\\times 10^9}{r^2}=\\frac{2.246\\times 10^{-28}}{r^2}\\\\\n\\end{aligned}\n\nLa constante de gravitación es G=6.674\\times 10^{-11}N\\cdot m^2/kg^2, y la masa de un protón es m_{p}=1.672\\times 10^{-27}kg, así que la magnitud de la fuerza gravitatoria entre dos protones es \n\\begin{aligned}\n  \\left|F_{g}\\right|&=\\frac{6.674\\times 10^{-11}\\cdot \\left(1.672\\times 10^{-27}\\right)^2}{r^2}\\\\\n   &=\\frac{6.674\\times 10^{-11}\\cdot 2.795\\times 10^{-54}}{r^2}\\\\\n   &=\\frac{1.234\\times 10^{-64}}{r^2}\\\\\n\\end{aligned}\n\nVemos que la magnitud de la fuerza gravitatoria es MUCHO menor que la de la fuerza eléctrica entre dos protones. Podemos calcular el cociente entre ambas fuerzas para mejor claridad. \n  \\frac{\\left|F_{e}\\right|}{\\left|F_{g}\\right|}=\\frac{2.246\\times 10^{-28}}{1.234\\times 10^{-64}}=1.820\\times 10^{36}\n Osea que la fuerza eléctrica entre dos protones es aproximadamente 10^{36} veces mas grande que la gravitatoria. Es literalmente un trillón de trillones de veces mas fuerte!"
+    "text": "Conductores, aislantes y cargas inducidas\nAlgunos materiales permiten que las cargas eléctricas se muevan con facilidad de una región a otra, mientras que otros no lo hacen. Los primeros, reciben el nombre de conductores de electricidad. El alambre de cobre es un ejemplo de un conductor. Otros materiales, como una banda de caucho y un cordón de nailon no permiten que la carga eléctrica se transfiera, y reciben el nombre de aislantes.\n\nCarga por inducción\nSi queremos transferir carga eléctrica de un cuerpo A hacia otro cuerpo B, podemos simplemente acercar A hacia B para que A ceda electrones a B, transfiriendole parte de su carga eléctrica. Sin embargo, existe otro proceso mediante el cual podemos cargar al cuerpo B sin perder carga del cuerpo A. Este proceso se llama carga por inducción.\nEn la Figura 1 podemos ver cómo es este proceso. Primero hay una esfera metálica sin carga sostenida por un soporte aislante. Al acercarse una varilla con carga negativa, los electrones libres en la esfera metálica son repelidos por los electrones excedentes en la varilla, de forma que se acumulan en el lado derecho de la esfera. Ahora, como el lado derecho de la esfera tiene una carga inducida negativa, al ponerla en contacto con un alambre conductor que está conectado a tierra, los electrones del lado derecho de la esfera son transferidos. De esta manera, la varilla nunca perdió electrones, y logramos transferir parte de la carga eléctrica de la esfera hacia la tierra.\n\n\n\n\n\n\nFigura 1: Imagen sacada de Young, D., y Freedman (2009). Carga por inducción\n\n\n\n\n\n\n\n\n\n🔍\n\n\n\nEjemplos\n\nComparar la magnitud de la fuerza electrostática con la gravitatoria entre:\n\n\n2 protones.\n2 electrones.\n2 partículas \\alpha.\n\nLa magnitud de la fuerza electrostática la vimos aca Ecuación 1 y es\n\\left|F_{e}\\right|=\\frac{\\left|q_{1}q_{2}\\right|}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}\nPor otro lado, la magnitud de la fuerza gravitatoria es\n\\left|F_{g}\\right|=G\\frac{m_{1}m_{2}}{r^2}\nPara los protones:\nHabíamos dicho que su carga eléctrica es q_{p}=1.6\\times 10^{-19}C, por lo que la magnitud de la fuerza entre los protones es \n\\begin{aligned}\n  \\left|F_{e}\\right|&=\\frac{\\left(1.6\\times 10^{-19}\\right)^2}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}=k\\frac{2.5\\times 10^{-38}}{r^2}\\\\\n   &=\\frac{2.5\\times 10^{-38}\\cdot 8.987\\times 10^9}{r^2}=\\frac{2.246\\times 10^{-28}}{r^2}\\\\\n\\end{aligned}\n\nLa constante de gravitación es G=6.674\\times 10^{-11}N\\cdot m^2/kg^2, y la masa de un protón es m_{p}=1.672\\times 10^{-27}kg, así que la magnitud de la fuerza gravitatoria entre dos protones es \n\\begin{aligned}\n  \\left|F_{g}\\right|&=\\frac{6.674\\times 10^{-11}\\cdot \\left(1.672\\times 10^{-27}\\right)^2}{r^2}\\\\\n   &=\\frac{6.674\\times 10^{-11}\\cdot 2.795\\times 10^{-54}}{r^2}\\\\\n   &=\\frac{1.234\\times 10^{-64}}{r^2}\\\\\n\\end{aligned}\n\nVemos que la magnitud de la fuerza gravitatoria es MUCHO menor que la de la fuerza eléctrica entre dos protones. Podemos calcular el cociente entre ambas fuerzas para mejor claridad. \n  \\frac{\\left|F_{e}\\right|}{\\left|F_{g}\\right|}=\\frac{2.246\\times 10^{-28}}{1.234\\times 10^{-64}}=1.820\\times 10^{36}\n Osea que la fuerza eléctrica entre dos protones es aproximadamente 10^{36} veces mas grande que la gravitatoria. Es literalmente un trillón de trillones de veces mas fuerte!\nLos otros dos puntos son lo mismo que este así que los saltamos.\n\nCalcular el cociente q/m entre la carga y la masa de dos partíulas idénticas que se repelen electrostáticamente con la misma fuerza con que se atraen gravitatoriamente. Comparar el valor hallado con el cociente e/m para el electrón.\n\nTenemos dos partículas idénticas y nos dicen que la magnitud de la fuerza de repulsión electrostática entre ellas es igual a la magnitud de la fuerza de atracción gravitatoria: \n  \\left|F_{e}\\right|=\\left|F_{g}\\right|\n\n\n\\begin{aligned}\n  k\\frac{q^2}{r^2} &= G\\frac{m^2}{r^2}\\\\\n  \\frac{q^2}{m^2} &= \\frac{G}{k}\\\\\n  \\frac{q}{m} &= \\sqrt[]{\\frac{G}{k}}\n\\end{aligned}"
   },
   {
     "objectID": "apuntes/fisica2/electrostatica/resumen.html#ejemplos",
     "href": "apuntes/fisica2/electrostatica/resumen.html#ejemplos",
     "title": "Física 2",
     "section": "Ejemplos",
-    "text": "Ejemplos\n\nComparar la magnitud de la fuerza electrostática con la gravitatoria entre:\n\n\n2 protones.\n2 electrones.\n2 partículas \\alpha.\n\nLa magnitud de la fuerza electrostática la vimos aca Ecuación 1 y es\n\\left|F_{e}\\right|=\\frac{\\left|q_{1}q_{2}\\right|}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}\nPor otro lado, la magnitud de la fuerza gravitatoria es\n\\left|F_{g}\\right|=G\\frac{m_{1}m_{2}}{r^2}\nPara los protones:\nHabíamos dicho que su carga eléctrica es q_{p}=1.6\\times 10^{-19}C, por lo que la magnitud de la fuerza entre los protones es \n\\begin{aligned}\n  \\left|F_{e}\\right|&=\\frac{\\left(1.6\\times 10^{-19}\\right)^2}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}=k\\frac{2.5\\times 10^{-38}}{r^2}\\\\\n   &=\\frac{2.5\\times 10^{-38}\\cdot 8.987\\times 10^9}{r^2}=\\frac{2.246\\times 10^{-28}}{r^2}\\\\\n\\end{aligned}\n\nLa constante de gravitación es G=6.674\\times 10^{-11}N\\cdot m^2/kg^2, y la masa de un protón es m_{p}=1.672\\times 10^{-27}kg, así que la magnitud de la fuerza gravitatoria entre dos protones es \n\\begin{aligned}\n  \\left|F_{g}\\right|&=\\frac{6.674\\times 10^{-11}\\cdot \\left(1.672\\times 10^{-27}\\right)^2}{r^2}\\\\\n   &=\\frac{6.674\\times 10^{-11}\\cdot 2.795\\times 10^{-54}}{r^2}\\\\\n   &=\\frac{1.234\\times 10^{-64}}{r^2}\\\\\n\\end{aligned}\n\nVemos que la magnitud de la fuerza gravitatoria es MUCHO menor que la de la fuerza eléctrica entre dos protones. Podemos calcular el cociente entre ambas fuerzas para mejor claridad. \n  \\frac{\\left|F_{e}\\right|}{\\left|F_{g}\\right|}=\\frac{2.246\\times 10^{-28}}{1.234\\times 10^{-64}}=1.820\\times 10^{36}\n Osea que la fuerza eléctrica entre dos protones es aproximadamente 10^{36} veces mas grande que la gravitatoria. Es literalmente un trillón de trillones de veces mas fuerte!"
+    "text": "Ejemplos\n\nComparar la magnitud de la fuerza electrostática con la gravitatoria entre:\n\n\n2 protones.\n2 electrones.\n2 partículas \\alpha.\n\nLa magnitud de la fuerza electrostática la vimos aca Ecuación 1 y es\n\\left|F_{e}\\right|=\\frac{\\left|q_{1}q_{2}\\right|}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}\nPor otro lado, la magnitud de la fuerza gravitatoria es\n\\left|F_{g}\\right|=G\\frac{m_{1}m_{2}}{r^2}\nPara los protones:\nHabíamos dicho que su carga eléctrica es q_{p}=1.6\\times 10^{-19}C, por lo que la magnitud de la fuerza entre los protones es \n\\begin{aligned}\n  \\left|F_{e}\\right|&=\\frac{\\left(1.6\\times 10^{-19}\\right)^2}{4\\pi\\varepsilon_{0}}\\frac{1}{r^2}=k\\frac{2.5\\times 10^{-38}}{r^2}\\\\\n   &=\\frac{2.5\\times 10^{-38}\\cdot 8.987\\times 10^9}{r^2}=\\frac{2.246\\times 10^{-28}}{r^2}\\\\\n\\end{aligned}\n\nLa constante de gravitación es G=6.674\\times 10^{-11}N\\cdot m^2/kg^2, y la masa de un protón es m_{p}=1.672\\times 10^{-27}kg, así que la magnitud de la fuerza gravitatoria entre dos protones es \n\\begin{aligned}\n  \\left|F_{g}\\right|&=\\frac{6.674\\times 10^{-11}\\cdot \\left(1.672\\times 10^{-27}\\right)^2}{r^2}\\\\\n   &=\\frac{6.674\\times 10^{-11}\\cdot 2.795\\times 10^{-54}}{r^2}\\\\\n   &=\\frac{1.234\\times 10^{-64}}{r^2}\\\\\n\\end{aligned}\n\nVemos que la magnitud de la fuerza gravitatoria es MUCHO menor que la de la fuerza eléctrica entre dos protones. Podemos calcular el cociente entre ambas fuerzas para mejor claridad. \n  \\frac{\\left|F_{e}\\right|}{\\left|F_{g}\\right|}=\\frac{2.246\\times 10^{-28}}{1.234\\times 10^{-64}}=1.820\\times 10^{36}\n Osea que la fuerza eléctrica entre dos protones es aproximadamente 10^{36} veces mas grande que la gravitatoria. Es literalmente un trillón de trillones de veces mas fuerte!\nLos otros dos puntos son lo mismo que este así que los saltamos.\n\nCalcular el cociente q/m entre la carga y la masa de dos partíulas idénticas que se repelen electrostáticamente con la misma fuerza con que se atraen gravitatoriamente. Comparar el valor hallado con el cociente e/m para el electrón.\n\nTenemos dos partículas idénticas y nos dicen que la magnitud de la fuerza de repulsión electrostática entre ellas es igual a la magnitud de la fuerza de atracción gravitatoria: \n  \\left|F_{e}\\right|=\\left|F_{g}\\right|\n\n\n\\begin{aligned}\n  k\\frac{q^2}{r^2} &= G\\frac{m^2}{r^2}\\\\\n  \\frac{q^2}{m^2} &= \\frac{G}{k}\\\\\n  \\frac{q}{m} &= \\sqrt[]{\\frac{G}{k}}\n\\end{aligned}"
   },
   {
-    "objectID": "apuntes/fisica2/index.html",
-    "href": "apuntes/fisica2/index.html",
-    "title": "Resumenes",
+    "objectID": "apuntes/sop/index.html",
+    "href": "apuntes/sop/index.html",
+    "title": "SOP",
     "section": "",
-    "text": "Resumenes\n\nelectrostática"
+    "text": "SOP\nohla"
   },
   {
     "objectID": "apuntes/am2/index.html",
     "href": "apuntes/am2/index.html",
     "title": "AM2",
     "section": "",
-    "text": "AM2\nhola"
+    "text": "AM2\n\nResumen del primer parcial"
   },
   {
     "objectID": "apuntes/index.html",

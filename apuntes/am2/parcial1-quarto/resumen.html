@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ricardo Freccero">
+
+<title>resumen – OmniVault</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-d58883fc66a2fe2e25d849a0b6d9d813.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">OmniVault</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../apuntes/index.html"> 
+<span class="menu-text">Apuntes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../proyectos/index.html"> 
+<span class="menu-text">Proyectos</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#conjuntos-y-puntos" id="toc-conjuntos-y-puntos" class="nav-link active" data-scroll-target="#conjuntos-y-puntos">Conjuntos y puntos</a>
+  <ul class="collapse">
+  <li><a href="#punto" id="toc-punto" class="nav-link" data-scroll-target="#punto">Punto</a></li>
+  <li><a href="#bola-abierta" id="toc-bola-abierta" class="nav-link" data-scroll-target="#bola-abierta">Bola abierta</a></li>
+  <li><a href="#bola-abierta-reducida" id="toc-bola-abierta-reducida" class="nav-link" data-scroll-target="#bola-abierta-reducida">Bola abierta reducida</a></li>
+  <li><a href="#bola-cerrada" id="toc-bola-cerrada" class="nav-link" data-scroll-target="#bola-cerrada">Bola cerrada</a></li>
+  <li><a href="#tipos-de-puntos" id="toc-tipos-de-puntos" class="nav-link" data-scroll-target="#tipos-de-puntos">Tipos de puntos</a>
+  <ul class="collapse">
+  <li><a href="#punto-interior" id="toc-punto-interior" class="nav-link" data-scroll-target="#punto-interior">Punto interior</a></li>
+  <li><a href="#punto-de-acumulación" id="toc-punto-de-acumulación" class="nav-link" data-scroll-target="#punto-de-acumulación">Punto de acumulación</a></li>
+  <li><a href="#punto-aislado" id="toc-punto-aislado" class="nav-link" data-scroll-target="#punto-aislado">Punto aislado</a></li>
+  <li><a href="#punto-exterior" id="toc-punto-exterior" class="nav-link" data-scroll-target="#punto-exterior">Punto exterior</a></li>
+  <li><a href="#punto-frontera" id="toc-punto-frontera" class="nav-link" data-scroll-target="#punto-frontera">Punto frontera</a></li>
+  <li><a href="#frontera-de-un-conjunto" id="toc-frontera-de-un-conjunto" class="nav-link" data-scroll-target="#frontera-de-un-conjunto">Frontera de un conjunto</a></li>
+  </ul></li>
+  <li><a href="#conjuntos" id="toc-conjuntos" class="nav-link" data-scroll-target="#conjuntos">Conjuntos</a>
+  <ul class="collapse">
+  <li><a href="#conjunto-abierto" id="toc-conjunto-abierto" class="nav-link" data-scroll-target="#conjunto-abierto">Conjunto abierto</a></li>
+  <li><a href="#conjunto-cerrado" id="toc-conjunto-cerrado" class="nav-link" data-scroll-target="#conjunto-cerrado">Conjunto cerrado</a></li>
+  <li><a href="#conjunto-acotado" id="toc-conjunto-acotado" class="nav-link" data-scroll-target="#conjunto-acotado">Conjunto acotado</a></li>
+  <li><a href="#complemento-de-un-conjunto" id="toc-complemento-de-un-conjunto" class="nav-link" data-scroll-target="#complemento-de-un-conjunto">Complemento de un conjunto</a></li>
+  <li><a href="#conjunto-conexo" id="toc-conjunto-conexo" class="nav-link" data-scroll-target="#conjunto-conexo">Conjunto conexo</a></li>
+  <li><a href="#conjunto-simplemente-conexo" id="toc-conjunto-simplemente-conexo" class="nav-link" data-scroll-target="#conjunto-simplemente-conexo">Conjunto simplemente conexo</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones">Funciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ricardo Freccero </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><img src="./imagenes/logo_utn_frc.jpg" class="img-fluid"></p>
+<div style="text-align: center">
+<section id="universidad-tecnológica-nacional" class="level3" style="font-family: serif">
+<h3 class="anchored" data-anchor-id="universidad-tecnológica-nacional">UNIVERSIDAD TECNOLÓGICA NACIONAL</h3>
+<section id="facultad-regional-cordoba---extensión-áulica-bariloche" class="level4">
+<h4 class="anchored" data-anchor-id="facultad-regional-cordoba---extensión-áulica-bariloche">FACULTAD REGIONAL CORDOBA - EXTENSIÓN ÁULICA BARILOCHE</h4>
+<section id="ingeniería-en-sistemas-de-información" class="level5">
+<h5 class="anchored" data-anchor-id="ingeniería-en-sistemas-de-información">INGENIERÍA EN SISTEMAS DE INFORMACIÓN</h5>
+<section id="año-lectivo-2025" class="level6">
+<h6 class="anchored" data-anchor-id="año-lectivo-2025">AÑO LECTIVO 2025</h6>
+</section>
+</section>
+</section>
+</section>
+<hr>
+<section id="análisis-matemático-2" class="level1">
+<h1>Análisis Matemático 2</h1>
+<section id="resumen-primer-parcial" class="level3">
+<h3 class="anchored" data-anchor-id="resumen-primer-parcial">Resumen Primer Parcial</h3>
+<hr>
+</section>
+</section>
+</div>
+<div style="margin-top: 3rem;">
+
+</div>
+<p><strong>Profesor:</strong> Mónica Guraya</p>
+<p><strong>Ayudante:</strong> Santiago Ward</p>
+<div style="margin-top: 10rem;">
+
+</div>
+<div style="text-align: right">
+<p><strong>Alumno:</strong> Ricardo Freccero</p>
+<p><strong>Número de legajo:</strong> 415753</p>
+</div>
+<hr>
+<section id="conjuntos-y-puntos" class="level1">
+<h1>Conjuntos y puntos</h1>
+<p>En <span class="math inline">\mathbb{R}^{2}</span> el <strong>entorno de punto</strong> <span class="math inline">P_{0}(x_{0},y_{0})</span> y de radio <span class="math inline">\delta</span> es el conjunto de puntos ubicados en el interior de un círculo de centro <span class="math inline">P_{0}</span> y radio <span class="math inline">\delta</span>. En clase, al entorno lo vimo como <strong>Bola</strong>, así que vamos a usar la <span class="math inline">B</span> para representarlo.</p>
+<section id="punto" class="level2">
+<h2 class="anchored" data-anchor-id="punto">Punto</h2>
+<p>Consideramos como punto a cualquier vector del plano o el espacio que tenga origen en el <span class="math inline">\vec{O}</span>.</p>
+</section>
+<section id="bola-abierta" class="level2">
+<h2 class="anchored" data-anchor-id="bola-abierta">Bola abierta</h2>
+<p>Es el conjunto de puntos ubicados en un círculo de radio <span class="math inline">\delta</span> alrededor de un punto <span class="math inline">P_{0}</span>. <span class="math display">
+B(P_{0},\delta)=\left\{(x,y) \;/\; 0\leq \sqrt[]{(x-x_{0})^2-(y-y_{0})^2}&lt;\delta,\delta \in \mathbb{R}^{}\right\}
+</span></p>
+<p>Otra notación mas facil de entender es la siguiente: <span class="math display">
+  B(P_{0},\delta)=\left|P-P_{0}\right|&lt;\delta,\delta \in \mathbb{R}^{}
+</span></p>
+<p>Que podemos interpretar como: la bola abierta <span class="math inline">B(P_{0},\delta)</span> es el conjunto de todos los puntos <span class="math inline">P</span> cuya distancia a <span class="math inline">P_{0}</span> es menor a <span class="math inline">\delta</span>, siendo <span class="math inline">\delta</span> el radio de un círculo alrededor del punto <span class="math inline">P_{0}</span>.</p>
+</section>
+<section id="bola-abierta-reducida" class="level2">
+<h2 class="anchored" data-anchor-id="bola-abierta-reducida">Bola abierta reducida</h2>
+<p>Es lo mismo que la bola abierta, solo que ahora el punto <span class="math inline">P_{0}</span> no está incluído en el conjunto de puntos.</p>
+<p>La denotamos como <span class="math inline">B_{0}</span> y su ecuación es la siguiente: <span class="math display">
+  B_{0}(P_{0},\delta)=0&lt;\left|P-P_{0}\right|&lt;\delta,\delta \in \mathbb{R}^{}
+</span></p>
+</section>
+<section id="bola-cerrada" class="level2">
+<h2 class="anchored" data-anchor-id="bola-cerrada">Bola cerrada</h2>
+<p>Es el conjunto de puntos alrededor del punto <span class="math inline">P_{0}</span> que cumplen que su distancia es <span class="math inline">\leq \delta</span>. La denotamos como <span class="math inline">\overline{B}</span>. <span class="math display">
+\overline{B}(P_{0},\delta)=\left|P-P_{0}\right|\leq \delta,\delta \in \mathbb{R}^{}
+</span></p>
+</section>
+<section id="tipos-de-puntos" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-puntos">Tipos de puntos</h2>
+<p>Dados un punto <span class="math inline">P</span> cualquiera y un conjunto no vacío <span class="math inline">A</span> de números definimos:</p>
+<section id="punto-interior" class="level3">
+<h3 class="anchored" data-anchor-id="punto-interior">Punto interior</h3>
+<p>Un punto <span class="math inline">P_{0}</span> es interior de un conjunto <span class="math inline">A</span> si existe una bola abierta alrededor de <span class="math inline">P_{0}</span> que esté totalmente contenida en <span class="math inline">A</span>. <span class="math display">
+  P_{0} \text{ es punto interior}  \iff  \exists B(P_{0}) \subset A
+</span></p>
+</section>
+<section id="punto-de-acumulación" class="level3">
+<h3 class="anchored" data-anchor-id="punto-de-acumulación">Punto de acumulación</h3>
+<p>Cuando toda bola abierta reducida alrededor de un punto <span class="math inline">P_{0}</span> contiene puntos de <span class="math inline">A</span>. <span class="math display">
+P_{0} \text{ es punto de acumulación de } A  \iff  \forall B_{0}(P_{0},\delta): \exists P \;/\; P \in B_{0}(P_{0},\delta) \land P \in A
+</span></p>
+</section>
+<section id="punto-aislado" class="level3">
+<h3 class="anchored" data-anchor-id="punto-aislado">Punto aislado</h3>
+<p>Cuando existe una bola abierta alrededor del punto <span class="math inline">P_{0}</span> cuya intersección con <span class="math inline">A</span> es el mismo punto. <span class="math display">
+P_{0}\text{ es un punto aislado } \iff  \exists B(P_{0}) \;/\; B(P_{0}) \cap A=P_{0}
+</span> <strong>Nota:</strong> Fijarse que <span class="math inline">P_{0} \in A</span>. si bien es un punto que está separado del resto de los puntos de <span class="math inline">A</span>, sigue formando parte de ese conjunto.</p>
+</section>
+<section id="punto-exterior" class="level3">
+<h3 class="anchored" data-anchor-id="punto-exterior">Punto exterior</h3>
+<p>Este es lo mismo que el anterior, pero ahora <span class="math inline">P_{0} \notin A</span>. <span class="math display">
+  P_{0}\text{ es punto exterior } \iff  \exists B(P_{0}) \;/\; B(P_{0}) \cap A= \left\{\varnothing\right\}
+</span></p>
+</section>
+<section id="punto-frontera" class="level3">
+<h3 class="anchored" data-anchor-id="punto-frontera">Punto frontera</h3>
+<p>Si hay una bola alrededor de un punto <span class="math inline">P_{0}</span> que contiene tanto puntos que pertenecen a <span class="math inline">A</span>, como puntos que no pertenecen a <span class="math inline">A</span>. <span class="math display">
+  P_{0}\text{ es punto frontera } \iff  \forall B(P_{0})=\begin{cases}
+     \exists P_{1} \in B(P_{0}) \land P_{1} \in A \\
+     \exists P_{2} \in B(P_{0}) \land P_{2} \notin A
+  \end{cases}
+</span></p>
+</section>
+<section id="frontera-de-un-conjunto" class="level3">
+<h3 class="anchored" data-anchor-id="frontera-de-un-conjunto">Frontera de un conjunto</h3>
+<p>Es el conjunto de todos los puntos frontera de un conjunto <span class="math inline">A</span>.</p>
+</section>
+</section>
+<section id="conjuntos" class="level2">
+<h2 class="anchored" data-anchor-id="conjuntos">Conjuntos</h2>
+<section id="conjunto-abierto" class="level3">
+<h3 class="anchored" data-anchor-id="conjunto-abierto">Conjunto abierto</h3>
+<p>Es un conjunto cuyos puntos son todos interiores. No hay puntos frontera.</p>
+</section>
+<section id="conjunto-cerrado" class="level3">
+<h3 class="anchored" data-anchor-id="conjunto-cerrado">Conjunto cerrado</h3>
+<p>Es un conjunto que contiene todos sus puntos de acumulación, es decir, contiene sus puntos interiores y contiene sus puntos frontera.</p>
+</section>
+<section id="conjunto-acotado" class="level3">
+<h3 class="anchored" data-anchor-id="conjunto-acotado">Conjunto acotado</h3>
+<p>Es un conjunto para el cual es posible hallar un valor <span class="math inline">M</span> que es mayor que el módulo de cualquier punto <span class="math inline">P_{0}</span> de <span class="math inline">A</span>. <span class="math display">
+M \in \mathbb{R}^{+} \;/\; \left|P_{0}\right|&lt;M,\forall P_{0} \in A
+</span> Tambien lo podemos escribir de la siguiente forma <span class="math display">
+\forall P_{0} \in A: \exists M \in \mathbb{R}^{+} \;/\; \left|P_{0}\right|&lt;M
+</span></p>
+</section>
+<section id="complemento-de-un-conjunto" class="level3">
+<h3 class="anchored" data-anchor-id="complemento-de-un-conjunto">Complemento de un conjunto</h3>
+<p>El complemento de un conjunto <span class="math inline">A</span> es el conjunto que contiene todos los elementos del conjunto universal de <span class="math inline">A</span> que no pertenecen a <span class="math inline">A</span>.</p>
+</section>
+<section id="conjunto-conexo" class="level3">
+<h3 class="anchored" data-anchor-id="conjunto-conexo">Conjunto conexo</h3>
+<p>Un conjunto es conexo si cualquier par de puntos del conjunto puede ser unido por un camino formado por sementos de recta contenidos en <span class="math inline">A</span>.</p>
+</section>
+<section id="conjunto-simplemente-conexo" class="level3">
+<h3 class="anchored" data-anchor-id="conjunto-simplemente-conexo">Conjunto simplemente conexo</h3>
+<p>Es cuando cualquier curva cerrada contenida en el conjunto tiene su interior totalmente contenido en el conjunto.</p>
+</section>
+</section>
+</section>
+<section id="funciones" class="level1">
+<h1>Funciones</h1>
+<div id="grf-incrementos" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Superficie: z = f(x, y)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">20</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">20</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="op">-</span>(x<span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (y<span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span> <span class="co"># ejemplo</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Puntos importantes</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> {</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"M"</span>: (<span class="fl">0.6</span>, <span class="fl">0.6</span>, <span class="op">-</span>(<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"N"</span>: (<span class="dv">1</span>, <span class="fl">0.6</span>, <span class="op">-</span>(<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"T"</span>: (<span class="fl">0.6</span>, <span class="dv">1</span>, <span class="op">-</span>(<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Q"</span>: (<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"N1"</span>: (<span class="dv">1</span>, <span class="fl">0.6</span>, <span class="op">-</span>(<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"T1"</span>: (<span class="fl">0.6</span>, <span class="dv">1</span>, <span class="op">-</span>(<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Q1"</span>: (<span class="dv">1</span>, <span class="dv">1</span>, <span class="op">-</span>(<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>),</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"P0"</span>: (<span class="fl">0.6</span>, <span class="fl">0.6</span>, <span class="op">-</span>(<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> (<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"P1"</span>: (<span class="dv">1</span>, <span class="fl">0.6</span>, <span class="op">-</span>(<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>),</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"P2"</span>: (<span class="fl">0.6</span>, <span class="dv">1</span>, <span class="op">-</span>(<span class="fl">0.6</span><span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"P"</span>: (<span class="fl">0.6</span>, <span class="fl">0.6</span>, <span class="dv">0</span>),</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"P1"</span>: (<span class="dv">1</span>, <span class="fl">0.6</span>, <span class="dv">0</span>),</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"P2"</span>: (<span class="fl">0.6</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"P0"</span>: (<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>aristas <span class="op">=</span> [</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"P"</span>, <span class="st">"P1"</span>), (<span class="st">"P1"</span>, <span class="st">"P0"</span>), (<span class="st">"P0"</span>, <span class="st">"P2"</span>), (<span class="st">"P2"</span>, <span class="st">"P"</span>), </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"M"</span>, <span class="st">"N1"</span>), (<span class="st">"N1"</span>, <span class="st">"Q1"</span>), (<span class="st">"Q1"</span>, <span class="st">"T1"</span>), (<span class="st">"T1"</span>, <span class="st">"M"</span>), </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"P"</span>, <span class="st">"M"</span>), (<span class="st">"P1"</span>, <span class="st">"N1"</span>), (<span class="st">"P0"</span>, <span class="st">"Q1"</span>), (<span class="st">"P2"</span>, <span class="st">"T1"</span>), </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear figura</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure()</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Superficie</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>fig.add_trace(go.Surface(x<span class="op">=</span>x, y<span class="op">=</span>y, z<span class="op">=</span>z, colorscale<span class="op">=</span><span class="st">'Viridis'</span>, opacity<span class="op">=</span><span class="fl">0.5</span>, showscale<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Puntos</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, (x_, y_, z_) <span class="kw">in</span> points.items():</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    fig.add_trace(go.Scatter3d(</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span>[x_], y<span class="op">=</span>[y_], z<span class="op">=</span>[z_],</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        mode<span class="op">=</span><span class="st">'markers+text'</span>,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'black'</span>),</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        text<span class="op">=</span>[name],</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        textposition<span class="op">=</span><span class="st">'middle right'</span>,</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Dibujo las proyecciones</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> inicio, fin <span class="kw">in</span> aristas:</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    x0, y0, z0 <span class="op">=</span> points[inicio]</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    x1, y1, z1 <span class="op">=</span> points[fin]</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    fig.add_trace(go.Scatter3d(</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>           x<span class="op">=</span>[x0,x1],</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>           y<span class="op">=</span>[y0,y1],</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>           z<span class="op">=</span>[z0,z1],</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>           mode<span class="op">=</span><span class="st">"lines"</span>,</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>           line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"gray"</span>, width<span class="op">=</span><span class="dv">2</span>, dash<span class="op">=</span><span class="st">"dash"</span>),</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>           showlegend<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Línea entre puntos P → P0)</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>fig.add_trace(go.Scatter3d(</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>[points[<span class="st">"P"</span>][<span class="dv">0</span>], points[<span class="st">"P0"</span>][<span class="dv">0</span>]],</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>[points[<span class="st">"P"</span>][<span class="dv">1</span>], points[<span class="st">"P0"</span>][<span class="dv">1</span>]],</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    z<span class="op">=</span>[points[<span class="st">"P"</span>][<span class="dv">2</span>], points[<span class="st">"P0"</span>][<span class="dv">2</span>]],</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">'lines'</span>,</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'blue'</span>, width<span class="op">=</span><span class="dv">4</span>, dash<span class="op">=</span><span class="st">"longdash"</span>),</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"ΔS"</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="co"># Incremento parcial de x</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>fig.add_trace(go.Scatter3d(</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>[points[<span class="st">"N1"</span>][<span class="dv">0</span>], points[<span class="st">"N"</span>][<span class="dv">0</span>]],</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>[points[<span class="st">"N1"</span>][<span class="dv">1</span>], points[<span class="st">"N"</span>][<span class="dv">1</span>]],</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    z<span class="op">=</span>[points[<span class="st">"N1"</span>][<span class="dv">2</span>], points[<span class="st">"N"</span>][<span class="dv">2</span>]],</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">"lines"</span>,</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"yellow"</span>, width<span class="op">=</span><span class="dv">4</span>),</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"$</span><span class="ch">\\</span><span class="st">Delta_</span><span class="sc">{x}</span><span class="st"> z$"</span>,</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Incremento parcial de y</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>fig.add_trace(go.Scatter3d(</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>[points[<span class="st">"T1"</span>][<span class="dv">0</span>], points[<span class="st">"T"</span>][<span class="dv">0</span>]],</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>[points[<span class="st">"T1"</span>][<span class="dv">1</span>], points[<span class="st">"T"</span>][<span class="dv">1</span>]],</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    z<span class="op">=</span>[points[<span class="st">"T1"</span>][<span class="dv">2</span>], points[<span class="st">"T"</span>][<span class="dv">2</span>]],</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">"lines"</span>,</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"green"</span>, width<span class="op">=</span><span class="dv">4</span>),</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"$</span><span class="ch">\\</span><span class="st">Delta_</span><span class="sc">{y}</span><span class="st"> z$"</span>,</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Incremento total de z</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>fig.add_trace(go.Scatter3d(</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>[points[<span class="st">"Q1"</span>][<span class="dv">0</span>], points[<span class="st">"Q"</span>][<span class="dv">0</span>]],</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>[points[<span class="st">"Q1"</span>][<span class="dv">1</span>], points[<span class="st">"Q"</span>][<span class="dv">1</span>]],</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>    z<span class="op">=</span>[points[<span class="st">"Q1"</span>][<span class="dv">2</span>], points[<span class="st">"Q"</span>][<span class="dv">2</span>]],</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">"lines"</span>,</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"red"</span>, width<span class="op">=</span><span class="dv">4</span>),</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"$</span><span class="ch">\\</span><span class="st">Delta z$"</span>,</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>fig.update_layout(scene<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">'x'</span>,</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">'y'</span>,</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>    zaxis_title<span class="op">=</span><span class="st">'z'</span>,</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    aspectratio<span class="op">=</span><span class="bu">dict</span>(x<span class="op">=</span><span class="dv">1</span>,y<span class="op">=</span><span class="dv">1</span>,z<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    camera<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    eye<span class="op">=</span><span class="bu">dict</span>(x<span class="op">=-</span><span class="fl">1.9</span>, y<span class="op">=-</span><span class="fl">0.1</span>, z<span class="op">=</span><span class="fl">0.7</span>),</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    center<span class="op">=</span><span class="bu">dict</span>(x<span class="op">=</span><span class="dv">1</span>, y<span class="op">=</span><span class="fl">0.2</span>, z<span class="op">=-</span><span class="fl">0.5</span>),</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="grf-incrementos-1" class="cell-output cell-output-display">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.0.1.min"</script>
+        
+<p>Incrementos de una función</p>
+</div>
+<div id="grf-incrementos-2" class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="4b1530cb-935e-42ec-930b-574a53877889" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("4b1530cb-935e-42ec-930b-574a53877889")) {                    Plotly.newPlot(                        "4b1530cb-935e-42ec-930b-574a53877889",                        [{"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"opacity":0.5,"showscale":false,"x":{"dtype":"f8","bdata":"AAAAAAAAAAAor6G8hvKqPyivobyG8ro\u002fXkN5DeU1xD8or6G8hvLKP3kN5TWU19A\u002fXkN5DeU11D9DeQ3lNZTXPyivobyG8to\u002fDeU1lNdQ3j95DeU1lNfgP2wor6G8huI\u002fXkN5DeU15D9QXkN5DeXlP0N5DeU1lOc\u002fNpTXUF5D6T8or6G8hvLqPxrKayivoew\u002fDeU1lNdQ7j8AAAAAAADwPwAAAAAAAAAAKK+hvIbyqj8or6G8hvK6P15DeQ3lNcQ\u002fKK+hvIbyyj95DeU1lNfQP15DeQ3lNdQ\u002fQ3kN5TWU1z8or6G8hvLaPw3lNZTXUN4\u002feQ3lNZTX4D9sKK+hvIbiP15DeQ3lNeQ\u002fUF5DeQ3l5T9DeQ3lNZTnPzaU11BeQ+k\u002fKK+hvIby6j8aymsor6HsPw3lNZTXUO4\u002fAAAAAAAA8D8AAAAAAAAAACivobyG8qo\u002fKK+hvIbyuj9eQ3kN5TXEPyivobyG8so\u002feQ3lNZTX0D9eQ3kN5TXUP0N5DeU1lNc\u002fKK+hvIby2j8N5TWU11DeP3kN5TWU1+A\u002fbCivobyG4j9eQ3kN5TXkP1BeQ3kN5eU\u002fQ3kN5TWU5z82lNdQXkPpPyivobyG8uo\u002fGsprKK+h7D8N5TWU11DuPwAAAAAAAPA\u002fAAAAAAAAAAAor6G8hvKqPyivobyG8ro\u002fXkN5DeU1xD8or6G8hvLKP3kN5TWU19A\u002fXkN5DeU11D9DeQ3lNZTXPyivobyG8to\u002fDeU1lNdQ3j95DeU1lNfgP2wor6G8huI\u002fXkN5DeU15D9QXkN5DeXlP0N5DeU1lOc\u002fNpTXUF5D6T8or6G8hvLqPxrKayivoew\u002fDeU1lNdQ7j8AAAAAAADwPwAAAAAAAAAAKK+hvIbyqj8or6G8hvK6P15DeQ3lNcQ\u002fKK+hvIbyyj95DeU1lNfQP15DeQ3lNdQ\u002fQ3kN5TWU1z8or6G8hvLaPw3lNZTXUN4\u002feQ3lNZTX4D9sKK+hvIbiP15DeQ3lNeQ\u002fUF5DeQ3l5T9DeQ3lNZTnPzaU11BeQ+k\u002fKK+hvIby6j8aymsor6HsPw3lNZTXUO4\u002fAAAAAAAA8D8AAAAAAAAAACivobyG8qo\u002fKK+hvIbyuj9eQ3kN5TXEPyivobyG8so\u002feQ3lNZTX0D9eQ3kN5TXUP0N5DeU1lNc\u002fKK+hvIby2j8N5TWU11DeP3kN5TWU1+A\u002fbCivobyG4j9eQ3kN5TXkP1BeQ3kN5eU\u002fQ3kN5TWU5z82lNdQXkPpPyivobyG8uo\u002fGsprKK+h7D8N5TWU11DuPwAAAAAAAPA\u002fAAAAAAAAAAAor6G8hvKqPyivobyG8ro\u002fXkN5DeU1xD8or6G8hvLKP3kN5TWU19A\u002fXkN5DeU11D9DeQ3lNZTXPyivobyG8to\u002fDeU1lNdQ3j95DeU1lNfgP2wor6G8huI\u002fXkN5DeU15D9QXkN5DeXlP0N5DeU1lOc\u002fNpTXUF5D6T8or6G8hvLqPxrKayivoew\u002fDeU1lNdQ7j8AAAAAAADwPwAAAAAAAAAAKK+hvIbyqj8or6G8hvK6P15DeQ3lNcQ\u002fKK+hvIbyyj95DeU1lNfQP15DeQ3lNdQ\u002fQ3kN5TWU1z8or6G8hvLaPw3lNZTXUN4\u002feQ3lNZTX4D9sKK+hvIbiP15DeQ3lNeQ\u002fUF5DeQ3l5T9DeQ3lNZTnPzaU11BeQ+k\u002fKK+hvIby6j8aymsor6HsPw3lNZTXUO4\u002fAAAAAAAA8D8AAAAAAAAAACivobyG8qo\u002fKK+hvIbyuj9eQ3kN5TXEPyivobyG8so\u002feQ3lNZTX0D9eQ3kN5TXUP0N5DeU1lNc\u002fKK+hvIby2j8N5TWU11DeP3kN5TWU1+A\u002fbCivobyG4j9eQ3kN5TXkP1BeQ3kN5eU\u002fQ3kN5TWU5z82lNdQXkPpPyivobyG8uo\u002fGsprKK+h7D8N5TWU11DuPwAAAAAAAPA\u002fAAAAAAAAAAAor6G8hvKqPyivobyG8ro\u002fXkN5DeU1xD8or6G8hvLKP3kN5TWU19A\u002fXkN5DeU11D9DeQ3lNZTXPyivobyG8to\u002fDeU1lNdQ3j95DeU1lNfgP2wor6G8huI\u002fXkN5DeU15D9QXkN5DeXlP0N5DeU1lOc\u002fNpTXUF5D6T8or6G8hvLqPxrKayivoew\u002fDeU1lNdQ7j8AAAAAAADwPwAAAAAAAAAAKK+hvIbyqj8or6G8hvK6P15DeQ3lNcQ\u002fKK+hvIbyyj95DeU1lNfQP15DeQ3lNdQ\u002fQ3kN5TWU1z8or6G8hvLaPw3lNZTXUN4\u002feQ3lNZTX4D9sKK+hvIbiP15DeQ3lNeQ\u002fUF5DeQ3l5T9DeQ3lNZTnPzaU11BeQ+k\u002fKK+hvIby6j8aymsor6HsPw3lNZTXUO4\u002fAAAAAAAA8D8AAAAAAAAAACivobyG8qo\u002fKK+hvIbyuj9eQ3kN5TXEPyivobyG8so\u002feQ3lNZTX0D9eQ3kN5TXUP0N5DeU1lNc\u002fKK+hvIby2j8N5TWU11DeP3kN5TWU1+A\u002fbCivobyG4j9eQ3kN5TXkP1BeQ3kN5eU\u002fQ3kN5TWU5z82lNdQXkPpPyivobyG8uo\u002fGsprKK+h7D8N5TWU11DuPwAAAAAAAPA\u002fAAAAAAAAAAAor6G8hvKqPyivobyG8ro\u002fXkN5DeU1xD8or6G8hvLKP3kN5TWU19A\u002fXkN5DeU11D9DeQ3lNZTXPyivobyG8to\u002fDeU1lNdQ3j95DeU1lNfgP2wor6G8huI\u002fXkN5DeU15D9QXkN5DeXlP0N5DeU1lOc\u002fNpTXUF5D6T8or6G8hvLqPxrKayivoew\u002fDeU1lNdQ7j8AAAAAAADwPwAAAAAAAAAAKK+hvIbyqj8or6G8hvK6P15DeQ3lNcQ\u002fKK+hvIbyyj95DeU1lNfQP15DeQ3lNdQ\u002fQ3kN5TWU1z8or6G8hvLaPw3lNZTXUN4\u002feQ3lNZTX4D9sKK+hvIbiP15DeQ3lNeQ\u002fUF5DeQ3l5T9DeQ3lNZTnPzaU11BeQ+k\u002fKK+hvIby6j8aymsor6HsPw3lNZTXUO4\u002fAAAAAAAA8D8AAAAAAAAAACivobyG8qo\u002fKK+hvIbyuj9eQ3kN5TXEPyivobyG8so\u002feQ3lNZTX0D9eQ3kN5TXUP0N5DeU1lNc\u002fKK+hvIby2j8N5TWU11DeP3kN5TWU1+A\u002fbCivobyG4j9eQ3kN5TXkP1BeQ3kN5eU\u002fQ3kN5TWU5z82lNdQXkPpPyivobyG8uo\u002fGsprKK+h7D8N5TWU11DuPwAAAAAAAPA\u002fAAAAAAAAAAAor6G8hvKqPyivobyG8ro\u002fXkN5DeU1xD8or6G8hvLKP3kN5TWU19A\u002fXkN5DeU11D9DeQ3lNZTXPyivobyG8to\u002fDeU1lNdQ3j95DeU1lNfgP2wor6G8huI\u002fXkN5DeU15D9QXkN5DeXlP0N5DeU1lOc\u002fNpTXUF5D6T8or6G8hvLqPxrKayivoew\u002fDeU1lNdQ7j8AAAAAAADwPwAAAAAAAAAAKK+hvIbyqj8or6G8hvK6P15DeQ3lNcQ\u002fKK+hvIbyyj95DeU1lNfQP15DeQ3lNdQ\u002fQ3kN5TWU1z8or6G8hvLaPw3lNZTXUN4\u002feQ3lNZTX4D9sKK+hvIbiP15DeQ3lNeQ\u002fUF5DeQ3l5T9DeQ3lNZTnPzaU11BeQ+k\u002fKK+hvIby6j8aymsor6HsPw3lNZTXUO4\u002fAAAAAAAA8D8AAAAAAAAAACivobyG8qo\u002fKK+hvIbyuj9eQ3kN5TXEPyivobyG8so\u002feQ3lNZTX0D9eQ3kN5TXUP0N5DeU1lNc\u002fKK+hvIby2j8N5TWU11DeP3kN5TWU1+A\u002fbCivobyG4j9eQ3kN5TXkP1BeQ3kN5eU\u002fQ3kN5TWU5z82lNdQXkPpPyivobyG8uo\u002fGsprKK+h7D8N5TWU11DuPwAAAAAAAPA\u002fAAAAAAAAAAAor6G8hvKqPyivobyG8ro\u002fXkN5DeU1xD8or6G8hvLKP3kN5TWU19A\u002fXkN5DeU11D9DeQ3lNZTXPyivobyG8to\u002fDeU1lNdQ3j95DeU1lNfgP2wor6G8huI\u002fXkN5DeU15D9QXkN5DeXlP0N5DeU1lOc\u002fNpTXUF5D6T8or6G8hvLqPxrKayivoew\u002fDeU1lNdQ7j8AAAAAAADwPwAAAAAAAAAAKK+hvIbyqj8or6G8hvK6P15DeQ3lNcQ\u002fKK+hvIbyyj95DeU1lNfQP15DeQ3lNdQ\u002fQ3kN5TWU1z8or6G8hvLaPw3lNZTXUN4\u002feQ3lNZTX4D9sKK+hvIbiP15DeQ3lNeQ\u002fUF5DeQ3l5T9DeQ3lNZTnPzaU11BeQ+k\u002fKK+hvIby6j8aymsor6HsPw3lNZTXUO4\u002fAAAAAAAA8D8=","shape":"20, 20"},"y":{"dtype":"f8","bdata":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACivobyG8qo\u002fKK+hvIbyqj8or6G8hvKqPyivobyG8qo\u002fKK+hvIbyqj8or6G8hvKqPyivobyG8qo\u002fKK+hvIbyqj8or6G8hvKqPyivobyG8qo\u002fKK+hvIbyqj8or6G8hvKqPyivobyG8qo\u002fKK+hvIbyqj8or6G8hvKqPyivobyG8qo\u002fKK+hvIbyqj8or6G8hvKqPyivobyG8qo\u002fKK+hvIbyqj8or6G8hvK6PyivobyG8ro\u002fKK+hvIbyuj8or6G8hvK6PyivobyG8ro\u002fKK+hvIbyuj8or6G8hvK6PyivobyG8ro\u002fKK+hvIbyuj8or6G8hvK6PyivobyG8ro\u002fKK+hvIbyuj8or6G8hvK6PyivobyG8ro\u002fKK+hvIbyuj8or6G8hvK6PyivobyG8ro\u002fKK+hvIbyuj8or6G8hvK6PyivobyG8ro\u002fXkN5DeU1xD9eQ3kN5TXEP15DeQ3lNcQ\u002fXkN5DeU1xD9eQ3kN5TXEP15DeQ3lNcQ\u002fXkN5DeU1xD9eQ3kN5TXEP15DeQ3lNcQ\u002fXkN5DeU1xD9eQ3kN5TXEP15DeQ3lNcQ\u002fXkN5DeU1xD9eQ3kN5TXEP15DeQ3lNcQ\u002fXkN5DeU1xD9eQ3kN5TXEP15DeQ3lNcQ\u002fXkN5DeU1xD9eQ3kN5TXEPyivobyG8so\u002fKK+hvIbyyj8or6G8hvLKPyivobyG8so\u002fKK+hvIbyyj8or6G8hvLKPyivobyG8so\u002fKK+hvIbyyj8or6G8hvLKPyivobyG8so\u002fKK+hvIbyyj8or6G8hvLKPyivobyG8so\u002fKK+hvIbyyj8or6G8hvLKPyivobyG8so\u002fKK+hvIbyyj8or6G8hvLKPyivobyG8so\u002fKK+hvIbyyj95DeU1lNfQP3kN5TWU19A\u002feQ3lNZTX0D95DeU1lNfQP3kN5TWU19A\u002feQ3lNZTX0D95DeU1lNfQP3kN5TWU19A\u002feQ3lNZTX0D95DeU1lNfQP3kN5TWU19A\u002feQ3lNZTX0D95DeU1lNfQP3kN5TWU19A\u002feQ3lNZTX0D95DeU1lNfQP3kN5TWU19A\u002feQ3lNZTX0D95DeU1lNfQP3kN5TWU19A\u002fXkN5DeU11D9eQ3kN5TXUP15DeQ3lNdQ\u002fXkN5DeU11D9eQ3kN5TXUP15DeQ3lNdQ\u002fXkN5DeU11D9eQ3kN5TXUP15DeQ3lNdQ\u002fXkN5DeU11D9eQ3kN5TXUP15DeQ3lNdQ\u002fXkN5DeU11D9eQ3kN5TXUP15DeQ3lNdQ\u002fXkN5DeU11D9eQ3kN5TXUP15DeQ3lNdQ\u002fXkN5DeU11D9eQ3kN5TXUP0N5DeU1lNc\u002fQ3kN5TWU1z9DeQ3lNZTXP0N5DeU1lNc\u002fQ3kN5TWU1z9DeQ3lNZTXP0N5DeU1lNc\u002fQ3kN5TWU1z9DeQ3lNZTXP0N5DeU1lNc\u002fQ3kN5TWU1z9DeQ3lNZTXP0N5DeU1lNc\u002fQ3kN5TWU1z9DeQ3lNZTXP0N5DeU1lNc\u002fQ3kN5TWU1z9DeQ3lNZTXP0N5DeU1lNc\u002fQ3kN5TWU1z8or6G8hvLaPyivobyG8to\u002fKK+hvIby2j8or6G8hvLaPyivobyG8to\u002fKK+hvIby2j8or6G8hvLaPyivobyG8to\u002fKK+hvIby2j8or6G8hvLaPyivobyG8to\u002fKK+hvIby2j8or6G8hvLaPyivobyG8to\u002fKK+hvIby2j8or6G8hvLaPyivobyG8to\u002fKK+hvIby2j8or6G8hvLaPyivobyG8to\u002fDeU1lNdQ3j8N5TWU11DePw3lNZTXUN4\u002fDeU1lNdQ3j8N5TWU11DePw3lNZTXUN4\u002fDeU1lNdQ3j8N5TWU11DePw3lNZTXUN4\u002fDeU1lNdQ3j8N5TWU11DePw3lNZTXUN4\u002fDeU1lNdQ3j8N5TWU11DePw3lNZTXUN4\u002fDeU1lNdQ3j8N5TWU11DePw3lNZTXUN4\u002fDeU1lNdQ3j8N5TWU11DeP3kN5TWU1+A\u002feQ3lNZTX4D95DeU1lNfgP3kN5TWU1+A\u002feQ3lNZTX4D95DeU1lNfgP3kN5TWU1+A\u002feQ3lNZTX4D95DeU1lNfgP3kN5TWU1+A\u002feQ3lNZTX4D95DeU1lNfgP3kN5TWU1+A\u002feQ3lNZTX4D95DeU1lNfgP3kN5TWU1+A\u002feQ3lNZTX4D95DeU1lNfgP3kN5TWU1+A\u002feQ3lNZTX4D9sKK+hvIbiP2wor6G8huI\u002fbCivobyG4j9sKK+hvIbiP2wor6G8huI\u002fbCivobyG4j9sKK+hvIbiP2wor6G8huI\u002fbCivobyG4j9sKK+hvIbiP2wor6G8huI\u002fbCivobyG4j9sKK+hvIbiP2wor6G8huI\u002fbCivobyG4j9sKK+hvIbiP2wor6G8huI\u002fbCivobyG4j9sKK+hvIbiP2wor6G8huI\u002fXkN5DeU15D9eQ3kN5TXkP15DeQ3lNeQ\u002fXkN5DeU15D9eQ3kN5TXkP15DeQ3lNeQ\u002fXkN5DeU15D9eQ3kN5TXkP15DeQ3lNeQ\u002fXkN5DeU15D9eQ3kN5TXkP15DeQ3lNeQ\u002fXkN5DeU15D9eQ3kN5TXkP15DeQ3lNeQ\u002fXkN5DeU15D9eQ3kN5TXkP15DeQ3lNeQ\u002fXkN5DeU15D9eQ3kN5TXkP1BeQ3kN5eU\u002fUF5DeQ3l5T9QXkN5DeXlP1BeQ3kN5eU\u002fUF5DeQ3l5T9QXkN5DeXlP1BeQ3kN5eU\u002fUF5DeQ3l5T9QXkN5DeXlP1BeQ3kN5eU\u002fUF5DeQ3l5T9QXkN5DeXlP1BeQ3kN5eU\u002fUF5DeQ3l5T9QXkN5DeXlP1BeQ3kN5eU\u002fUF5DeQ3l5T9QXkN5DeXlP1BeQ3kN5eU\u002fUF5DeQ3l5T9DeQ3lNZTnP0N5DeU1lOc\u002fQ3kN5TWU5z9DeQ3lNZTnP0N5DeU1lOc\u002fQ3kN5TWU5z9DeQ3lNZTnP0N5DeU1lOc\u002fQ3kN5TWU5z9DeQ3lNZTnP0N5DeU1lOc\u002fQ3kN5TWU5z9DeQ3lNZTnP0N5DeU1lOc\u002fQ3kN5TWU5z9DeQ3lNZTnP0N5DeU1lOc\u002fQ3kN5TWU5z9DeQ3lNZTnP0N5DeU1lOc\u002fNpTXUF5D6T82lNdQXkPpPzaU11BeQ+k\u002fNpTXUF5D6T82lNdQXkPpPzaU11BeQ+k\u002fNpTXUF5D6T82lNdQXkPpPzaU11BeQ+k\u002fNpTXUF5D6T82lNdQXkPpPzaU11BeQ+k\u002fNpTXUF5D6T82lNdQXkPpPzaU11BeQ+k\u002fNpTXUF5D6T82lNdQXkPpPzaU11BeQ+k\u002fNpTXUF5D6T82lNdQXkPpPyivobyG8uo\u002fKK+hvIby6j8or6G8hvLqPyivobyG8uo\u002fKK+hvIby6j8or6G8hvLqPyivobyG8uo\u002fKK+hvIby6j8or6G8hvLqPyivobyG8uo\u002fKK+hvIby6j8or6G8hvLqPyivobyG8uo\u002fKK+hvIby6j8or6G8hvLqPyivobyG8uo\u002fKK+hvIby6j8or6G8hvLqPyivobyG8uo\u002fKK+hvIby6j8aymsor6HsPxrKayivoew\u002fGsprKK+h7D8aymsor6HsPxrKayivoew\u002fGsprKK+h7D8aymsor6HsPxrKayivoew\u002fGsprKK+h7D8aymsor6HsPxrKayivoew\u002fGsprKK+h7D8aymsor6HsPxrKayivoew\u002fGsprKK+h7D8aymsor6HsPxrKayivoew\u002fGsprKK+h7D8aymsor6HsPxrKayivoew\u002fDeU1lNdQ7j8N5TWU11DuPw3lNZTXUO4\u002fDeU1lNdQ7j8N5TWU11DuPw3lNZTXUO4\u002fDeU1lNdQ7j8N5TWU11DuPw3lNZTXUO4\u002fDeU1lNdQ7j8N5TWU11DuPw3lNZTXUO4\u002fDeU1lNdQ7j8N5TWU11DuPw3lNZTXUO4\u002fDeU1lNdQ7j8N5TWU11DuPw3lNZTXUO4\u002fDeU1lNdQ7j8N5TWU11DuPwAAAAAAAPA\u002fAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA\u002fAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA\u002fAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA\u002fAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA\u002fAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA\u002fAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA\u002fAAAAAAAA8D8=","shape":"20, 20"},"z":{"dtype":"f8","bdata":"AAAAAAAAAABQlkx0\u002fDy6P4B99ytyh8k\u002fiMu56m2d0j\u002fgS02bXRzYP9A\u002ftieIQN0\u002frlP6x\u002fYE4T8+QQTqRjzjP5jo+Hk0RuU\u002fwEnYd78i5z+yZKLj59HoP3A5V72tU+o\u002f+sf2BBGo6z9OEIG6Ec\u002fsP3AS9t2vyO0\u002fXM5Vb+uU7j8URKBuxDPvP5Zz1ds6pe8\u002f5lz1tk7p7z8AAAAAAADwP1CWTHT8PLo\u002fUJZMdPw8yj9Y5A4z+FLTPxzxzAetLNk\u002fdHFguJyr3j+ysmSi4+fhP3jmg1aWTOQ\u002fCNSNeOaD5j9ke4II1I3oP4rcYQZfauo\u002ffPcrcocZ7D88zOBLTZvtP8RagJOw7+4\u002fjFGFpFgL8D+d0j+2J4jwP5Ow735F7vA\u002fb+uU\u002frE98T8wgy81bXbxP9h3vyJ3mPE\u002fZclEx8+j8T+AffcrcofJP1jkDjP4UtM\u002fhH33K3KH2T9IirUAJ2HfP1CFpFgLcOI\u002fSP\u002fYniAC5T8OM\u002fhS02bnP6AgAnUjnuk\u002f+sf2BBGo6z8gKdYCnITtPxREoG7EM+8\u002faYwqJMVa8D+uU\u002frH9gTxP9h3vyJ3mPE\u002f6Ph5NEYV8j\u002fe1in9Y3vyP7oRz3zQyvI\u002ffKlps4sD8z8knvmglSXzP7DvfkXuMPM\u002fiMu56m2d0j8c8cwHrSzZP0iKtQAnYd8\u002fiMu56m2d4j+0iwPD5VzlP6wFOAn77uc\u002fcjlXva1T6j8CJ2Hf\u002fYrsP1zOVW\u002frlO4\u002fwpeaNrs48D87pX9sTxDxP5oPWlky0fE\u002f39Yp\u002fWN78j8K++5X5A7zPxp8qWmzi\u002fM\u002fEFpZMtHx8z\u002fslP6xPUH0P64smej4efQ\u002fVSEp1gKc9D\u002ficq56W6f0P+BLTZtdHNg\u002fdHFguJyr3j9QhaRYC3DiP7SLA8PlXOU\u002f4EtNm10c6D\u002fYxYHhcq7qP575oJUlE+0\u002fLueqt3VK7z9Ex8+jMarwP9h3vyJ3mPE\u002fUYWkWAtw8j+w735F7jDzP\u002fW2Tukf2\u002fM\u002fINsTRKBu9D8wXM5Vb+v0PyY6fh6NUfU\u002fAnUjnvmg9T\u002fEDL7UtNn1P2sBTsK++\u002fU\u002f+FLTZhcH9j\u002fQP7YniEDdP7KyZKLj5+E\u002fSP\u002fYniAC5T+sBTgJ++7nP9jFgeFyruo\u002f0D+2J4hA7T+Wc9XbOqXvP5Ow735F7vA\u002fQATqRjzz8T\u002fUtNnFgeHyP03CvvsVufM\u002frCyZ6Ph59D\u002fx82iMKiT1PxwYLueqt\u002fU\u002fLJno+Hk09j8id5jBl5r2P\u002f6xPUEE6vY\u002fwEnYd78i9z9nPmhlyUT3P\u002fSP7QkiUPc\u002frlP6x\u002fYE4T945oNWlkzkPw4z+FLTZuc\u002fcjlXva1T6j+e+aCVJRPtP5Zz1ds6pe8\u002frlP6x\u002fYE8T92Sv\u002fYniDyPyOe+aCVJfM\u002ftk7pH9sT9D8wXM5Vb+v0P4\u002fGqEJSrPU\u002f1I145oNW9j\u002f+sT1BBOr2Pw4z+FLTZvc\u002fBRGoG\u002fHM9z\u002fgS02bXRz4P6Lj59EYVfg\u002fSth3vyJ3+D\u002fXKf1je4L4Pz5BBOpGPOM\u002fCNSNeOaD5j+gIAJ1I57pPwInYd\u002f9iuw\u002fLueqt3VK7z+TsO9+Re7wP3ZK\u002f9ieIPI\u002fPkEE6kY88z\u002fslP6xPUH0P39F7jCDL\u002fU\u002f+FLTZhcH9j9Yva1T+sf2P5yEffcrcvc\u002fxqhCUqwF+D\u002fXKf1je4L4P80HrSyZ6Pg\u002fqUJSrAU4+T9q2uziwHD5PxLPfNDKkvk\u002fnyACdSOe+T+Y6Ph5NEblP2R7ggjUjeg\u002f+sf2BBGo6z9czlVv65TuP0THz6MxqvA\u002fQATqRjzz8T8jnvmglSXzP+yU\u002frE9QfQ\u002fmej4eTRG9T8smej4eTT2P6amzS4ODPc\u002fBRGoG\u002fHM9z9K2He\u002fInf4P3T8PBqjCvk\u002fhH33K3KH+T96W6f0j+35P1aWTHT8PPo\u002fGC7nqrd1+j+\u002fIneYwZf6P0x0\u002fDwao\u002fo\u002fwEnYd78i5z+K3GEGX2rqPyAp1gKchO0\u002fwpeaNrs48D\u002fYd78id5jxP9S02cWB4fI\u002ftk7pH9sT9D9\u002fRe4wgy\u002f1PyyZ6Ph5NPY\u002fwEnYd78i9z85V72tU\u002fr3P5jBl5o2u\u002fg\u002f3YhnPmhl+T8HrSyZ6Pj5Pxgu56q3dfo\u002fDgyXc9Xb+j\u002fqRjzzQSv7P6ve1in9Y\u002fs\u002fUtNmFweG+z\u002fgJOy7X5H7P7JkouPn0eg\u002ffPcrcocZ7D8URKBuxDPvPzulf2xPEPE\u002fUYWkWAtw8j9Nwr77FbnzPzBczlVv6\u002fQ\u002f+FLTZhcH9j+mps0uDgz3PzlXva1T+vc\u002fsmSi4+fR+D8Sz3zQypL5P1aWTHT8PPo\u002fgboRz3zQ+j+RO8zgS037P4gZfKlps\u002fs\u002fY1QhKdYC\u002fD8l7LtfkTv8P8zgS02bXfw\u002fWTLR8fNo\u002fD9wOVe9rVPqPzzM4EtNm+0\u002faYwqJMVa8D+aD1pZMtHxP7DvfkXuMPM\u002frCyZ6Ph59D+PxqhCUqz1P1i9rVP6x\u002fY\u002fBRGoG\u002fHM9z+YwZeaNrv4PxLPfNDKkvk\u002fcTlXva1T+j+2ACdh3\u002f36P+Ak7Ltfkfs\u002f8KWmzS4O\u002fD\u002fng1aWTHT8P8K++xW5w\u002fw\u002fhFaWTHT8\u002fD8rSyY6fh79P7icq97WKf0\u002f+sf2BBGo6z\u002fEWoCTsO\u002fuP65T+sf2BPE\u002f39Yp\u002fWN78j\u002f1tk7pH9vzP\u002fHzaIwqJPU\u002f1I145oNW9j+chH33K3L3P0rYd78id\u002fg\u002f3YhnPmhl+T9Wlkx0\u002fDz6P7YAJ2Hf\u002ffo\u002f+sf2BBGo+z8k7LtfkTv8PzVtdnFguPw\u002fK0smOn4e\u002fT8Hhsu56m39P8gdZvClpv0\u002fcBL23a\u002fI\u002fT\u002f9Y3uCCNT9P04QgboRz+w\u002fjFGFpFgL8D\u002fYd78id5jxPwr77lfkDvM\u002fINsTRKBu9D8cGC7nqrf1P\u002f6xPUEE6vY\u002fxqhCUqwF+D90\u002fDwaowr5PwetLJno+Pk\u002fgboRz3zQ+j\u002fgJOy7X5H7PyTsu1+RO\u002fw\u002fTxCBuhHP\u002fD9fkTvM4Ev9P1Zv65T+sf0\u002fMaqQFGsB\u002fj\u002fzQStLJjr+P5o2uzgwXP4\u002fJ4hA3Yhn\u002fj9wEvbdr8jtP53SP7YniPA\u002f6Ph5NEYV8j8afKlps4vzPzBczlVv6\u002fQ\u002fLJno+Hk09j8OM\u002fhS02b3P9cp\u002fWN7gvg\u002fhH33K3KH+T8YLueqt3X6P5E7zOBLTfs\u002f8KWmzS4O\u002fD81bXZxYLj8P1+RO8zgS\u002f0\u002fcBL23a\u002fI\u002fT9m8KWmzS7+P0IrSyY6fv4\u002fA8PlXPW2\u002fj+rt3VK\u002f9j+PzgJ++5X5P4\u002fXM5Vb+uU7j+TsO9+Re7wP97WKf1je\u002fI\u002fEFpZMtHx8z8mOn4ejVH1PyJ3mMGXmvY\u002fBRGoG\u002fHM9z\u002fNB60smej4P3pbp\u002fSP7fk\u002fDgyXc9Xb+j+IGXypabP7P+eDVpZMdPw\u002fK0smOn4e\u002fT9Wb+uU\u002frH9P2bwpabNLv4\u002fXM5Vb+uU\u002fj84CfvuV+T+P\u002fqglSUTHf8\u002foZUlEx0\u002f\u002fz8u56q3dUr\u002fPxREoG7EM+8\u002fb+uU\u002frE98T+6Ec980MryP+yU\u002frE9QfQ\u002fAnUjnvmg9T\u002f+sT1BBOr2P+BLTZtdHPg\u002fqUJSrAU4+T9Wlkx0\u002fDz6P+pGPPNBK\u002fs\u002fY1QhKdYC\u002fD\u002fCvvsVucP8PweGy7nqbf0\u002fMaqQFGsB\u002fj9CK0smOn7+PzgJ++5X5P4\u002fFESgbsQz\u002fz\u002fV2zqlf2z\u002fP33QypKJjv8\u002fCiJQN+KZ\u002fz+Wc9XbOqXvPzCDLzVtdvE\u002ffKlps4sD8z+uLJno+Hn0P8QMvtS02fU\u002fwEnYd78i9z+i4+fRGFX4P2ra7OLAcPk\u002fGC7nqrd1+j+r3tYp\u002fWP7PyXsu1+RO\u002fw\u002fhFaWTHT8\u002fD\u002fIHWbwpab9P\u002fNBK0smOv4\u002fA8PlXPW2\u002fj\u002f6oJUlEx3\u002fP9XbOqV\u002fbP8\u002fl3PV2zql\u002fz8+aGXJRMf\u002fP8u56m2d0v8\u002f5lz1tk7p7z\u002fYd78id5jxPySe+aCVJfM\u002fVSEp1gKc9D9rAU7Cvvv1P2c+aGXJRPc\u002fSth3vyJ3+D8Sz3zQypL5P78id5jBl\u002fo\u002fUtNmFweG+z\u002fM4EtNm138PytLJjp+Hv0\u002fcBL23a\u002fI\u002fT+aNrs4MFz+P6u3dUr\u002f2P4\u002foZUlEx0\u002f\u002fz990MqSiY7\u002fPz5oZclEx\u002f8\u002f5lz1tk7p\u002fz9zrnpbp\u002fT\u002fPwAAAAAAAPA\u002fZclEx8+j8T+w735F7jDzP+Jyrnpbp\u002fQ\u002f+FLTZhcH9j\u002f0j+0JIlD3P9cp\u002fWN7gvg\u002fnyACdSOe+T9MdPw8GqP6P+Ak7Ltfkfs\u002fWTLR8fNo\u002fD+4nKve1in9P\u002f1je4II1P0\u002fJ4hA3Yhn\u002fj84CfvuV+T+Py7nqrd1Sv8\u002fCiJQN+KZ\u002fz\u002fLueptndL\u002fP3Ouelun9P8\u002fAAAAAAAAAEA=","shape":"20, 20"},"type":"surface"},{"marker":{"color":"black","size":2},"mode":"markers+text","showlegend":false,"text":["M"],"textposition":"middle right","x":[0.6],"y":[0.6],"z":[1.68],"type":"scatter3d"},{"marker":{"color":"black","size":2},"mode":"markers+text","showlegend":false,"text":["N"],"textposition":"middle right","x":[1],"y":[0.6],"z":[1.8399999999999999],"type":"scatter3d"},{"marker":{"color":"black","size":2},"mode":"markers+text","showlegend":false,"text":["T"],"textposition":"middle right","x":[0.6],"y":[1],"z":[1.8399999999999999],"type":"scatter3d"},{"marker":{"color":"black","size":2},"mode":"markers+text","showlegend":false,"text":["Q"],"textposition":"middle right","x":[1],"y":[1],"z":[2],"type":"scatter3d"},{"marker":{"color":"black","size":2},"mode":"markers+text","showlegend":false,"text":["N1"],"textposition":"middle right","x":[1],"y":[0.6],"z":[1.68],"type":"scatter3d"},{"marker":{"color":"black","size":2},"mode":"markers+text","showlegend":false,"text":["T1"],"textposition":"middle right","x":[0.6],"y":[1],"z":[1.68],"type":"scatter3d"},{"marker":{"color":"black","size":2},"mode":"markers+text","showlegend":false,"text":["Q1"],"textposition":"middle right","x":[1],"y":[1],"z":[1.68],"type":"scatter3d"},{"marker":{"color":"black","size":2},"mode":"markers+text","showlegend":false,"text":["P0"],"textposition":"middle right","x":[1],"y":[1],"z":[0],"type":"scatter3d"},{"marker":{"color":"black","size":2},"mode":"markers+text","showlegend":false,"text":["P1"],"textposition":"middle right","x":[1],"y":[0.6],"z":[0],"type":"scatter3d"},{"marker":{"color":"black","size":2},"mode":"markers+text","showlegend":false,"text":["P2"],"textposition":"middle right","x":[0.6],"y":[1],"z":[0],"type":"scatter3d"},{"marker":{"color":"black","size":2},"mode":"markers+text","showlegend":false,"text":["P"],"textposition":"middle right","x":[0.6],"y":[0.6],"z":[0],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[0.6,1],"y":[0.6,0.6],"z":[0,0],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[1,1],"y":[0.6,1],"z":[0,0],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[1,0.6],"y":[1,1],"z":[0,0],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[0.6,0.6],"y":[1,0.6],"z":[0,0],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[0.6,1],"y":[0.6,0.6],"z":[1.68,1.68],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[1,1],"y":[0.6,1],"z":[1.68,1.68],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[1,0.6],"y":[1,1],"z":[1.68,1.68],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[0.6,0.6],"y":[1,0.6],"z":[1.68,1.68],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[0.6,0.6],"y":[0.6,0.6],"z":[0,1.68],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[1,1],"y":[0.6,0.6],"z":[0,1.68],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[1,1],"y":[1,1],"z":[0,1.68],"type":"scatter3d"},{"line":{"color":"gray","dash":"dash","width":2},"mode":"lines","showlegend":false,"x":[0.6,0.6],"y":[1,1],"z":[0,1.68],"type":"scatter3d"},{"line":{"color":"blue","dash":"longdash","width":4},"mode":"lines","name":"\u0394S","x":[0.6,1],"y":[0.6,1],"z":[0,0],"type":"scatter3d"},{"line":{"color":"yellow","width":4},"mode":"lines","name":"$\\Delta_{x} z$","x":[1,1],"y":[0.6,0.6],"z":[1.68,1.8399999999999999],"type":"scatter3d"},{"line":{"color":"green","width":4},"mode":"lines","name":"$\\Delta_{y} z$","x":[0.6,0.6],"y":[1,1],"z":[1.68,1.8399999999999999],"type":"scatter3d"},{"line":{"color":"red","width":4},"mode":"lines","name":"$\\Delta z$","x":[1,1],"y":[1,1],"z":[1.68,2],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"scene":{"aspectratio":{"x":1,"y":1,"z":1},"camera":{"eye":{"x":-1.9,"y":-0.1,"z":0.7},"center":{"x":1,"y":0.2,"z":-0.5}},"xaxis":{"title":{"text":"x"}},"yaxis":{"title":{"text":"y"}},"zaxis":{"title":{"text":"z"}}}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('4b1530cb-935e-42ec-930b-574a53877889');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ricman1029\.github\.io\/OmniVault\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
