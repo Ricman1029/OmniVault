@@ -246,7 +246,7 @@ fig.update_layout(
   scene=dict(aspectmode="cube")
 )
 ```
-Así como hay curvas de nivel, existen las superficies de nivel.
+<!-- Hay un bug y tengo que poner este comentario sí o sí. No sé qué onda. Si no pongo el comentario, la siguiente sección se renderiza al principio del documento. -->
 
 ## Superficies de nivel
 En el caso de funciones de 3 variables independientes, osea campos escalares que van de $f:\mathbb{R}^{3} \to \mathbb{R}^{}$, podemos definir superficies de nivel.
@@ -890,6 +890,24 @@ $$
   \end{bmatrix}
 $$
 
+::: {.callout-tip title=Ejemplo}
+Armar la expresión matricial de las derivadas de primer orden de la función $z=x^2 + 2xy^3 - \cos^{}(y)$.
+
+- Como tenemos dos variables independientes, nuestra matriz va a tener dos columnas. Cada columna es la derivada respecto de cada variable
+  $$
+  \begin{aligned}
+    f_{x}(x,y) = 2x + 2y^3 && f_{y}(x,y) = 6xy^2 + \sin^{}(y)
+  \end{aligned}
+  $$
+  Así que la matriz derivada es la siguiente
+  $$
+    Df(x,y)=\begin{bmatrix}
+      2x + 2y^3 & 6xy^2 + \sin^{}(y)
+    \end{bmatrix}
+  $$
+
+:::
+
 Para el caso general en que $f:\mathbb{R}^{n} \to \mathbb{R}^{m}$, la matriz derivada va a tener $m$ filas y $n$ columnas, $Df \in \mathbb{R}^{m\times n}$. Antes de ver esta matriz estaría bueno volver a leer la parte de campos vectoriales en la @sec-funciones para entender bien la notación de la matriz que sigue.
 $$
   Df(\vec{x})=\begin{bmatrix}
@@ -899,6 +917,38 @@ $$
   \end{bmatrix}
 $$
 
+::: {.callout-tip title=Ejemplo}
+Obtener la matriz derivada del campo vectorial $f(x,y)=(2x^2 + e^{3x - y}, sin(3x + y^2))$.
+
+- Nuestra matriz va a ser de dos filas por dos columnas porque la imagen son los vectores de dimensión 2 (filas) y el dominio son vectores de dimensión 2 también (columnas).
+
+  Para armar esta matriz, tenemos que derivar cada componente del vector imagen respecto a cada una de las variables. A las componentes del vector las llamamos $f_{i}(x,y)$, donde $1\leq i\leq m$. En este caso tenemos que $f_{1}(x,y)=2x^2+e^{3x-y}$, y $f_{2}(x,y)=\sin^{}(3x+y^2)$.
+
+  La matríz entonces sería así
+  $$
+    Df(x,y) = \begin{bmatrix}
+      \frac{\partial f_{1}}{\partial x} & \frac{\partial f_{1}}{\partial y}\\[0.3cm]
+      \frac{\partial f_{2}}{\partial x} & \frac{\partial f_{2}}{\partial y}
+    \end{bmatrix}
+  $$
+
+  Busquemos entonces las derivadas parciales
+  $$
+  \begin{aligned}
+    \frac{\partial f_{1}}{\partial x} &= 4x + 3e^{3x-y} & \frac{\partial f_{1}}{\partial y} =& -e^{3x-y}\\
+    \frac{\partial f_{2}}{\partial x} &= 3\cos^{}(3x+y^2) & \frac{\partial f_{2}}{\partial y} =& 2y\cos^{}(3x+y^2)
+  \end{aligned}
+  $$
+
+  Entonces la matriz derivada nos queda así
+  $$
+    Df(x,y)=\begin{bmatrix}
+      4x + 3e^{3x-y} && -e^{3x-y}\\
+      3\cos^{}(3x+y^2) && 2y\cos^{}(3x+y^2)
+    \end{bmatrix}
+  $$
+:::
+
 Cuando estemos trabajando con funciones de $\mathbb{R}^{2} \to \mathbb{R}^{}$ (que al final van a ser las funciones con las que mas vamos a trabajar este año), podemos definir una matriz derivada para las segundas derivdas de la función. Esta matriz lleva el nombre de **matriz Hessiana**, se denota como $Hf$ y va a ser muy útil durante la cursada.
 $$
   Hf(x,y)=\begin{bmatrix}
@@ -907,10 +957,39 @@ $$
   \end{bmatrix}
 $$
 
+::: {.callout-tip title=Ejemplo}
+Obtener la matriz derivada de segundo orden de la función $z=e^{3x+y}-x^2y+2y$.
+
+- Primero buscamos las primeras derivadas parciales para poder calcular las segundas derivadas.
+  $$
+  \begin{aligned}
+    f_{x}(x,y) = 3e^{3x+y}-2xy && f_{y}(x,y)=e^{3x+y}-x^2+2
+  \end{aligned}
+  $$
+
+- Ahora calculamos las 4 segundas derivadas
+  $$
+  \begin{aligned}
+    f_{xx}(x, y) &= 9e^{3x+y}-2y\\
+    f_{xy}(x, y) &= 3e^{3x+y}-2x\\
+    f_{yx}(x,y) &= 3e^{3x+y}-2x\\
+    f_{yy}(x,y) &= e^{3x+y}
+  \end{aligned}
+  $$
+
+- Y ya tenemos todo para armar la matriz
+$$
+  Hf(x,y)=\begin{bmatrix}
+    9e^{3x+y}-2y & 3e^{3x+y}-2x\\
+    3e^{3x+y}-2x & e^{3x+y}
+  \end{bmatrix}
+$$
+:::
+
 ## Diferencial
 Acá viene un tema importante. Creo que lo mejor para entenderlo bien del todo es volver a análisis I y trabajar con funciones de $\mathbb{R}^{}  \to  \mathbb{R}^{}$. Una vez que entendamos bien qué es el diferencial ahí, vamos a pasar a estudiarlo en funciones de $\mathbb{R}^{n} \to \mathbb{R}^{m}$.
 
-La notación diferencial en realidad la venimos vienod hace un montón pero nunca supimos de dónde venía ni qué significaba. La veíamos por ejemplo cuando estudiabamos derivadas, que podiamos expresarla como $\frac{dy}{dx}$, donde $y=f(x)$. también la veíamos en las integrales de la forma $\int_{}^{} f(x) \,dx$. Esto lo tomabamos que solo era una notación, pero en realidad no, $dx$ y $dy$ son dos variables que tiene la propiedad de que cuando su razón existe, esta es igual a la derivada.
+La notación diferencial en realidad la venimos viendo hace un montón pero nunca supimos de dónde venía ni qué significaba. La veíamos por ejemplo cuando estudiabamos derivadas, que podiamos expresarla como $\frac{dy}{dx}$, donde $y=f(x)$. también la veíamos en las integrales de la forma $\int_{}^{} f(x) \,dx$. Esto lo tomabamos que solo era una notación, pero en realidad no, $dx$ y $dy$ son dos variables que tiene la propiedad de que cuando su razón existe, esta es igual a la derivada.
 
 ::: {.callout-note title=Definición}
 Diferencial en funciones escalares
@@ -986,14 +1065,223 @@ $$
 De esta manera, como ya conocemos la fórmula para calcular $dy$, podemos estimar el valor de $f(a+dx)$ cuando conocemos el valor de $f(a)$ y $dx$ es muy pequeño.
 
 ## Diferencial en funciones de varias variables
-Agora sim, ya estamos listos para estudiar los diferenciales en funciones de varias variables.
+Ahora sí, ya estamos listos para estudiar el diferencial en funciones de varias variables.
+
+Cuando trabajabamos recién con funciones escalares dijimos que el diferencial $dy$ (siendo $y$ la variable dependiente) era la variación de la recta tangente a la curva $y=f(x)$ en un punto $a$ cuando nos moviamos una distancia $dx$.
+
+Ahora vamos a trabajar con campos escalares de $\mathbb{R}^{2} \to \mathbb{R}^{}$, de manera que vamos a tener 2 variables independientes (generalmente $x$ e $y$) y una variable dependiente $z$.
+
+Como tenemos dos variables independientes, vamos a poder definir dos rectas tangentes (en vez de una sola) a una superficie (en vez de una curva) en un punto $P_{0}(x_{0},y_{0},f(x_{0},y_{0}))$.
+
+Entonces, tenemos un punto de la superficie y dos rectas tangentes a dicha superficie, por lo que podemos armar la ecuación del plano que es tangente a la superficie en el punto $P_{0}$. Vamos a decir que, en una bola alrededor del punto $P_{0}$, este plano es una buena aproximación a la función $z=f(x,y)$ cuando el radio de la bola tiende a cero.
+
+El **diferencial** de la función $z=f(x,y)$ va a ser la variación del plano tangente a la superficie en un punto $P_{0}(x_{0}, y_{0}, f(x_{0}, y_{0}))$ al movernos una distancia $dx=\Delta x$ en el eje $x$ y $dy=\Delta y$ en el eje $y$.
+
+Podemos deducir la ecuación del diferencial de una función $z=f(x,y)$ utilizando la ecuación general del plano y teniendo en cuenta que estamos buscando un plano tangente a la superficie en un punto $P_{0}(x_{0},y_{0},z_{0})$.
+
+La ecuación general de un plano que pasa por $P_{0}(x_{0},y_{0},z_{0})$ es
+$$
+  A(x-x_{0}) + B(y-y_{0}) + C(z-z_{0})=0
+$$
+
+Como nosotros queremos saber cuánto varía este plano en el eje $z$, podemos reordenar la ecuación de la siguiente forma
+$$
+\begin{aligned}
+  -C(z-z_{0}) &= A(x-x_{0}) + B(y-y_{0})\\
+  z-z_{0} &= \frac{A}{-C}(x-x_{0}) + \frac{B}{-C}(y-y_{0})
+\end{aligned}
+$$
+
+Ahora podemos decir que $\frac{A}{-C}=a$ y que $\frac{B}{-C}=b$ para obtener
+$$
+  z-z_{0}=a(x-x_{0}) + b(y-y_{0})
+$$
+
+Bien, ya tenemos entonces la ecuación del plano tangente a la superficie, al que vamos a nombrar $\pi$. Esta ecuación representa lo que llamamos **diferencial total** de $z$, denotado como $dz$. Aunque $dz$ no es el cambio real $\Delta z=f(x+dx, y+dy)-f(x,y)$, se dice que **es una buena aproximación** cuando $dx$ y $dy$ son pequeños. En otras palabras, el plano tangente a la superficie representa una aproximación lineal al comportamiento de la función $z=f(x,y)$ en un entorno cercano al punto $P_{0}(x_{0},y_{0})$.
+
+Cabe aclarar que para que una función sea diferenciable en un punto $P_{0}$, debe existir un plano tangente a la función en $P_{0}$. Esto quiere decir que la función debe ser continua en $P_{0}$ y no debe tener dobleces, esquinas o picos en la gráfica. En otras palabras, la gráfica de la función debe ser *suave*.
+
+Podemos decir entonces que 
+$$
+  dz=a(x-x_{0}) + b(y-y_{0})
+$$
+
+Nos queda saber cuánto valen $a$ y $b$, así que sigamos analizando. ¿Qué datos conocemos del plano $\pi$? Sabemos que es tangente a la superficie $z=f(x,y)$ en el punto $P_{0}(x_{0}, y_{0})$. Esto quiere decir que la pendiente de este plano en el eje $x$ es la misma que la de la recta tangente a la curva generada por la intersección de la superficie con el plano $x=x_{0}$. Osea, que la pendiente de $\pi$ en el eje $x$ es $f_{x}(x_{0},y_{0})$. Lo mismo pasa con la pendiente en $y$ del plano, es igual a $f_{y}(x_{0},y_{0})$. Estos son los valores de $a$ y $b$, respectivamente.
+
+La ecuación del diferencial de $z$ nos queda entonces así:
+$$
+  dz=f_{x}(x_{0},y_{0})(x-x_{0}) + f_{y}(x_{0},y_{0})(y-y_{0})
+$$
+
+y como $\Delta x = dx$ y $\Delta y = dy$, podemos decir
+$$
+  dz=f_{x}(x_{0},y_{0})dx + f_{y}(x_{0},y_{0})dy
+$${#eq-diferencial-z}
 
 
+```{python}
+#| label: fig-visualizacion-diferencial
+#| fig-cap: Visualización del plano tangente a $f(x,y)=4-x^2-2y^2$ en el punto $P_{0}(1,1)$.
+
+x = np.linspace(0, 2, 20)
+y = np.linspace(0, np.sqrt(2), 20)
+x, y = np.meshgrid(x, y)
+z = 4 - x**2 - 2*y**2
+
+fig = go.Figure()
+
+# Superficie
+fig.add_trace(go.Surface(x=x, y=y, z=z, colorscale="Viridis", opacity=0.6, showscale=False))
+
+# Plano tangente a la superficie en (1, 1, f(1, 1))
+a = -2
+b = -4
+c = 7
+x = np.linspace(0, 3, 20)
+y = np.linspace(0, 2, 20)
+x, y = np.meshgrid(x, y)
+z = a*x + b*y + c
+fig.add_trace(go.Surface( x=x, y=y, z=z, colorscale=[[0, "yellow"], [1, "plum"]], opacity=0.5, visible=True, showscale=False))
 
 
+# Plano derivada parcial y
+y = np.linspace(0, 2, 300)
+z = np.linspace(0, 4, 300)
+y, z = np.meshgrid(y, z)
+x = np.ones_like(y)
+# Mask es para que el plano quede contenido dentro de la superficie
+mask = z <= 4 - 1**2 - 2*y**2
+mask_x = np.where(mask, x, np.nan)
+mask_y = np.where(mask, y, np.nan)
+mask_z = np.where(mask, z, np.nan)
+fig.add_trace(go.Surface(x=mask_x, y=mask_y, z=mask_z, colorscale=[[0, "paleturquoise"], [1, "paleturquoise"]], opacity=0.8, showscale=False, visible=False))
+
+# Intersección Superficie con Plano derivada parcial y
+x = 1
+y = np.linspace(0, np.sqrt(2), 20)
+z = 4 - x**2 - 2*y**2
+x_vals = np.full_like(y, x)
+fig.add_trace(go.Scatter3d(x=x_vals, y=y, z=z, mode="lines", line=dict(color="red"), visible=False, name="Curva intersección"))
+
+# Recta derivada parcial en y
+x0, y0 = 1, 1
+z0 = 4 - x0**2 - 2*y0**2
+df_dy = -4*y0
+y = np.linspace(0, 2, 20)
+x = np.full_like(y, 1)
+z = z0 + df_dy*(y - y0)
+fig.add_trace(go.Scatter3d(
+  x=x, y=y, z=z,
+  mode="lines",
+  line=dict(color="cyan"),
+  name="Derivada parcial respecto de y",
+  visible=False,
+))
 
 
+# Plano derivada parcial x
+x = np.linspace(0, 3, 300)
+z = np.linspace(0, 4, 300)
+y, z = np.meshgrid(x, z)
+y = np.ones_like(x)
+# Mask es para que el plano quede contenido dentro de la superficie
+mask = z <= 4 - x**2 - 2*1**2
+mask_x = np.where(mask, x, np.nan)
+mask_y = np.where(mask, y, np.nan)
+mask_z = np.where(mask, z, np.nan)
+fig.add_trace(go.Surface(x=mask_x, y=mask_y, z=mask_z, colorscale=[[0, "paleturquoise"], [1, "paleturquoise"]], opacity=0.8, showscale=False, visible=True))
 
+# Intersección Superficie con Plano derivada parcial x
+y = 1
+x = np.linspace(0, np.sqrt(2), 20)
+z = 4 - x**2 - 2*y**2
+y_vals = np.full_like(x, y)
+fig.add_trace(go.Scatter3d(x=x, y=y_vals, z=z, mode="lines", line=dict(color="red"), visible=True, name="Curva intersección"))
+
+# Recta derivada parcial en x
+x0, y0 = 1, 1
+z0 = 4 - x0**2 - 2*y0**2
+df_dx = -2*x0
+x = np.linspace(0, 2, 20)
+y = np.full_like(x, 1)
+z = z0 + df_dx*(x - x0)
+fig.add_trace(go.Scatter3d(
+  x=x, y=y, z=z,
+  mode="lines",
+  line=dict(color="cyan"),
+  name="Derivada parcial respecto de x",
+  visible=True,
+))
+
+
+# Punto (1,1)
+x = 1
+y = 1
+z = 1
+fig.add_trace(go.Scatter3d(
+    x=[x], y=[y], z=[z],
+    mode='markers+text',
+    marker=dict(size=4, color='cyan'),
+    text=["P0"],
+    textposition='middle right',
+    showlegend=False,
+))
+
+# Ajusto los límites de los ejes
+fig.update_layout(
+  updatemenus=[dict(
+      type="buttons",
+      direction="right",
+      x=0.5, xanchor="center",
+      y=1, yanchor="top",
+      buttons=list([
+        dict(label="Derivada parcial en x",
+             method="update",
+             args=[{"visible": [True, True, False, False, False, True, True, True]},
+             {"title": "DPy"}]),
+        dict(label="Derivada parcial en y",
+             method="update",
+             args=[{"visible": [True, True, True, True, True, False, False, False]},
+             {"title": "DPx"}]),
+      ]),
+  )],
+  scene=dict(
+    xaxis=dict(range=[0, 3]),
+    yaxis=dict(range=[0, 2]),
+    zaxis=dict(range=[0, 5]),
+    aspectmode="cube",
+  )
+)
+```
+
+La @fig-no-diferenciable muestra un ejemplo de una función $f(x,y)=x^{1/3}y^{1/3}$ que no es diferenciable en el punto $P_{0}(0,0)$ ya que la gráfica de la función no es *suave* en ese punto. Debido a esto, es imposible definir un plano tangente a la superficie en $P_{0}$.
+
+```{python}
+#| label: fig-no-diferenciable
+#| fig-cap: La función $f(x,y)=x^{1/3}y^{1/3}$ no es diferenciable en $(0,0)$ (adaptado de @tromba [p. 122]).
+
+x = np.linspace(-1, 3, 100)
+y = np.linspace(-1, 3, 100)
+x, y = np.meshgrid(x, y)
+z = np.cbrt(x)*np.cbrt(y)   # Tengo que usar esto porque sino la raíz cúbica no funciona
+
+fig = go.Figure()
+fig.add_trace(go.Surface(x=x, y=y, z=z, colorscale="Viridis", opacity=0.7, showscale=False))
+
+fig.update_layout(
+  scene=dict(
+    xaxis=dict(range=[-1, 3]),
+    yaxis=dict(range=[-1, 3]),
+    zaxis=dict(range=[0, 3]),
+  )
+)
+```
+
+::: {.callout-tip title=Ejemplo}
+Aproximar el cambio en $z=\sqrt[]{4-x^2-y^2}$ cuando $(x,y)$ se desplaza del punto $(1,1)$ al punto $(1.01, 0.97)$. Comprobar esta aproximación con el cambio exacto en $z$.
+
+
+:::
 
 
 
