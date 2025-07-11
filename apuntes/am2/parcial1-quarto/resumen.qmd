@@ -1,4 +1,4 @@
----
+--- 
 lang: es
 author: Ricardo Freccero
 toc: true
@@ -183,7 +183,7 @@ Por ejemplo, supongamos que tenemos una función escalar $f:\mathbb{R}^{} \to \m
 
 Otro ejemplo podría ser si tenemos el campo escalar $g:\mathbb{R}^{5} \to \mathbb{R}^{}$. Si $g$ está escrita como $g(x_{1}, x_{2}, x_{3}, x_{4}, x_{5})=y$, entonces está dada en su forma explícita.
 
-### Función implícita
+### Función implícita{#sec-implicita}
 Una función se dice que está dada de forma implícita cuando la variable dependiente no está despejada.
 
 Por ejemplo, supongamos que tenemos una función $f:\mathbb{R}^{2} \to \mathbb{R}^{} \;/\; f = x^2 + 2y - 3z$. Esta función está dada en su forma implícita, ya que la variable $z$, que es la variable dependiente no está despejada en la ecuación de la función.
@@ -380,7 +380,7 @@ $$
 Por último, si incrementamos simultaneamente a $x$ en $\Delta x$ y a $y$ en $\Delta y$, obtenemos el **incremento total de la función**, lo denotamos como $\Delta z$ (segmento $\overline{QQ_{1}}$)
 $$
   \Delta z = f(x + \Delta x, y + \Delta y) - f(x,y)
-$$
+$${#eq-incremento-total-z}
 
 # Límites
 Ahora ya sabemos todo lo que hay que saber para poder empezar a estudiar las funciones de análisis 2.
@@ -1280,8 +1280,334 @@ fig.update_layout(
 ::: {.callout-tip title=Ejemplo}
 Aproximar el cambio en $z=\sqrt[]{4-x^2-y^2}$ cuando $(x,y)$ se desplaza del punto $(1,1)$ al punto $(1.01, 0.97)$. Comprobar esta aproximación con el cambio exacto en $z$.
 
+El cambio de $z$ es $\Delta z$ y nos están pidiendo que lo aproximemos, así que tenemos que usar la @eq-diferencial-z
+$$
+  \Delta z \approx dz=f_{x}(x,y)dx+f_{y}(x,y)dy
+$$
+Necesitamos entonces calcular las derivadas parciales de la función, y determinar la distancia que nos movimos en cada eje.
 
+- Calculemos primero las distancias $dx$ y $dy$ que es lo mas facil.
+  
+  Como en $x$ nos movimos desde 1 hasta 1.01, la distancia $dx$ es $dx=1.01-1=0.01$. Lo mismo hacemos para obtener $dy$, entonces $dy=0.97-1=-0.03$.
+
+- Ahora calculemos las derivadas parciales
+  $$
+  \begin{aligned}
+    f_{x}(x,y)=\frac{-x}{\left(4-x^2-y^2\right)^{1/2}} && f_{x}(1,1)=-\frac{1}{\sqrt[]{2}} \\
+    f_{y}(x,y)=\frac{-y}{\left(4-x^2-y^2\right)^{1/2}} && f_{y}(1,1)=-\frac{1}{\sqrt[]{2}}
+  \end{aligned}
+  $$
+
+- Y ahora solo queda reemplazar los valores obtenidos en la ecuación 
+  $$
+    dz=-\frac{1}{\sqrt[]{2}}(0.01)-\frac{1}{\sqrt[]{2}}(-0.03)\approx 0.0141
+  $$
+
+Entonces podemos decir que si desde el punto $(1,1)$ nos desplazamos al punto $(1.01,0.97)$, $\Delta z \approx 0.0141$.
+
+- Calculemos ahora el valor real de $\Delta z$. Vimos la fórmula cuando vimos incrementos de una función (@eq-incremento-total-z).
+  $$
+  \begin{aligned}
+    \Delta z &= f(1.01, 0.97)-f(1,1)\\
+     &= \sqrt[]{4-(1.01)^2-(0.97)^2} - \sqrt[]{4-1^2-1^2} \approx 0.0137
+  \end{aligned}
+  $$
 :::
+
+## La regla de la cadena
+La regla de la cadena funciona de manera similar a como lo hacía cuando trabajabamos con funciones escalares, solo que ahora al tener mas variables se agregan alguna cosas. La regla de la cadena conviene explicarla en dos casos separados y después presentar el caso general que aplica a cualquier función $f:\mathbb{R}^{n} \to \mathbb{R}^{m}$.
+
+### Primero caso
+Supongamos que $z=f(x,y)$ es una función derivable de $x$ e $y$, donde $x=g(t)$ e $y=h(t)$ son funciones derivables de $t$. Entonces decimos que $z$ es una función derivable de $t$ y se calcula como 
+$$
+  \frac{dz}{dt}=\frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\partial y}\frac{dy}{dt}
+$$
+
+Fijemonos que en este caso, la derivada de la función $z$ respecto de $t$ ya no es una derivada parcial ya que $t$ es la única variable de la función. Podemos reescribir $z$ en función de $t$ para que quede mas evidente de la siguiente manera
+$$
+  z=f(x(t),y(t))
+$$
+
+::: {.callout-tip title=Ejemplo}
+Usar la regla de la cadena para obtener la derivada de $z=xy$ con respecto a $t$ a lo largo de la trayectoria $x=\cos^{}(t)$, $y=\sin^{}(t)$. ¿Cuál es el valor de la derivada en $t=\pi/2$?
+
+Usamos la fórmula que vimos recién para obtener $\frac{\partial z}{\partial t}$ como sigue
+$$
+\begin{aligned}
+  \frac{dz}{dt} &= \frac{\partial z}{\partial x}\frac{dx}{dt} + \frac{\partial z}{\partial y}\frac{dy}{dt}\\
+   &= \frac{\partial (xy)}{\partial x}\frac{d(\cos^{}(t))}{t} + \frac{\partial (xy)}{\partial y}\frac{d(\sin^{}(t)}{t}\\
+   &= (y)(-\sin^{}(t)) + (x)(\cos^{}(t))\\
+   &= (\sin^{}(t))(-\sin^{}(t)) + (\cos^{}(t))(\cos^{}(t))\\
+   &= -\sin^{2}(t) + \cos^{2}(t) \\
+   &= \cos^{}(2t)
+\end{aligned}
+$$
+:::
+
+### Segundo caso
+Supongamos ahora que $z=f(x,y)$ es una función derivable de $x$ e $y$, donde $x=g(s,t)$ e $y=h(s,t)$ son funciones derivables de $s$ y $t$. Entonces, las derivadas de $z$ respecto de $t$ y $s$ son
+$$
+\begin{aligned}
+  \frac{\partial z}{\partial s}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial s} && \frac{\partial z}{\partial t}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial t}
+\end{aligned}
+$$
+
+::: {.callout-tip title=Ejemplo}
+Si $z=e^x\sin^{}(y)$, donde $x=st^2$ e $y=s^2t$, determinar $\frac{\partial z}{\partial s}$ y $\frac{\partial z}{\partial t}$.
+
+$$
+\begin{aligned}
+  \frac{\partial z}{\partial s} &= \frac{\partial z}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial s}\\
+   &= (e^x\sin^{}(y))(t^2) + (e^x\cos^{}(y))(2st)\\
+   &= t^2e^{st^2}\sin^{}(s^2t)+2ste^{st^2}\cos^{}(s^2t)
+\end{aligned}
+$$
+$$
+\begin{aligned}
+  \frac{\partial z}{\partial t} &= \frac{\partial z}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial t}\\
+   &= (e^x\sin^{}(y))(2st) + (e^x\cos^{}(y))(s^2)\\
+   &= 2ste^{st^2}\sin^{}(s^2t) + s^2e^{st^2}\cos^{}(s^2t)
+\end{aligned}
+$$
+:::
+
+### Versión general de la regla de la cadena
+Supongamos que $u$ es una función derivable de las $n$ variables $x_{1},\dots ,x_{n}$ y que cada $x_{j}$ es una función derivable de las $m$ variables $t_{1}, \dots ,t_{m}$. Entonces, $u$ es una función de $t_{1},\dots ,t_{m}$ la derivada parcial de $u$ respecto de $t_{i}$ es
+$$
+  \frac{\partial u}{\partial t_{i}}=\frac{\partial u}{\partial x_{1}}\frac{\partial x_{1}}{\partial t_{i}} + \frac{\partial u}{\partial x_{2}}\frac{\partial x_{2}}{\partial t_{i}} + \dots + \frac{\partial u}{\partial x_{n}}\frac{\partial x_{n}}{\partial t_{i}}
+$$
+con $1\leq i\leq m$.
+
+Existe también la forma matricial de la regla de la cadena que es mucho mas sencilla de ver y calcular, y además es muhco mas prolija y organizada (Moni usa un montón esta regla, y a mi también me parece mas práctica que la otra). La regla de la cadena en su forma matricial es como sigue:
+
+::: {.callout-note title=Definición}
+Sean $g:U  \subset \mathbb{R}^{n} \to \mathbb{R}^{m}$ y $f:V \subset \mathbb{R}^{m} \to \mathbb{R}^{p}$ funciones dadas tales que $g$ transforma $U$ en $V$, de forma que está definida $f\circ g$. Supongamos que $g$ es diferenciable en $\vec{x_{0}}$ y que $f$ es diferenciable en $\vec{y_{0}}=g(\vec{x_{0}})$. Entonces $f\circ g$ es diferenciable en $x_{0}$ y 
+$$
+  D(f\circ g)(\vec{x_{0}})=Df(g(\vec{x_{0}}))=Df(\vec{y_{0}})\cdot Dg(\vec{x_{0}})
+$${#eq-regla-cadena}
+:::
+
+No voy a poner un ejemplo de regla de la cadena sin usar la forma matricial porque recomiendo mucho siempre usar esta forma.
+
+::: {.callout-tip title=Ejemplo}
+Dada $g(x,y)=(x^2+1, y^2)$ y $f(u,v)=(u+v,u,v^2)$, calcular la derivada de $f\circ g$ en $(1,1)$ usando la regla de la cadena.
+
+- Primero identifiquemos las características de las funciones que nos dan:
+  - Vemos que $g$ es una funcion $g:\mathbb{R}^{2} \to \mathbb{R}^{2}$, así que su matriz derivada pertenece a $\mathbb{R}^{2\times 2}$, osea que tiene dos filas y dos columnas.
+  - Por otro lado, $f$ es una función $f:\mathbb{R}^{2} \to \mathbb{R}^{3}$, así que su matriz derivada pertenece a $\mathbb{R}^{3\times 2}$. Tiene tres filas y dos columnas.
+
+- Calculemos ahora las matrices derivadas de ambas funciones
+  - Para $g$ tenemos 
+  $$
+    Dg(x,y)=\begin{bmatrix}
+      \frac{\partial f_{1}}{\partial x} & \frac{\partial f_{1}}{\partial y}\\[0.3cm]
+      \frac{\partial f_{2}}{\partial x} & \frac{\partial f_{2}}{\partial y}
+    \end{bmatrix}=\begin{bmatrix}
+      2x & 0 \\
+      0 & 2y
+    \end{bmatrix}
+  $$
+  - Para $f$
+  $$
+    Df(u,v)=\begin{bmatrix}
+      \frac{\partial f_{1}}{\partial u} & \frac{\partial f_{1}}{\partial v}\\[0.3cm]
+      \frac{\partial f_{2}}{\partial u} & \frac{\partial f_{2}}{\partial v}\\[0.3cm]
+      \frac{\partial f_{3}}{\partial u} & \frac{\partial f_{3}}{\partial v}
+    \end{bmatrix}=\begin{bmatrix}
+      1 & 1\\
+      1 & 0\\
+      0 & 2v
+    \end{bmatrix}
+  $$
+- Lo siguiente que hay que hacer es evaluar las matrices de derivadas parciales en el punto que nos piden. Recordemos que estamos calculando $f\circ g$ en el punto $(1,1)$, que es lo mismo que decir $f(g(1,1))$.
+
+  Entonces, a la matriz de derivadas de $g$ sí la evaluamos en el punto $(1,1)$, pero a la matriz de derivadas de $f$ la tenemos que evaluar en el punto que devuelve $g(1,1)$, que en este caso es $g(1,1)=(1^2+1,1^2)=(2,1)$. Tenemos que evaluar la matriz de derivadas de $f$ en el punto $(2,1)$.
+
+  - $Dg(1,1)=\begin{bmatrix}
+    2 & 0\\
+    0 & 2
+  \end{bmatrix}$
+  - $Df(2,1)=\begin{bmatrix}
+    1 & 1\\
+    1 & 0\\
+    0 & 2
+  \end{bmatrix}$
+
+- Por último, hacemos el producto de las matrices
+$$
+  Df(2,1)\cdot Dg(1,1)=\begin{bmatrix}
+    1 & 1\\
+    1 & 0\\
+    0 & 2
+  \end{bmatrix}\cdot \begin{bmatrix}
+    2 & 0\\
+    0 & 2
+  \end{bmatrix}=\begin{bmatrix}
+    2 & 2\\
+    2 & 0\\
+    0 & 4
+  \end{bmatrix}
+$$
+
+- Esta matriz nos dice que la derivada de $f$ respecto de $x$ es $\frac{\partial f}{\partial x}=(2,2,0)$ (el vector de la columna 1), y que la derivada de $f$ respecto de $y$ es $\frac{\partial f}{\partial y}=(2,0,4)$ (el vector de la columna 2).
+:::
+
+## Teorema de Taylor
+El hermoso (horrible) teorema de Taylor también aparece en funciones de varias variables. Este teorema, al igual que en análisis I, lo podemos usar para aproximar funciones. La forma de calcularlo es muy parecida a cuando lo hacíamos con una sola variable, solo que ahora tenemos que tener en cuenta que estamos trabajando con varias variables.
+
+::: {.callout-note title=Definición}
+Sea $f: U \subset \mathbb{R}^{2} \to \mathbb{R}^{}$ una función diferenciable en el punto $P_{0}(x_{0},y_{0})$, podemos escribir el polinomio de Taylor de segundo orden como sigue
+$$
+f(x,y)=f(x_{0},y_{0})+f_{x}(x_{0},y_{0})\Delta x + f_{y}(x_{0},y_{0})\Delta y + \frac{1}{2}\left(\begin{bmatrix}
+\Delta x & \Delta y
+\end{bmatrix}\begin{bmatrix}
+  f_{xx} & f_{xy}\\
+  f_{yx} & f_{yy}
+\end{bmatrix}\begin{bmatrix}
+  \Delta x\\
+  \Delta y
+\end{bmatrix}\right) + Resto
+$$
+:::
+
+::: {.callout-tip title=Ejemplo}
+Dada la función $f(x,y)=\cos^{}(2x+\ln{y})$, obtener el polinomio de Taylor de segundo orden alrededor del punto $(x,y)=(0,1)$
+
+- Primero calculemos todos los valores que tenemos que poner en la ecuación.
+  $$
+  \begin{aligned}
+    f(0,1) &= \cos^{}(2\cdot 0+\ln{1})=1\\
+    \Delta x &= x - 0 = x\\
+    \Delta y &= y - 1\\
+    \frac{\partial f}{\partial x} &= 2\cos^{}(2x+\ln{y})  \implies \frac{\partial f(0,1)}{\partial x} = 2\\
+    \frac{\partial f }{\partial y} &= \frac{1}{y}\cos^{}(2x+\ln{y})  \implies \frac{\partial f(0,1)}{\partial y} = 1\\
+    Hf &= \begin{bmatrix}
+      4\cos^{}(2x+\ln{y}) & \frac{2}{y}\cos^{}(2x+\ln{y})\\
+      \frac{2}{y}\cos^{}(2x+\ln{y}) & 0
+    \end{bmatrix} \implies Hf(0,1)=\begin{bmatrix}
+      4 & 2\\
+      2 & 0
+    \end{bmatrix}
+  \end{aligned}
+  $$
+
+- Escribamos ahora el polinomio de Taylor con los datos que tenemos
+$$
+  p_{2}(x,y)=1 + 2(x) + 1(y-1) + \frac{1}{2}\left(\begin{bmatrix}
+    x & y-1
+  \end{bmatrix}\begin{bmatrix}
+    4 & 2\\
+    2 & 0
+  \end{bmatrix}\begin{bmatrix}
+    x\\
+    y-1
+  \end{bmatrix}\right)
+$$
+
+- Ahora resolvemos las cuentas y ya podemos escribir el polinomio
+$$
+\begin{aligned}
+  p_{2}(x,y) &= 1+2x+y-1+\frac{1}{2}\left(4x^2+4x(y-1)\right)\\
+  p_{2}(x,y) &= 2x+y+2x^2+2x(y-1)
+\end{aligned}
+$$
+:::
+
+## Derivación implícita
+Cuando tenemos una función dada de forma implícita y queremos calcular sus derivadas parciales, podemos usar la regla de la cadena. Recordemos que una función está dada de forma explícita cuando se presenta de la forma $z=f(x,y)$. Otra forma que existe de definir a $z$ en función de $(x,y)$ es $F(x,y,z)=0$, que se llama forma implícita de $z$.
+
+En esta @sec-implicita habíamos dicho que hay ocasiones en las que es imposible escribir una función que está en su forma implícita como una función explícita. En estos casos tenemos que usar la regla de la cadena sí o sí para calcular las derivadas parciales de la función y el **teorema de la función implícita** nos dice cuál es el procedimiento.
+
+::: {.callout-note title="Teorema de la función implícita"}
+Dada una función $F$ definida en una bola alrededor del punto $(a,b,c)$, donde se cumple que $F(a,b,c)=0$, $F_{z}(a,b,c)\neq 0$, y $F_{x}$, $F_{y}$ y $F_{z}$ son continuas en un disco $D \subseteq \mathbb{R}^{2}$, la ecuación $F(x,y,z)=0$ define a $z$ como una función de $(x,y)$ en el disco $D$, y las derivadas parciales de $z$ están dadas por la ecuación 
+$$
+\begin{aligned}
+  z_{x}(x,y)=-\frac{F_{x}(x,y,z(x,y))}{F_{z}(x,y,z(x,y))} && z_{y}(x,y)=-\frac{F_{y}(x,y,z(x,y))}{F_{z}(x,y,z(x,y))}
+\end{aligned}
+$${#eq-teorema-implicita}
+:::
+
+Este teorema lo podemos demostrar de forma sencilla de la siguiente manera.
+
+Supongamos que $z=f(x,y)$ está dada implicitamente por la ecuación de fomra $F(x,y,z)=0$. Esto significa que $F(x,y,f(x,y))=0$ para todos los puntos $(x,y)$ que pertenecen al dominio de $f$. Si $F$ y $f$ son derivables, podemos derivar ambos miembros de la ecuación respecto de $x$ de la siguiente forma:
+$$
+  \frac{\partial F}{\partial x}\frac{\partial x}{\partial x} + \frac{\partial F}{\partial y}\frac{\partial y}{\partial x} + \frac{\partial F}{\partial z}\frac{\partial z}{\partial x} = 0
+$$
+Pero $\partial x/\partial x=1$ y $\partial y/\partial x = 0$. Sabemos que $z$ es en realidad una función de $(x,y)$, por eso $\partial z/\partial x$ no es necesariamente igual a cero. De esta manera, la ecuación anterior queda así:
+$$
+  \frac{\partial F}{\partial x} + \frac{\partial F}{\partial z}\frac{\partial z}{\partial x} = 0
+$$
+
+Si $\partial F/\partial z \neq 0$, podemos despejar $\partial z/\partial x$
+$$
+\begin{aligned}
+  &\frac{\partial F}{\partial x} + \frac{\partial F}{\partial z}\frac{\partial z}{\partial x} = 0\\
+  &\frac{\partial F}{\partial z}\frac{\partial z}{\partial x} = -\frac{\partial F}{\partial x}\\
+  &\frac{\partial z}{\partial x} = -\frac{F_{x}}{F_{z}}
+\end{aligned}
+$$
+
+Luego podemos repetir el mismo procedimiento para despejar $\partial z/\partial y$, solo que ahora hay que derivar respecto de $y$. El resultado final de ambos despejes es el siguiente:
+
+::: {.callout-tip title=Ejemplo}
+Sabiendo que $z=f(x,y)$ hallar $\frac{\partial z}{\partial x}$ y $\frac{\partial z}{\partial y}$ por derivación implícita de la función $F(x,y,z)=\sin^{}(xy)+\cos^{}(xz)-yz=0$.
+
+- Primero buscamos las derivadas parciales de la función $F$.
+$$
+\begin{aligned}
+  F_{x} &= \cos^{}(xy) - \sin^{}(xz)\\
+  F_{y} &= \cos^{}(xy) - z\\
+  F_{z} &= -\sin^{}(xz) - y
+\end{aligned}
+$$
+
+- Ya podemos calcular las derivadas parciales de $z$ usando el teorema de la función implícita
+$$
+\begin{aligned}
+  \frac{\partial z}{\partial x} &= -\frac{F_{x}}{F_{z}} = \frac{\cos^{}(xy) - \sin^{}(xz)}{\sin^{}(xz) + y}\\
+  \frac{\partial z}{\partial y} &= -\frac{F_{y}}{F_{z}} = \frac{\cos^{}(xy) - z}{\sin^{}(xz) + y}
+\end{aligned}
+$$
+:::
+
+## Derivada direccional
+Dada una función $z=f(x,y)$, las derivadas parciales $f_{x}$ y $f_{y}$ representan las razondes de cambio de $z$ en las direcciones de $x$ e $y$. Podríamos pensarlo como que representan las razones de cambio en las direcciones de los versores $\hat{i}$ y $\hat{j}$.
+
+Supongamos ahora que queremos determinar la razón de cambio de $z$ en $(x_{0},y_{0})$ en la dirección de un vector unitario arbitrario $\hat{u}=\left\langle a,b \right\rangle$. Consideremos la superficie $S$ dada por la ecuación $z=f(x,y)$ y digamos que $z_{0}=f(x_{0},y_{0})$. De esta manera, el punto $P(x_{0},y_{0},z_{0})$ pertenece a la superficie $S$.
+
+![Imagen sacada de @stewart2 [p. 947]](./imagenes/derivada-direccional.png)
+
+El plano vertical que pasa por $P$ en la dirección $\hat{u}$ interseca a $S$ en la curva $C$. La pendiente de la recta tangente $T$ a $C$ en el punto $P$ es la razón de cambio de $z$ en la dirección de $\hat{u}$.
+
+Si $Q(x,y,z)$ es otro punto en $C$ y $P^{\prime}$, $Q^{\prime}$ son las proyecciones de $P$, $Q$ en el plano $xy$, el vector $\vec{P^{\prime}Q^{\prime}}$ es paralelo a $\hat{u}$ y por lo tanto
+$$
+  \vec{P^{\prime}Q^{\prime}}=h\hat{u}=\left\langle ha,hb \right\rangle \qquad h \in \mathbb{R}^{}
+$$
+Así, $x-x_{0} = ha$, $y-y_{0}=hb$, entonces $x=x_{0}+ha$ e $y=y_{0}+hb$, con lo que podemos decir que
+$$
+  \frac{\Delta z}{h}=\frac{z-z_{0}}{h}=\frac{f(x_{0}+ha, y_{0}+hb)-f(x_{0},y_{0})}{h}
+$$
+Si calculamos el límite cuando $h \to 0$, obtenemos la razón de cambio de $z$ en la dirección de $\hat{u}$, que se conoce como **derivada direccional** de $f$ en la dirección $\hat{u}$.
+
+::: {.callout-note title=Definición}
+La derivada direccional de $f$ en $(x_{0},y_{0})$ en la dirección de un vector unitario $\hat{u}=\left\langle a,b \right\rangle$ es
+$$
+  D_{u}f(x_{0},y_{0})=\lim_{h \to 0}\frac{f(x_{0}+ha, y_{0}+hb)-f(x_{0},y_{0})}{h}
+$$
+si ese límite existe.
+:::
+
+Con esta definición podemos ver que si $\hat{u} = \hat{i} = \left\langle 1,0 \right\rangle$, entonces $D_{i}f=f_{x}$, y que si $\hat{u}=\hat{j}=\left\langle 0,1 \right\rangle$, entonces $D_{j}f=f_{y}$. Osea que, en realidad, las derivadas parciales respecto de $y$ y $x$ son casos especiales de las derivadas direccionales.
+
+
+
+
+
+
+
+
+
+
 
 
 
