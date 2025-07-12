@@ -1455,7 +1455,9 @@ $$
 ## Teorema de Taylor
 El hermoso (horrible) teorema de Taylor también aparece en funciones de varias variables. Este teorema, al igual que en análisis I, lo podemos usar para aproximar funciones. La forma de calcularlo es muy parecida a cuando lo hacíamos con una sola variable, solo que ahora tenemos que tener en cuenta que estamos trabajando con varias variables.
 
-::: {.callout-note title=Definición}
+::: {.callout-warning title=Teorema icon=false}
+**Teorema de Taylor para funciones de dos variables**
+
 Sea $f: U \subset \mathbb{R}^{2} \to \mathbb{R}^{}$ una función diferenciable en el punto $P_{0}(x_{0},y_{0})$, podemos escribir el polinomio de Taylor de segundo orden como sigue
 $$
 f(x,y)=f(x_{0},y_{0})+f_{x}(x_{0},y_{0})\Delta x + f_{y}(x_{0},y_{0})\Delta y + \frac{1}{2}\left(\begin{bmatrix}
@@ -1518,7 +1520,9 @@ Cuando tenemos una función dada de forma implícita y queremos calcular sus der
 
 En esta @sec-implicita habíamos dicho que hay ocasiones en las que es imposible escribir una función que está en su forma implícita como una función explícita. En estos casos tenemos que usar la regla de la cadena sí o sí para calcular las derivadas parciales de la función y el **teorema de la función implícita** nos dice cuál es el procedimiento.
 
-::: {.callout-note title="Teorema de la función implícita"}
+::: {.callout-warning title=Teorema icon=false}
+**Teorema de la función implícita**
+
 Dada una función $F$ definida en una bola alrededor del punto $(a,b,c)$, donde se cumple que $F(a,b,c)=0$, $F_{z}(a,b,c)\neq 0$, y $F_{x}$, $F_{y}$ y $F_{z}$ son continuas en un disco $D \subseteq \mathbb{R}^{2}$, la ecuación $F(x,y,z)=0$ define a $z$ como una función de $(x,y)$ en el disco $D$, y las derivadas parciales de $z$ están dadas por la ecuación 
 $$
 \begin{aligned}
@@ -1593,15 +1597,638 @@ Si calculamos el límite cuando $h \to 0$, obtenemos la razón de cambio de $z$ 
 La derivada direccional de $f$ en $(x_{0},y_{0})$ en la dirección de un vector unitario $\hat{u}=\left\langle a,b \right\rangle$ es
 $$
   D_{u}f(x_{0},y_{0})=\lim_{h \to 0}\frac{f(x_{0}+ha, y_{0}+hb)-f(x_{0},y_{0})}{h}
-$$
+$${#eq-derivada-direccional}
 si ese límite existe.
 :::
 
 Con esta definición podemos ver que si $\hat{u} = \hat{i} = \left\langle 1,0 \right\rangle$, entonces $D_{i}f=f_{x}$, y que si $\hat{u}=\hat{j}=\left\langle 0,1 \right\rangle$, entonces $D_{j}f=f_{y}$. Osea que, en realidad, las derivadas parciales respecto de $y$ y $x$ son casos especiales de las derivadas direccionales.
 
+::: {.callout-warning title=Teorema icon=false}
+Si $f$ es una función diferenciable de $x$ e $y$, entonces la derivada direccional de $f$ en la dirección del vector unitario $\hat{u}=\left\langle a,b \right\rangle$ es
+$$
+  D_{u}f(x,y)=f_{x}(x,y)a+f_{y}(x,y)b
+$$
+:::
 
+Podemos demostrar el teorema anterior como sigue. Dado un punto fijo $(x_{0},y_{0})$, sea $g$ una función paramétrica de la recta tal que 
+$$
+g(t)=\begin{cases}
+  x=x_{0}+t\cdot a\\
+  y=y_{0}+t\cdot b
+\end{cases}
+$$
+Podemos decir que $g$ es una función compuesta por $f(x,y)$ de manera que $g(t)=f(x(t),y(t))$. Como $f$ es diferenciable, se puede aplicar la regla de la cadena para obtener
+$$
+  g'(t)=f_{x}(x,y)x'(t) + f_{y}(x,y)y'(t) = f_{x}(x,y)a + f_{y}(x,y)b
+$$
+Si $t=0$, entonces $x=x_{0}$ e $y=y_{0}$, por lo tanto
+$$
+  g'(0)=f_{x}(x_{0},y_{0})a + f_{y}(x_{0},y_{0})b
+$$
+De acuerdo con la definición @eq-derivada-direccional, también es cierto que 
+$$
+\begin{aligned}
+  g^{\prime}(0) &= \lim_{t \to 0}\frac{g(t)-g(0)}{t}\\
+  g'(0) &= \lim_{t \to 0}\frac{f(x_{0}+ta, y_{0}+tb) - f(x_{0},y_{0})}{t}
+\end{aligned}
+$$
+Así que queda demostrado que $D_{u}f(x,y)=f_{x}(x,y)a + f_{y}(x,y)b$.
 
+::: {.callout-tip title=Ejemplo}
+Hallar la derivada direccional de $f(x,y)=4-x^2-\frac{1}{4}y^2$ en el punto $(1,2)$ en la dirección de $\hat{u}=\left\langle \cos^{}(\frac{\pi}{3}),\sin^{}(\frac{\pi}{3}) \right\rangle$
 
+$$
+\begin{aligned}
+  D_{u}f(x,y) &= f_{x}(x,y)\cos^{}(\frac{\pi}{3}) + f_{y}(x,y)\sin^{}(\frac{\pi}{3})\\
+   &= (-2x)\cos^{}(\frac{\pi}{3}) + \left(-\frac{y}{2}\right)\sin^{}(\frac{\pi}{3})
+\end{aligned}
+$$
+Evaluando en el punto $(1,2)$ obtenemos
+$$
+  D_{u}f(1,2)=(-2)\left(\frac{1}{2}\right) + (-1)\left(\frac{\sqrt[]{3}}{2}\right) = -1-\frac{\sqrt[]{3}}{2}
+$$
+:::
+
+## El vector gradiente
+Del teorema anterior, podemos ver que la derivada direccional de una función se puede escribir como el producto punto de dos vectores:
+$$
+\begin{aligned}
+  D_{u}f(x,y) &= f_{x}(x,y)a + f_{y}(x,y)b\\
+   &= \left(f_{x}(x,y),f_{y}(x,y)\right)\cdot \left\langle a,b \right\rangle\\
+  D_{u}f(x,y) &= \left(f_{x}(x,y),f_{y}(x,y)\right)\cdot \hat{u}
+\end{aligned}
+$$
+
+El primer vector en este producto recibe el nombre de **gradiente** de $f$ y se denota como $\nabla f$.
+
+::: {.callout-note title=Definición}
+Dada una función $f:U \subset \mathbb{R}^{n} \to \mathbb{R}^{}$, podemos definir el gradiente de la función, y lo denotamos como $\nabla f$, como un vector cuyas componentes son las derivadas parciales de todas sus variables independientes.
+$$
+  \nabla f=\left(\frac{\partial f}{\partial x_{1}}, \frac{\partial f}{\partial x_{2}}, \dots ,\frac{\partial f}{\partial x_{n}}\right)
+$${#eq-gradiente}
+:::
+
+De esta manera, podemos escribir la derivada direccional de la siguiente manera
+$$
+  D_{u}f(x,y)=\nabla f \cdot \hat{u}
+$$
+
+::: {.callout-tip title=Ejemplo}
+Hallar la derivada direccional de $f(x,y)=3x^2-2y^2$ en el punto $(-\frac{3}{4},0)$ en la dirección de $P(-\frac{3}{4}, 0)$ a $Q(0,1)$.
+
+- Busquemos primero el vector unitario $\hat{u}$ que tiene dirección $PQ$
+$$
+\begin{aligned}
+  \hat{u} &= \frac{\vec{PQ}}{\lVert\vec{PQ}\rVert} = \frac{(\frac{3}{4},1)}{\sqrt[]{\left(\frac{3}{4}\right)^2+1^2}}\\
+  \hat{u} &= \frac{1}{5}(3,4)
+\end{aligned}
+$$
+
+- Ahora buscamos el vector gradiente de $f$
+$$
+  \nabla f = \left(6x,-4y\right)
+$$
+  Y lo evaluamos en el punto $(-\frac{3}{4},0)$
+  $$
+    \nabla f\left(\frac{3}{4},0\right)=\left(-\frac{9}{2},0\right)
+  $$
+
+- Y con todo esto ya podemos calcular la derivada direccional
+  $$
+  \begin{aligned}
+  D_{u}f\left(\frac{3}{4},0\right) &= \nabla f\left(\frac{3}{4},0\right)\cdot \hat{u}\\
+   &= \left(-\frac{9}{2}, 0\right) \cdot \left(\frac{3}{4},\frac{4}{5}\right)\\
+  D_{u}f\left(\frac{3}{4},0\right) &= -\frac{27}{10}
+  \end{aligned}
+  $$
+:::
+
+### Maximización de la derivada direccional
+Como la derivada direccional $D_{u}f(\vec{x})$ es el producto escalar entre dos vectores $\nabla f(\vec{x})\cdot \hat{u}$, el **valor máximo** de la derivada direccional lo vamos a obtener cuando al dirección de $\nabla f(\vec{x})$ sea la misma que el versor $\hat{u}$. Esto es porque cuando dicho vectores tienen la misma dirección el producto escalar dá su valor máximo ya que el $\cos^{}(\theta)=1$. Cuando esto ocurre, el valor de la derivada direccional es el módulo del vector gradiente $D_{u}f(\vec{x})=\lVert\nabla f(\vec{x})\rVert$.
+
+::: {.callout-tip title=Ejemplo}
+La temperatura en grados Celsius en la superficie de una placa metálica es $T(x,y)=20-4x^2-y^2$, donde $x$ e $y$ se miden en centímetros. ¿En qué dirección a partir de $(2,-3)$ aumenta más rápido la temperatura? ¿Cuál es la tasa o ritmo de crecimiento?
+
+Lo que nos pide la consigna es primero obtener la dirección de máximo creciemiento de la función $T$, que sabemos que es la dirección de $\nabla f$, y luego nos pide obtener la derivada direccional máxima en el punto $(2,-3)$.
+
+- Busquemos el vector gradiente para encontrar la dirección de máximo crecimiento de $T$.
+  $$
+    \nabla T = \left(-8x, -2y\right)  \implies \nabla T(2,-3) = \left(-16,6\right)
+  $$
+  Para obtener la dirección normalizamos el vector gradiente en el punto $(2,-3)$.
+  $$
+    \hat{u} = \frac{1}{\sqrt[]{292}}\left(-16,6\right)
+  $$
+- La tasa de crecimiento es el valor de la derivada direccional máxima, que es la norma del vector gradiente en el punto $(2,-3)$.
+  $$
+    \lVert\nabla T(2,-3)\rVert = \sqrt[]{292}
+  $$
+:::
+
+## Planos tangentes a superficies
+Una de las propiedades importantes del vector gradiente es que siempre es perpendicular a la curva o superficie de nivel (dependiendo de la dimensión del dominio de la función). Esto lo podemos demostrar de la siguiente manera.
+
+```{python}
+#| label: fig-plano-tangente
+#| fig-cap: El vector gradiente es normal a la superficie de nivel $F(x,y,z) = x^2 + y^2 + z^2 = 4$
+
+fig = go.Figure()
+
+# Voy a graficar una esfera, esta conviene graficarla en coordenadas esfericas
+# porque sino hay problemas con valores chicos en la raiz
+
+# Coordenadas esféricas
+r = 2
+theta = np.linspace(0, np.pi/2, 50)
+phi = np.linspace(0, np.pi/2, 50)
+theta, phi = np.meshgrid(theta, phi)
+
+# Paso a coordenadas cartesianas
+x = r*np.sin(phi)*np.cos(theta)
+y = r*np.sin(phi)*np.sin(theta)
+z = r*np.cos(phi)
+
+# Superficie
+fig.add_trace(go.Surface(
+  x=x, y=y, z=z,
+  colorscale="Viridis",
+  opacity=0.6,
+  showscale=False
+))
+
+# Curva C perteneciente a la superficie S
+r = np.sqrt(3)                      # radio de la intersección de la esfera con x=1
+theta = np.linspace(0, np.pi/2, 50)
+y = r * np.cos(theta)
+z = r * np.sin(theta)
+x = np.full_like(y, 1)
+
+fig.add_trace(go.Scatter3d(
+  x=x, y=y, z=z,
+  mode="lines",
+  line=dict(color="red", width=4),
+  visible=True,
+  name="Curva $C=r(t)$"
+))
+
+# Recta derivada parcial en y
+x0, y0 = 1, 1
+z0 = np.sqrt(4 - x0**2 - y0**2)
+df_dy = -y0/np.sqrt(4 - x0**2 - y0**2)
+y = np.linspace(0, 2.5, 20)
+x = np.full_like(y, 1)
+z = z0 + df_dy*(y - y0)
+fig.add_trace(go.Scatter3d(
+  x=x, y=y, z=z,
+  mode="lines",
+  line=dict(color="cyan", width=4),
+  name="$r'(0)$",
+  visible=True,
+))
+
+# Vector gradiente de la superficie
+# Coordenadas del origen del vector
+x = 1
+y = 1
+z = np.sqrt(2)
+# Componentes del vector
+u = (-x)/np.sqrt(4 - x**2 - y**2)
+v = (-y)/np.sqrt(4 - x**2 - y**2)
+w = -1
+# Grafico el vector como un cono
+fig.add_trace(go.Cone(
+  x=[x], y=[y], z=[z],
+  u=[u], v=[v], w=[w],
+  showscale=False,
+  anchor="tail",
+  name="$\\nabla S$",
+  colorscale=[[0, "blue"], [1, "blue"]],
+))
+
+# Punto (1,1)
+x = 1
+y = 1
+z = np.sqrt(2)
+fig.add_trace(go.Scatter3d(
+    x=[x], y=[y], z=[z],
+    mode='markers+text',
+    marker=dict(size=4, color='black'),
+    showlegend=False,
+))
+
+# Ajusto los límites de los ejes
+fig.update_layout(
+  scene=dict(
+    xaxis=dict(range=[0, 2.5]),
+    yaxis=dict(range=[0, 2.5]),
+    zaxis=dict(range=[0, 2.5]),
+    aspectmode="cube",
+    annotations=[
+      dict(
+        showarrow=False,
+        x=1, y=2, z=1,
+        text="$r'(0)$",
+        font=dict(
+          color="cyan",
+          size=14,
+          weight="bold",
+        )
+      ),
+      dict(
+        showarrow=False,
+        x=1, y=0.5, z=2,
+        text="$C=r(t)$",
+        font=dict(
+          color="red",
+          size=14,
+          weight="bold"
+        )
+      ),
+      dict(
+        x=1, y=1, z=1.6,
+        ax=0, ay=-50,
+        arrowcolor="black",
+        arrowhead=1,
+        text="$P_{0}$",
+        xanchor="left",
+        font=dict(
+          color="black",
+          size=14,
+          weight="bold"
+        )
+      ),
+      dict(
+        showarrow=False,
+        x=1.5, y=0.5, z=np.sqrt(4-1.5**2-0.5**2),
+        text="$S$",
+        font=dict(
+          color="green",
+          size=14,
+          weight="bold"
+        )
+      ),
+     dict(
+        x=1, y=1, z=np.sqrt(2),
+        ax=-50, ay=0,
+        arrowcolor="blue",
+        arrowhead=1,
+        text="$\\nabla F$",
+        font=dict(
+          color="blue",
+          size=14
+        )
+      )
+    ]
+  )
+)
+```
+
+Supongamos que $S$ es una superficie de nivel con ecuación $F(x,y,z)=k$, y sea $P_{0}(x_{0},y_{0},z_{0})$ un punto en $S$. Sea $C$ cualquier curva de la superficie $S$ que pasa por el punto $P_{0}$. La función de la cruva $C$ la podemos escribir en su forma paramétrica de manera que $C=r(t)=\left(x(t),y(t),z(t)\right)$. Sea $t_{0}$ el valor paramétrico correspondiente a $P_{0}$; es decir, $r(t_{0})=\left(x_{0},y_{0},z_{0}\right)$. Como $C$ reside en $S$, cualquier punto $\left(x(t), y(t), z(t)\right)$, debe satisfacer la ecuación de $S$, es decir
+$$
+  F\left(x(t),y(t),z(t)\right)=k
+$$
+
+Si $x$, $y$ y $z$ son funciones derivables de $t$, y $F$ también es derivable, podemos derivar ambos lados de la ecuación respecto de $t$ usando la regla de la cadena como sigue:
+$$
+  \frac{\partial F}{\partial x}\frac{dx}{dt} + \frac{\partial F}{\partial y}\frac{dy}{dt} + \frac{\partial F}{\partial z}\frac{dz}{dt} = 0
+$${#eq-derivada-Ft}
+
+Pero habíamos visto recién que $\left(F_{x}, F_{y}, F_{z}\right)$ era el vector de gradiente de $F$, y también sabemos que $r'(t)=\left(x'(t), y'(t), z'(t)\right)$ es tangente a la superficie $S$. Podemos expresar la @eq-derivada-Ft de la siguiente manera
+$$
+  \left(F_{x}, F_{y}, F_{z}\right)\cdot \left(\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right) = 0
+$$
+$$
+  \nabla F\cdot r'(t) = 0
+$$
+y analizarla en $t=t_{0}$
+$$
+  \nabla F(x_{0},y_{0},z_{0})\cdot r'(t_{0}) = 0
+$${#eq-prod-gradiente-derivada}
+
+La @eq-prod-gradiente-derivada establece que el vector gradiente en $P_{0}$ dado por $\nabla F(x_{0},y_{0},z_{0})$, es perpendicular al vector tangente $r'(t_{0})$, el cual es también perpendicular a cualquier curva $C$ en $S$ que pase por $P_{0}$. Osea que podemos afirmar que, si $\nabla F\neq \vec{O}$, entonces es perpendicular a la superficie $S$, por lo que es perpendicular al plano tangente a $S$ en el punto $P_{0}$. En otras palabras, el plano tangente a la superficie de nivel $F(x,y,z)=k$ en el punto $P_{0}$ es aquel cuyo vector normal es $\nabla F(x_{0},y_{0},z_{0})$ y pasa por el punto $P_{0}$.
+$$
+  \nabla F(x_{0},y_{0},z_{0})\cdot \vec{P_{0}P} = 0 \text{Ecuación del plano tangente a $S$}
+$$
+
+En el caso especial que la ecuación de una superficie $S$ sea de la forma $z=f(x,y)$, podemos definir la ecuación como 
+$$
+  F(x,y,z)=f(x,y)-z=0
+$$
+y cosiderarla como una superficie de nivel con $k=0$. De esta manera
+$$
+\begin{aligned}
+  F_{x}(x_{0},y_{0},z_{0} &= f_{x}(x_{0},y_{0})\\
+  F_{y}(x_{0},y_{0},z_{0} &= f_{y}(x_{0},y_{0})\\
+  F_{z}(x_{0},y_{0},z_{0} &= -1
+\end{aligned}
+$$
+
+::: {.callout-tip title=Ejemplo}
+Hallar la ecuación del plano tangente y la recta normal a la superficie $z=e^{3x}\sin^{}(3y)$ en el punto $P(0,\frac{\pi}{6},1)$
+
+- Esta ecuación está dada en la forma $z=f(x,y)$, así que la vamos a considerar como la superficie de nivel con $k=0$, de manera que $F(x,y,z)=e^{3x}\sin^{}(3y)-z=0$.
+
+- Para encontrar la ecuación del plano todo lo que tenemos que hacer es encontrar el vector gradiente de $F$.
+$$
+\begin{aligned}
+  F_{x}(x,y,z) = f_{x}(x,y) &= 3e^{3x}\sin^{}(3y) \implies F_{x}(0, \frac{\pi}{3}, 1) = 3\\
+  F_{y}(x,y,z) = f_{y}(x,y) &= -3e^{3x}\cos^{}(3y) \implies F_{y}(0, \frac{\pi}{3}, 1) = 0\\
+  F_{z} &= -1
+\end{aligned}
+$$
+
+- Tenemos entonces el vector normal al plano, y un punto que pertenece al plano así que podemos encontrar su ecuación
+$$
+\begin{aligned}
+  \pi &: \nabla F(0,\frac{\pi}{3},1)\cdot \left(x-0, y-\frac{\pi}{3}, z-1\right) = 0\\
+   &: (3, 0, -1)\cdot (x-0,y-\frac{\pi}{3},z-1) = 0\\
+  \pi &: 3x - z = -1
+\end{aligned}
+$$
+:::
+
+## Máximos y mínimos
+::: {.callout-note title=Definición}
+Una función de dos variables tiene un **máximo local** en $(a,b)$ si $f(x,y)\leq f(a,b)$ para todo $(x,y)$ en un disco abierto alrededor de $(a,b)$. El número $f(a,b)$ se llama **valor máximo local**.
+
+Si $f(x,y)\geq f(a,b)$ para todo $(x,y)$ en un disco abierto de $(a,b)$, $f$ tiene un **mínimo local** en $(a,b)$ y $f(a,b)$ es un **mínimo local**.
+:::
+
+Si en la definición anterior las desigualdades son vállidas para todos los puntos $(x,y)$ del dominio de $f$, entonces $f$ tiene un **máximo absoluto** (o **mínimo absoluto**) en $(a,b)$.
+
+Si $f$ tiene un máximo o un mínimo local en $(a,b)$ y las derivadas parciales existen, entonces $f_{x}(a,b)=0$ y $f_{y}(a,b)=0$. En otras palabras, si hay un máximo o un mínimo en $(a,b)$, el gradiente de $f$ es el vector nulo $\nabla f(a,b)=\vec{O}$.
+
+Un **punto crítico** de $f$ es cuando $f_{x}(a,b)=0$ y $f_{y}(a,b)=0$, o si al menos una de las derivadas parciales no existe. Todos los máximos y mínimos de $f$ son puntos críticos, pero no todos los puntos críticos son máximos o mínimos de $f$.
+
+::: {.callout-tip title=Ejemplo}
+Sea $f(x,y)=x^2+y^2-2x-6y+14$, calcular los extremos de la función.
+
+- Primero calculamos las derivadas parciales
+$$
+\begin{aligned}
+  f_{x}(x,y) = 2x-2 && f_{y}(x,y) = 2y-6
+\end{aligned}
+$$
+
+- Ahora tenemos que buscar los puntos críticos de la función. Para eso igualamos a cero las derivadas parciales y resolvemos el sistema de ecuaciónes
+$$
+  \left\{
+  \begin{aligned}
+    2x - 2 = 0\\
+    2y - 6 = 0
+  \end{aligned}
+  \right. \implies \left\{
+  \begin{aligned}
+    x = 1\\
+    y = 3
+  \end{aligned}
+  \right.
+$$
+  El único punto crítico que encontramos es el $(1,3)$.
+
+- Ahora evaluamos la función en el punto crítico. Conviene completar los cuadrados para hacer los cálculos mas sencillos
+$$
+  f(x,y)=(x-1)^2+(y-3)^2+4
+$$
+Al evaluar la función en el punto $(1,y)$ nos queda $(y-3)^2\geq 0,  \forall y \in \mathbb{R}^{}$. Cuando evaluamos en el punto $(x,3)$ obetenemos $(x-1)^2\geq 0,  \forall x \in \mathbb{R}^{}$. Esto nos dice que la función crece en la dirección de $x$ y también en la dirección de $y$ a partir del punto $(1,3)$, por lo que $f(1,3)=4$ es mínimo absoluto de $f$. 
+
+```{python}
+#| label: fig-ej1-extremos
+#| fig-cap: Visualización de la función $f(x,y)=(x-1)^2+(y-3)^2+4$ y su punto crítico en $f(1,3)$.
+
+fig = go.Figure()
+
+x = np.linspace(-3, 5)
+y = np.linspace(0, 6)
+x, y = np.meshgrid(x, y)
+z = (x - 1)**2 + (y - 3)**2 + 4
+
+fig.add_trace(go.Surface(
+  x=x, y=y, z=z,
+  colorscale="Viridis",
+  showscale=False,
+  opacity=0.6,
+  cmin=4,
+  cmax=13,
+))
+
+fig.add_trace(go.Scatter3d(
+  x=[1], y=[3], z=[4],
+  mode='markers+text',
+  marker=dict(size=4, color='red'),
+  showlegend=False,
+))
+
+fig.update_layout(
+  scene=dict(
+    xaxis=dict(range=[-3, 5]),
+    yaxis=dict(range=[0, 6]),
+    zaxis=dict(range=[0, 13]),
+    annotations=[
+      dict(
+        x=1, y=3, z=4,
+        text="$P(1,3,4)$",
+        font=dict(color="red"),
+      ),
+    ]
+  )
+)
+```
+:::
+
+::: {.callout-tip title=Ejemplo}
+Sea la función $f(x,y)=y^2-x^2$, calcular sus valores extremos.
+
+$$
+\begin{aligned}
+  f_{x}(x,y) = -2x && f_{y}(x,y) = 2y
+\end{aligned}
+$$
+
+Las derivadas se hacen cero cuando $x=y=0$, así que tenemos un solo punto crítico en el $(0,0)$.
+Sin embargo, al analizar la función en ese punto vemos que en un sentido crece, y en otro decrece: $f(0,y)=y^2\geq 0,  \forall y \in \mathbb{R}^{}$, pero $f(x,0)=-x^2\leq 0, \forall x \in \mathbb{R}^{}$. En consecuencia, todos los discos alrededor del punto $(0,0)$ contienen puntos donde $f$ adopta valores positivos, así como puntos en los que $f$ adopta valores negativos. Por lo tanto, $f(0,0)=0$ no puede ser ni un máximo ni un mínimo de $f$. Es un **punto silla**.
+
+```{python}
+#| label: fig-ej2-extremos
+#| fig-cap: Visualización de la función $f(x,y)=y^2-x^2$ y su punto silla en $f(0,0)$.
+
+fig = go.Figure()
+
+x = np.linspace(-5, 5)
+y = np.linspace(-5, 5)
+x, y = np.meshgrid(x, y)
+z = y**2 - x**2
+
+fig.add_trace(go.Surface(
+  x=x, y=y, z=z,
+  opacity=0.6,
+  showscale=False,
+  colorscale="Viridis"
+))
+
+fig.add_trace(go.Scatter3d(
+  x=[0], y=[0], z=[0],
+  mode="markers+text",
+  marker=dict(size=4, color="red"),
+  showlegend=False
+))
+
+fig.update_layout(
+  scene=dict(
+    annotations=[
+      dict(
+        x=0, y=0, z=0,
+        text="$P(0,0,0)$",
+        font=dict(color="red"),
+      )
+    ]
+  )
+)
+```
+:::
+
+En los ejemplos que vimos recién es fácil determinar los extremos relativos porque cada una de las funciones estaba dada, o se podía expresar, en forma de cuadrado perfecto. Para funciones mas complicadas existen métodos, como el de la segunda derivada, para determinar los extremos de una función.
+
+::: {.callout-warning title=Teorema icon=false}
+**Teorema del criterio de las segundas derivadas parciales**
+
+Sea $f$ una función con segundas derivadas parciales continuas en una región abierta que contiene un punto $(a,b)$ para el cual
+$$
+\begin{aligned}
+  f_{x}(a,b) = 0  && \text{y} && f_{y}(a,b)=0
+\end{aligned}
+$$
+Para buscar los extremos relativos de $f$, podemos armar el **Hessiano** en el punto $(a,b)$ ($Hf(a,b)$) y calcular su determinante.
+
+- Si $\det{Hf} > 0$ y $f_{xx}(a,b)>0$, entonces $f(a,b)$ es un mínimo local.
+- Si $\det{Hf} > 0$ y $f_{xx}(a,b)<0$, entonces $f(a,b)$ es un máximo local.
+- Si $\det{Hf} < 0$, entonces $f(a,b)$ es un punto silla.
+- Si $\det{Hf} = 0$, entonces este método no sirve ya que no aporta información útil.
+:::
+
+::: {.callout-tip title=Ejemplo}
+Encontrar los valores máximos y mínimos locales, y los puntos silla de la función $f(x,y)=x^4 + y^4 - 4xy + 1$.
+
+- Primero buscamos los puntos críticos
+$$
+\begin{aligned}
+  f_{x}(x,y) = 4x^3 - 4y && f_{y}(x,y) = 4y^3 - 4x
+\end{aligned}
+$$
+  Al igualar a cero las derivadas parciales se obtiene el siguiene sistema de ecuaciones:
+  $$
+    \left\{
+    \begin{aligned}
+      4(x^3 - y) = 0\\
+      4(y^3 - x) = 0
+    \end{aligned}
+    \right. \implies \left\{
+    \begin{aligned}
+      x^3 = y\\
+      y^3 = x
+    \end{aligned}
+    \right. \implies (x^3)^3 - x = 0
+  $$
+  $$
+     \implies 0 = x(x^8 - 1) = x(x^4 - 1)(x^4 - 1) = x(x^2 - 1)(x^2 + 1)(x^4 - 1)
+  $$
+  De manera que hay tres raíces reales: $x=\left\{0, 1, -1\right\}$. Los tres puntos críticos son $(0,0)$, $(1,1)$, y $(-1,-1)$. Fijarse que los puntos en los que $x$ e $y$ tienen distinos valores o distintos signos se descartan porque sabemos que $x^3=y$.
+
+- Calculemos ahora las segundas derivadas para poder armar el Hessiano:
+  $$
+  \begin{aligned}
+    f_{xx}(x,y) = 12x^2 && f_{xy}(x,y) = -4 && f_{yx}(x,y) = -4 && f_{yy}(x,y) = 12y^2
+  \end{aligned}
+  $$
+
+  El Hessiano y su determinante nos quedan así:
+  $$
+  \begin{aligned}
+    Hf(x,y) = \begin{bmatrix}
+      12x^2 & -4\\
+      -4 & 12y^2
+    \end{bmatrix} && ,\det{Hf(x,y)} = 144x^2y^2 - 16
+  \end{aligned}
+  $$
+  Cuando analizamos la $\det{Hf}$ en el punto $(0,0)$ obtenemos $\det{Hf(0,0)} = -16 < 0$, y el teorema de la segunda derivada nos dice que el $f(0,0)=$ es un punto silla.
+
+  Si analizamos la $\det{Hf}$ en el punto $(1,1)$ obtenemos $\det{Hf(1,1)} = 128 > 0$. Tenemos que mirar entonces el valor de $f_{xx}(1,1)$, que es igual a $12$, así que según el teorema, el punto $f(1,1)=12$ es un mínimo local. En el punto $(1,1)$ la determinante del Hessiano nos vuelve a dar $128$, y $f_{xx}(1,1)=12$, así que $f(-1,-1)=12$ es también un mínimo local.
+
+```{python}
+#| label: fig-ej-teorema-2da-derivada
+#| fig-cap: Visualización de la función $f(x,y)=x^4+y^4-4xy+2$ y sus puntos críticos.
+
+fig = go.Figure()
+
+x = np.linspace(-2, 2, 100)
+y = np.linspace(-2, 2, 100)
+x, y = np.meshgrid(x, y)
+z = x**4 + y**4 - 4*x*y + 2
+
+fig.add_trace(go.Surface(
+  x=x, y=y, z=z,
+  colorscale="Viridis",
+  opacity=0.6,
+  showscale=False,
+  cmin=0,
+  cmax=5
+))
+
+fig.add_trace(go.Scatter3d(
+  x=[-1, 0, 1], y=[-1, 0, 1], z=[0, 2, 0],
+  mode="markers+text",
+  marker=dict(size=4, color="red")
+))
+
+fig.update_layout(
+  scene=dict(
+    zaxis=dict(range=[0,5]),
+    annotations=[
+      dict(
+        x=-1, y=-1, z=0,
+        text="$P(-1,-1,0)$",
+        font=dict(
+          color="red",
+        )
+      ),
+      dict(
+        x=1, y=1, z=0,
+        text="$P(1,1,0)$",
+        font=dict(
+          color="red",
+        )
+      ),
+      dict(
+        x=0, y=0, z=2,
+        text="$P(0,0,2)$",
+        font=dict(
+          color="red",
+        )
+      ),
+    ]
+  )
+)
+```
+:::
+
+### Valores máximos y mínimos absolutos
+Para una función $f$ de una variable, el teorema de los vlaores extremos establece que si $f$ es continua en un intervalo cerrado $\left[a,b\right]$, $f$ tiene un valor mínimo absoluto y un máximo absoluto. Esos valores se determinan evaluando $f$ no solo en los puntos críticos, sino también en los puntos extremos $a$ y $b$.
+
+Lo mismo que pasa en las funciones escalares, pasa para las funciones de varias variables.
+
+::: {.callout-warning title=Teorema icon=false}
+**Teorema de los valores extremos para funciones de dos variables**
+
+Si $f$ es continua en un conjunto cerrado y acotado $D$ en $\mathbb{R}^{2}$, entonces $f$ alcanza un valor máximo absoluto $f(x_{1}, y_{1})$ y un valor mínimo absoluto $f(x_{2},y_{2})$ en algunos puntos en $D$.
+:::
+
+Podemos entonces extender el teorema de los valores extremos relativos
+
+Para determinar los valores máximo y mínimo absolutos de una función continua $f$ en un conjunto cerrado y acotado $D$:
+
+1. Determinamos los valores de $f$ en los puntos críticos de $f$ en $D$.
+2. Determinamos las valores extremos de $f$ en la frontera de $D$.
+3. El mayor de los valores de los pasos 1 y 2 es el valor máximo absoluto; el menor de esos valores es el mínimo absoluto.
 
 
 
