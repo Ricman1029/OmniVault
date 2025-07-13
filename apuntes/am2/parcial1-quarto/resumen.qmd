@@ -1730,156 +1730,129 @@ Una de las propiedades importantes del vector gradiente es que siempre es perpen
 
 ```{python}
 #| label: fig-plano-tangente
-#| fig-cap: El vector gradiente es normal a la superficie de nivel $F(x,y,z) = x^2 + y^2 + z^2 = 4$
+#| fig-cap: El vector gradiente es normal a la superficie de nivel $F(x,y,z) = k$
 
-fig = go.Figure()
-
-# Voy a graficar una esfera, esta conviene graficarla en coordenadas esfericas
-# porque sino hay problemas con valores chicos en la raiz
-
-# Coordenadas esféricas
-r = 2
-theta = np.linspace(0, np.pi/2, 50)
-phi = np.linspace(0, np.pi/2, 50)
+# Superficie en el primer octante
+theta = np.linspace(0, np.pi/2, 20)  # Restrict to first octant
+phi = np.linspace(0, np.pi/2, 20)
 theta, phi = np.meshgrid(theta, phi)
+x = 2 * np.sin(theta) * np.cos(phi)
+y = 2 * np.sin(theta) * np.sin(phi)
+z = 2 * np.cos(theta)
 
-# Paso a coordenadas cartesianas
-x = r*np.sin(phi)*np.cos(theta)
-y = r*np.sin(phi)*np.sin(theta)
-z = r*np.cos(phi)
-
-# Superficie
-fig.add_trace(go.Surface(
+# Plot de la superficie
+surface = go.Surface(
   x=x, y=y, z=z,
-  colorscale="Viridis",
-  opacity=0.6,
-  showscale=False
-))
-
-# Curva C perteneciente a la superficie S
-r = np.sqrt(3)                      # radio de la intersección de la esfera con x=1
-theta = np.linspace(0, np.pi/2, 50)
-y = r * np.cos(theta)
-z = r * np.sin(theta)
-x = np.full_like(y, 1)
-
-fig.add_trace(go.Scatter3d(
-  x=x, y=y, z=z,
-  mode="lines",
-  line=dict(color="red", width=4),
-  visible=True,
-  name="Curva $C=r(t)$"
-))
-
-# Recta derivada parcial en y
-x0, y0 = 1, 1
-z0 = np.sqrt(4 - x0**2 - y0**2)
-df_dy = -y0/np.sqrt(4 - x0**2 - y0**2)
-y = np.linspace(0, 2.5, 20)
-x = np.full_like(y, 1)
-z = z0 + df_dy*(y - y0)
-fig.add_trace(go.Scatter3d(
-  x=x, y=y, z=z,
-  mode="lines",
-  line=dict(color="cyan", width=4),
-  name="$r'(0)$",
-  visible=True,
-))
-
-# Vector gradiente de la superficie
-# Coordenadas del origen del vector
-x = 1
-y = 1
-z = np.sqrt(2)
-# Componentes del vector
-u = (-x)/np.sqrt(4 - x**2 - y**2)
-v = (-y)/np.sqrt(4 - x**2 - y**2)
-w = -1
-# Grafico el vector como un cono
-fig.add_trace(go.Cone(
-  x=[x], y=[y], z=[z],
-  u=[u], v=[v], w=[w],
+  opacity=0.5,
+  colorscale='Viridis',
   showscale=False,
+  name='Superficie F(x,y,z)'
+)
+
+# Un punto P0 que pertenece a la superficie
+point = go.Scatter3d(
+  x=[1], y=[1], z=[np.sqrt(2)],
+  mode='markers',
+  marker=dict(size=5, color='black'),
+  name='$P_{0}(x_{0},y_{0},z_{0})$'
+)
+
+# Curva sobre C sobre la superficie S en forma esférica, que pasa por el punto P0
+phi = np.linspace(0, np.pi/2, 20)
+theta = np.full_like(phi, np.pi/4)
+curva_x = 2 * np.sin(phi) * np.cos(theta)
+curva_y = 2 * np.sin(phi) * np.sin(theta)
+curva_z = 2 * np.cos(phi)
+curva = go.Scatter3d(
+  x=curva_x, y=curva_y, z=curva_z,
+  mode='lines',
+  line=dict(color='red', width=4),
+  name='$r(t)=(x(t),y(t),z(t))$'
+)
+
+# Recta tangente a la curva C
+s = np.linspace(-0.5, 0.5, 20)
+tangent_x = 1 + s
+tangent_y = 1 + s
+tangent_z = np.sqrt(2) - s * np.sqrt(2)
+tangent = go.Scatter3d(
+  x=tangent_x, y=tangent_y, z=tangent_z,
+  mode='lines',
+  line=dict(color='blue', width=4),
+  name="Recta $r'(t)$"
+)
+
+# Gradient vector at (1, 1, sqrt(2))
+gradient = go.Cone(
+  x=[1], y=[1], z=[np.sqrt(2)],
+  u=[2], v=[2], w=[2 * np.sqrt(2)],
+  sizemode='absolute',
   anchor="tail",
-  name="$\\nabla S$",
-  colorscale=[[0, "blue"], [1, "blue"]],
-))
+  sizeref=0.5,
+  colorscale="Reds",
+  opacity=0.6,
+  showscale=False,
+  showlegend=True,
+  name='Vector gradiente'
+)
 
-# Punto (1,1)
-x = 1
-y = 1
-z = np.sqrt(2)
-fig.add_trace(go.Scatter3d(
-    x=[x], y=[y], z=[z],
-    mode='markers+text',
-    marker=dict(size=4, color='black'),
-    showlegend=False,
-))
-
-# Ajusto los límites de los ejes
-fig.update_layout(
-  scene=dict(
-    xaxis=dict(range=[0, 2.5]),
-    yaxis=dict(range=[0, 2.5]),
-    zaxis=dict(range=[0, 2.5]),
-    aspectmode="cube",
-    annotations=[
-      dict(
-        showarrow=False,
-        x=1, y=2, z=1,
-        text="$r'(0)$",
-        font=dict(
-          color="cyan",
-          size=14,
-          weight="bold",
-        )
-      ),
-      dict(
-        showarrow=False,
-        x=1, y=0.5, z=2,
-        text="$C=r(t)$",
-        font=dict(
-          color="red",
-          size=14,
-          weight="bold"
-        )
-      ),
-      dict(
-        x=1, y=1, z=1.6,
-        ax=0, ay=-50,
-        arrowcolor="black",
-        arrowhead=1,
-        text="$P_{0}$",
-        xanchor="left",
-        font=dict(
-          color="black",
-          size=14,
-          weight="bold"
-        )
-      ),
-      dict(
-        showarrow=False,
-        x=1.5, y=0.5, z=np.sqrt(4-1.5**2-0.5**2),
-        text="$S$",
-        font=dict(
-          color="green",
-          size=14,
-          weight="bold"
-        )
-      ),
-     dict(
-        x=1, y=1, z=np.sqrt(2),
-        ax=-50, ay=0,
-        arrowcolor="blue",
-        arrowhead=1,
-        text="$\\nabla F$",
-        font=dict(
-          color="blue",
-          size=14
-        )
-      )
-    ]
+# Annotations for labeling
+annotations = [
+  # Sphere label
+  dict(
+    x=1.5, y=0.5, z=np.sqrt(4 - 1.5**2 - 0.5**2),
+    text="Superficie F(x,y,z)",
+    showarrow=True,
+    arrowhead=2,
+    ax=20, ay=-20
+  ),
+  # Point label
+  dict(
+    x=1, y=1, z=np.sqrt(2),
+    text="P\u2080(x\u2080,y\u2080,z\u2080)", # \u2080 es equivalente a _0
+    showarrow=True,
+    arrowhead=2,
+    ax=20, ay=-20
+  ),
+  # Curve label
+  dict(
+    x=0.5, y=0.5, z=np.sqrt(3.5),
+    text="r(t\u2080)=(x(t\u2080),y(t\u2080),z(t\u2080))",
+    font=dict(color="red"),
+    showarrow=True,
+    arrowhead=2,
+    ax=20, ay=-20
+  ),
+  # Tangent line label
+  dict(
+    x=1.5, y=1.5, z=np.sqrt(2) - 0.5 * np.sqrt(2),
+    text="Recta r'(t\u2080)",
+    font=dict(color="blue"),
+    showarrow=True,
+    arrowhead=2,
+    ax=20, ay=-20
+  ),
+  # Gradient vector label
+  dict(
+    x=5/4, y=5/4, z=5*np.sqrt(2)/4,
+    text="Vector gradiente de F",
+    font=dict(color="chocolate"),
+    showarrow=True,
+    arrowhead=2,
+    ax=20, ay=-20
   )
+]
+
+# Create figure
+fig = go.Figure(data=[surface, point, curva, tangent, gradient])
+fig.update_layout(
+    scene=dict(
+        aspectmode='cube',
+        xaxis=dict(range=[0, 2.5]),
+        yaxis=dict(range=[0, 2.5]),
+        zaxis=dict(range=[0, 2.5]),
+        annotations=annotations
+    ),
 )
 ```
 
@@ -2027,8 +2000,9 @@ fig.update_layout(
     annotations=[
       dict(
         x=1, y=3, z=4,
-        text="$P(1,3,4)$",
+        text="P(1,3,4)",
         font=dict(color="red"),
+        ay=50
       ),
     ]
   )
@@ -2078,7 +2052,7 @@ fig.update_layout(
     annotations=[
       dict(
         x=0, y=0, z=0,
-        text="$P(0,0,0)$",
+        text="P(0,0,0)",
         font=dict(color="red"),
       )
     ]
@@ -2150,7 +2124,7 @@ $$
     \end{bmatrix} && ,\det{Hf(x,y)} = 144x^2y^2 - 16
   \end{aligned}
   $$
-  Cuando analizamos la $\det{Hf}$ en el punto $(0,0)$ obtenemos $\det{Hf(0,0)} = -16 < 0$, y el teorema de la segunda derivada nos dice que el $f(0,0)=$ es un punto silla.
+  Cuando analizamos la $\det{Hf}$ en el punto $(0,0)$ obtenemos $\det{Hf(0,0)} = -16 < 0$, y el teorema de la segunda derivada nos dice que el $f(0,0)=2$ es un punto silla.
 
   Si analizamos la $\det{Hf}$ en el punto $(1,1)$ obtenemos $\det{Hf(1,1)} = 128 > 0$. Tenemos que mirar entonces el valor de $f_{xx}(1,1)$, que es igual a $12$, así que según el teorema, el punto $f(1,1)=12$ es un mínimo local. En el punto $(1,1)$ la determinante del Hessiano nos vuelve a dar $128$, y $f_{xx}(1,1)=12$, así que $f(-1,-1)=12$ es también un mínimo local.
 
@@ -2158,49 +2132,49 @@ $$
 #| label: fig-ej-teorema-2da-derivada
 #| fig-cap: Visualización de la función $f(x,y)=x^4+y^4-4xy+2$ y sus puntos críticos.
 
-fig = go.Figure()
-
-x = np.linspace(-2, 2, 100)
-y = np.linspace(-2, 2, 100)
+x = np.linspace(-2, 2)
+y = np.linspace(-2, 2)
 x, y = np.meshgrid(x, y)
 z = x**4 + y**4 - 4*x*y + 2
+z = np.minimum(z, 5.2)
 
-fig.add_trace(go.Surface(
+superficie = go.Surface(
   x=x, y=y, z=z,
   colorscale="Viridis",
   opacity=0.6,
   showscale=False,
-  cmin=0,
-  cmax=5
-))
+)
 
-fig.add_trace(go.Scatter3d(
+puntos_criticos = go.Scatter3d(
   x=[-1, 0, 1], y=[-1, 0, 1], z=[0, 2, 0],
   mode="markers+text",
   marker=dict(size=4, color="red")
-))
+)
+
+fig = go.Figure(data=[superficie, puntos_criticos])
 
 fig.update_layout(
   scene=dict(
     zaxis=dict(range=[0,5]),
+    aspectmode="cube",
     annotations=[
       dict(
         x=-1, y=-1, z=0,
-        text="$P(-1,-1,0)$",
+        text="P(-1,-1,0)",
         font=dict(
           color="red",
         )
       ),
       dict(
         x=1, y=1, z=0,
-        text="$P(1,1,0)$",
+        text="P(1,1,0)",
         font=dict(
           color="red",
         )
       ),
       dict(
         x=0, y=0, z=2,
-        text="$P(0,0,2)$",
+        text="P(0,0,2)",
         font=dict(
           color="red",
         )
@@ -2230,11 +2204,349 @@ Para determinar los valores máximo y mínimo absolutos de una función continua
 2. Determinamos las valores extremos de $f$ en la frontera de $D$.
 3. El mayor de los valores de los pasos 1 y 2 es el valor máximo absoluto; el menor de esos valores es el mínimo absoluto.
 
+::: {.callout-tip title=Ejemplo}
+Hallar los valores máximo y mínimo absoluto de la función $f(x,y)=x^2 - 2xy + 2y$ en el rectángulo $D=\left\{(x,y) \;/\; 0\leq x\leq 3 \land 0\leq y\leq 2\right\}$
 
+- Buscamos los puntos críticos
+  $$
+  \begin{aligned}
+    f_{x}=2x-2y=0 && f_{y}(x,y)=-2x + 2 = 0
+  \end{aligned}
+  $$
 
+  El único punto crítico es el $(1,1)$, y el valor de $f$ ahí es $f(1,1)=1$.
 
+- El siguiente paso es determinar los valores extremos de $f$ en la forntera de $D$, que en este caso son los cuatro segmentos de recta $L_{1},L_{2},L_{3},L_{4}$ que delimitan el cuadrado $D$.
 
+```{python}
+#| label: fig-ej-extremo-absoluto
+#| fig-cap: Visualización de la región $D$.
 
+# Este gráfico me lo hizo GrokAI. Tremendo.
+# Define the vertices of the rectangle
+x = [0, 3, 3, 0, 0]  # Close the polygon by returning to the start
+y = [0, 0, 2, 2, 0]
+
+# Create the plot
+plt.figure(figsize=(6, 4))
+plt.plot(x, y, 'b-', label='Boundary')  # Plot the rectangle boundary
+
+# Fill the interior with a soft color (e.g., light blue)
+plt.fill(x, y, color='lightblue', alpha=0.3)
+
+# Add labels for each side
+plt.text(1.5, -0.1, '$L_1$', ha='center', va='top')
+plt.text(3.1, 1, '$L_2$', ha='left', va='center')
+plt.text(1.5, 2.1, '$L_3$', ha='center', va='bottom')
+plt.text(-0.1, 1, '$L_4$', ha='right', va='center')
+
+# Set axis limits and labels
+plt.xlim(-0.5, 3.5)
+plt.ylim(-0.5, 2.5)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.legend()
+
+# Display the plot
+plt.show()
+```
+
+  - El segmento $L_{1}$ está dado por la ecuación $L_{1}:=\begin{cases}
+    y = 0 \\
+    0 \leq x\leq 3
+  \end{cases}$. Si evaluamos la recta $L_{1}$ en la ecuación $f$ obtenemos:
+  $$
+  \begin{aligned}
+    f(x,0)=x^2 && 0\leq x\leq 3
+  \end{aligned}
+  $$
+  El valor mínimo de esta función es $f(0,0)=0$ y el máximo es $f(3,0)=9$.
+
+  - Para $L_{2}$ que:
+  $$
+  \begin{aligned}
+    f(3,y) = 9 - 4y && 0\leq y\leq 2
+  \end{aligned}
+  $$
+  El valor mínimo es $f(3,0)=9$ y su valor mínimo es $f(3,2)=1$.
+
+  - Para $L_{3}$ tenemos:
+  $$
+  \begin{aligned}
+    f(x,2)=x^2-4x+4 && 0\leq x\leq 3
+  \end{aligned}
+  $$
+  El valor mínimo de esta función es $f(2,2)=0$ y el valor máximo es $f(0,2)=4$.
+
+  - Por último, para $L_{4}$ tenemos:
+  $$
+  \begin{aligned}
+    f(0,y)=2y && 0\leq y\leq 2
+  \end{aligned}
+  $$
+  que tiene valor mínimo $f(0,0)=0$ y valor máximo $f(0,2)=4$.
+
+- Ahora nos fijamos todos los valores que obtuvimos y determinamos los máximos y mínimos. En este caso, el valor máximo que obtubimos fue $f(3,0)=9$ y el valor mínimo es $f(0,0)=f(2,2)=0$. Estos valores son extremos absolutos.
+
+```{python}
+#| label: fig-ej-extremos-absolutos
+#| fig-cap: Visualización de la función $f(x,y)=x^2-2xy+2y$ y sus valores extremos absolutos dentro de la región $D$.
+
+x = np.linspace(0, 3)
+y = np.linspace(0, 2)
+x, y = np.meshgrid(x, y)
+z = x**2 - 2*x*y + 2*y
+
+superficie = go.Surface(
+  x=x, y=y, z=z,
+  colorscale="Viridis",
+  showscale=False,
+  opacity=0.6
+)
+
+puntos = go.Scatter3d(
+  x=[0, 2, 3], y=[0, 2, 0], z=[0, 0, 9],
+  mode="markers",
+  marker=dict(size=4, color="red"),
+)
+
+fig = go.Figure(data=[superficie, puntos])
+
+fig.update_layout(
+  scene=dict(
+    aspectmode="cube",
+    annotations=[
+      dict(
+        x=0, y=0, z=0,
+        text="P(0,0,0)",
+        font=dict(
+          color="red",
+        )
+      ),
+      dict(
+        x=3, y=0, z=9,
+        text="P(3,0,9)",
+        font=dict(
+          color="red",
+        )
+      ),
+      dict(
+        x=2, y=2, z=0,
+        text="P(2,2,0)",
+        font=dict(
+          color="red",
+        )
+      ),
+    ]
+  )
+)
+```
+:::
+
+## Multiplicadores de Lagrange
+Una de las mayores aplicaciones de los extremos de las funciones es resolver problemas de optimización. Cuando queremos optimizar una función $f(x,y)$ vamos a necesitar encontrar sus extremos, pero además vamos a estar sujetos a restricciones del tipo $g(x,y)=k$. Un ejemplo de una situación en la que pasa esto es cuando queremos calcular las dimensiones de un depósito cilíndrico, y queremos que tenga un cierto volumen $k$, y que el área total sea mínima. En este caso, la función que estamos intentando optimizar es la del área de cilíndro, y la restricción es el volúmen del mismo igual a $k$.
+
+### Una restricción
+Para entender este método conviene primero analizarlo para funciones de dos variables, y una vez que lo entdemos geométricamente podemos estudiarlo para funciones de tres variables. entonces, supongamos que tenemos una funcion $f(x,y)$ y queremos encontrar los valores extremos cuando el punto $(x,y)$ está restringido a residir en la curva de nivel $g(x,y)=k$.
+
+![Imagen sacada de @stewart2 [p. 971]](./imagenes/intro-multiplicadores-lagrange.png){#fig-intro-lagrange}
+
+En la @fig-intro-lagrange podemos ver la curva $g(x,y)=k$ y vaias curvas de nivel de $f$, dadas por $f(x,y)=c$, donde $c=\left\{7,8,9,10,11\right\}$. Maximizar $f(x,y)$ sujeta a $g(x,y)=k$ consiste en encontrar el mayor valor de $c$ para el cual la curva $f(x,y)=c$ interseca a $g(x,y)=k$. Podemos ver que esto sucede cuando dichas curvas apenas se tocan, y en ese punto comparten la misma recta tangente. Esto significa que las rectas normales a cada curva en el punto $(x_{0},y_{0})$ donde se tocan son idénticas. Podemos decir entonces que los vectores gradientes son paralelos: es decir $\nabla f(x_{0},y_{0})=\lambda\nabla g(x_{0},y_{0})$ con $\lambda \in \mathbb{R}^{}$.
+
+El mismo argumento aplica cuando queremos encontrar valores extremos de $f(x,y,z)$ sujeta a la restricción $g(x,y,z)=k$, solo que ahora en vez de pensar en curvas de nivel tenemos que pensar en superficies de nivel. Como los vectores gradiente de $f$ y $g$ son paralelos, podemos decir que si $\nabla g\neq \vec{O}$, existe un $\lambda \in \mathbb{R}^{}$ tal que
+$$
+  \nabla f(x_{0},y_{0},z_{0})=\lambda\nabla g(x_{0},y_{0},z_{0})
+$$  
+El número real $\lambda$ se llama **multiplicador de Lagrange**.
+
+::: {.callout-warning title="Método de los multiplicadores de Lagrange" icon=false}
+Para determinar los valores máximo y mínimo de $f(x,y,z)$ sujetos a la restricción $g(x,y,z)=k$ (suponiendo que esos valores existen y que $\nabla g(x_{0},y_{0},z_{0})\neq \vec{O}$):
+
+1. Determinamos todos los valores de $x, y, z, \lambda$ tales que 
+  $$
+    \left\{
+    \begin{aligned}
+      \nabla f(x,y,z) &= \lambda\nabla g(x,y,z)\\
+      g(x,y,z) &= k
+    \end{aligned}
+    \right.
+  $$
+
+2. Evaluamos $f$ en todos los puntos $(x,y,z)$ que resulten del paso anterior. El mayor de esos valores es el valor máximo de $f$; el menor es el valor mínimo de $f$.
+
+Los valores que tome $\lambda$ no son importantes.
+:::
+
+::: {.callout-tip title=Ejemplo}
+Se quiere armar una caja rectangular sin tapa con $12m^2$ de cartón. Determinar el volumen máximo de la caja.
+
+- Lo primero que tenemos que hacer en este tipo de ejercicios es identificar cuál es la función que queremos optimizar, y cuál es nuestra restricción.
+  
+  ```{python}
+  #| label: fig-paralelepipedo
+  #| fig-cap: Una caja rectangular sin tapa
+  #| fig-width: 10
+  #| fig-height: 8
+  #| dpi: 300
+
+  from mpl_toolkits.mplot3d import Axes3D
+  from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+
+  fig = plt.figure(figsize=(10, 8), dpi=300)
+  ax = fig.add_subplot(111, projection='3d')
+
+  largo, ancho, alto = 2, 3, 4
+
+  faces = [
+      [[0, 0, 0], [largo, 0, 0], [largo, ancho, 0], [0, ancho, 0]],
+      [[0, 0, 0], [largo, 0, 0], [largo, 0, alto], [0, 0, alto]],
+      [[0, ancho, 0], [largo, ancho, 0], [largo, ancho, alto], [0, ancho, alto]],
+      [[0, 0, 0], [0, ancho, 0], [0, ancho, alto], [0, 0, alto]],
+      [[largo, 0, 0], [largo, ancho, 0], [largo, ancho, alto], [largo, 0, alto]]
+  ]
+
+  colors = ['lightcoral', 'lightgoldenrodyellow', 'lightseagreen', 'lavender', 'mistyrose']
+
+  face_collection = Poly3DCollection(faces, linewidth=0.5, edgecolors='k', alpha=0.3)
+  face_collection.set_facecolor(colors)
+
+  ax.add_collection3d(face_collection)
+
+  ax.set_xlabel('X (Largo)', labelpad=1)
+  ax.set_ylabel('Y (Ancho)', labelpad=1)
+  ax.set_zlabel('Z (Alto)', labelpad=1)
+  # ax.set_xlim(1, 3)
+  # ax.set_ylim(-1, 3)
+  # ax.set_zlim(-1, 3)
+
+  ax.set_xticks([])
+  ax.set_yticks([])
+  ax.set_zticks([])
+
+  ax.view_init(elev=25, azim=-60)
+
+  ax.legend()
+
+  plt.tight_layout()
+
+  plt.show()
+  ```
+  - En este caso nos piden encontrar el columen máximo, así que la función que tenemos que optimizar es la del volúmen de un paralelepípedo. Vamos a definir $x$, $y$ y $z$ como el largo, ancho y alto de la caja, de manera que la función del volúmen nos queda
+    $$
+      V(x,y,z)=xyz
+    $$
+  - Por otro lado, la restricción que nos dan es que solo tenemos $12m^2$ de cartón para armar la caja. Nos están diciendo que el área de la misma es igual a 12. Como la caja no tiene tapa, con el cartón vamos a tener que cubrir la cara $xy$ (piso de la caja) una sola vez, la cara $yz$dos veces (los lados izquierdo y derecho de la caja) y la cara $xz$ también dos veces (las caras del frente y atrás de la caja). La ecuación del área, que es nuestra restricción nos queda así:
+    $$
+      g(x,y,z)=2xz + 2yz + xy = 12
+    $$
+
+- Como ya sabemos cuáles son nuestras funciones, podemos armar el sistema de ecuaciónes y resolver
+  $$
+  \left\{
+  \begin{aligned}
+    \nabla V(x,y,z) &= \lambda\nabla g(x,y,z)\\
+    g(x,y,z) &= k
+  \end{aligned}
+  \right.
+  $$
+  $$
+    \implies \left\{
+  \begin{aligned}
+    V_{x} = \lambda g_{x}\\
+    V_{y} = \lambda g_{y}\\
+    V_{z} = \lambda g_{z}\\
+    2xz + 2yz + xy = 12
+  \end{aligned}
+  \right. \implies \left\{
+  \begin{aligned}
+    yz = \lambda(2z+y) && (1)\\
+    xz = \lambda(2z+x) && (2)\\
+    xy = \lambda(2x+2y) && (3)\\
+    2xz + 2yz + xy = 12 && (4)\\
+  \end{aligned}
+  \right.
+  $$
+  - Lo primero que podemos descartar de este sistema es $\lambda=0$, ya que si esto es cierto implicaría que $yz=xz=xy$ que sabemos que no es cierto por la ecuación (4). Por otro lado, podemos multiplicar (1) por $x$, (2) por $y$ y (3) por $z$ para que nos queden los lados izquierdos de las ecuaciones (1), (2) y (3) todos iguales.
+  $$
+    \left\{
+    \begin{aligned}
+      xyz = \lambda(2xz+xy) && (5)\\
+      yxz = \lambda(2yz+yx) && (5)\\
+      zxy = \lambda(2zx+yz) && (5)\\
+      2xz + 2yz + xy = 12 && (4)\\
+    \end{aligned}
+    \right.
+  $$
+  - De (6) y (7) podemos decir que 
+  $$
+    2xz + xy = 2yz + xy
+  $$
+  que nos dice que $xz=yz$. Pero $z\neq 0$ porque el volúmen de la caja no puede ser cero, así que $x=y$.
+  - De (7) y (8) tenemos que
+  $$
+    2yz + xy = 2xz + 2yz
+  $$
+  de donde sale que $xy=2xz$, y por lo tanto $y=2z$ ya que $x\neq 0$. Y ya resolvimos nuestro sistema de ecuaciones. Ahora podemos poner $x=y=2z$ en (4) y obtenemos
+  $$
+    4z^2 + 4z^2 + 4z^2 = 12
+  $$
+  - Como $x$, $y$ y $z$ son positivas (porque no podemos tener volúmen o área negativa), se tiene que $z=1$, así que $x=y=2$.
+  
+- El vólumen máximo de una caja rectangular sin tapa con un área total de $12m^2$ es $V(x,y,z)=2\cdot 2\cdot 1=4m^3$.
+:::
+
+### Dos restricciones
+También nos pueden pedir que encontremos los valores máximo y mínimo de una función $f(x,y,z)$ sujeta a dos restricciones de la forma $g(x,y,z)=k$ y $h(x,y,z)=c$.
+
+Cuando teníamos el caso de una sola restricción habíamos dicho que $\nabla f = \lambda\nabla g$ y esto lo podemos pensar como que $\nabla f$ es combinación lineal de $\nabla g$. Exactamente el mismo concepto es el que tenemos que aplicar enel caso de dos restricciones: $\nabla f$ debe ser combinación lineal de los vectores $\nabla g$ y $\nabla h$. Esto siginifica que el vector gradiente $\nabla f(x_{0},y_{0},z_{0})$ está en el plano determinado por $\nabla g(x_{0},y_{0},z_{0})$ y $\nabla h(x_{0},y_{0},z_{0})$.
+$$
+  \nabla f(x_{0},y_{0},z_{0}) = \lambda\nabla g(x_{0},y_{0},z_{0}) + \mu\nabla h(x_{0},y_{0},z_{0})
+$$
+Los valores $\lambda$ y $\mu$ son denominados multiplicadores de Lagrange.
+
+Al haber ahora dos restricciones, el sistema de ecuaciones que vamos a tener va a ser un sistema de cinco ecuaciones con cinco incógnitas.
+$$
+  \left\{
+  \begin{aligned}
+    f_{x}=\lambda g_{x} + \mu h_{x}\\
+    f_{y}=\lambda g_{y} + \mu h_{y}\\
+    f_{z}=\lambda g_{z} + \mu h_{z}\\
+    g(x,y,z)=k\\
+    h(x,y,z)=c
+  \end{aligned}
+  \right.
+$$
+
+::: {.callout-tip title=Ejemplo}
+Encontrar el valor máximo de la función $f(x,y,z)=x+2y+3z$ en la curva de intersección del plano $x-y+z=1$ y el cilindro $x^2+y^2=1$.
+
+- Planteamos el sistema de ecuaciones:
+$$
+  \left\{
+  \begin{aligned}
+    1 = \lambda + \mu2x && (1)\\
+    2 = -\lambda + \mu2y && (2)\\
+    3 = \lambda && (3)\\
+    x - y + z = 1 && (4)\\
+    x^2 + y^2 = 1 && (5)
+  \end{aligned}
+  \right.
+$$
+
+- De (3) sale $\lambda = 3$, que si lo ponemos en (1) nos queda $\mu2x=-2 \implies x=-1/\mu$. Podemos hacer lo mismo en (2) para obtener $y=5/(2\mu)$. Ahora podemos sustituir $x$ e $y$ en (5):
+  $$
+    \frac{1}{\mu^2} + \frac{25}{4\mu^2} = 1
+  $$
+  y por lo tanto, $\mu^2=\frac{29}{4} \implies \mu=\pm\sqrt[]{29}/2$. Entonces $x=\mp2/\sqrt[]{29}$, $y=\pm5/\sqrt[]{29}$ y podemos meter estos valores en (4) de manera que $z=1-x+y=1\pm7/\sqrt[]{29}$. Los valores correspondientes de $f$ son:
+  $$
+    \mp\frac{2}{\sqrt[]{29}} + 2\left(\pm\frac{5}{\sqrt[]{29}}\right) + 3\left(1\pm\frac{7}{\sqrt[]{29}}\right) = 3\pm\sqrt[]{29}
+  $$
+  El valor máximo de $f$ en la curva dada es $3+\sqrt[]{29}$
+:::
+
+# Integrales múltiples
+Último tema
 
 
 
