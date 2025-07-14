@@ -2544,7 +2544,8 @@ $$
 :::
 
 # Integrales múltiples
-## Integrales dobles en rectángulos
+## Integrales dobles
+### Integrales dobles en rectángulos
 En análisis I habíamos visto las integrales para las funciones de una variable. Si queríamos integrar la función $f(x)$ en el intervalo $\left[a,b\right]$, lo que hacíamos era dividir ese intervalo en $n$ subintervalos cerrados $\left[x_{i-1}, x_{i}\right]$ de igual ancho $\Delta x=(b-a)/n$ y sumábamos todos los intervalos (armábamos la suma de Riemann)
 $$
   \sum_{i=1}^{n} f(x_{i})\Delta x
@@ -2604,6 +2605,7 @@ square = go.Scatter3d(
     name='R'
 )
 
+# Pared izquierda
 x_wall_left = np.full(50, 3)
 y_wall_left = np.linspace(1, 3, 50)
 z_wall_left = 2 + (x_wall_left - 3)**2 + (y_wall_left - 3)**2
@@ -2617,6 +2619,7 @@ wall_left = go.Surface(
     name='Wall x=3'
 )
 
+# Pared derecha
 x_wall_right = np.full(50, 5)
 y_wall_right = np.linspace(1, 3, 50)
 z_wall_right = 2 + (x_wall_right - 3)**2 + (y_wall_right - 3)**2
@@ -2630,6 +2633,7 @@ wall_right = go.Surface(
     name='Wall x=5'
 )
 
+# Pared del frente
 y_wall_front = np.full(50, 1)
 x_wall_front = np.linspace(3, 5, 50)
 z_wall_front = 2 + (x_wall_front - 3)**2 + (y_wall_front - 3)**2
@@ -2643,6 +2647,7 @@ wall_front = go.Surface(
     name='Wall y=1'
 )
 
+# Pared trasera
 y_wall_back = np.full(50, 3)
 x_wall_back = np.linspace(3, 5, 50)
 z_wall_back = 2 + (x_wall_back - 3)**2 + (y_wall_back - 3)**2
@@ -2712,7 +2717,7 @@ $$
 $$
 :::
 
-### Integrales iteradas
+#### Integrales iteradas
 Evaluar las integrales a partir de su definición es bastante dificil. Lo bueno es que las integrales dobles las podemos expresar como integrales iteradas, que después las podemos evaluar como integrales simples.
 
 Supongamos que $f$ es una función de dos variables, integrable en el rectángulo $R=\left[a,b\right]\times \left[c,d\right]$. Lo que podemos hacer es algo parecido a lo que hacíamos con las derivadas parciales: integramos primero respecto solo de una de las dos variables, digamos $y$ desde $c$ a $d$. De esta manera, $\int_{c}^{d} f(x,y) \,dy$ es un número que depende de $x$ (la variable y se fue porque la acabamos de integrar), así que la podemos pensar como una función de $x$:
@@ -2776,5 +2781,453 @@ $$
 ::: {.callout-tip title=Ejemplo}
 Determinar el volúmen del sólido $S$ acotado por el parabolodie elíptico $x^2+2y^2+z=16$, los planos $x=2$, e $y=2$, y los tres planos coordenados.
 
-En los casos como este siempre combiene graficar antes.
+Lo primero que tenemos que hacer en casos como estos es determinar cuál es la función que nos piden en la consigna que integremos, y sobre qué región tenemos que integrar. La consigna habla de un sólido, y sabemos que cuando integramos estamos calculando el volúmen del sólido que se encuentra entre la función $z=f(x,y)$ y por encima del rectángulo $R$ (@fig-volumen-solido).
+
+En este caso, la función $z=f(x,y)$ es el paraboloide elíptico y podemos despejar $z$ de la ecuación: $z=16-x^2-y^2$, y el cuadrado $R$ está dado por los puntos de intersección de los planos coordenados con los planos $x=2$ e $y=2$. La región $R$ entonces es $R=\left[0,2\right]\times \left[0,2\right]$.
+
+$$
+\begin{aligned}
+  V &= \iint_{R} 16-x^2-y^2 \,dA = \int_{0}^{2} \int_{0}^{2} 16-x^2-y^2 \,dx dy\\
+   &= \int_{0}^{2} \Bigg[16x-\frac{x^3}{3}-2xy^2\Bigg]_{x=0}^{x=2} \,dy\\
+   &= \int_{0}^{2} \frac{88}{3}-4y^2 \,dy=\Bigg[\frac{88}{3}y-\frac{4}{3}y^3\Bigg]_{0}^{2}=48
+\end{aligned}
+$$
 :::
+
+#### Valor promedio
+El valor promedio de una función $f$ de una variable en un intervalo $\left[a,b\right]$ lo podemos calcular como
+$$
+  f_{prom}=\frac{1}{b-a}\int_{a}^{b} f(x) \,dx
+$$
+y tiene sentido. Si queremos calcular el promedio de algo, por ejemplo la nota promedio de una clase, lo que hacemos es sumar las notas de todos los trabajos que había que entregar, y dividimos esa suma por la cantidad de trabajos. Esta fórmula hace los mismo: la integral suma los resultados de los infinitos puntos en el intervalo $\left[a,b\right]$ y luego divide ese resultado por el  intervalo $\left[a,b\right]$.
+
+Para funciones de dos variables, el **valor promedio** se define de forma similar
+$$
+  f_{prom}=\frac{1}{A(R)}\iint_{R} f(x,y) \,dA
+$$
+donde $A(R)$ es el área de la región $R$.
+
+### Integrales dobles en regiones generales
+Ya aprendimos a integrar funciones dentro de regiones cuadradas. Pero la idea es que podamos integrar regiones $D$ que sean de cualquier forma. Si nos piden integrar $f$ dentro de una región $D$ que no es un rectángulo, vamos a poder definir tres tipos de regiones particulares:
+
+#### Regiones tipo I
+Decimos que una región $D$ en un plano es de **tipo I** si la podemos definir entre las gráficas de dos funciones continuas de $x$, es decir
+$$
+  D = \left\{(x,y) \;/\; a\leq x\leq b \land g_{1}(x)\leq y\leq g_{2}(x)\right\}
+$$
+donde $g_{1}$ y $g_{2}$ son continuas en el intervalo $\left[a,b\right]$.
+
+![Imagen sacada de @stewart2 [p. 1002]. Algunas regiones tipo I.](./imagenes/dobles-tipo-1.png)
+
+::: {.callout-warning title=Teorema icon=false}
+**Fubini para regiones tipo I**
+
+Sea $f(x,y)$ continua en una región $D=\left\{(x,y) \;/\; a\leq x\leq b \land g_{1}(x)\leq y\leq g_{2}(x)\right\}$, entonces
+$$
+  \iint_{R} f(x,y) \,dA = \int_{a}^{b} \int_{g_{1}(x)}^{g_{2}(x)} f(x,y) \,dy dx
+$$
+:::
+
+Cuando integramos este tipo de regiones, integramos primero respecto a $y$, y luego respecto a $x$.
+
+Pasos para determinar los límites de integración:
+
+1. Graficar la región de integración y dibujar una flecha vertical sobre ella. 
+2. La cola de la flecha marca la función $g_{1}(x)$ que será el límite inferior de integación. 
+3. La punta de la flecha marca la función $g_{2}(x)$, que será el limite superior de integración. 
+4. Si no nos dan el intervalo de integración de la variable $x$ buscamos los puntos de intersección de $g_{1}(x)=g_{2}(x)$. Vamos a obtener dos puntos: el menor marca el inicio del intervalo; el mayor el fin.
+
+Lo podemos pensar como que integramos primero a lo largo de una recta vertical que pasa por $D$ y luego integramos de izquierda a derecha para incluir todas las rectas verticales en $D$.
+
+```{python}
+#| label: fig-animacion-tipo1
+#| fig-cap: Interpretación de gráfica de integración de funciones en regiones de tipo I (Hecho por GrokAI).
+
+from matplotlib.animation import FuncAnimation
+from IPython.display import HTML
+
+# Definir las funciones g_1(x) y g_2(x)
+def g1(x):
+    return x**2
+
+def g2(x):
+    return 2 - x**2
+
+# Configurar la figura y el eje
+fig, ax = plt.subplots()
+x = np.linspace(-1, 1, 100)  # Puntos para dibujar las curvas
+g1_line, = ax.plot(x, g1(x), 'k-', label='$g_1(x) = x^2$')  # Curva inferior (negro)
+g2_line, = ax.plot(x, g2(x), 'k-', label='$g_2(x) = 2 - x^2$')  # Curva superior (negro)
+ax.set_xlim(-1, 1)
+ax.set_ylim(-0.5, 2.5)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$y$')
+ax.grid(True)
+ax.legend()
+
+# Inicializar la flecha vertical y el área de relleno
+arrow = None  # Para la flecha
+fill = None   # Para el relleno
+line = None   # Para la línea vertical del relleno
+
+# Función de inicialización para la animación
+def init():
+    global arrow, fill, line
+    if arrow is not None:
+        arrow.remove()
+    if fill is not None:
+        fill.remove()
+    if line is not None:
+        line.remove()
+    arrow = ax.arrow(0, -0.5, 0, 0, head_width=0.05, head_length=0.1, fc='green', ec='green')
+    line, = ax.plot([], [], 'k-', linewidth=1)  # Línea vertical vacía
+    return g1_line, g2_line, arrow, line
+
+# Función de actualización para la animación
+def update(frame):
+    global arrow, fill, line, g1_line, g2_line
+    # Fase 1: Animación de la flecha (frames 0 a 49)
+    if frame < 50:
+        y_pos = -0.5 + (frame / 49) * 2.5  # y desde -0.5 hasta 2
+        if arrow is not None:
+            arrow.remove()
+        arrow = ax.arrow(0, -0.5, 0, y_pos - (-0.5), head_width=0.05, head_length=0.1, fc='green', ec='green')
+        
+        # Cambiar color de g1 a azul cuando la flecha toca g1(0) = 0
+        if y_pos >= g1(0) and g1_line.get_color() == 'k':
+            g1_line.set_color('blue')
+            ax.legend()  # Actualizar leyenda
+        
+        # Cambiar color de g2 a rojo cuando la flecha toca g2(0) = 2
+        if y_pos >= g2(0) and g2_line.get_color() == 'k':
+            g2_line.set_color('red')
+            ax.legend()  # Actualizar leyenda
+        
+        return g1_line, g2_line, arrow, line
+    
+    # Pausa de 500 ms (frames 50 a 59, 10 frames a 50 ms cada uno)
+    elif frame < 60:
+        return g1_line, g2_line, arrow, line
+    
+    # Fase 2: Relleno progresivo (frames 60 a 159)
+    else:
+        if arrow is not None:
+            arrow.remove()
+            arrow = None
+        x_pos = -1 + (frame - 60) * (2 / 100)  # Mover x de -1 a 1
+        y = np.linspace(g1(x_pos), g2(x_pos), 100)  # Puntos y entre g1 y g2
+        x_line = np.full_like(y, x_pos)  # x constante para la línea
+        line.set_data(x_line, y)
+        
+        # Rellenar el área desde x=-1 hasta x_pos
+        x_fill = np.linspace(-1, x_pos, 50)
+        y1_fill = g1(x_fill)
+        y2_fill = g2(x_fill)
+        if fill is not None:
+            fill.remove()
+        fill = ax.fill_between(x_fill, y1_fill, y2_fill, color='lightblue', alpha=0.5)
+        
+        return g1_line, g2_line, line, fill
+
+# Crear la animación
+ani = FuncAnimation(fig, update, init_func=init, frames=160, interval=50, blit=False)
+
+# Cerrar la figura estática
+plt.close(fig)
+
+# Mostrar la animación en HTML
+HTML(ani.to_jshtml())
+```
+
+::: {.callout-tip title=Ejemplo}
+Usemos la región $D$ definida en la @fig-animacion-tipo1 y calculemos el volumen del solido que está por debajo de la función $f(x,y)=5 - y^2 - x^2$ y por encima de la región $D$.
+
+- Como siempre, primero graficamos la región que vamos a integrar (@fig-animacion-tipo1).
+- Una vez que la graficamos, dibujamos una flecha que vaya desde la parte inferior del gráfico hasta la parte superior. La cola de la flecha nos va a indicar el límite inferior de integración en $y$, que en este caso es la función $g_{1}(x)=x^2$. La punta de la flecha nos indica límite superior de integración en $y$, que vemos que es $g_{2}(x)=2-x^2$.
+- Ahora buscamos los puntos de intersección de las funciones $g_{1}(x)=g_{2}(x)$. Esos puntos conforman el intervalo de integración de la variable $x$. En este caso el intervalo de integración en $x$ es $\left[-1,1\right]$.
+- La región $D$ nos queda así
+  $$
+    D=\begin{cases}
+      -1\leq x\leq 1\\
+      x^2\leq y\leq 2-x^2
+    \end{cases}
+  $$
+- Ahora podemos armar la integral usando los límites de integración de $D$.
+  $$
+    \int_{-1}^{1} \int_{x^2}^{2-x^2} 5-y^2-x^2 \,dy dx
+  $$
+- Y solo queda resolver
+  $$
+  \begin{aligned}
+    V &=\int_{-1}^{1} \int_{x^2}^{2-x^2} 5-y^2-x^2 \,dy dx \\
+     &= \int_{-1}^{1} \Bigg[5y - \frac{y^3}{3} - x^2y\Bigg]_{y=x^2}^{y=2-x^2} \,dx\\
+     &= \int_{-1}^{1} \left[\left(5(2-x^2)-\frac{(2-x^2)^3}{3}-x^2(2-x^2)\right)-\left(5x^2 - \frac{\left(x^2\right)^3}{3}-x^2x^2\right)\right] \,dx\\
+     &= \int_{-1}^{1} \left[\left(2-x^2\right)\left(5-\frac{\left(2-x^2\right)^2}{3}-x^2\right)-\left(5x^2-\frac{x^6}{3}-x^4\right)\right] \,dx\\
+     &= \int_{-1}^{1} \left[\left(2-x^2\right)\left(\frac{11}{3}+\frac{x^2}{3}-\frac{x^4}{3}\right)-\left(5x^2-\frac{x^6}{3}-x^4\right)\right] \,dx\\
+     &= \int_{-1}^{1} \left[\frac{22-9x^2-3x^4+x^6}{3}-\left(5x^2-\frac{x^6}{3}-x^4\right)\right] \,dx\\
+     &= \int_{-1}^{1} \left[\frac{22-9x^2-3x^4+x^6}{3}-\frac{15x^2}{3}+\frac{x^6}{3}+\frac{3x^4}{3}\right] \,dx\\
+     &= \frac{1}{3} \int_{-1}^{1} 22 - 24x^2 + 2x^6 \,dx = \frac{1}{3} \Bigg[22x - \frac{24x^3}{3} + \frac{2x^7}{7}\Bigg]_{-1}^{1} \\
+     &= \frac{1}{3}\left[\left(22 - 8 + \frac{2}{7}\right)-\left(-22 + 8 - \frac{2}{7}\right)\right]\\
+     &= \frac{1}{3}\left[28+\frac{4}{7}\right] = \frac{1}{3}\cdot \frac{200}{7} = \frac{200}{21}
+  \end{aligned}
+  $$
+
+  El volumen del sólido es $\frac{200}{21}m^3$.
+:::
+
+#### Regiones tipo II
+Una región es **tipo II** si existen funciones continuas $h_{1}(y)$ y $h_{2}(y)$ en el intervalo $\left[c,d\right]$ que permiten definir la región de integración $D$ de la siguiente manera:
+$$
+  D=\left\{(x,y) \;/\; h_{1}(y)\leq x\leq h_{2}(y) \land c\leq y\leq d\right\}
+$$
+
+::: {.callout-warning title=Teorema icon=false}
+**Fubini para regiones tipo II**
+
+Sea $f(x,y)$ continua en una región $D=\left\{(x,y) \;/\; a\leq x\leq b \land g_{1}(x)\leq y\leq g_{2}(x)\right\}$, entonces
+$$
+  \iint_{R} f(x,y) \,dA = \int_{c}^{d} \int_{h_{1}(y)}^{h_{2}(u)} f(x,y) \,dx dy
+$$
+:::
+
+Cuando integramos este tipo de regiones, integramos primero respecto a $x$, y luego respecto a $y$.
+
+Los pasos para determinar los límites de integración son:
+
+1. Graficar la región de integración y dibujar una flecha horizontal sobre ella. 
+2. La cola de la flecha marca la función $h_{1}(y)$ que será el límite inferior de integación. 
+3. La punta de la flecha marca la función $h_{2}(y)$, que será el limite superior de integración. 
+4. Si no nos dan el intervalo de integración de la variable $y$ buscamos los puntos de intersección de $h_{1}(y)=h_{2}(y)$. Vamos a obtener dos puntos: el menor marca el inicio del intervalo; el mayor el fin.
+
+
+```{python}
+#| label: fig-animacion-tipo2
+#| fig-cap: Interpretación de gráfica de integración de funciones en regiones de tipo II (hecho por GrokAI).
+
+from matplotlib.animation import FuncAnimation
+from IPython.display import HTML
+
+# Definir las funciones h_1(y) y h_2(y)
+def h1(y):
+    return y**2 / 4
+
+def h2(y):
+    return (y + 2) / 4
+
+# Configurar la figura y el eje
+fig, ax = plt.subplots()
+y = np.linspace(0, 2, 100)  # Puntos para dibujar las curvas
+h2_line, = ax.plot(h2(y), y, 'k-', label='$h_{2}(y) = \\frac{y + 2}{4}$')  # Curva derecha
+h1_line, = ax.plot(h1(y), y, 'k-', label='$h_{1}(y) = \\frac{y^2}{4}$')  # Curva izquierda
+ax.set_xlim(-0.1, 1.1)
+ax.set_ylim(-0.1, 2.1)
+ax.set_xlabel('$x$')
+ax.set_ylabel('$y$')
+ax.grid(True)
+ax.legend()
+
+# Inicializar la flecha horizontal y el área de relleno
+arrow = None  # Para la flecha
+fill = None   # Para el relleno
+line = None   # Para la línea horizontal del relleno
+
+# Función de inicialización para la animación
+def init():
+    global arrow, fill, line
+    if arrow is not None:
+        arrow.remove()
+    if fill is not None:
+        fill.remove()
+    if line is not None:
+        line.remove()
+    arrow = ax.arrow(0, 1, 0, 0, head_width=0.05, head_length=0.05, fc='green', ec='green')
+    line, = ax.plot([], [], 'k-', linewidth=1)  # Línea horizontal vacía
+    return h2_line, h1_line, arrow, line
+
+# Función de actualización para la animación
+def update(frame):
+    global arrow, fill, line, h2_line, h1_line
+    # Fase 1: Animación de la flecha (frames 0 a 49)
+    if frame < 50:
+        x_pos = 0 + (frame / 49) * h2(1)  # x desde 0 a 0.75
+        if arrow is not None:
+            arrow.remove()
+        arrow = ax.arrow(0, 1, x_pos, 0, head_width=0.05, head_length=0.05, fc='green', ec='green')
+        
+        # Cambiar color de h1 a rojo cuando la flecha toca h1(1) = 0.25
+        if x_pos >= h1(1) and h1_line.get_color() == 'k':
+            h1_line.set_color('red')
+            ax.legend()  # Actualizar leyenda
+        
+        # Cambiar color de h2 a azul cuando la flecha toca h2(1) = 0.75
+        if x_pos >= h2(1) and h2_line.get_color() == 'k':
+            h2_line.set_color('blue')
+            ax.legend()  # Actualizar leyenda
+        
+        return h2_line, h1_line, arrow, line
+    
+    # Pausa de 500 ms (frames 50 a 59)
+    elif frame < 60:
+        return h2_line, h1_line, arrow, line
+    
+    # Fase 2: Relleno progresivo (frames 60 a 159)
+    else:
+        if arrow is not None:
+            arrow.remove()
+            arrow = None
+        y_pos = (frame - 60) / 100 * 2  # Mover y de 0 a 2
+        x = np.linspace(h1(y_pos), h2(y_pos), 100)  # Puntos x entre h1 y h2
+        y_line = np.full_like(x, y_pos)  # y constante para la línea
+        line.set_data(x, y_line)
+        
+        # Rellenar el área desde y=0 hasta y_pos
+        y_fill = np.linspace(0, y_pos, 50)
+        x1_fill = h2(y_fill)
+        x2_fill = h1(y_fill)
+        if fill is not None:
+            fill.remove()
+        fill = ax.fill_betweenx(y_fill, x1_fill, x2_fill, color='lightblue', alpha=0.5)
+        
+        return h2_line, h1_line, line, fill
+
+# Crear la animación
+ani = FuncAnimation(fig, update, init_func=init, frames=160, interval=50, blit=False)
+
+# Cerrar la figura estática
+plt.close(fig)
+
+# Mostrar la animación en HTML
+HTML(ani.to_jshtml())
+```
+
+::: {.callout-tip title=Ejemplo}
+De nuevo, usemos el ejemplo de la figura anterior para practicar. La consigna es la siguiente:
+
+Determinar el volumen de la cuña sólida que se encuentra bajo la superficie $z=16-x^2 - y^2$ y arriba de la región $R$ acotada por la curva $y=2 \sqrt{x}$, la recta $y=4x - 2$ y el eje $x$.
+
+- Lo primero que hacemos es graficar la región de integración (@fig-animacion-tipo2).
+- Ahora tenemos que dibujar una flecha horizontal que vaya desde la parte mas a la izquierda del gráfico, hasta la parte mas a la derecha.
+  - La cola de la flecha marca el límite inferior de integración en $x$, que en este caso vemos que es la función $h_{1}(x)=\frac{y^2}{4}$.
+  - La punta de la flecha marca el límite superior de integración en $x$, en este caso es $h_{2}(y) = \frac{y+2}{4}$
+- Ahora buscamos los puntos de intersección de las curvas. En este caso, la curva $x=\frac{y^2}{4}$ interseca al eje $x$ en el $(0,0)$ y a la curva $x=\frac{y+2}{4}$ en el $(1,2)$. Por otro lado, la curva $x=\frac{y+2}{4}$ interseca al eje $x$ en el punto $(1/2,0)$. Recordemos que este intervalo de integración es para la variable $y$, así que el intervalo es $\left[0,2\right]$.
+- La región $D$ es la siguiente
+  $$
+    D=\begin{cases}
+      0\leq y\leq 2\\
+      \frac{y^2}{4}\leq x\leq \frac{y+2}{4}
+    \end{cases}
+  $$
+- Ahora armamos la integral
+  $$
+    \int_{0}^{2} \int_{\frac{y^2}{4}}^{\frac{y+2}{4}} 16 - x^2 - y^2 \,dx dy
+  $$
+- Y resolvemos
+  $$
+  \begin{aligned}
+    V &= \int_{0}^{2} \int_{\frac{y^2}{4}}^{\frac{y+2}{4}} 16 - x^2 - y^2 \,dx dy\\
+     &= \int_{0}^{2} \Bigg[16x - \frac{x^3}{3} - xy^2\Bigg]_{x=y^2/4}^{x=(y+2)/4} \,dx\\
+     &= \int_{0}^{2} \left[4(y+2) - \frac{(y+2)^3}{3\cdot 64}-\frac{(y+2)y^2}{4}-4y^2+\frac{y^6}{3\cdot 64}+\frac{y^4}{4}\right] \,dy\\
+     &= \Bigg[\frac{191}{24}y + \frac{63}{32}y^2 - \frac{145}{96}y^3 - \frac{49}{768}y^4 + \frac{y^5}{20} + \frac{y^7}{1344}\Bigg]_{0}^{2} = \frac{20803}{1680}
+  \end{aligned}
+  $$
+  El volumen del sólido es $\frac{20803}{1680}m^3$.
+:::
+
+### Determiación del tipo de la región
+La forma de determinar si una región es tipo I o tipo II es haciendo el gráfico y dibujando las flechas. La idea es que la flecha (vertical u horizontal) la podamos dibujar desde cualquier parte del gráfico y siempre entre por una función $f_{1}$ y salga por otra $f_{2}$. 
+
+Por ejemplo, la región de la @fig-determinar-tipo es una región de tipo I, porque vemos que las flechas horizontales, si bien siempre entran por la función $h_{1}(y)=0$, cuando salen, a veces lo hacen por la función $h_{2}(y)=2(1-y)$ y otras veces salen por $h_{3}(y)=2y$.
+
+En cambio, las flechas verticales siempre entran por la función $g_{1}(x)=\frac{x}{2}$ y salen por $g_{2}(x)=\frac{1-x}{2}$.
+
+```{python}
+#| label: fig-determinar-tipo
+#| fig-cap: Region de tipo I que no puede ser de tipo II.
+
+# Defino las tres funciones que delimitan la región
+def g1(x):
+  return x/2
+
+def g2(x):
+  return 1 - x/2
+
+def g3(x):
+  return np.full_like(x, 0)
+
+x = np.linspace(0, 1)
+y1 = g1(x)
+y2 = g2(x)
+y3 = g3(x)
+
+# Grafico las tres funciones
+plt.figure()
+plt.plot(x, g1(x), "blue", label="$f_{1}(x)=\\frac{x}{2}$")
+plt.plot(x, g2(x), "red", label="$f_{2}(x) = \\frac{1 - x}{2}$")
+plt.plot(g3(x), x, "black", label="$x=0$")
+
+# Pinto la región entre las tres funciones
+plt.fill_between(x, y1, y2, color="lightblue")
+
+# Grafico las flechas
+plt.arrow(-0.05, 0.8, 0.65, 0, width=0.007, color="indianred", label="$\\to$ tipo I")
+plt.arrow(-0.05, 0.2, 0.65, 0, width=0.007, color="indianred", label="$\\to$ tipo I")
+plt.arrow(0.4, 0, 0, 0.9, width=0.007, color="darkgreen", label="$\\to$ tipo II")
+
+# Detalles al gráfico
+plt.xlim(-0.1, 1.1)
+plt.ylim(-0.1, 1.1)
+plt.xlabel("x")
+plt.ylabel("y")
+plt.legend()
+plt.grid(True)
+```
+
+### Cálculo de áreas
+Una propiedad importante que tienen las integrales dobles es que si integramos la función constante $f(x,y)=1$ en una región $D$ obtenemos el área de $D$.
+$$
+  \iint_{D} 1 \,dA = \iint_{D}  \,dA = \int_{a}^{b} \int_{c}^{d}  \,dy dx = A(D)
+$$
+Y tiene sentido si lo pensamos un poco. Hasta ahora veníamos pensando al resultado de las integrales dobles como el columen del sólido dispuesto entre la función $f(x,y)$ y la región $D$. Pero el volumen es el área de un objeto multiplicado por su altura. En el caso de las integrales dobles, el área del sólido sería la región $D$ sobre la cual estamos integrando y la altura son los infinitos valores que nos da la integral en esa región. Pero si decimos que $f(x,y)=1$ es constante a lo largo y ancho de toda la región $D$, el volumen de esa región es su área mulpilicada por la altura, que acabamos de decir que es $1$. Y el área multiplicada por uno es el mismo área. De esta manera, podemos pensar a la integral de la función constante $f(x,y)=1$ como el área de la región $D$.
+
+::: {.callout-tip title=Ejemplo}
+Calcular el área de la región $D$ de la @fig-determinar-tipo delimitada por las funciones $x=0$, $y=\frac{x}{2}$ e $y=\frac{1-x}{2}$.
+
+- Habiamos dicho que era una región tipo I en la que el límite inferior de integración en $y$ es $y=\frac{x}{2}$, y el límite superior es $y=\frac{1-x}{2}$.
+- Para determinar los extremos de integración en $x$ buscamos las intersecciones entre las rectas y obtenemos que el intervalo es $\left[0,1\right]$.
+- La región $D$ queda de la siguiente manera
+  $$
+    D=\begin{cases}
+      0 \leq x\leq 1\\
+      \frac{x}{2} \leq y \leq \frac{1-x}{2}
+    \end{cases}
+  $$
+- Como buscamos el área, la función que tenemos que integrar es $f(x,y)=1$. La integral es la siguiente
+  $$
+    \int_{0}^{2} \int_{x/2}^{(1-x)/2}  \,dy dx
+  $$
+- Resolvemos
+  $$
+  \begin{aligned}
+    A(D) &= \int_{0}^{2} \int_{x/2}^{(1-x)/2}  \,dy dx = \int_{0}^{2} \frac{1-x}{2} - \frac{x}{2} \,dx\\
+     &= \int_{0}^{2} \frac{1}{2} - x \,dx = \Bigg[\frac{x}{2} - \frac{x^2}{2}\Bigg]_{0}^{2} = 1 - \frac{1}{2} = \frac{1}{2}
+  \end{aligned}
+  $$
+  El área de la región $D$ es $\frac{1}{2}m^2$.
+:::
+
+### Integrales dobles en coordenadas polares
+Supongamos que queremos evaluar una integral doble $\iint_{R} f(x,y) \,dA$, donde $R$ es una de las regiones que aparecen en las figuras de abajo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
