@@ -1,0 +1,566 @@
+C:\Users\ricar\OneDrive\ing-sistemas\2-año\sop\TP2\Handle>handle -p brave
+
+Nthandle v5.0 - Handle viewer
+Copyright (C) 1997-2022 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+------------------------------------------------------------------------------
+brave.exe pid: 21444 COMPURICKY\ricar
+   98: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  22C: Section       \Sessions\1\BaseNamedObjects\windows_shell_global_counters
+  260: File          C:\$Extend\$Deleted\001F00000005968310976B29
+  330: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  3A4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\lockfile
+  3C8: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_100_percent.pak
+  3D0: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_200_percent.pak
+  3D8: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\Locales\en-US.pak
+  3E0: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\resources.pak
+  3E8: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_resources.pak
+  3F0: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_100_percent.pak
+  3F8: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_200_percent.pak
+  4B4: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  558: File          C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.4484_none_3e0e6d4ce32ef3b3
+  5C8: Section       \Windows\Theme2236473024
+  5CC: Section       \Sessions\1\Windows\Theme2642332878
+  5E8: Section       \BaseNamedObjects\__ComCatalogCache__
+  5F8: Section       \BaseNamedObjects\__ComCatalogCache__
+  628: File          C:\Windows\System32\en-US\kernel32.dll.mui
+  6D4: File          C:\Windows\System32\drivers\etc
+  790: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\ShaderCache\data_3
+  7C8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\ShaderCache\index
+  7D4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\ShaderCache\index
+  7E8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\ShaderCache\data_2
+  7F0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\ShaderCache\data_3
+  7F4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\ShaderCache\data_0
+  7F8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\ShaderCache\data_0
+  804: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\ShaderCache\data_1
+  808: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\ShaderCache\data_1
+  81C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\ShaderCache\data_2
+  898: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnWebGPUCache\data_0
+  8E0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\segmentation_platform\ukm_db
+  8E4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\segmentation_platform\ukm_db-wal
+  968: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\History
+  9D4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\ServerCertificate
+  A50: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\Database\LOG
+  A5C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\BraveWallet\Brave Wallet Storage\000003.log
+  A60: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Safe Browsing\UrlSoceng.store.4_13398474366991567
+  A68: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Safe Browsing\UrlUws.store.4_13398474367295783
+  A80: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Safe Browsing\UrlMalware.store.4_13398474367286005
+  A88: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Favicons
+  ACC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Sync Data\LevelDB\000003.log
+  AD0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Sync Data\LevelDB\LOG
+  AD8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Sync Data\LevelDB\LOCK
+  AF8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Affiliation Database
+  B58: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Extension State\MANIFEST-000001
+  B64: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\BraveWallet\Brave Wallet Storage\LOG
+  B6C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\BraveWallet\Brave Wallet Storage\LOCK
+  B78: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Sync Data\LevelDB\MANIFEST-000001
+  B7C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\BraveWallet\Brave Wallet Storage\MANIFEST-000001
+  BA8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\Database\LOCK
+  BB8: Section       \Sessions\1\BaseNamedObjects\C:*ProgramData*Microsoft*Windows*Caches*cversions.2.ro
+  BBC: Section       \Sessions\1\BaseNamedObjects\C:*ProgramData*Microsoft*Windows*Caches*{6AF0698E-D558-4F6E-9B3C-3716689AF493}.2.ver0x0000000000000002.db
+  BC4: Section       \Sessions\1\BaseNamedObjects\C:*ProgramData*Microsoft*Windows*Caches*cversions.2.ro
+  BC8: Section       \Sessions\1\BaseNamedObjects\C:*ProgramData*Microsoft*Windows*Caches*{DDF571F2-BE98-426D-8288-1A9A39C3FDA2}.2.ver0x0000000000000001.db
+  BD0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\Database\MANIFEST-000001
+  BE4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\shared_proto_db\metadata\LOG
+  BE8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Extension State\LOCK
+  BF0: File          C:\Windows\System32\en-US\user32.dll.mui
+  BF4: File          C:\Windows\System32\en-US\propsys.dll.mui
+  BF8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Safe Browsing\ChromeExtMalware.store.32_13398467291354135
+  BFC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Safe Browsing\UrlMalBin.store.4_13398474367306121
+  C2C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Safe Browsing\UrlCsdDownloadAllowlist.store.32_13397126086723618
+  C40: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\Database\000003.log
+  C4C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Safe Browsing\UrlBilling.store.4_13398474367315272
+  C5C: Section       \BaseNamedObjects\windows_shell_global_counters
+  C74: File          C:\Windows\Fonts\segoeui.ttf
+  CB4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Site Characteristics Database\LOG
+  CC4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Site Characteristics Database\LOCK
+  CD0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Site Characteristics Database\MANIFEST-000001
+  CD4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Extension State\LOG
+  CDC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Site Characteristics Database\000003.log
+  DA8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\shared_proto_db\metadata\LOCK
+  E00: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Extension State\000003.log
+  E04: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\shared_proto_db\metadata\MANIFEST-000001
+  E08: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\shared_proto_db\metadata\000003.log
+  E28: File          C:\Windows\Fonts\seguisb.ttf
+  E70: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\shared_proto_db\MANIFEST-000001
+  E74: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\shared_proto_db\LOG
+  E7C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\shared_proto_db\LOCK
+  E8C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\shared_proto_db\000003.log
+  EAC: Section       \Sessions\1\BaseNamedObjects\53c4HWNDInterface:50258
+  EB0: Section       \Sessions\1\BaseNamedObjects\53c4HWNDInterface:50258
+  EB8: File          C:\Windows\Fonts\segoeuii.ttf
+  ED0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Local Storage\leveldb\LOCK
+  EDC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnWebGPUCache\data_2
+  EE8: File          C:\Windows\Fonts\segoeuib.ttf
+  EF8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Top Sites
+  F68: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GrShaderCache\data_3
+  F70: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GraphiteDawnCache\data_3
+  F74: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Account Web Data
+  F80: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GPUCache\index
+  F90: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GPUCache\index
+  F9C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GPUCache\data_0
+  FA8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GPUCache\data_0
+  FB0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GPUCache\data_1
+  FB4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GPUCache\data_1
+  FB8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GPUCache\data_3
+  FC8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GPUCache\data_2
+  FDC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GPUCache\data_2
+  FE8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GPUCache\data_3
+  FF8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnWebGPUCache\index
+  FFC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnWebGPUCache\index
+ 1004: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnWebGPUCache\data_0
+ 100C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnWebGPUCache\data_1
+ 1010: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnWebGPUCache\data_1
+ 1018: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnWebGPUCache\data_2
+ 101C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnWebGPUCache\data_3
+ 1024: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnWebGPUCache\data_3
+ 1028: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnGraphiteCache\data_2
+ 1050: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnGraphiteCache\index
+ 1054: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnGraphiteCache\index
+ 105C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnGraphiteCache\data_0
+ 1060: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnGraphiteCache\data_0
+ 1068: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnGraphiteCache\data_2
+ 106C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnGraphiteCache\data_1
+ 1070: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnGraphiteCache\data_1
+ 108C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnGraphiteCache\data_3
+ 1094: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DawnGraphiteCache\data_3
+ 11E8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Platform Notifications\000003.log
+ 11EC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Web Data
+ 11F0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Session Storage\LOCK
+ 11F4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Platform Notifications\MANIFEST-000001
+ 11F8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Platform Notifications\LOCK
+ 1208: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Platform Notifications\LOG
+ 120C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GraphiteDawnCache\data_2
+ 1228: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Login Data For Account
+ 1234: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Login Data
+ 12C0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GrShaderCache\index
+ 12F0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GrShaderCache\index
+ 12F8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GrShaderCache\data_0
+ 12FC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GrShaderCache\data_0
+ 1304: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GrShaderCache\data_1
+ 1308: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GrShaderCache\data_1
+ 1310: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GrShaderCache\data_2
+ 1314: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GrShaderCache\data_2
+ 131C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GrShaderCache\data_3
+ 132C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GraphiteDawnCache\data_1
+ 1338: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GraphiteDawnCache\data_0
+ 133C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GraphiteDawnCache\index
+ 1340: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GraphiteDawnCache\data_2
+ 134C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GraphiteDawnCache\index
+ 135C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GraphiteDawnCache\data_3
+ 1360: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GraphiteDawnCache\data_0
+ 1368: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\GraphiteDawnCache\data_1
+ 13B0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\WebStorage\QuotaManager
+ 13E0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\WebStorage\QuotaManager-journal
+ 1440: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Favicons-journal
+ 1520: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DIPS-wal
+ 153C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\History-journal
+ 1554: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\heavy_ad_intervention_opt_out.db
+ 15D0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\File System\Origins\LOCK
+ 1600: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Shortcuts
+ 1614: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\ZxcvbnData\3\ranked_dicts
+ 1640: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\516de5033c930bfb_1
+ 16D4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\99ce3bce5849f412_0
+ 16D8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\DIPS
+ 16E8: File          C:\Windows\System32\en-US\KernelBase.dll.mui
+ 171C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\9357490db8ed3da2_0
+ 1790: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\File System\Origins\LOG
+ 1794: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network Action Predictor
+ 17A0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\File System\Origins\MANIFEST-000001
+ 17A4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\File System\Origins\000003.log
+ 17D0: File          C:\Windows\System32\en-US\Windows.FileExplorer.Common.dll.mui
+ 1878: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\f3d0e5b041e775c5_0
+ 1934: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb\000400.log
+ 1938: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Sessions\Session_13398476142842829
+ 1984: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\7a800cd214b69ae4_0
+ 1998: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GCM Store\Encryption\LOG
+ 19A8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\2fccb8fd485576b8_0
+ 19C4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GCM Store\Encryption\MANIFEST-000001
+ 19C8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GCM Store\Encryption\000003.log
+ 19D8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\GCM Store\Encryption\LOCK
+ 19F8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\16ee88beb721ee14_1
+ 1A00: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\974a6ef81185f0a3_1
+ 1A10: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\dec201bea85cec83_0
+ 1A20: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network Action Predictor-journal
+ 1A30: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\bef549b2428870eb_0
+ 1A50: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\MediaDeviceSalts
+ 1A58: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb\LOCK
+ 1A5C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\ads_service\database.sqlite
+ 1A60: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb\LOG
+ 1A64: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb\MANIFEST-000001
+ 1A78: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Sessions\Tabs_13398476143031071
+ 1ADC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\16ee88beb721ee14_0
+ 1AE4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb\000403.ldb
+ 1AE8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\700d451f2b596bb7_1
+ 1AF0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\b409fdd35c13b6c1_1
+ 1AF4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\73e5e5dc3726ede5_0
+ 1AF8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\99ce3bce5849f412_1
+ 1AFC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\a9dcf61be5c84a96_0
+ 1B00: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\ef066dff1c5367ca_0
+ 1B04: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\700d451f2b596bb7_0
+ 1B08: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\64c7bda00b7472b9_0
+ 1B0C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\974a6ef81185f0a3_0
+ 1B10: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\b409fdd35c13b6c1_0
+ 1B14: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\e72c7f56eab25f40_0
+ 1B18: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\87429a1c4f83db3a_0
+ 1B1C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\a1f4e2f7a30f95a8_0
+ 1B20: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\2fccb8fd485576b8_1
+ 1B24: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\73e5e5dc3726ede5_1
+ 1B28: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\7a800cd214b69ae4_1
+ 1B2C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\64c7bda00b7472b9_1
+ 1B30: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\e72c7f56eab25f40_1
+ 1B34: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\87429a1c4f83db3a_1
+ 1B38: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\a1f4e2f7a30f95a8_1
+ 1B3C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\9357490db8ed3da2_1
+ 1B40: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\cfaf710b9edea6dc_0
+ 1B44: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\4dd02136f240bd7a_0
+ 1B48: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\516de5033c930bfb_0
+ 1B4C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Service Worker\CacheStorage\379f1cbab5b08b6fc9e08681e42d8be311441c88\46d00788-2190-4d9b-99dc-b176ac01f1d4\f3d0e5b041e775c5_1
+ 1B50: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Web Data-journal
+------------------------------------------------------------------------------
+brave.exe pid: 12544 COMPURICKY\ricar
+   50: File          C:\Program Files\BraveSoftware\Brave-Browser\Application
+   98: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  1DC: Section       \Windows\Theme2236473024
+  1E0: Section       \Sessions\1\Windows\Theme2642332878
+------------------------------------------------------------------------------
+brave.exe pid: 13396 COMPURICKY\ricar
+   94: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   A8: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  148: File          C:\Windows\apppatch\DirectXApps.sdb
+  294: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  488: Section       \Sessions\1\BaseNamedObjects\windows_shell_global_counters
+  4AC: File          C:\Users\ricar\AppData\LocalLow\AMD\DxCache\5f739fef0b5d05b4.ffe45ff01275bf2e.7b1f799a.dad1858.0.parc
+  4CC: Section       \Sessions\1\BaseNamedObjects\GAME_ID_RECORD_3454
+  D68: File          C:\Windows\System32\en-US\KernelBase.dll.mui
+  F04: Section       \Sessions\1\BaseNamedObjects\362ab5ec0200
+ 1534: Section       \Sessions\1\BaseNamedObjects\362ab5ebef00
+ 1620: Section       \BaseNamedObjects\__ComCatalogCache__
+ 1630: Section       \BaseNamedObjects\__ComCatalogCache__
+------------------------------------------------------------------------------
+brave.exe pid: 21404 COMPURICKY\ricar
+   54: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   A0: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   EC: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_200_percent.pak
+   F4: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_100_percent.pak
+  108: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_resources.pak
+  248: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  250: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\v8_context_snapshot.bin
+  258: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_100_percent.pak
+  260: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_200_percent.pak
+  268: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\Locales\en-US.pak
+  270: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\resources.pak
+  350: File          C:\Windows\System32\drivers\etc
+  424: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network\Trust Tokens
+  428: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Safe Browsing Network\Safe Browsing Cookies
+  42C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Shared Dictionary\db
+  470: Section       \BaseNamedObjects\__ComCatalogCache__
+  490: Section       \BaseNamedObjects\__ComCatalogCache__
+  4BC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network\Reporting and NEL
+  570: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network\Cookies
+  578: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Network\Cookies-journal
+  5C0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Cache\Cache_Data\index
+  5C4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Cache\Cache_Data\index
+  5CC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Cache\Cache_Data\data_0
+  5D0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Cache\Cache_Data\data_0
+  5D8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Cache\Cache_Data\data_1
+  5DC: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Cache\Cache_Data\data_1
+  5E4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Cache\Cache_Data\data_2
+  5E8: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Cache\Cache_Data\data_2
+  5F0: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Cache\Cache_Data\data_3
+  5F4: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Cache\Cache_Data\data_3
+------------------------------------------------------------------------------
+brave.exe pid: 12596 COMPURICKY\ricar
+   44: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Session Storage\000189.log
+   94: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   E4: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  258: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  260: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\v8_context_snapshot.bin
+  268: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_100_percent.pak
+  270: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_200_percent.pak
+  278: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\Locales\en-US.pak
+  280: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\resources.pak
+  288: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_resources.pak
+  290: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_100_percent.pak
+  298: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_200_percent.pak
+  31C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Local Storage\leveldb\LOG
+  320: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Local Storage\leveldb\MANIFEST-000001
+  324: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Local Storage\leveldb\000005.ldb
+  32C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Local Storage\leveldb\000188.ldb
+  334: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Session Storage\LOG
+  338: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Session Storage\000005.ldb
+  340: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Session Storage\MANIFEST-000001
+  344: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Session Storage\000185.ldb
+  348: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Session Storage\000188.ldb
+  34C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Session Storage\000190.ldb
+  350: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Session Storage\000182.ldb
+  36C: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Local Storage\leveldb\000191.ldb
+  370: File          C:\Users\ricar\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Local Storage\leveldb\000190.log
+------------------------------------------------------------------------------
+brave.exe pid: 20372 COMPURICKY\ricar
+   94: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   E4: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  13C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\Locales\en-US.pak
+  140: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_resources.pak
+  154: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\resources.pak
+  280: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  288: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\v8_context_snapshot.bin
+  290: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_100_percent.pak
+  298: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_200_percent.pak
+  2A0: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_100_percent.pak
+  2A8: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_200_percent.pak
+  3B0: File          C:\Windows\Fonts\timesbd.ttf
+  3B8: File          C:\Windows\Fonts\times.ttf
+  3BC: File          C:\Windows\Fonts\timesbi.ttf
+  3CC: File          C:\Windows\Fonts\timesi.ttf
+  3D4: File          C:\Users\ricar\AppData\Local\Temp\568cd86a-70ad-4648-94f9-9ba94470818c.tmp
+  410: File          C:\Windows\Fonts\arial.ttf
+  414: File          C:\Windows\Fonts\arialbd.ttf
+  418: File          C:\Windows\Fonts\arialbi.ttf
+  41C: File          C:\Windows\Fonts\ariali.ttf
+  420: File          C:\Windows\Fonts\ARIALN.TTF
+  424: File          C:\Windows\Fonts\ARIALNB.TTF
+  428: File          C:\Windows\Fonts\ARIALNBI.TTF
+  42C: File          C:\Windows\Fonts\ARIALNI.TTF
+  430: File          C:\Windows\Fonts\ariblk.ttf
+  438: File          C:\Windows\Fonts\segoeuisl.ttf
+  45C: File          C:\Windows\Fonts\segoeuil.ttf
+  460: File          C:\Windows\Fonts\segoeui.ttf
+  464: File          C:\Windows\Fonts\segoeuiz.ttf
+  468: File          C:\Windows\Fonts\segoeuii.ttf
+  46C: File          C:\Windows\Fonts\segoeuib.ttf
+  4AC: File          C:\Windows\Fonts\segoeui.ttf
+  4D8: File          C:\Windows\Fonts\seguibli.ttf
+  4E0: File          C:\Windows\Fonts\seguisb.ttf
+  4E4: File          C:\Windows\Fonts\seguili.ttf
+  4EC: File          C:\Windows\Fonts\seguisli.ttf
+  4F0: File          C:\Windows\Fonts\seguisbi.ttf
+  504: File          C:\Windows\Fonts\arial.ttf
+  50C: File          C:\Windows\Fonts\arial.ttf
+  5CC: File          C:\Windows\Fonts\consola.ttf
+  5D8: File          C:\Windows\Fonts\seguibl.ttf
+  5E8: File          C:\Windows\Fonts\consolab.ttf
+  604: File          C:\Windows\Fonts\consolaz.ttf
+  634: File          C:\Windows\Fonts\consolai.ttf
+  6B4: File          C:\Windows\Fonts\seguisym.ttf
+  6B8: File          C:\Windows\Fonts\times.ttf
+  6BC: File          C:\Windows\Fonts\arialbd.ttf
+  6C4: File          C:\Windows\Fonts\arialbd.ttf
+  6D0: File          C:\Windows\Fonts\times.ttf
+  6DC: File          C:\Windows\Fonts\seguisym.ttf
+  6E4: File          C:\Windows\Fonts\seguisym.ttf
+------------------------------------------------------------------------------
+brave.exe pid: 8108 COMPURICKY\ricar
+   94: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   E0: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  274: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  27C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\v8_context_snapshot.bin
+  284: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_100_percent.pak
+  28C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_200_percent.pak
+  294: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\Locales\en-US.pak
+  29C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\resources.pak
+  2A4: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_resources.pak
+  2AC: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_100_percent.pak
+  2B4: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_200_percent.pak
+  3E0: File          C:\Windows\Fonts\times.ttf
+  3E4: File          C:\Windows\Fonts\timesbd.ttf
+  3E8: File          C:\Windows\Fonts\timesbi.ttf
+  3EC: File          C:\Windows\Fonts\timesi.ttf
+  404: File          C:\Windows\Fonts\arial.ttf
+  408: File          C:\Windows\Fonts\arialbd.ttf
+  40C: File          C:\Windows\Fonts\arialbi.ttf
+  410: File          C:\Windows\Fonts\ariali.ttf
+  414: File          C:\Windows\Fonts\ARIALN.TTF
+  418: File          C:\Windows\Fonts\ARIALNB.TTF
+  41C: File          C:\Windows\Fonts\ARIALNBI.TTF
+  420: File          C:\Windows\Fonts\ARIALNI.TTF
+  424: File          C:\Windows\Fonts\ariblk.ttf
+  458: File          C:\Users\ricar\AppData\Local\Temp\f86e2f96-ff55-440c-8c37-e4c0644e7b3e.tmp
+  48C: File          C:\Windows\Fonts\segoeui.ttf
+  4AC: File          C:\Windows\Fonts\segoeuib.ttf
+  4B0: File          C:\Windows\Fonts\segoeuii.ttf
+  4B4: File          C:\Windows\Fonts\segoeuil.ttf
+  4B8: File          C:\Windows\Fonts\segoeuisl.ttf
+  4BC: File          C:\Windows\Fonts\segoeuiz.ttf
+  4C0: File          C:\Windows\Fonts\seguibl.ttf
+  4C4: File          C:\Windows\Fonts\seguibli.ttf
+  4C8: File          C:\Windows\Fonts\seguili.ttf
+  4CC: File          C:\Windows\Fonts\seguisb.ttf
+  4D0: File          C:\Windows\Fonts\seguisbi.ttf
+  4D4: File          C:\Windows\Fonts\seguisli.ttf
+  4D8: File          C:\Windows\Fonts\segoeui.ttf
+  4E0: File          C:\Windows\Fonts\segoeui.ttf
+  4EC: File          C:\Windows\Fonts\segoeuil.ttf
+  4F4: File          C:\Windows\Fonts\segoeuil.ttf
+  4FC: File          C:\Windows\Fonts\segoeuii.ttf
+  504: File          C:\Windows\Fonts\segoeuii.ttf
+  50C: File          C:\Windows\Fonts\segoeuiz.ttf
+  518: File          C:\Windows\Fonts\segoeuiz.ttf
+  51C: File          C:\Windows\Fonts\ariblk.ttf
+  524: File          C:\Windows\Fonts\segoeuib.ttf
+  52C: File          C:\Windows\Fonts\segoeuib.ttf
+  534: File          C:\Windows\Fonts\ariblk.ttf
+  540: File          C:\Windows\Fonts\timesbd.ttf
+  548: File          C:\Windows\Fonts\timesbd.ttf
+  58C: File          C:\Windows\Fonts\consola.ttf
+  590: File          C:\Windows\Fonts\consolab.ttf
+  594: File          C:\Windows\Fonts\consolai.ttf
+  598: File          C:\Windows\Fonts\consolaz.ttf
+------------------------------------------------------------------------------
+brave.exe pid: 19100 COMPURICKY\ricar
+   94: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   E0: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  258: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  260: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\v8_context_snapshot.bin
+  268: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_100_percent.pak
+  270: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_200_percent.pak
+  278: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\Locales\en-US.pak
+  280: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\resources.pak
+  288: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_resources.pak
+  290: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_100_percent.pak
+  298: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_200_percent.pak
+  390: File          C:\Users\ricar\AppData\Local\Temp\c0ea50b8-e8f3-408b-acb5-b86214b5bc60.tmp
+  3F8: File          C:\Windows\Fonts\times.ttf
+  3FC: File          C:\Windows\Fonts\timesbd.ttf
+  404: File          C:\Windows\Fonts\timesbi.ttf
+  408: File          C:\Windows\Fonts\timesi.ttf
+  41C: File          C:\Windows\Fonts\arial.ttf
+  420: File          C:\Windows\Fonts\arialbd.ttf
+  424: File          C:\Windows\Fonts\arialbi.ttf
+  428: File          C:\Windows\Fonts\ariali.ttf
+  42C: File          C:\Windows\Fonts\ARIALN.TTF
+  430: File          C:\Windows\Fonts\ARIALNB.TTF
+  434: File          C:\Windows\Fonts\ARIALNBI.TTF
+  438: File          C:\Windows\Fonts\ARIALNI.TTF
+  43C: File          C:\Windows\Fonts\ariblk.ttf
+------------------------------------------------------------------------------
+brave.exe pid: 13620 COMPURICKY\ricar
+   94: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   E8: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  25C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  264: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\v8_context_snapshot.bin
+  26C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_100_percent.pak
+  274: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_200_percent.pak
+  27C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\Locales\en-US.pak
+  284: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\resources.pak
+  28C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_resources.pak
+  294: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_100_percent.pak
+  29C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_200_percent.pak
+  368: File          C:\Windows\Fonts\segoeuii.ttf
+  380: File          C:\Users\ricar\AppData\Local\Temp\5a831a8e-a659-4ffb-874c-89af889bbe9e.tmp
+  3F8: File          C:\Windows\Fonts\times.ttf
+  3FC: File          C:\Windows\Fonts\timesbd.ttf
+  404: File          C:\Windows\Fonts\timesbi.ttf
+  408: File          C:\Windows\Fonts\timesi.ttf
+  410: File          C:\Windows\Fonts\arial.ttf
+  418: File          C:\Windows\Fonts\arialbd.ttf
+  41C: File          C:\Windows\Fonts\arialbi.ttf
+  420: File          C:\Windows\Fonts\ariali.ttf
+  424: File          C:\Windows\Fonts\ARIALN.TTF
+  428: File          C:\Windows\Fonts\ARIALNB.TTF
+  42C: File          C:\Windows\Fonts\ARIALNBI.TTF
+  430: File          C:\Windows\Fonts\ARIALNI.TTF
+  434: File          C:\Windows\Fonts\ariblk.ttf
+  43C: File          C:\Windows\Fonts\segoeui.ttf
+  478: File          C:\Windows\Fonts\segoeuib.ttf
+  47C: File          C:\Windows\Fonts\segoeuil.ttf
+  480: File          C:\Windows\Fonts\segoeuisl.ttf
+  484: File          C:\Windows\Fonts\segoeuiz.ttf
+  488: File          C:\Windows\Fonts\seguibl.ttf
+  48C: File          C:\Windows\Fonts\seguibli.ttf
+  490: File          C:\Windows\Fonts\seguili.ttf
+  494: File          C:\Windows\Fonts\seguisb.ttf
+  498: File          C:\Windows\Fonts\seguisbi.ttf
+  49C: File          C:\Windows\Fonts\seguisli.ttf
+  4A0: File          C:\Windows\Fonts\segoeui.ttf
+  4A8: File          C:\Windows\Fonts\segoeui.ttf
+  4BC: File          C:\Windows\Fonts\consola.ttf
+  4C0: File          C:\Windows\Fonts\consolab.ttf
+  4C4: File          C:\Windows\Fonts\consolai.ttf
+  4C8: File          C:\Windows\Fonts\consolaz.ttf
+  5B8: File          C:\Windows\Fonts\seguisb.ttf
+  5C0: File          C:\Windows\Fonts\seguisb.ttf
+------------------------------------------------------------------------------
+brave.exe pid: 6448 COMPURICKY\ricar
+   94: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   E4: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  264: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  26C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\v8_context_snapshot.bin
+  274: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_100_percent.pak
+  27C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_200_percent.pak
+  284: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\Locales\en-US.pak
+  28C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\resources.pak
+  294: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_resources.pak
+  29C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_100_percent.pak
+  2A4: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_200_percent.pak
+  394: File          C:\Users\ricar\AppData\Local\Temp\61938ecc-9061-4dd6-ad7f-02639f32d926.tmp
+  3FC: File          C:\Windows\Fonts\times.ttf
+  404: File          C:\Windows\Fonts\timesbd.ttf
+  408: File          C:\Windows\Fonts\timesbi.ttf
+  40C: File          C:\Windows\Fonts\timesi.ttf
+  410: File          C:\Windows\Fonts\arial.ttf
+  414: File          C:\Windows\Fonts\arialbd.ttf
+  41C: File          C:\Windows\Fonts\arialbi.ttf
+  420: File          C:\Windows\Fonts\ariali.ttf
+  424: File          C:\Windows\Fonts\ARIALN.TTF
+  428: File          C:\Windows\Fonts\ARIALNB.TTF
+  42C: File          C:\Windows\Fonts\ARIALNBI.TTF
+  430: File          C:\Windows\Fonts\ARIALNI.TTF
+  434: File          C:\Windows\Fonts\ariblk.ttf
+  464: File          C:\Windows\Fonts\SegoeIcons.ttf
+  474: File          C:\Windows\Fonts\SegoeIcons.ttf
+------------------------------------------------------------------------------
+brave.exe pid: 3640 COMPURICKY\ricar
+   98: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   E4: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  25C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  264: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\v8_context_snapshot.bin
+  26C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_100_percent.pak
+  274: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_200_percent.pak
+  27C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\Locales\en-US.pak
+  284: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\resources.pak
+  28C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_resources.pak
+  294: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_100_percent.pak
+  29C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_200_percent.pak
+  384: File          C:\Users\ricar\AppData\Local\Temp\6d1a24f1-2330-4359-827a-b73dada34cb3.tmp
+------------------------------------------------------------------------------
+brave.exe pid: 8648 COMPURICKY\ricar
+   94: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   E0: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  260: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  268: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\v8_context_snapshot.bin
+  270: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_100_percent.pak
+  278: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_200_percent.pak
+  280: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\Locales\en-US.pak
+  288: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\resources.pak
+  290: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_resources.pak
+  298: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_100_percent.pak
+  2A0: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_200_percent.pak
+  350: File          C:\Windows\System32\en-US\MMDevAPI.dll.mui
+  37C: Section       \BaseNamedObjects\__ComCatalogCache__
+  38C: Section       \BaseNamedObjects\__ComCatalogCache__
+------------------------------------------------------------------------------
+brave.exe pid: 8612 COMPURICKY\ricar
+   54: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+   9C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125
+  100: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\icudtl.dat
+  110: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\v8_context_snapshot.bin
+  12C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_100_percent.pak
+  244: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\chrome_200_percent.pak
+  24C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\Locales\en-US.pak
+  254: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\resources.pak
+  25C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_resources.pak
+  264: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_100_percent.pak
+  26C: File          C:\Program Files\BraveSoftware\Brave-Browser\Application\138.1.80.125\brave_200_percent.pak
+  540: Section       \BaseNamedObjects\__ComCatalogCache__
+  550: Section       \BaseNamedObjects\__ComCatalogCache__
+  584: File          C:\Windows\apppatch\DirectXApps.sdb
+  658: Section       \Sessions\1\BaseNamedObjects\windows_shell_global_counters
+  6B4: File          C:\Users\ricar\AppData\Local\AMD\DxCache\5f739fef0b5d05b4.2520a65d1d81dbf4.7b1f799a.dad1858.0.parc
+  6BC: File          C:\Users\ricar\AppData\Local\AMD\DxCache\5f739fef0b5d05b4.2520a65d1d81dbf4.7b1f799a.dad1858.1.parc
+  FC0: Section       \Sessions\1\BaseNamedObjects\C:*ProgramData*Microsoft*Windows*Caches*cversions.2.ro
+  FC4: Section       \Sessions\1\BaseNamedObjects\C:*ProgramData*Microsoft*Windows*Caches*{6AF0698E-D558-4F6E-9B3C-3716689AF493}.2.ver0x0000000000000002.db
+  FC8: Section       \Sessions\1\BaseNamedObjects\C:*ProgramData*Microsoft*Windows*Caches*cversions.2.ro
+  FCC: Section       \Sessions\1\BaseNamedObjects\C:*ProgramData*Microsoft*Windows*Caches*{DDF571F2-BE98-426D-8288-1A9A39C3FDA2}.2.ver0x0000000000000001.db
+ 1004: File          C:\Windows\System32\en-US\propsys.dll.mui

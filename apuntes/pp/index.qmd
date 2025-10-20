@@ -1,0 +1,3 @@
+# Resumenes
+
+[Paradigma de Objetos](./oop/resumen.qmd)

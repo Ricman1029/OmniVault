@@ -1,0 +1,181 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+% Interlineado 1.5
+\usepackage{mathpazo}
+\usepackage{setspace}
+\onehalfspacing
+
+% Fuente Times New Roman
+\usepackage{mathptmx}
+
+% Acomodar margenes del documento
+\usepackage[a4paper, margin=2cm, top=3cm, headheight=50pt]{geometry}
+
+% Paquetes comunes
+\usepackage{graphicx, float}
+\usepackage{amsfonts, amssymb, amsmath}
+\usepackage{physics, esvect}
+\usepackage{enumerate}
+\usepackage[colorlinks=true, citecolor=blue]{hyperref}
+
+% Para graficar
+\usepackage{pgfplots}
+\usepackage{tikz, color}
+\usepackage{tikz-3dplot}
+\pgfplotsset{width=15cm, compat=1.18}
+\usepgfplotslibrary{external}
+\tikzexternalize[prefix=figs/]
+
+% Para automatas
+\usetikzlibrary{automata, positioning, arrows, calc}
+\tikzset{
+        ->,  % makes the edges directed
+        >=stealth, % makes the arrow heads bold
+        shorten >=2pt, shorten <=2pt, % shorten the arrow
+        node distance=3cm, % specifies the minimum distance between two nodes. Change if n
+        every state/.style={draw=blue!55,very thick,fill=blue!20}, % sets the properties for each ’state’ n
+        initial text=$ $, % sets the text that appears on the start arrow
+}
+
+% Encabezados
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\fancyhead[L]{
+  \includegraphics[height=1.2cm]{~/imagenes/logo_utn.png}
+  \shortstack[l]{
+    {\footnotesize Universidad Tecnológica Nacional} \\
+    {\footnotesize Facultad Regional Córdoba} \\
+    {\footnotesize Extensión Áulica Bariloche}
+  }
+}
+\fancyhead[C]{
+  \shortstack[c]{
+    {\footnotesize Ingeniería y Sociedad} \\
+    {\footnotesize Trabajo Práctico N° 3} \\
+    {\footnotesize }
+  }
+}
+\fancyhead[R]{
+  \shortstack[r]{
+    {\footnotesize Profesor: Sebastían Iván Benitez} \\
+    {\footnotesize Freccero R. - Martini M.} \\
+    {\footnotesize Fecha: 07/08/25}
+  }
+}
+
+% Para bibliografía
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{bibliografia.bib}
+
+\begin{document}
+\newgeometry{margin=2cm, top=1.5cm}
+  \begin{titlepage}
+    \centering
+    \includegraphics[width=\linewidth]{~/imagenes/logo_utn_frc.jpg}\\
+
+    \textsc{
+      \LARGE Universidad Tecnológica Nacional\\
+      \Large Facultad Regional Córdoba - Extensión Áulica Bariloche\\
+      \large Ingeniería en Sistemas de Información\\
+      Año lectivo 2025\\[0.5cm]
+    }
+
+    \rule{\linewidth}{1.0mm}\\[0.4cm]
+    \Huge
+    \textbf{Ingeniería y Sociedad}\\
+    Trabajo Práctico N° 3\\[0.2cm]
+    \LARGE
+    Taylorismo en la actualidad
+    \rule{\linewidth}{1.0mm}\\
+    \large
+    \begin{flushleft}
+      Profesor: Sebastían Iván Benitez
+
+      Ayudante: Julia Stringa
+
+      Fecha: 07/08/25
+    \end{flushleft}
+
+    \vfill
+    \begin{flushright}
+      Alumnos: Ricardo Nicolás Freccero y Morena Ángeles Martini Morelli
+
+    \end{flushright}
+  \end{titlepage}
+
+  \restoregeometry
+  \tableofcontents
+  \newpage
+
+  \section{Introducción}
+  El taylorismo fue un sistema de gestión industrial desarrollado por Frederick W. Taylor a fines del siglo XIX. El objetivo principal de este sistema era aumentar la productividad de las industrias. Alugnas de las características mas importantes de este sistema eran la fragmentación del trabajo en tareas mas simples, el cronometraje y estandarización de movimientos, la separación entre planificación y ejecución, y el uso de sistemas de incentivos y sanciones para los empleados. 
+
+  Si bien estas ideas desarrolladas durante la Segunda Revolución Industrial lograron transformar la organización del trabajo en las industrias de la época y trajeron grandes beneficios para las empresas, como la reducción de costos de hasta un 50\%, el aumento de la productividad y mayor control del proceso de trabajo, también vinieron acompañadas de fuertes críticas por su caracter mecanizante y el hecho de que se veía al empleado como un simple recurso, sin tener en cuenta su caracter humano.
+
+  En la actualidad esas mismas ideas aparecen camufladas como nuevas formas de tecnologías: vigilancia digital (sensores, geolocalización), fragmentación del trabajo en microtareas mas simples que pueden ser cronometradas, encuestas online a los clientes para que califiquen el nivel de atención del empleado, y muchas otras mas. En este trabajo vamos a tomar en cuenta el caso concreto del taylorismo en el sector de cocina de la empresa McDonald's.
+
+  \section{Desarrollo}
+  En esta sección vamos a analizar el caso de McDonald's, concretamente el sector de cocina de la empresa. Vamos a pasar, punto por punto, por cada uno de los conceptos mas característicos del taylorismo para poder ver cómo son aplicados dentro de la empresa.
+
+  \begin{itemize}
+	\item \textbf{División del trabajo:} Cada empleado tiene un rol específico y cuenta con cierto tiempo para cumplir las tareas. Dentro de este grupo se encuentran el que cobra, el que fríe las papas, el que limpia, el que prepara el pedido, el que prepara las hamburguesas, el que las cocina, etc.
+
+	\item \textbf{Estandarización de procesos:} Cada tarea, ya sea la cocción, limpieza, ensamblaje, preparado, cantidades de los alimentos y aderezos, etc., está medida para que se haga en cierto tiempo. Además, las máquinas fueron diseñadas para reducir estos tiempos, por ejemplo el parrillero coloca las hamburguesas de cierta manera y luego aprieta un botón que baja unas placas para cocinar por encima. De esta manera, el parrillero no debe dar vuelta manualmente las hamburguesas.
+
+	\item \textbf{Incentivos y sanciones:}\begin{itemize}
+	  \item  Cuando el empleado llega a horario (al menos 5 minutos antes de que comience su turno) se lo premia con ``presentismo'', que le proporciona un porcentaje mayor a la hora de cobrar el sueldo.
+
+	  \item La empresa suele promover competencias entre la cocina y los servicios (cobro, papas, bebida y preparado del pedido). Quienes hacen mas rápido su trabajo se ganan una merienda gratis en el mismo McDonald's.
+
+	  \item En cuanto a las sanciones, si un empelado llega tarde una vez o tiene una falta injustificada, este no puede gozar del aumento de sueldo por presentismo y debe esperar hasta la siguiente quincena (ya que el sueldo es por quincena) para obtener este beneficio.
+	\end{itemize}
+  \end{itemize}
+
+  Algo que nos parece importante destacar relacionado con cómo se verifica la llegada y salida del trabajo es que esto se realiza con una máquina que le toma al empleado la huella digital. Cuando el empleado llega al lugar de trabajo, debe ir con el gerente y ``fichar''. De esta forma, la empresa tiene todo registrado, tanto la entrada como la salida.
+
+  \paragraph{Impacto}\mbox{}
+  \begin{itemize}
+    \item Para la empresa:\begin{itemize}
+      \item Eficiencia: Gracias a la división y estandarización del trabajo, McDonald's produce y vende mucho mas que otras empresas.
+
+      \item Control: Al tener pantallas, supervisores y gerentes, controlan cada proceso que sucede en el ámbito de trabajo (cocción, ensamblaje, entrega, etc).
+
+      \item Rentabilidad: Al reducir costos de capacitación y tiempos, se vende más y aumentan las ganancias.
+    \end{itemize}
+
+    \item Para el trabajador: \begin{itemize}
+      \item Condiciones laborales: Los tiempos de trabajo de cada empleado son cortos (turnos de entre 3-5 horas) pero son muy intensos y las tareas que se realizan son muy repetitivas.
+
+      \item Salud física y mental: Los empleados presentan mucho cansancio físico y dolores corporales por malas posiciones y el estrés de tener que hacer todas las tareas en un tiempo límite durante todo el ciclo de trabajo.
+
+      \item Falta de Autonomía: Todas las instrucciones sobre cómo deben actuar los empleados las da el encargado o gerente.
+    \end{itemize}
+
+    \item Para la sociedad: \begin{itemize}
+      \item Salud pública y hábitos alimentarios: La presencia masiva de comida rápida barata contribuye a la normalización de dietas altas en calorías y grasas, lo que tiene efectos adversos sobre la salud de la población en general.
+
+      \item Desigualdad y precariedad laboral: las puestos generados en este sistema suelen ser temporales, con baja remuneración y muy poca capacidad de progresión. Los jóvenes y los sectores mas vulnerables son quienes terminan ocupando estos puestos de trabajo de baja calidad, lo que limita la movilidad social.
+
+      \item Impacto ambiental: El modelo de consumo rápido suele asociarse a altos volúmenes de envases desechables, y desperdicio de alimentos generando grandes cantidades de residuos.
+    \end{itemize}
+  \end{itemize}
+
+  \paragraph{Reflexión crítica}\mbox{}
+
+  En el análisis realizado se puede ver una gran tensión entre dos conceptos importantes. Por un lado vemos que el taylorismo realmente ofrece mejoras o beneficios económicos y de productividad para la empresa a través de la estandarización y el control de procesos de trabajo. Por otro lado vemos que esto sucede a costa de otros problemas como lo pueden ser la salud física y mental de las personas, y al final son la sociedad y los mismos empleados de la empresa quienes terminan pagando estos costos.
+
+  Creemos que una mejor opción sería quedarse con los beneficios que otorga el taylorismo moderno, pero sin sacrificar los derechos de los trabajadores. Algunas opciones para lograr esto pueden ser la creación de normas de regulación que limiten la vigilancia intrusiva y que eviten la competencia dañina entre los empleados. También se podría implementar políticas públicas de salud y consumo que incentiven opciones mas saludables y etiquetado claro para que las personas sepan qué están consumiendo. Por último, la implementación de mecanismos reales de participación para que los trabajadores sean parte de la toma de decisiones de la empresa puede traer grandes beneficios para su bienestar, tanto físico como mental.
+
+  \section{Conclusión}
+  El taylorismo no es solo un fenómeno histórico, un sistema que nació y murió durante la Segunda Revolución Industrial, sino que sus ideas todavía están vigentes en la actualidad y son aplicadas por una gran cantidad de empresas de todo tipo. La fragmentación de procesos, la estandarización temporal y los incentivos económicos siguen siendo herramientas poderosas para elevar la productividad, y hoy en día, con el constante avance tecnológico, la vigilancia es incluso mayor de lo que fue en un principio. Esto genera mayores ganancias para las empresas, pero también genera mayores riesgos para la salud, la autonomía de los trabajadores y la justicia laboral de las personas.
+
+  \newpage
+  \addcontentsline{toc}{section}{Referencias}
+  \printbibliography
+
+\end{document}

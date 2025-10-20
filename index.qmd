@@ -11,3 +11,4 @@ Bienvenidos a mis resúmenes de **proyectos** y **apuntes** universitarios.
 - [Física 2](apuntes/fisica2/index.html)
 - [Sistemas Operativos](apuntes/sop/index.html)
 - [Sintáxis y Semántica de los lenguajes](apuntes/ssl/index.html)
+- [Paradigmas de la Programación](apuntes/pp/index.html)

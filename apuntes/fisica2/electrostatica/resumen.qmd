@@ -2,10 +2,9 @@
 lang: es
 author: Ricardo Freccero
 toc: true
+fig-cap-location: top
 format:
   html:
-    math:
-      equationNumbers: true
     theme: cosmo
     code-fold: true
     html-math-method: katex
@@ -78,7 +77,8 @@ En Física 2 vamos a estudiar pura y exclusivamente las **fuerzas electromagnét
 
 Las interacciones del *electromagnetismo* implican partículas que tienen una propiedad llamada *carga eléctrica*. De la misma manera que en Física 1 vimos que los objetos con masa eran acelerados por las fuerzas gravitatorias, en Fisica 2 vamos a ver que los objetos cargados eléctricamente son acelerados por las fuerzas eléctricas.
 
-# Introducción
+# El campo eléctrico
+## Introducción
 Como vimos en Física 1, Isaac Newton fue una figura muy importante para la física clásica moderna. Fue él quien formuló las leyes del movimiento y la gravitación universal, y su modelo se sigue usando hasta el día de hoy. Sin embargo, hay ciertos fenómenos que las leyes de Newton no pueden explicar, así que los científicos de la época se pusieron a pensar qué podría estar pasando. Algunos experimentos conocidos, que hacían quedar mal a las leyes de Newton eran los siguientes:
 
 - Supongamos que tenemos dos bombillas de plástico. En principio si las acercamos no pasa nada, pero si las frotamos contra la piel y volvemos a acercarlas, ahora se repelen.
@@ -88,7 +88,7 @@ Como vimos en Física 1, Isaac Newton fue una figura muy importante para la fís
 
 Y cómo puede ser esto? Que a veces los materiales se repelen, otras se atraen, y otras no pase nada aunque lo único que esté pasando entre ellos es que se toquen entre sí. Bueno esto es lo que viene a explicar la **electrostática**, que es el primer tema que vamos a ver en la materia.
 
-# Ley de Coulomb
+## Ley de Coulomb
 Todos estos fenómenos que acabamos de ver se pueden explicar con una sola fórmula, conocida como **Ley de Coulomb**. Esta ley establece que hay algunos cuerpos que tienen una propiedad llamada *carga eléctrica*, denominada generalmente con la letra $q$, y esta carga eléctrica es medida en Coulombs. Además, si tenemos una entidad que tiene una carga eléctrica $q_{1}$, y otra entidad con una carga eléctrica $q_{2}$, ambas ejercen una fuerza sobre la otra, y **la magnitud** de esa fuerza está dada por la siguiente fórmula:
 
 $$
@@ -104,21 +104,21 @@ $$ {#eq-ley-coulomb}
 La Ley de Coulomb puede aparecer escrita de otra forma en la que se usa una constante $k=\frac{1}{4\pi\varepsilon_{0}}$. Esta forma puede ser útil en algunas ocasiones
 $$
   \left|F\right|=k\frac{\left|q_{1}q_{2}\right|}{r^2}
-$$
+$${#eq-magn-ley-coulomb-constante}
 Y en su forma vectorial
 $$
   \vec{F}=k\frac{\left|q_{1}q_{2}\right|}{r^3}\vec{r}
-$$
+$${#eq-fuerza-ley-coulomb-constante}
 El valor de esta constante es $k\approx 8.987\times 10^9N\cdot m^2/C^2$
 
-## Carga eléctrica y estructura de la materia
+### Carga eléctrica y estructura de la materia
 En los ejemplos que dimos al principio, cuando se frotaba la varilla de vidrio contra la seda por ejemplo, no había ningún cambio visible en su apariencia que idicara que algo había cambiado. Para entender esto hay que analizar las propiedades eléctricas de los átomos de esa varilla de vidrio.
 
 Los átomos están constituidos por tres tipos de particulas: los **electrones**, con carga eléctrica negativa; los **protones**, con carga eléctrica positiva y de igual magnitud que los electrones; y los **neutrones**, sin carga. Los protones y los neutrones están formados por otras entidades llamadas *quarks*, que tienen cargas de $\pm\frac{1}{3}$ y $\pm\frac{2}{3}$ de la carga del electrón. Todos los electrones siempre tienen la misma carga eléctrica $q_{e}=-1.6\times10^{-19}C=-q_{p}$.
 
 Los protones y los neutrones en un átomo forma el **núcleo**. Los electrones rodean al núcleo y se mantienen dentro del átomo debido a las fuerzas eléctricas que ejercen los protones sobre ellos. (Los protones y los neutrones están unidos en el núcleo debido a la fuerza nuclear fuerte, que vence a la repulsión eléctrica entre los protones).
 
-## Propiedades de la carga eléctrica
+### Propiedades de la carga eléctrica
 Del análisis anterior podemos deducir dos prinicpios importantes.
 
 - **La carga eléctrica se conserva:** La suma algebráica de todas las cargas eléctricas en cualquier sistema cerrado es constante.
@@ -127,15 +127,16 @@ Del análisis anterior podemos deducir dos prinicpios importantes.
 ## Conductores, aislantes y cargas inducidas
 Algunos materiales permiten que las cargas eléctricas se muevan con facilidad de una región a otra, mientras que otros no lo hacen. Los primeros, reciben el nombre de **conductores** de electricidad. El alambre de cobre es un ejemplo de un conductor. Otros materiales, como una banda de caucho y un cordón de nailon no permiten que la carga eléctrica se transfiera, y reciben el nombre de **aislantes**.
 
-### Carga por inducción
+#### Carga por inducción
 Si queremos transferir carga eléctrica de un cuerpo $A$ hacia otro cuerpo $B$, podemos simplemente acercar $A$ hacia $B$ para que $A$ ceda electrones a $B$, transfiriendole parte de su carga eléctrica. Sin embargo, existe otro proceso mediante el cual podemos cargar al cuerpo $B$ sin perder carga del cuerpo $A$. Este proceso se llama **carga por inducción**.
 
 En la @fig-carga-induccion podemos ver cómo es este proceso. Primero hay una esfera metálica sin carga sostenida por un soporte aislante. Al acercarse una varilla con carga negativa, los electrones libres en la esfera metálica son repelidos por los electrones excedentes en la varilla, de forma que se acumulan en el lado derecho de la esfera. Ahora, como el lado derecho de la esfera tiene una **carga inducida** negativa, al ponerla en contacto con un alambre conductor que está conectado a tierra, los electrones del lado derecho de la esfera son transferidos. De esta manera, la varilla nunca perdió electrones, y logramos transferir parte de la carga eléctrica de la esfera hacia la tierra. 
 
 ![Imagen sacada de @sears2. Carga por inducción](./imagenes/carga-induccion.png){#fig-carga-induccion}
 
-::: {.callout-tip title="🔍" icon=false}
-## Ejemplos
+::: {.callout-tip title=Ejemplo}
+::: {#exm-ley-coulomb}
+
 1. Comparar la magnitud de la fuerza electrostática con la gravitatoria entre:
  - 2 protones.
  - 2 electrones.
@@ -190,11 +191,1072 @@ $$
   \frac{q}{m} &= \sqrt[]{\frac{G}{k}}
 \end{aligned}
 $$
+:::
+:::
+
+## Principio de superposición
+Ahora, la Ley de Coulomb está definida sólo cuando existen dos cargas que interactúan entre sí. Pero, ¿qué pasa si en vez de dos cargas tenemos tres?, ¿y si tenemos mas de tres?. Los experimentos demuestran que cuando dos cargas ejercen fuerza de manera simultánea sobre una tercer carga, la fuerza total que actúa sobre esa carga es la suma vectorial de las otras dos. Esta propiedad se conoce como **principio de superposición de fuerzas**, y se cumple para cualquier número de cargas.
+
+De esta manera, si hay dos cargas $q_{1}, q_{2}$ y queremos conocer la fuerza ejercida por ambas en $q_{0}$ decimos lo siguiente:
+$$
+  \vec{F}_{q \to q_{0}} = \vec{F}_{q_{1} \to q_{0}}^1 + \vec{F}_{q_{2} \to q_{0}}^2
+$${#eq-superposicion}
+
+::: {.callout-tip title=Ejemplo}
+::: {#exm-superposicion}
+
+En la @fig-ej-superposicion se observan dos cargas idénticas de valor $q$, ubicadas en $z=a$ y $z=-a$. Se coloca una carga de prueba sobre el eje $x$. Hallar la fuerza total que siente la carga de prubea en función de $x$. ¿En qué lugar la fuerza es máxima? ¿En qué posición la fuerza alcanza su mínimo? Hallar la fuerza total en el límite $x \to \infty$.
+
+![Ejemplo 3.](./imagenes/ejercicio-superposicion.png){#fig-ej-superposicion}
+
+- Por el principio de superposicion sabemos que si queremos calcular la fuerza que siente la carga $q_{0}$ tenemos que sumar las fuerzas que le ejercen las dos cargas $q$. Entonces:
+  $$
+  \begin{aligned}
+    F_{q \to q_{0}} &= F_{q_{1} \to q_{0}} + F_{q_{2} \to q_{0}}
+     &= \frac{1}{4\pi\varepsilon_{0}}\left(\frac{q_{0}q_{1}\vec{r_{1}}}{\lVert\vec{r_{1}}\rVert^3} + \frac{q_{0}q_{2}\vec{r_{2}}}{\lVert\vec{r_{2}}\rVert^3}\right)\\
+  \end{aligned}
+  $$
+
+  Los vectores $r$ nos los dan en la consigna, simplemente los armamos con las posiciones de cada carga.
+  $$
+  \begin{aligned}
+    \vec{r_{1}} &= \vec{q_{0}} - \vec{q_{1}} = (x, 0, 0) - (0, 0, a) = (x, 0, a)\\
+    \vec{r_{2}} &= \vec{q_{0}} - \vec{q_{2}} = (x, 0, 0) - (0, 0, -a) = (x, 0, -a)
+  \end{aligned}
+  $$
+
+  La ecuación de las fuerzas entonces nos queda aśi:
+  $$
+  \begin{aligned}
+    \vec{F}_{q \to q_{0}} &= \frac{q_{0}}{4\pi\varepsilon_{0}}\left[\frac{q_{1}(x, 0, a)}{(x^2+a^2)^{3/2}} + \frac{q_{2}(x, 0, -a)}{(x^2+a^2)^{3/2}}\right]
+  \end{aligned}
+  $$
+
+  Pero sabemos que $q_{1} = q_{2}$:
+  $$
+  \begin{aligned}
+    \vec{F}_{q \to q_{0}} &= \frac{q_{0}}{4\pi\varepsilon_{0}}\left[\frac{q(x, 0, a)}{(x^2+a^2)^{3/2}} + \frac{q(x, 0, -a)}{(x^2+a^2)^{3/2}}\right]\\
+    \vec{F}_{q \to q_{0}} &= \frac{q_{0}}{4\pi\varepsilon_{0}}\left[\frac{2q(x, 0, 0)}{(x^2+a^2)^{3/2}}\right]\\
+    \vec{F}_{q \to q_{0}} &= \frac{q_{0}}{4\pi\varepsilon_{0}}\frac{2qx}{\left(x^2+a^2\right)^{3/2}}\bm{\hat{i}}
+  \end{aligned}
+  $$
+
+- Si queremos encontrar el lugar donde la fuerza es máxima simplemente derivamos e igualamos a cero. Podemos solo enfocarnos en la magnitud de $F$ ya que buscamos el lugar donde la magnitud es mayor.
+  $$
+  \begin{aligned}
+    F(x) &= \frac{q_{0}2q\left|x\right|}{4\pi\varepsilon_{0}(x^2+a^2)^{3/2}}\\
+    F'(x) &= \frac{(2q_{0}q)\left(4\pi\varepsilon_{0}(x^2+a^2)^{3/2}\right) - (2q_{0}qx)(12\pi\varepsilon_{0}x(x^2+a^2)^{1/2})}{\left(4\pi\varepsilon_{0}(x^2+a^2)^{3/2}\right)^2}\\
+     &= \frac{2q_{0}q4\pi\varepsilon_{0}\left[(x^2+a^2)^{3/2} - 3x^2(x^2+a^2)^{1/2}\right]}{\left(4\pi\varepsilon_{0}(x^2+a^2)^{3/2}\right)^2}
+  \end{aligned}
+  $$
+  Igualamos a cero
+  $$
+  \begin{aligned}
+    F'(x) &= \frac{2q_{0}q4\pi\varepsilon_{0}\left[(x^2+a^2)^{3/2} - 3x^2(x^2+a^2)^{1/2}\right]}{\left(4\pi\varepsilon_{0}(x^2+a^2)^{3/2}\right)^2} = 0\\
+     &\implies 2q_{0}q4\pi\varepsilon_{0}\left[(x^2+a^2)^{3/2} - 3x^2(x^2+a^2)^{1/2}\right] = 0\\
+     &\implies (x^2+a^2)^{3/2} - 3x^2(x^2+a^2)^{1/2} = 0\\
+     &\implies a^2 - 2x^2 = 0\\
+     &\implies x^2 = \frac{a^2}{2}\\
+     &\implies x = \pm\frac{a}{\sqrt[]{2}}
+  \end{aligned}
+  $$
+
+- Por último, nos piden hallar la fuerza total en el límite $x \to \infty$.
+$$
+\begin{aligned}
+  F(x) &= \lim_{x \to \infty}\frac{q_{0}2q\left|x\right|}{4\pi\varepsilon_{0}(x^2+a^2)^{3/2}}\\
+   &= \frac{q_{0}2q\left|\infty\right|}{4\pi\varepsilon_{0}(\infty^2+a^2)^{3/2}} = \frac{\infty}{\infty}\\
+\end{aligned}
+$$
+Acá, como $x$ tiende a infinito, podemos despreciar el valor de $a^2$ ya que $x^2 + a^2 \approx x^2$. Entonces la ecuación nos queda así:
+$$
+\begin{aligned}
+  F(x) &= \frac{2q_{0}q\left|x\right|}{4\pi\varepsilon_{0}x^3}\\
+   &= \frac{2q_{0}q}{4\pi\varepsilon_{0}x^2}
+\end{aligned}
+$$
+Y ahora vemos que cuando $x \to \infty$, la fuerza tiende a cero.
 
 :::
 
-# Principio de superposición
-Ahora, la Ley de Coulomb está definida sólo cuando existen dos cargas que interactúan entre sí. Pero, ¿qué pasa si en vez de dos cargas tenemos tres?, ¿y si tenemos mas de tres?. Los experimentos demuestran que cuando dos cargas ejercen fuerza de manera simultánea sobre una tercer carga, la fuerza total que actúa sobre esa carga es la suma vectorial de las otras dos. Esta propiedad se conoce como **principio de superposición de fuerzas**, y se cumple para cualquier número de cargas.
+:::
+
+## Campo eléctrico
+Cuando tenemos varias cargas puntuales $q_{1}, q_{2},\dots , q_{n}$, a distancias $r_{1}, r_{2}, \dots , r_{n}$ de una carga $q$, habíamos dicho que por el principio de superposición la fuerza total ejercida en $q$ es
+$$
+\begin{aligned}
+  \vec{F} &= \vec{F}_{1} + \vec{F}_{2} + \dots = \frac{1}{4\pi\varepsilon_{0}}\left(\frac{q_{1}q}{r_{1}^2}\bm{\hat{r_{1}}} + \frac{q_{1}q}{r_{2}^2}\bm{\hat{r_{2}}} + \dots \right)\\
+   &= \frac{q}{4\pi\varepsilon_{0}}\left(\frac{q_{1}}{r_{1}^2}\bm{\hat{r_{1}}} + \frac{q_{1}}{r_{2}^2}\bm{\hat{r_{2}}} + \dots \right)
+\end{aligned}
+$$
+También lo podemos escribir así:
+$$
+  \vec{F} = q\vec{E}
+$${#eq-fuerza-campo-electrico}
+, donde
+$$
+  \vec{E}(r)  \equiv \frac{1}{4\pi\varepsilon_{0}}\sum_{i=1}^{n} \frac{q_{i}}{r_{i}^2}\bm{\hat{r}}
+$${#eq-campo-electrico}
+$\vec{E}$ es el **campo eléctrico** producido por las cargas $q_{i}$. en la @fig-campo-electrico-puntual podemos ver cómo sería el campo eléctrico de una carga puntual centrada en el origen de coordenadas.
+
+```{python}
+#| label: fig-campo-electrico-puntual
+#| fig-cap: Visualizacion del campo eléctrico.
+
+import numpy as np
+import plotly.graph_objects as go
+
+# Parámetros
+q = 1  # carga
+k = 1  # constante (omitimos 1/4piε0 por simplicidad)
+
+# Grilla de puntos
+x = np.linspace(-2, 2, 7)
+y = np.linspace(-2, 2, 7)
+z = np.linspace(-2, 2, 7)
+x, y, z = np.meshgrid(x, y, z)
+
+# Evitamos el origen para no dividir por cero
+r_mag = np.sqrt(x**2 + y**2 + z**2)
+mask = r_mag != 0
+
+# Campo eléctrico: E = k*q*r / r^3 = k*q*r_hat / r^2
+Ex = np.zeros_like(x)
+Ey = np.zeros_like(y)
+Ez = np.zeros_like(z)
+
+Ex[mask] = k * q * x[mask] / r_mag[mask]**3
+Ey[mask] = k * q * y[mask] / r_mag[mask]**3
+Ez[mask] = k * q * z[mask] / r_mag[mask]**3
+
+campo = go.Cone(
+    x=x[mask], y=y[mask], z=z[mask],
+    u=Ex[mask], v=Ey[mask], w=Ez[mask],
+    sizemode="scaled",
+    sizeref=1,
+    colorscale='Viridis',
+    showscale=False,
+)
+
+# Carga puntual
+carga = go.Scatter3d(
+    x=[0], y=[0], z=[0], 
+    mode="markers",
+    marker=dict(size=6)
+)
+
+# Gráfico
+fig = go.Figure(data=[campo, carga])
+
+fig.update_layout(
+    scene=dict(
+        xaxis=dict(range=[-2,2]),
+        yaxis=dict(range=[-2,2]),
+        zaxis=dict(range=[-2,2]),
+    ),
+)
+
+fig.show()
+```
+
+El campo eléctrico $\vec{E}$ es una función de la posicón $(r)$ ya que los vectores $\vec{r}_{i} = \vec{r} - \vec{r}_{i}$ dependen de la posición $P$ en el campo eléctrico donde realizamos la cuenta (@fig-punto-campo-electrico). El campo eléctrico es un campo vectorial que determina la fuerza por unidad de carga que se le ejerce a una carga $q_{0}$ si su posición está en $P$.
+
+Cada carga produce su propio campo eléctrico desde su posición en el espacio, por lo que una carga $q_{0}$ colocada en un punto $P$ experimena una fuerza $\vec{F}_{1}=q_{0}\vec{E}_{1}$ de la carga $q_{1}$, una fuerza $\vec{F}_{2}=q_{0}\vec{E}_{2}$ de la carga $q_{2}$, y así hasta la carga $q_{i}$. Podemos decir entonces que el **campo eléctrico total** en el punto $P$ es la suma de todos los campos eléctricos producidos por cada una de las cargas $q_{i}$ en el espacio.
+
+![Imagen sacada de @griffiths[p. 61]](./imagenes/punto-campo-electrico.png){#fig-punto-campo-electrico}
+
+::: {.callout-tip title=Ejemplo}
+::: {#exm-campo-electrico}
+
+Podemos usar de nuevo la consigna del @exm-superposicion y calcular el campo electrico en el punto $P(x,0,0)$.
+
+- Sea $\vec{E}_{1}$ el campo de la única carga superior, y $\vec{E}_{2}$ el campo de la única carga inferior. Si los sumamos obtenemos el siguiente campo eléctrico.
+$$
+\begin{aligned}
+  \vec{E}_{x} &= \vec{E}_{1} + \vec{E}_{2} = \frac{1}{4\pi\varepsilon_{0}}\left[\frac{q}{\left(x^2 + a^2\right)^{3/2}}(x, 0, a) + \frac{q}{\left(x^2 + a^2\right)^{3/2}}(x, 0, -a)\right]\\
+  \vec{E}_{x} &= \frac{1}{4\pi\varepsilon_{0}}\frac{2qx}{\left(x^2+a^2\right)^{3/2}}\bm{\hat{i}}
+\end{aligned}
+$$
+
+A modo de demostración, podemos calcular la fuerza que sentiría una carga en esa posición usando la fórmula que vimos mas arriba que decía que
+$$
+  \vec{F} = q\vec{E}
+$$
+En este caso, la carga $q_{0}$ sentiría la siguiente fuerza
+$$
+  \vec{F} = q_{0} \frac{1}{4\pi\varepsilon_{0}}\frac{2qx}{\left(x^2+a^2\right)^{3/2}}\bm{\hat{i}}
+$$
+que es el mismo resultado al que habíamos llegado antes.
+:::
+:::
+
+## Distribuciones continuas de cargas
+Cuando definimos el campo eléctrico estabamos asumiendo que la fuente del campo eléctrico era una colección discreta de cargas, y esto es completamente válido. Sin embargo, puede ser que el campo eléctrico esté compuesto por cargas distribuidas de manera continua sobre alguna región y, en este caso, la suma se convierte en una integral.
+$$
+  \vec{E}(r) = \frac{1}{4\pi\varepsilon_{0}}\int_{}^{} \frac{1}{r^2}\bm{\hat{r}} \,dq
+$${#eq-campo-electrico-continuo}
+
+- Si la carga está distribuida a lo largo de una *linea* (con una carga por unidad de longitud $C/m$), vamos a usar $\lambda$ para representar la **densidad lineal de carga** ($\lambda=\frac{Q}{L}$).
+
+  En este caso $dq = \lambda dl'$, donde $dl'$ es un segmento de largo infinitesimal sobre la línea.
+- Si la carga está distribuida a sobre una *superficie* (con una carga por unidad de área $C/m^2$), vamos a usar $\sigma$ para representar la **densidad superficial de carga** ($\sigma = \frac{Q}{A}$)
+
+  En este caso $dq = \sigma da'$, donde $da'$ es una porcion infinitesimal de área sobre la superficie.
+- Si la carga está distribuida en un *volúmen* (con una carga por unidad de volumen $C/m^3$), vamos a usar $\rho$ para representar la **densidad volumétrica de carga** ($\rho = \frac{Q}{V}$).
+
+  En este caso $dq = \rho d\tau'$, donde $d\tau'$ es una porción infinitesimal de volúmen.
+
+De esta manera, el **campos eléctrico total** para distribuciones continuas de cargas es:
+
+- Para una linea de cargas
+$$
+  \vec{E}(r) = \frac{1}{4\pi\varepsilon_{0}}\int_{}^{} \frac{\lambda(r')}{r^2}\bm{\hat{r}} \,dl'
+$${#eq-campo-electrico-linea}
+- Para una superficie de cargas
+$$
+  \vec{E}(r) = \frac{1}{4\pi\varepsilon_{0}}\int_{}^{} \frac{\sigma(r')}{r^2}\bm{\hat{r}} \,da'
+$${#eq-campo-electrico-superficie}
+- Para un volumen de cargas
+$$
+  \vec{E}(r) = \frac{1}{4\pi\varepsilon_{0}}\int_{}^{} \frac{\rho(r')}{r^2}\bm{\hat{r}} \,d\tau'
+$${#eq-campo-electrico-volumen}
+
+::: {.callout-tip title=Ejemplo}
+::: {#exm-linea-campo-electrico}
+
+Encontrar el campo eléctrico a una distancia $z$ sobre el punto medio del segmento de linea de largo $2L$ que tiene una carga uniforme $\lambda$.
+
+![Imagen sacada de @griffiths [p. 64]](./imagenes/ej-linea-campo-electrico.png)
+
+- Lo primero que hacemos es buscar todos los datos que tenemos, en este caso tenemos $r(0,0,z)$ que es el punto en el que tenemos que calcular el campo eléctrico; todas las cargas $\lambda$ se van a encontrar en la línea de cargas que esta sobre el eje $x$ así que la posición de estas cargas va a ser $r'(x, 0, 0)$ ($x$ va a variar desde $-L$ hasta $L$).
+$$
+  r = z\bm{\hat{k}}, \qquad r' = x\bm{\hat{i}}, \qquad dl' = dx,
+$$
+$$
+  \vec{r} = r - r' = (-x, 0, z), \qquad \lVert\vec{r}\rVert = \sqrt[]{x^2 + z^2}, \qquad \bm{\hat{r}} = \frac{\vec{r}}{\lVert\vec{r}\rVert} = \frac{(-x, 0, z)}{\sqrt[]{x^2 + z^2}}
+$$
+$$
+\begin{aligned}
+  \vec{E} &= \frac{1}{4\pi\varepsilon_{0}}\int_{-L}^{L} \frac{\lambda}{z^2+x^2}\frac{(-x,0,z)}{\sqrt[]{z^2+x^2}} \,dx\\
+  &= \frac{\lambda}{4\pi\varepsilon_{0}}\left[z\bm{\hat{k}}\int_{-L}^{L} \frac{1}{\left(z^2+x^2\right)^{3/2}} \,dx - \bm{\hat{i}}\int_{-L}^{L} \frac{x}{\left(z^2+x^2\right)^{3/2}} \,dx\right]\\
+   &= \frac{\lambda}{4\pi\varepsilon_{0}}\left\{\Bigg[z\bm{\hat{k}}\left(\frac{x}{z^2\,\sqrt[]{z^2+x^2}}\right)\Bigg]_{-L}^{L} - \bm{\hat{i}}\Bigg[\left(-\frac{1}{\sqrt[]{z^2+x^2}}\right)\Bigg]_{-L}^{L}\right\}\\
+   &= \frac{1}{4\pi\varepsilon_{0}}\frac{2\lambda L}{z\,\sqrt[]{z^2+L^2}}\bm{\hat{k}}
+\end{aligned}
+$$
+
+Si consideramos que el punto $r=z\bm{\hat{k}}$ está MUY alejado de la linea $(z\gg L)$, 
+$$
+  \vec{E}\approx \frac{1}{4\pi\varepsilon_{0}}\frac{2\lambda L}{z^2}\bm{\hat{k}}
+$$
+Esto tiene sentido ya que si nos alejamos lo suficiente podemos llegar a ver a la linea como si fuese un punto, y considerarla como si fuese una carga puntual.
+
+Por otro lado, si la longitud de la línea tiende a infinito, el campo eléctrico es como sigue
+$$
+\begin{aligned}
+  \vec{E} &= \lim_{L \to \infty} \frac{1}{4\pi\varepsilon_{0}} \frac{2\lambda L}{z \, \sqrt[]{z^2+L^2}}\bm{\hat{k}}\\
+   &= \lim_{L \to \infty} \frac{1}{4\pi\varepsilon_{0}} \frac{2\lambda L}{zL\,\sqrt[]{\left(\frac{z}{L}\right)^2+1}}\bm{\hat{k}}\\
+  \vec{E} &= \frac{1}{4\pi\varepsilon_{0}} \frac{2\lambda}{z}\bm{\hat{k}}
+\end{aligned}
+$$
+:::
+:::
+
+::: {.callout-tip title=Ejemplo}
+::: {#exm-guia8-1}
+
+Sea una varilla de espesor despreciable y longitud $L$, cargada uniformemente, con una carga total $Q$.
+
+1. Dar una expresión matemática para "*espesor despresciable*".
+2. ¿Cuál es la densidad lineal de carga?
+3. Escribir la expresión del campo eléctrico en un punto genérico $P$ para un diferencial $dq$.
+4. Escribir la expresión del campo eléctrico total.
+5. Calcular el campo total sobre el plano $xy$.
+6. Graficar la expresión hallada en el item anterior.
+7. Encontrar el campo para $r \gg L$, ¿Coincide con el campo de una carga puntual en el origen?
+8. Dibujar las líneas de campo.
+
+![](./imagenes/guia8ej1.png)
+
+1. Una varilla de espesor despreciable es un cilindro, en este centrado en el origen con eje paralelo al eje de cotas.
+  $$
+    x^2 + y^2 = r^2
+  $$
+
+2. La densidad lineal de carga es $\lambda = \frac{Q}{L}$
+
+3. 
+  $$
+  \vec{E}(P) = \frac{1}{4\pi\varepsilon_{0}} \int_{}^{} \frac{1}{\lVert\vec{r}\rVert^2}\bm{\hat{r}} \,dq \qquad \text{con } \vec{r} = r_{P} - r'
+  $$
+
+4. 
+  $$
+    \vec{E}(P) = \frac{1}{4\pi\varepsilon_{0}} \int_{-L/2}^{L/2} \frac{\lambda(r')}{\lVert\vec{r}\rVert^2}\bm{\hat{r}} \,dl'
+  $$
+
+5. 
+  $$
+  r = x\bm{\hat{i}} + y\bm{\hat{j}} \qquad r' = z\bm{\hat{k}} \qquad dl' = dz
+  $$
+  $$
+  \vec{r} = (x,y,-z) \qquad \lVert\vec{r}\rVert = \sqrt[]{x^2 + y^2 + z^2}
+  $$
+  $$
+  \begin{aligned}
+    E &= \frac{1}{4\pi\varepsilon_{0}} \int_{-L/2}^{L/2} \frac{\lambda}{x^2+y^2+z^2} \frac{x\bm{\hat{i}}+y\bm{\hat{j}}-z\bm{\hat{k}}}{\sqrt[]{x^2+y^2+z^2}} \,dz\\
+     &= \frac{\lambda}{4\pi\varepsilon_{0}} \int_{-L/2}^{L/2} \frac{x\bm{\hat{i}}+y\bm{\hat{j}}-z\bm{\hat{k}}}{\left(x^2+y^2+z^2\right)^{3/2}} \,dz\\
+     &= \frac{\lambda}{4\pi\varepsilon_{0}} \left[\left(x\bm{\hat{i}}+y\bm{\hat{j}}\right) \int_{-L/2}^{L/2} \frac{1}{\left(x^2+y^2+z^2\right)^{3/2}} \,dz  - \bm{\hat{k}}\int_{-L/2}^{L/2} \frac{z}{\left(x^2+y^2+z^2\right)^{3/2}} \,dz\right]\\
+  \end{aligned}
+  $$
+  Estas integrales se ven dificiles pero podemos usar algunas fórmulas de integración conocidas. Por ejemplo, existe una que dice que $\int_{}^{} \frac{1}{\left(a^2+z^2\right)^{3/2}} \,dz = \frac{z}{a^2\,\sqrt[]{a^2+z^2}} + C$, y podemos decir que $a^2 = x^2 + y^2$. Por otro lado, la integral $\bm{\hat{k}}\int_{-L/2}^{L/2} \frac{z}{\left(x^2+y^2+z^2\right)^{3/2}} \,dz$ es una función impar integrada en un intervalo simétrico, lo que significa que lo que "sumemos" en la parte positiva lo vamos a "restar" en la parte negativa; la integral es igual a cero.
+
+  $$
+  \begin{aligned}
+    \vec{E} &= \frac{\lambda}{4\pi\varepsilon_{0}} \Bigg[\left(x\bm{\hat{i}}+y\bm{\hat{j}}\right) \frac{z}{\left(x^2+y^2\right)^2\,\sqrt[]{x^2+y^2+z^2}}\Bigg]_{-L/2}^{L/2}\\
+    \vec{E} &= \frac{1}{4\pi\varepsilon_{0}} \frac{\lambda L}{\left(x^2+y^2\right)^2\,\sqrt[]{x^2+y^2+\left(\frac{L}{2}\right)^2}} \left(x\bm{\hat{i}}+y\bm{\hat{j}}\right)
+  \end{aligned}
+  $$
+
+6. 
+```{python}
+#| label: fig-campo-ej-6
+#| fig-cap: Campo eléctrico en el plano $xy$.
+
+import numpy as np
+import plotly.graph_objects as go
+
+# Parámetros
+lambda_ = 1       # densidad lineal de carga
+L = 2             # longitud de la varilla (de -L/2 a L/2)
+epsilon_0 = 1
+
+# Malla en el plano z=0
+x = np.linspace(-4, 4, 20)
+y = np.linspace(-4, 4, 20)
+X, Y = np.meshgrid(x, y)
+Z = np.zeros_like(X)
+
+# Radio al punto (x, y)
+R2 = X**2 + Y**2
+R = np.sqrt(R2 + (L/2)**2)
+
+# Campo eléctrico (solo componentes x e y)
+Ex = (lambda_ * L * X) / (4 * np.pi * epsilon_0 * R2 * R)
+Ey = (lambda_ * L * Y) / (4 * np.pi * epsilon_0 * R2 * R)
+Ez = np.zeros_like(Ex)
+campo = go.Cone(
+    x=X.flatten(),
+    y=Y.flatten(),
+    z=Z.flatten(),
+    u=Ex.flatten(),
+    v=Ey.flatten(),
+    w=Ez.flatten(),
+    sizemode="scaled",
+    sizeref=3,
+    anchor="tail",
+    colorscale='Viridis',
+    showscale=False,
+)
+
+# Varilla cargada
+radio = 0.1
+h = L
+theta = np.linspace(0, 2*np.pi, 5)
+z = np.linspace(-h, h, 5)
+theta, z = np.meshgrid(theta, z)
+
+x = radio * np.cos(theta)
+y = radio * np.sin(theta)
+
+varilla = go.Surface(
+    x=x, y=y, z=z,
+    colorscale=[[0, "red"], [1, "red"]],
+    opacity=0.7,
+    showscale=False,
+)
+
+# Crear figura
+fig = go.Figure(data=[campo, varilla])
+
+fig.update_layout(
+    scene=dict(
+        xaxis_title='x',
+        yaxis_title='y',
+        zaxis_title='z',
+        aspectratio=dict(x=1, y=1, z=0.5),
+        xaxis=dict(range=[-4, 4]),
+        yaxis=dict(range=[-4, 4]),
+    ),
+)
+```
+
+7. En el caso que $r$ sea mucho mayor que $L$, el campo eléctrico queda aśi:
+$$
+\vec{E} = \frac{1}{4\pi\varepsilon_{0}} \frac{\lambda}{\left(x^2+y^2\right)^{3/2}} \left(x\bm{\hat{i}}+y\bm{\hat{j}}\right)
+$$
+que coincide con el campo de una carga puntual en el origen.
+
+8. Para este punto tenemos que leer la siguiente sección.
+:::
+:::
+
+## Lineas de campo
+En realidad, con todo lo que sabemos podríamos decir que ya estamos listos con el estudio de la electrostática. Con la @eq-campo-electrico-volumen ya sabemos calcular el campo de una distribución de cargas, y con la ecuación @eq-fuerza-campo-electrico podemos saber la fuerza ejercida sobre una carga $q$ en dicho campo. Lamentablemente las integrales que hay que resolver para realizar estos cálculos del campo eléctrico se pueden volver super complejas para problemas que son dentro de todo sencillos. Todo lo que sigamos viendo de electrostática entonces va a ser solo con el fin de facilitar estas cuentas usando herramientas y truquitos que nos ayudan a evitar estas integrales.
+
+Empecemos con el caso mas sencillo: una carga puntual situada en el origen:
+$$
+  \vec{E}(\vec{r}) = \frac{1}{4\pi\varepsilon_{0}} \frac{q}{\lVert\vec{r}\rVert^2}\bm{\hat{r}}
+$$
+
+Para visualizar el campo eléctrico producido por esta carga podemos mirar la @fig-campo-electrico-puntual. Esta forma, en la que usamos vectores que se vuelven mas chicos mientras se encuentren mas lejos de la carga (representando la disminución del campo de $1/r^2$), es correcta pero existe otra forma de represntar el campo eléctrico en el que usamos lineas en vez de vectores, de esta manera armamos lo que se conoce como **lineas de campo**.
+
+```{python}
+#| label: fig-linea-campo-puntual-2d
+#| fig-cap: Lineas de campo de una carga puntual en 2d.
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+
+radio = 5
+theta = np.linspace(0, 2*np.pi, 9)
+
+# Origen de las lineas de campo en el (0, 0)
+x0, y0 = 0, 0
+# Dibujo las lineas de campo
+for angulo in theta:
+  x = 0 + radio * np.cos(angulo)
+  y = 0 + radio * np.sin(angulo)
+  ax.plot([x, x0], [y, y0], color="blue", linewidth=1)
+
+# Agrego las flechas de las lineas de campo
+radio_flechas = 2.5
+x_flecha = radio_flechas * np.cos(theta)
+y_flecha = radio_flechas * np.sin(theta)
+x0 = np.full_like(x_flecha, 0)
+y0 = np.full_like(y_flecha, 0)
+
+ax.quiver(
+  x0, y0,
+  x_flecha, y_flecha,
+  angles="xy",
+  scale_units="xy",
+  scale=1,
+  color="blue",
+  width=0.004
+)
+
+# Dibujo la carga en el (0,0)
+ax.plot([0], [0], "o", color="red", markersize=8)
+```
+
+```{python}
+#| label: fig-lineas-campo-puntual
+#| fig-cap: Lineas de campo de una carga puntual en 3d.
+
+# Cantidad de líneas y largo
+cant_lineas = 9
+radio = 5  # distancia hasta donde se dibuja la línea
+
+# Direcciones en coordenadas esféricas de las lineas de campo
+phi = np.linspace(0, 2*np.pi, cant_lineas)
+theta = np.linspace(0, np.pi, cant_lineas)
+phi, theta = np.meshgrid(phi, theta)
+# Uso .flatten() porque después quiero hacer productos con estos valores
+phi = phi.flatten()
+theta = theta.flatten()
+# Coordenadas de los puntos de las líneas
+x = np.outer(np.linspace(0.1, radio), np.sin(theta) * np.cos(phi))
+y = np.outer(np.linspace(0.1, radio), np.sin(theta) * np.sin(phi))
+z = np.outer(np.linspace(0.1, radio), np.cos(theta))
+
+# Crear figura con las líneas
+fig = go.Figure()
+
+for i in range(len(theta)):
+  fig.add_trace(go.Scatter3d(
+    # La expresión x[:, i] signfica:
+    # dame todos los elementos de la columna i de la matriz x
+    x=x[:, i], y=y[:, i], z=z[:, i],
+    mode='lines',
+    line=dict(color='blue', width=1.5),
+  ))
+
+# Dibujamos la carga como un punto en el origen
+fig.add_trace(go.Scatter3d(
+  x=[0], y=[0], z=[0],
+  mode='markers',
+  marker=dict(size=6, color='red'),
+))
+
+fig.update_layout(
+  scene=dict(
+    aspectmode='cube',
+  ),
+  showlegend=False
+)
+
+fig.show()
+```
+
+Uno podría pensar que al final con estos gráficos estamos perdiendo información ya que antes podíamos ver los vectores y su magnitud, que nos permiten visualizar la *fuerza* del campo eléctrico en cada punto. Pero en realidad, no estamos perdiendo nada de información. La *fuerza* del campo eléctrico en este nuevo tipo de gráficos la indica la densidad de lineas de campo: cerca del centro la fuerza del campo es mayor que si no alejamos de él. 
+
+Las lineas de campo *salen* de las cargas positivas y *entran* en las cargas negativas. Esto lo podemos ver en @fig-lineas-campo-dipolo. En un campo *uniforme*, las líneas de campo son rectas, paralelas y con espaciamiento uniforme, como se ve en la @fig-lineas-campo-uniforme.
+
+```{python}
+#| label: fig-lineas-campo-uniforme
+#| fig-cap: Lineas de campo de un campo uniforme.
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constantes
+E_0 = 1  # Magnitud del campo eléctrico uniforme
+
+# Crear malla para el campo vectorial
+x = np.linspace(-4, 4, 20)
+y = np.linspace(-4, 4, 20)
+X, Y = np.meshgrid(x, y)
+
+# Campo eléctrico uniforme en la dirección +x
+Ex = np.full_like(X, E_0)  # Ex = E_0 en todos los puntos
+Ey = np.zeros_like(Y)      # Ey = 0 en todos los puntos
+
+# Crear gráfico
+fig, ax = plt.subplots(figsize=(7, 7))
+
+# Graficar líneas de campo con streamplot
+ax.streamplot(X, Y, Ex, Ey, color='black', linewidth=0.5, density=1.0, arrowstyle='->')
+
+# Ajustes del gráfico
+ax.set_aspect('equal')
+ax.set_xlim(-4, 4)
+ax.set_ylim(-4, 4)
+ax.grid(False)
+plt.show()
+```
+
+```{python}
+#| label: fig-lineas-campo-cargas-iguales
+#| fig-cap: Lineas de campo de dos cargas positivas.
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constantes
+k = 1
+q = 1
+d = 2  # separación entre las cargas
+
+# Posiciones de las cargas positivas
+q1_pos = np.array([d/2, 0])  # Carga +q1 en (d/2, 0)
+q2_pos = np.array([-d/2, 0])  # Carga +q2 en (-d/2, 0)
+
+def E_field(x, y):
+    """Campo eléctrico total en (x, y) debido a dos cargas positivas."""
+    # Campo de +q1
+    dx1, dy1 = x - q1_pos[0], y - q1_pos[1]
+    r1_sq = dx1**2 + dy1**2 + 1e-9
+    r1 = np.sqrt(r1_sq)
+    Ex1 = k * q * dx1 / r1_sq / r1
+    Ey1 = k * q * dy1 / r1_sq / r1
+
+    # Campo de +q2
+    dx2, dy2 = x - q2_pos[0], y - q2_pos[1]
+    r2_sq = dx2**2 + dy2**2 + 1e-9
+    r2 = np.sqrt(r2_sq)
+    Ex2 = k * q * dx2 / r2_sq / r2
+    Ey2 = k * q * dy2 / r2_sq / r2
+
+    return Ex1 + Ex2, Ey1 + Ey2
+
+def integrar_linea(x0, y0, paso=0.05, n=400):
+    """Integra la línea de campo desde un punto inicial."""
+    xs, ys = [x0], [y0]
+    x, y = x0, y0
+    for _ in range(n):
+        Ex, Ey = E_field(x, y)
+        E_mag = np.sqrt(Ex**2 + Ey**2)
+        if E_mag < 1e-3:
+            break
+        Ex, Ey = Ex / E_mag, Ey / E_mag
+        x += paso * Ex
+        y += paso * Ey
+        xs.append(x)
+        ys.append(y)
+        # Parar si se sale del dominio
+        if abs(x) > 4 or abs(y) > 4:
+            break
+    return np.array(xs), np.array(ys)
+
+def dibujar_flechas(ax, xs, ys, color='black'):
+    """Agrega flechas en 3 puntos de la curva."""
+    for t in [0.1, 0.9]:
+        i = int(t * len(xs))
+        if i < len(xs) - 1:
+            dx = xs[i+1] - xs[i]
+            dy = ys[i+1] - ys[i]
+            ax.annotate('', xy=(xs[i+1], ys[i+1]), xytext=(xs[i], ys[i]),
+                        arrowprops=dict(arrowstyle='->', color=color, lw=0.6))
+
+# Crear puntos semilla alrededor de +q1 y +q2
+n_lineas = 12  # Reducimos a 8 líneas por carga para claridad
+r0 = 0.2
+# El + 0.92 np.pi es para que no hayan lineas horizontales, ya que se chocan en el gráfico
+angles = np.linspace(0, 2*np.pi, n_lineas, endpoint=False) + 0.92 * np.pi
+puntos_q1 = [(q1_pos[0] + r0*np.cos(a), q1_pos[1] + r0*np.sin(a)) for a in angles]
+puntos_q2 = [(q2_pos[0] + r0*np.cos(a), q2_pos[1] + r0*np.sin(a)) for a in angles]
+
+# Crear gráfico
+fig, ax = plt.subplots(figsize=(7, 7))
+
+# Integrar desde cada punto alrededor de +q1
+for x0, y0 in puntos_q1:
+    xs, ys = integrar_linea(x0, y0, paso=0.05)
+    ax.plot(xs, ys, color="black", linewidth=0.5)
+    dibujar_flechas(ax, xs, ys)
+
+# Integrar desde cada punto alrededor de +q2
+for x0, y0 in puntos_q2:
+    xs, ys = integrar_linea(x0, y0, paso=0.05)
+    ax.plot(xs, ys, color="black", linewidth=0.5)
+    dibujar_flechas(ax, xs, ys)
+
+# Dibujar cargas
+ax.plot(*q1_pos, 'ro', markersize=10, label='+q1')
+ax.plot(*q2_pos, 'ro', markersize=10, label='+q2')
+
+# Ajustes del gráfico
+ax.set_aspect('equal')
+ax.set_xlim(-4, 4)
+ax.set_ylim(-4, 4)
+ax.legend()
+ax.grid(True)
+plt.show()
+```
+
+```{python}
+#| label: fig-lineas-campo-dipolo
+#| fig-cap: Lineas de campo de dos cargas opuestas (dipolo eléctrico).
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constantes
+k = 1
+q = 1
+d = 2  # separación del dipolo
+
+# Posiciones de las cargas
+pos_q = np.array([d/2, 0])
+neg_q = np.array([-d/2, 0])
+
+def E_field(x, y):
+    """Campo eléctrico total en (x, y) debido al dipolo."""
+    dx1, dy1 = x - pos_q[0], y - pos_q[1]
+    r1_sq = dx1**2 + dy1**2 + 1e-9
+    r1 = np.sqrt(r1_sq)
+    Ex1 = k * q * dx1 / r1_sq / r1
+    Ey1 = k * q * dy1 / r1_sq / r1
+
+    dx2, dy2 = x - neg_q[0], y - neg_q[1]
+    r2_sq = dx2**2 + dy2**2 + 1e-9
+    r2 = np.sqrt(r2_sq)
+    Ex2 = -k * q * dx2 / r2_sq / r2
+    Ey2 = -k * q * dy2 / r2_sq / r2
+
+    return Ex1 + Ex2, Ey1 + Ey2
+
+def integrar_linea(x0, y0, paso=0.05, n=400):
+    """Integra la línea de campo desde un punto inicial."""
+    xs, ys = [x0], [y0]
+    x, y = x0, y0
+    for _ in range(n):
+        Ex, Ey = E_field(x, y)
+        E_mag = np.sqrt(Ex**2 + Ey**2)
+        if E_mag < 1e-3:
+            break
+        Ex, Ey = Ex / E_mag, Ey / E_mag
+        x += paso * Ex
+        y += paso * Ey
+        xs.append(x)
+        ys.append(y)
+        if np.sqrt((x - neg_q[0])**2 + (y - neg_q[1])**2) < 0.1:
+            break
+    return np.array(xs), np.array(ys)
+
+def dibujar_flechas(ax, xs, ys, color='black'):
+    """Agrega flechas en 3 puntos de la curva."""
+    for t in [0.1, 0.9]:
+        i = int(t * len(xs))
+        if i < len(xs) - 1:
+            dx = xs[i+1] - xs[i]
+            dy = ys[i+1] - ys[i]
+            ax.annotate('', xy=(xs[i+1], ys[i+1]), xytext=(xs[i], ys[i]),
+                        arrowprops=dict(arrowstyle='->', color=color, lw=0.6))
+
+# Crear puntos semilla alrededor de +q
+n_lineas = 16
+r0 = 0.2
+angles = np.linspace(0, 2*np.pi, n_lineas, endpoint=False)
+puntos_inicio = [(pos_q[0] + r0*np.cos(a), pos_q[1] + r0*np.sin(a)) for a in angles]
+
+fig, ax = plt.subplots(figsize=(7, 7))
+
+# Integrar desde cada punto alrededor de +q
+for x0, y0 in puntos_inicio:
+    for paso in [+0.05, -0.05]:
+        xs, ys = integrar_linea(x0, y0, paso=paso)
+        ax.plot(xs, ys, color="black", linewidth=0.5)
+        dibujar_flechas(ax, xs, ys)
+
+# Ángulos originales desde q+
+angulos_originales = [angles[0], angles[1], angles[-1]]
+angulos_opuestos = [(a + np.pi) % (2*np.pi) for a in angulos_originales]
+puntos_opuestos = [(neg_q[0] + r0*np.cos(a), neg_q[1] + r0*np.sin(a)) for a in angulos_opuestos]
+
+# Integrar desde el lado opuesto de q-
+for x0, y0 in puntos_opuestos:
+    xs, ys = integrar_linea(x0, y0, paso=-0.05)
+    ax.plot(xs, ys, color="black", linewidth=0.5)
+    dibujar_flechas(ax, xs, ys)
+
+# Dibujar cargas
+ax.plot(*pos_q, 'ro', markersize=10, label='+q')
+ax.plot(*neg_q, 'bo', markersize=10, label='-q')
+
+# Ajustes del gráfico
+ax.set_aspect('equal')
+ax.set_xlim(-4, 4)
+ax.set_ylim(-4, 4)
+ax.legend()
+ax.grid(True)
+plt.show()
+```
+
+## Dipolos eléctricos
+Lo que vemos en la @fig-lineas-campo-dipolo es un **dipolo eléctrico**. Un par de cargas puntuales de igual magnitud y signos opuestos, separados por una distancia $d$. Este es un tema que está bueno analizar porque varios sistemas físicos se pueden describir como dipolos eléctricos.
+
+### Fuerza y torque en un dipolo eléctrico
+Empecemos el análisis suponiendo que ponemos el dipolo eléctrico en un campo eléctrico *uniforme* $\vec{E}$, como se vé en la @fig-fuerza-neta-dipolo.
+
+![Imagen sacada de @sears2[p. 735]](./imagenes/fuerza-neta-dipolo.png){#fig-fuerza-neta-dipolo}
+
+Las fuerzas $\vec{F}_{+}$ y $\vec{F}_{-}$ en las dos cargas del dipolo tienen la misma magnitud de $qE$, pero sus direcciones son opuestas así que si las sumamos obtenemos una fuerza neta igual a cero. *La fuerza neta sobre un dipolo eléctrico en un campo eléctrico externo uniforme es cero*.
+
+Sin embargo, estas dos fuerzas producen un torque sobre el eje del dipolo, que sen encuentra en el centro. Este no suma cero ya que $\vec{\tau}$ es el mismo para ambos extremos del dipolo. Recordemos que el torque era $\vec{\tau} = \vec{r}\times \vec{F}$ y $\lVert\vec{\tau}\rVert = \lVert\vec{F}\rVert\cdot \lVert\vec{r}\rVert\cdot \sin^{}(\phi)$; entonces, la magnitud del torque es la misma para las dos cargas del dipolo $\vec{\tau} = \lVert q\vec{E}\rVert\cdot \left|d/2\right|\cdot \sin^{}(\phi)$. Entonces, la magnitud total del torque del dipolo es dos veces la magnitud del torque de cualquier carga del dipolo:
+$$
+  \tau = \left(q\vec{E}\right)\left(d\sin^{}(\phi)\right)
+$${#eq-magnitud-torque-dipolo}
+El producto de la carga $q$ y la separación $d$ es la magnitud de una cantidad llamada **momento dipolar eléctrico**, que se denota con $p$:
+$$
+  p = qd
+$$
+El momento dipolar eléctrico es un vector. La magnitud es lo que vimos recién, y su dirección es la del eje dipolar. La dirección de $\vec{p}$ es la dirección desde la carga negativa hacia la positiva del dipolo.
+
+### Energía potencial de un dipolo eléctrico
+Cuando un dipolo cambia de dirección en un campo eléctrico, el torque que el campo eléctrico ejerce sobre el dipolo realiza trabajo sobre él. El trabajo $dW$ realizado por el torque durante un desplazamiento infinitesimal $d\phi$ está dado por la ecuación $dW=\tau d\phi$. Pero como este torque lo que hace es disminuir el ángulo $\phi$ entre el campo eléctrico $\vec{E}$ y el momento dipolar eléctrico $\vec{p}$, decimos que el torque es negativo.
+$$
+  dW = \tau d\phi = -\lVert\vec{p}\rVert\lVert\vec{E}\rVert\sin^{}(\phi)d\phi
+$$
+En un desplazamiento finito de $\phi_{1}$ a $\phi_{2}$, el trabajo total realizado sobre el dipolo es
+$$
+\begin{aligned}
+  W &= \int_{\phi_{1}}^{\phi_{2}} \left(-pE\sin^{}(\phi)\right) \,d\phi\\
+   &= pE\cos^{}(\phi_{2}) - pE\cos^{}(\phi_{1}    )
+\end{aligned}
+$$
+Vimos en Física 1 que el trabajo es el negativo de la variación de la energía potencial $W = -\Delta U = U_{1} - U_{2}$. Sabiendo esto, y viendo la ecuación anterior podemos dar una definición de la energía potencial de un dipolo
+$$
+  U(\phi) = -pE\cos^{}(\phi)
+$${#eq-energia-potencial-dipolo-1}
+y es equivalente a 
+$$
+  U(\phi) = \vec{p}\cdot \vec{E}
+$${#eq-energia-potencial-dipolo-2}
+
+::: {.callout-tip title=Ejemplo}
+::: {#exm-dipolo}
+
+Dado un dipolo que tiene una carga puntual negativa de valor $-q$ situada en el punto $P_{-q}(0,a,0)$ y una carga positiva de valor $q$ en el punto $P_{q}(0,-y,0)$. Hallar el campo eléctrico sobre los puntos del plano $yz$.
+
+![](./imagenes/ej-dipolo.png)
+
+$$
+\begin{aligned}
+  \vec{E}_{total} &= \vec{E}(P_{-q}) + \vec{E}(P_{q})\\
+   &= \frac{1}{4\pi\varepsilon_{0}} \left[\frac{q(0,y-a,z)}{\left((y-a)^2+z^2\right)^{3/2}} - \frac{q(0,y+a,z)}{\left((y+a)^2+z^2\right)^{3/2}}\right]\\
+   &= \frac{q}{4\pi\varepsilon_{0}} \left[\frac{\vec{r}_{+}}{\left|r_{+}\right|^3} - \frac{\vec{r}_{-}}{\left|r_{-}\right|^3}\right]
+\end{aligned}
+$$
+:::
+:::
+
+# Divergencia y rotor de campos electrostáticos
+## Flujo y ley de Gauss
+
+El **flujo** de $\vec{E}$ a través de una superficies $S$,
+$$
+  \Phi = \int_{S}^{} \vec{E} \,d\vec{A}
+$$
+es una medida de la "cantidad de lineas de campo" que pasan a través de $S$. Está entre comillas porque en realidad, para una misma carga podemos dibujar tantas lineas de campo como queramos. Pero sí es cierto que para cualquier cantidad de lineas que dibujemos, el flujo es proporcional a ese número de lineas.
+
+De esta manera, podemos decir que el flujo a través de *cualquier* superficie cerrada es una medida de la carga total que hay adentro de esa superficie. Porque las lineas de campo que salen de una carga positiva adentro de esa superficie tienen que sí o sí pasar a través de la superficie o terminar en alguna carga negativa que también se encuentre adentro. Por otro lado, las cargas que estén afuera de la superficie no tienen influencia sobre el flujo total ya que sus lineas de campo entran por un lado y salen por el otro. Esto que acabamos de explicar es *la esencia* de la **Ley de Gauss**. 
+
+Supongamos una carga puntual $q$ en el origen, el flujo de $\vec{E}$ a través de una superficie esférica de radio $r$ es
+$$
+\begin{aligned}
+  \Phi_{\vec{E}} &= \oint_{}^{} \vec{E} \,d\vec{A} = \int_{}^{} \underbrace{\frac{1}{4\pi\varepsilon_{0}} \left(\frac{q}{r^2}\bm{\hat{r}}\right)}_{\vec{E}} \cdot \underbrace{\left(r^2\sin^{}(\theta)\,d\theta\,d\phi\,\bm{\hat{r}}\right)}_{d\vec{A}}
+\end{aligned}
+$$
+Sabemos que $\bm{\hat{r}} \cdot \bm{\hat{r}} = 1$ porque es el producto escalar de un vector unitario consigo mismo. Además, $\frac{1}{r^2}$ se nos va con $r^2$, y podemos realizar la integración
+$$
+\begin{aligned}
+  \Phi_{\vec{E}} &= \frac{1}{4\pi\varepsilon_{0}}q\int_{}^{} \sin^{}(\theta) \,d\theta \,d\phi\\
+   &= \int_{0}^{2\pi} \int_{0}^{\pi} \sin^{}(\theta) \,d\theta d\phi\\
+   &= \int_{0}^{2\pi} \Bigg[-\cos^{}(\theta)\Bigg]_{0}^{\pi} \,d\phi\\
+   &= 2\pi\cdot 2 = 4\pi = \frac{1}{4\pi\varepsilon_{0}} q 4\pi\\
+  \Phi_{\vec{E}} &= \frac{q}{\varepsilon_{0}}
+\end{aligned}
+$$
+Si nos fijamos, el radio de la esfera se cancela en la ecuación. Y esto tiene sentido si analizamos las lineas de campo de una carga puntual, ya que como las líneas salen en dirección radial, siempre la misma cantidad de líneas va a pasar por cualquier esfera centrada en el origen de cualquier tamaño. De hecho, ni si quiera hace falta que sea una esfera, *cualquier* superficie cerrada (sin importar su forma) va a ser atravesada por la misma cantidad de líneas de campo. Podemos decir entonces que *el flujo a través de cualquier superficie que encierre a una carga es $q/\varepsilon_{0}$*.
+
+Supongamos ahora que en vez de una sola carga en el origen, tenemos muchas cargas en distintas posiciones. El campo electrico total vimos que era
+$$
+  \vec{E}_{total} = \sum_{i=1}^{n} \vec{E}_{i}
+$$
+
+El flujo a través de una superficie que encierra a todas esas cargas es
+$$
+  \oint_{}^{} \vec{E} \,d\vec{A} = \sum_{i=1}^{n} \left(\oint_{}^{} \vec{E}_{i} \,d\vec{A}\right) = \sum_{i=1}^{n} \frac{q_{i}}{\varepsilon_{0}}
+$$
+
+Para cualquier superficie cerrada entonces
+$$
+  \oint_{}^{} \vec{E} \,d\vec{A} = \frac{Q_{enc}}{\varepsilon_{0}}
+$$
+donde $Q_{enc}$ es la carga total encerrada dentro de la superficie.
+
+Esta ecuación integral la podemos convertir en una ecuación diferencial usando el teorema de la divergencia (o teorema de Gauss). Este teorema establece que el flujo de un vector a través de una superficie cerrada $S$ que encierra un volumen $V$ es igual a la integral de la divergencia de ese vector sobre el volumen:
+$$
+  \int_{S}^{} \vec{E} \,d\vec{A} = \int_{V}^{} \nabla \cdot \vec{E} \,d\tau
+$$
+donde $\nabla \cdot \vec{E}$ es la divergencia del campo eléctrico $\vec{E}$, y $d\tau$ es el elemento de volumen.
+
+Si sustituimos la ley de Gauss integral en esta relación, tenemos que
+$$
+  \int_{V}^{} \nabla \cdot \vec{E} \,d\tau = \frac{Q_{enc}}{\varepsilon_{0}}
+$$
+
+Ahora, la carga encerrada $Q_{enc}$ en un volumen $V$ se puede expresar como la integral de la densidad de carga volumétrica $\rho$ sobre ese volumen:
+$$
+  Q_{enc} = \int_{V}^{} \rho \,d\tau
+$$
+
+Entonces, podemos sustituir $Q_{enc}$ en la ecuación de la ley de Gauss
+$$
+  \int_{V}^{} \nabla \cdot \vec{E} \,d\tau = \frac{1}{\varepsilon_{0}} \int_{V}^{} \rho \,d\tau
+$$
+Y como esto tiene que ser cierto para cualquier volumen, sin importar su forma o tamaño, los integrandos de los dos lados de la ecuación tienen que ser iguales en cada punto del espacio, así que los podemos "cancelar"
+$$
+  \nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_{0}}
+$$
+
+::: {.callout-tip title=Ejemplo}
+::: {#exm-flujo}
+
+Una carga $q$ esta situada en la esquina trasera de un cubo, como se muestra en la @fig-ej-flujo. ¿Cuál es el flujo de $\vec{E}$ a traves de la cara sombreada?
+
+![Ejemplo sacado de @griffiths[p. 70]](./imagenes/ej-flujo.png){#fig-ej-flujo}
+
+Vamos a ver que usando los conocimientos que aprendimos, estos ejercicios se vuelven super sencillos. 
+
+Primero que nada vemos que, como la carga está justo en la esquina del cubo, por el mismo fluye solo un octavo del flujo que genera $q$. Ya que si consideramos que $q$ está en el origen, el cubo abarca solo el primer octante del espacio. 
+
+Si el cubo rodease a la carga por completo, el flujo sería $q/\varepsilon_{0}$. Pero como el cubo está sobre el primer octante, el flujo total sobre el cubo es
+$$
+\Phi_{cubo} = \frac{q}{8\varepsilon_{0}}
+$$
+Ahora, el flujo total en este cubo ocurre solo sobre las tres caras deltanteras. A nosotros nos piden calcular el flujo sobre solo una de estas tres caras así que 
+$$
+\Phi_{sombra} = \Phi_{cubo} \frac{1}{3} = \frac{q}{24\varepsilon_{0}}
+$$
+:::
+:::
+
+### Aplicaciones de la ley de Gauss
+La ley de Gauss nos permite realizar las cuentas de manera mucho mas sencilla, siempre que la simetría lo permita. Hagamos un par de ejemplos.
+
+::: {.callout-tip title=Ejemplo}
+::: {#exm-aplic-gauss-1}
+
+Encontrar el campo exterior a una esfera cargada uniformemente de radio $R$ y carga total $q$.
+
+Para calcular el campo eléctrico exterior a una esfera de radio $R$, lo que podemos hacer es imaginar una esfera de radio $r>R$ (@fig-esfera-gauss); esta esfera es una **superficie Gaussiana**. La ley de Gauss nos dice que
+$$
+  \oint_{S}^{} \vec{E} \,d\vec{A} = \frac{Q_{enc}}{\varepsilon_{0}}
+$$
+y en este caso $Q_{enc}=q$. A primera vista parece que esto no nos sirve de nada ya que nos piden calcular el campo eléctrico y no el flujo, que es lo que nos dá la ley de Gauss. Sin embargo, si prestamos atención, vemos que, como el campo eléctrico va en dirección radial y el diferencial de area también va en la misma dirección, el producto escalar entre ambos queda así
+$$
+  \int_{S}^{} \vec{E} \,d\vec{A} = \int_{S}^{} \left|E\right| \,dA
+$$
+Esto es porque $\vec{E}\cdot d\vec{A} = \left|E\right|\cdot \left|dA\right|\cdot \cos^{}(\alpha)$, pero el $\cos^{}(\alpha) = 1$.
+
+![Imagen sacada de @griffiths[p. 72]](./imagenes/ej-aplic-gauss-1.png){#fig-esfera-gauss}
+
+Además, sabemos que la magnitud de $\vec{E}$ es constante sobre toda la superficie Gaussiana, ya que al ser una esfera, todos los puntos se encuentran a la misma distancia de la carga situadad en el centro. Como es constante, $\left|E\right|$ sale afuera de la integral
+$$
+  \int_{S}^{} \left|E\right| \,dA = \left|E\right| \int_{S}^{}  \,dA = \left|E\right|4\pi r^2
+$$
+
+Y ya está, ahora podemos despejar el campo eléctrico. 
+$$
+\begin{aligned}
+   \left|E\right|4\pi r^2 &= \frac{q}{\varepsilon_{0}}\\
+   \vec{E} &= \frac{1}{4\pi\varepsilon_{0}} \frac{q}{r^2}\bm{\hat{r}}
+\end{aligned}
+$$
+:::
+:::
+
+Para poder usar la ley de Gauss, tenemos que tener simetría en el problema. Existen tres tipos de simetría que podemos aprovechar:
+
+- Simetría esférica: Hacemos que la superficie Gaussiana sea una esfera, como vimos recién.
+- Simetría cilíndrica: Hacemos que la superficie Gaussiana sea un cilíndro.
+- Simetría planar: Hacemos que la superficie sea un paralelepipedo que cubre la superficie.
+
+::: {.callout-tip title=Ejemplo}
+::: {#exm-aplic-gauss-2}
+
+Un cilindro largo tienen una densidad de carga proporcional a la distancia desde su eje: $\rho = ks$, siendo $k$ la constante de proporcionalidad. Encontrar el campo eléctrico adentro del cilíndro.
+
+En este caso, dibujamos una **cilindro Gaussiano** de largo $l$ y radio $s$. Vamos a suponer en este caso que $s$ es el radio de la superficie Gaussiana y es menor que $s'$, que es el radio del cilíndro cargado ($s<s'$). 
+
+![Imagen sacada de @griffiths[p. 73]](./imagenes/ej-aplic-gauss-2.png)
+
+La ley de Gauss nos dice que
+$$
+  \int_{S}^{} \vec{E} \,d\vec{A} = \frac{Q_{enc}}{\varepsilon_{0}}
+$$
+
+La carga encerrada adentro del cilindro es 
+$$
+\begin{aligned}
+  Q_{enc} &= \int_{}^{} \rho \,d\tau = \int_{}^{} (ks')(s'\,ds' \,d\phi \,dz)\\
+   &= k \int_{0}^{2\pi} \int_{0}^{l} \int_{0}^{s} s'^2 \,ds' \,dz \,d\phi\\
+   &= 2\pi kl \int_{0}^{s} s'^2 \,ds' = \frac{2}{3}\pi kls^3
+\end{aligned}
+$$
+
+Ahora, por simetría, sabemos que $\vec{E}$ tiene dirección radial, así que la integral es la siguiente
+$$
+  \int_{}^{} \vec{E} \,d\vec{A} = \int_{}^{} \left|E\right| \,dA = \left|E\right|\int_{}^{}  \,dA = \left|E\right|2\pi sl
+$$
+
+Y ahora ya estamos listos para despejar el campo eléctrico de la ecuación
+$$
+\begin{aligned}
+  \left|E\right|2\pi sl &= \frac{1}{\varepsilon_{0}} \frac{2}{3}\pi kls^3\\
+  \vec{E} &= \frac{1}{3\varepsilon_{0}}ks^2\bm{\hat{s}}
+\end{aligned}
+$$
+:::
+:::
+
+
+::: {.callout-tip title=Ejemplo}
+::: {#exm-aplic-gauss-3}
+
+Un plano infinito tiene una carga superficial uniforme $\sigma$. Encontrar el campo eléctrico.
+
+Para este último ejemplo, dibujamos un paralelepípedo que se extiende la misma distancia por encima y por debajo del plano cargado.
+
+![Imagen sacada de @griffiths[p. 74]](./imagenes/ej-aplic-gauss-3.png)
+
+En este caso $Q_{enc}=\sigma A$, donde $A$ es el area de la "tapa" del paralelepípedo. Por simetría, el campo $\vec{E}$ apunta alejándose del plano, hacia arriba y hacia abajo, así que la tapa superior y la tapa inferior del paralelepípedo se suman.
+$$
+  \int_{}^{} \vec{E} \,d\vec{A} = 2A\left|\vec{E}\right|
+$$
+
+De esta manera, podemos despejar el campo eléctrico
+$$
+\begin{aligned}
+  2A\left|E\right| &= \frac{1}{\varepsilon_{0}}\sigma A
+  \vec{E} &= \frac{\sigma}{2\varepsilon_{0}}\bm{\hat{n}}
+\end{aligned}
+$$
+donde $\bm{\hat{n}}$ en el versor normal a la superficie cargada.
+:::
+:::
+
+## El rotor del campo eléctrico
+El rotor se calcula como $\nabla \times E$ y para el campo eléctrico es siempre cero, sin importar la cantidad de cargas que hayan
+$$
+  \nabla \times E = \vec{0}
+$$
+No lo voy a seguir explicando porque no lo entiendo y lo pasamos por encima en clase.
+
+# Potencial eléctrico
+El campo eléctrico $\vec{E}$ no es cualquier campo vectorial. Es un tipo especial de campo vectorial cuyo rotor es siempre cero. *No existe un campo elctrostático cuyo rotor sea distinto de cero*. Vamos a aprovechar esta propiedad de los campos eléctricos para reducir un problema vectorial (como encontrar $\vec{E}$) a un problema escalar mucho mas simple. Hay un teorema que dice que si el rotor de un campo vectorial $F$ da cero en cualquier punto (como lo hace el campo eléctrico), entonces el campo vectorial $F$ puede ser escrito como el gradiente de una función escalar $F = -\nabla \mathcal{V}$.
+
+Como $\nabla\times \vec{E} = \vec{O}$, la integral de linea de $\vec{E}$ al rededor de un camino cerrado es cero (por el teorema de Strokes). Como $\oint_{}^{} \vec{E} \,d\vec{l} = 0$, la integral de linea de $\vec{E}$ desde un punto $\vec{a}$ hasta un punto $\vec{b}$ es igual para cualquier camino entre ambos puntos. Como la integral de linea es independiente del camino que se tome, podemos definir una función
+$$
+\mathcal{V}(\vec{r})  \equiv -\int_{\mathcal{O}}^{\vec{r}} \vec{E} \,d\vec{l}
+$$
+Donde $\mathcal{O}$ es un punto de referencia estándar que elejimos de antemano; $\mathcal{V}$ depende solo de $\vec{r}$. $\mathcal{V}$ es el **potencial eléctrico**.
+
+La *diferencia* de potencial entre dos puntos $\vec{a}$ y $\vec{b}$ es 
+$$
+\begin{aligned}
+  \mathcal{V}(\vec{b}) - \mathcal{V}(\vec{a}) &= -\int_{\mathcal{O}}^{\vec{b}} \vec{E} \,d\vec{l} + \int_{\vec{a}}^{\mathcal{O}} \vec{E} \,d\vec{l}\\
+   &= -\int_{\mathcal{O}}^{\vec{b}} \vec{E} \,d\vec{l} - \int_{\vec{a}}^{\mathcal{O}} \vec{E} \,d\vec{l} = -\int_{\vec{a}}^{\vec{b}} \vec{E} \,d\vec{l}
+\end{aligned}
+$$
+Ahora, el teorema fundamental de los gradientes dice que 
+$$
+  \mathcal{V}(\vec{b}) - \mathcal{V}(\vec{a}) = \int_{\vec{a}}^{\vec{b}} \nabla \mathcal{V} \,d\vec{l}
+$$
+así que
+$$
+  \int_{\vec{a}}^{\vec{b}} \nabla \mathcal{V} \,d\vec{l} = -\int_{\vec{a}}^{\vec{b}} \vec{E} \,d\vec{l}
+$$
+Y, como esto es cierto para cualquier par de puntos $\vec{a}$ y $\vec{b}$, los integrandos tienen que ser iguales
+$$
+  \vec{E} = -\nabla \mathcal{V}
+$$
+
+## Algunos comentarios sobre el potencial
+- Una superficie en la que el potencial se mantiene constante es una superficie **equipotencial**.
+- Si conocemos $\mathcal{V}$, entonces conocemos $\vec{E}$ (solo hay que calcular el gradiente $\vec{E}= -\nabla \mathcal{V}$).
+- El punto de referencia $\mathcal{O}$ lo decidimos nosotros. No importa el punto de referencia que tomemos, solo conviene elegir el que facilite mas las cuentas. Sin embargo, suele ser mas útil tomar el punto de referencia como un punto infinitamente lejos de la carga. Decimos entonces que el punto de inicio está en el infinito. Esto no lo podemos hacer siempre, pero cuando podamos siempre conviene.
+- El potencial obedece el principio de superposición. Entonces, el potencial en cualquier punto es la suma de los potenciales debido a cada carga por separado.
+- La unidad del potencial es $Joules/Coulomb$. La medida Joules por Coulomb es un **Volt**.
+
+::: {.callout-tip title=Ejemplo}
+::: {#exm-potencial}
+
+Encontrar el potencial por dentro y fuera de una superficie esférica de radio $R$ que tiene una carga superficial uniforme. Poner el punto de referencia en el infinito.
+
+![Imagen sacada de @griffiths[p. 82]](./imagenes/ej-potencial-electrico-1.png)
+
+Por la ley de Gauss sabemos que el campo eléctrico exterior es 
+$$
+  \vec{E} = \frac{1}{4\pi\varepsilon_{0}} \frac{q}{r^2}\bm{\hat{r}}
+$$
+donde $q$ es la carga total en la esfera. El campo adentro de la esfera es cero, ya que la carga se encuentra en la superficie de la esfera. Para los puntos que se encuentren por fuera de la esfera ($r>R$)
+$$
+  \mathcal{V}(r) = -\int_{\mathcal{O}}^{r} \vec{E} \,d\vec{l} = \frac{-1}{4\pi\varepsilon_{0}} \int_{\infty}^{r} \frac{q}{r'^2} \,dr' = \frac{1}{4\pi\varepsilon_{0}} \Bigg[\frac{q}{r'}\Bigg]_{\infty}^{r} = \frac{1}{4\pi\varepsilon_{0}} \frac{q}{r}
+$$
+
+Para encontrar el potencial adentro de la esfera ($r<R$), tenemos que romper la integral en dos partes para poder usar en cada región el campo que corresponda. Recordemos que en el interior de la esfera el campo eléctrico es cero.
+$$
+  \mathcal{V}(r) = \frac{-1}{4\pi\varepsilon_{0}} \int_{\infty}^{R} \frac{q}{r'^2} \,dr' - \int_{R}^{r} 0 \,dr' = \frac{1}{4\pi\varepsilon_{0}} \Bigg[\frac{q}{r'}\Bigg]_{\infty}^{R} + 0 = \frac{1}{4\pi\varepsilon_{0}} \frac{q}{R}
+$$
+
+Fijemonos que el potencial dentro de la esfera no es cero, aunque el campo eléctrico sí. Además, en esta región $\mathcal{V}$ es una constante que solo depende del radio $R$ de la esfera. Por otro lado, el potencial afuera de la esfera depende de qué tan lejos esté la carga de la superficie de la esfera. 
+:::
+::: 
 
 
 
@@ -205,23 +1267,95 @@ Ahora, la Ley de Coulomb está definida sólo cuando existen dos cargas que inte
 
 
 
+# Informe Van de Graaff
 
+El generador de Van de Graaff, inventado por el físico Robert J. Van de Graaff en 1929, es un dispositivo diseñado para generar altos voltajes. Inicialmente fue desarrollado como una herramienta para experimentos de física de partículas, donde se necesitaba producir una diferencia de potencial muy alta para acelerar partículas cargadas que se hacían chocar contra blancos fijos. Hoy en día, el generador de Van de Graaff es un instrumento valioso en la educación y la demostración de principios electrostáticos. Su capacidad para producir fenómenos visibles, como chispas y repulsíon de objetos, lo hace ideal para ilustrar conceptos fundamentales de la física de manera práctica.
 
+El principio de funcionamiento del generador de Van de Graaff se basa en el transporte de carga eléctrica a través de una cinta aislante hacia una esfera metálica hueca, donde esta carga se acumula, generando un potencial eléctrico elevado. Este proceso  involucra conceptos clave de la electrostática, como la ley de Coulomb, el campo eléctrico, el potencial eléctrico y la capacitancia, que son esenciales para comprender su funcionamiento.
 
+El propósito de este informe es describir la construcción y el funcionamiento de este generador casero, enfocado en la electrostática. Mediante este proyecto se busca ejemplificar el comportamiento de las cargas eléctricas y los campos que generan.
 
+# Fundamentos teóricos del generado de Van de Graaff
+## Ley de Coulomb
+La ley de Coulomb establece que hay algunos cuerpos que tienen una propiedad llamada carga eléctrica, denominada generalmente con la letra $q$, y su unidad de medida es el Coulomb. Además, si un cuerpo dado tiene una carga $q1$, y otro cuerpo tiene una carga $q2$, ambos cuerpos ejercen una fuerza sobre el otro y la magnitud de esa fuerza está dada por la fórmula:
+$$
+  \left|F\right| = \frac{\left|q1q2\right|}{4\pi\varepsilon_{0}} \frac{1}{r^2}
+$$
+, donde $r$ es la distancia entre ambos cuerpos, y $\varepsilon_{0}$ es una constante. Para obtener el vector fuerza, multiplicamos la magnitud por la dirección del vector $r$.
+$$
+  \vec{F} = \frac{\left|q1q2\right|}{4\pi\varepsilon_{0}} \frac{1}{r^2} \frac{\vec{r}}{\left|r\right|} = \frac{\left|q1q2\right|}{4\pi\varepsilon_{0}} \frac{\vec{r}}{r^3}
+$$
 
+## Campo eléctrico
+Otra forma de escribir el vector fuerza es como sigue
+$$
+  \vec{F} = q1\vec{E}
+$$
+, donde $\vec{E}$ es el campo electrico producido por la carga $q2$
+$$
+  \vec{E} = \frac{1}{4\pi\varepsilon_{0}} \frac{q}{r^2}\bm{\hat{r}}
+$$
 
+Cuando tenemos varias cargas puntuales $q1, q2, \dots , qn$, a distancias $r1, r2, \dots rn$, y queremos obtener la fuerza ejercida por estas cargas sobre la carga $q0$ podemos utilizar el principio de superposición del campo eléctrico que establece que el campo eléctrico total en un punto del espacio es la suma vectorial de los campos eléctricos producidos por cada una de las cargas $qi$.
+$$
+  \vec{E}_{tot} = \frac{1}{4\pi\varepsilon_{0}} \sum_{i=1}^{n} \frac{q_{i}}{r^2}\bm{\hat{r}}
+$$
 
+## Potencial eléctrico
+El potencial eléctrico mide la energía potencial por unidad de carga en un punto del espacio debido a las cargas presentes. Mientras que el campo eléctrico nos indica la fuerza que actua sobre una carga en un punto del espacio, el potencial eléctrico nos dice cuánta energía está asociada a esa posición.
 
+Para una carga puntual $q$, el potencial eléctrico $\mathcal{V}$ que genera a una distancia $r$ es:
+$$
+  \mathcal{V} = \frac{1}{4\pi\varepsilon_{0}} \frac{q}{r}
+$$
+A diferencia del campo eléctrico, que es un vector, el potencial eléctrico es un escalar, lo que hace más fácil sumarlo cuando hay varias cargas. Si tenemos varias cargas puntuales $q1, q2, \dots ,qn$, el potencial total en un punto es:
+$$
+  \mathcal{V}_{tot} = \frac{1}{4\pi\varepsilon_{0}} \sum_{i=1}^{n} \frac{q_{i}}{r_{i}}
+$$  
+El potencial eléctrico también está conectado al campo eléctrico por la relación:
+$$
+  \vec{E} = -\nabla \mathcal{V}
+$$
+Esto significa que el campo eléctrico apunta hacia donde el potencial disminuye mas rápido.
 
+## Capacitancia
+Algunos materiales permiten que las cargas eléctricas se muevan con facilidad de una región a otra, mientras que otros no lo hacen. Los primeros recibene el nombre de conductores de electricidad. El alambre de cobre es un ejemplo de un conductor. Otros materiales, como una banda de latex o un cordón de nailon no permiten que la carga eléctrico se transfiera, y reciben el nombre de aislantes.
 
+Dos conductores separados por un aislante (o vacío) constituyen un capacitor. En un capacitor, cada conductor tiene inicialmente una carga neta cero, y los electrones son transferidos de un conductor al otro, cargando al capacitor.
 
+La capacitancia es una propiedad que mida la capacidad de un sistema para almacenar carga eléctrica por unidad de potencial eléctrico. Un sistema con alta capacitancia puede almacenar más carga para un mismo voltaje en comparación con uno de baja capacitancia. Esta se define como la razón entre la carga la diferencia de potencial.
+$$
+  C = \frac{Q}{V_{ab}}
+$$
+Para una esfera de radio tal es tal
 
+## Ley de Gauss
+la ley de Gauss establece que el flujo eléctrico total ($\Phi_{E}$) a través de cualquier superfice cerrada es proporcional a la carga eléctrica total dentro de la superficie. En símbolos matemáticos
+$$
+\Phi_{tot} = \oint_{}^{} \vec{E} \,d\vec{A} = \frac{Q_{enc}}{\varepsilon_{0}}
+$$
 
+## Efecto triboelectrico
+El efecto triboeléctrico es un fenómeno mediante el cual dos materiales, al frotarse entre ellos, se cargan eléctricamente. Un ejemplo común de este fenómeno es cuando frotamos un globo contra la piel (en realidad contra el pelo). Al frotar el globo, este gana electrones de la piel, cargándose negativamente. El campo eléctrico del globo induce una polarización en la pared, atrayendo las carags positivas hacia la superficie. La fuerza electrostática resultante hace que el globo quede adherido a ella. 
 
+Lo que determina cuál material va a terminar recibiendo electrones y cuál los pierde es la estructura molecular de cada uno. En realidad, no hace falta frotar los materiales. El simple hecho de que ambos materiales se toquen y se separen puede producir un desbalance de la carga. Los efectos triboeléctricos son mitigados por la humedad en el aire, ya que las moléculas de agua en el aire también se quedan con los electrones que se mueven en el intercambio.
 
+En el generador de Van de Graaff, el efecto triboeléctrico ocurre de maner similar: la cinta aislante se frota contra el rodillo inferior, generando carga en la cinta. Esta carga se transporta a la esfera, aumentando su potencial eléctrico y produciendo efectos como chispas o repulsión de objetos.
 
+## Cómo funciona?
+El motor hace girar el rodillo de la parte inferior del generador. Este rodillo está hecho de teflón, que es un material que se encuentra muy abajo en la serie triboelectrica, y al girar comienza a frotarse con la cinta de goma, que está por encima del teflón en la serie triboeléctrica. De esta manera, el teflón gana electrones quedando cargado negativamente y la cinta queda con carga positiva.
 
+Al mismo tiempo, hay un peine metálico por debajo del rodillo inferior que esta posicionado cerca de este y conectado a tierra. El rodillo de teflón, cargado negativamente, induce una separación de cargas en el peine de manera que los electrones del mismo fluyen a tierra y las puntas del peine queda cargadas positivamente, atrayendo a los electrones del rodillo hacia tierra. Esto neutraliza la carga del rodillo permitiendo que siga cargando positivamente la cinta en cada ciclo.
 
+La cinta de goma, que ahora está cargada positivamente, se mueve hacia arriba gracias al giro del rodillo inferior. Como la goma es un aislante, la carga positiva se mantiene en la superficie de la cinta.
 
+Cerca del rodillo superior, hay otro peine metálico pero esta vez conectado a una esfera metálica hueca. La carga positiva de la cinta induce una separación de cargas en el peine superior y lo electrones son atraídos hacia las puntas cercanas a la cinta. Las cargas positivas se dirigen a la esfera.
+
+Debido a que el rodillo superior está hecho de nylon, la cinta transportará carga negativa cuando esté yendo hacia abajo, esta carga negativa sale de la esfera, quedando cargada aún mas positivamente.
+
+La esfera actúa como un capacitor. A medida que la cinta transfiere mas carga positiva, la carga total $Q$ en la esfera aumenta, elevando su potencial eléctrico.
+
+Este ciclo se repite continuamente, acumulando carga y generando voltajes muy altos sobre la superficie de la esfera.
+
+@borrar y @borrar2
 
